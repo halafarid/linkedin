@@ -1,4 +1,9 @@
-@import 'sass/main.scss';
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+    width: 1400px;
+    margin: 0 auto;
+}

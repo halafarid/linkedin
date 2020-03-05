@@ -4,18 +4,30 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {
+  MatCardModule,
+  MatMenuModule,
+  MatButtonModule
+} from '@angular/material';
+
+import { CardsComponent } from './cards/cards.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CardsComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatMenuModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
