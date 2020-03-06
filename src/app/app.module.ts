@@ -12,14 +12,17 @@ import {
   MatButtonModule
 } from '@angular/material';
 
+
 import { CardsComponent } from './cards/cards.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { WelcomeCardComponent } from './cards/welcome-card/welcome-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
-    DropdownComponent
+    DropdownComponent,
+    WelcomeCardComponent
   ],
   imports: [
     BrowserModule,
