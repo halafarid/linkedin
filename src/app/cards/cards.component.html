@@ -1,17 +1,20 @@
+<mat-card class="card card--pad">
+    <ng-content select=".coverProfile"></ng-content>
+</mat-card>
+
+<mat-card class="card card-border">
+    <mat-card-title class="card__title--lg">Strengthen your profile</mat-card-title>
+    <mat-card class="card--sub card-mr1">  
+        <ng-content select=".subCard1"></ng-content>
+    </mat-card>
+
+    <button mat-button class="card__btn">Not now</button>
+    <button mat-raised-button class="btn btn--primary">Add past position</button>
+</mat-card>
+
 <mat-card class="card">
-    <div class="card__cover">
-        <img mat-card-cover-image src="../../assets/profile/background.svg" class="card__img-background">
-
-        <div class="card__img-parent">
-            <div class="card__img card__img--radius">
-                <img mat-card-avatar src="../../assets/profile/photo.png" class="card__img-profile">
-            </div>
-        </div>
-    </div>
-
-    <mat-card-content class="card__content">
-        <app-dropdown></app-dropdown>
-        <mat-card-title>Profile Name</mat-card-title>
-        <mat-card-subtitle>Web and User Interface student at Information Technology Institute (ITI)</mat-card-subtitle>
-    </mat-card-content>
+    <mat-card-title class="card__title--lg">Featured</mat-card-title>
+    <mat-card class="card--sub card-mr1">  
+        <ng-content select=".subCard2"></ng-content>
+    </mat-card>
 </mat-card>

@@ -14,12 +14,14 @@ import {
 
 import { CardsComponent } from './cards/cards.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
-    DropdownComponent
+    DropdownComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

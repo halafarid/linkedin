@@ -1,5 +1,11 @@
+@import '../../sass/variables.scss';
+
 .card {
-    padding: 0;
+    margin-bottom: 40px;
+    
+    &--pad {
+        padding: 0 0 20px;
+    }
     
     &__cover {
         position: relative;
@@ -32,9 +38,135 @@
             width: 60px;
             height: 60px;
         }
+
+        
+        &-logo {
+            width: 35px;
+            height: 30px;
+            margin: 3px 10px;
+        }
+    }
+
+    
+    &__features {
+        padding-bottom: 30px;
+        &-img {
+            width: 40%;
+        }
     }
 
     &__content {
-        padding: 20px 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    
+    }
+
+    &__title {
+        font-size: 24px;
+
+        &--lg {
+            font-size: $font-lg;
+        }
+    }
+
+    &__subtitle {
+        color: $info;
+        font-size: $font-md;
+        line-height: 1.4;
+        padding-top: 10px;
+    }
+    
+    &__list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    &__btn {
+        margin-right: 15px;
+        color: $info;
+    }
+
+    &-info {
+        width: 60%;
+    }
+
+    &-edu {
+        width: 25%;
+        margin-right: 5%;
+        line-height: 1.5;
+    }
+
+    &-job {
+        justify-content: flex-start;
+
+        &__title {
+            margin-left: 15px;
+        }
+    }
+
+    &--sub {
+        padding-bottom: 0;
+        border: 1px solid #DADDDF;
+    }
+
+    &--light {
+        background-color: $light;
+    }
+
+    &-mr0 {
+        margin: 20px 15px 0px;
+    }
+
+    &-mr1 {
+        margin-bottom: 15px;
+    }
+
+    &-border {
+        border-top: 5px solid $primary;
+    }
+}
+
+.list {
+    &--inline {
+        display: inline;
+        margin-right: 30px;
+    }
+
+    &__item {
+        color: $info;
+        font-size: $font-normal;
+        position: relative;
+
+        &:not(:first-child)::before {
+            content: '.';
+            position: absolute;
+            left: -15px;
+            bottom: 3px;
+            font-size: 20px;
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $primary;
+    }
+}
+
+.text {
+    text-align: justify;
+    
+    &--sm {
+        font-size: $font-sm;
+        margin-bottom: 10px;
+        padding: 0;
+    }
+
+    &--normal {
+        font-size: $font-normal;
+    }
+
+    &--dark {
+        color: $dark;
     }
 }

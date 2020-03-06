@@ -1,0 +1,13 @@
+.container {
+    width: 1200px;
+    margin: 30px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.eventProfile {
+    display: flex;
+    align-self: baseline;
+    margin-left: 20px;
+}

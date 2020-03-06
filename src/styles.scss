@@ -1,13 +1,7 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-@import 'sass/general.scss';
+@import 'sass/main.scss';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Monospace", sans-serif; height: 1000px; }
 
-.container {
-    width: 1200px;
-    margin: 30px auto 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
