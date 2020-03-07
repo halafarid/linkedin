@@ -4,6 +4,7 @@
         color: $light;
 
         &:hover {
+            color: $light;
             background-color: $dark-primary;
         }
     }
@@ -23,6 +24,7 @@
             transition: all 0.3s ease-in-out;
 
             &:hover {
+                color: $primary;
                 background-color: #93d8fc52;
             }
         }
