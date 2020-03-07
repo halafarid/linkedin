@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { MatButtonModule } from "@angular/material/button";
+import { NetworkComponent } from "./network.component";
 
-import { ProfileComponent } from "./profile.component";
-
-describe("ProfileComponent", () => {
-  let component: ProfileComponent;
-  let fixture: ComponentFixture<ProfileComponent>;
+describe("NetworkComponent", () => {
+  let component: NetworkComponent;
+  let fixture: ComponentFixture<NetworkComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ProfileComponent]
+      declarations: [NetworkComponent]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProfileComponent);
+    fixture = TestBed.createComponent(NetworkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

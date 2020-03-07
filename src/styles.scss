@@ -1,7 +1,14 @@
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-@import 'sass/main.scss';
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "sass/main.scss";
 
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-body { margin: 0; font-family: Roboto, "Monospace", sans-serif; }
-
+body {
+  margin: 0;
+  font-family: Roboto, "Monospace", sans-serif;
+}
