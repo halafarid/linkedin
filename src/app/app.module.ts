@@ -19,6 +19,8 @@ import { WelcomeCardComponent } from './cards/welcome-card/welcome-card.componen
 import { StartPostComponent } from './cards/start-post/start-post.component';
 import { CreatePostComponent } from './cards/create-post/create-post.component';
 import { ProfileComponent } from './profile/profile.component';
+import { PostCardComponent } from './cards/post-card/post-card.component';
+import { OptionDropdownComponent } from './option-dropdown/option-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ProfileComponent } from './profile/profile.component';
     WelcomeCardComponent,
     StartPostComponent,
     CreatePostComponent,
-    ProfileComponent
+    ProfileComponent,
+    PostCardComponent,
+    OptionDropdownComponent
   ],
   imports: [
     BrowserModule,
