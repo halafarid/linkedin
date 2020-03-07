@@ -15,26 +15,22 @@ import {
 
 import { CardsComponent } from './cards/home-card/cards.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
-<<<<<<< HEAD
 import { WelcomeCardComponent } from './cards/welcome-card/welcome-card.component';
 import { StartPostComponent } from './cards/start-post/start-post.component';
 import { CreatePostComponent } from './cards/create-post/create-post.component';
-=======
 import { ProfileComponent } from './profile/profile.component';
->>>>>>> 97032c91170969506ae151a391ffd231ef0493e6
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
     DropdownComponent,
-<<<<<<< HEAD
     WelcomeCardComponent,
     StartPostComponent,
-    CreatePostComponent
-=======
-    ProfileComponent
->>>>>>> 97032c91170969506ae151a391ffd231ef0493e6
+    CreatePostComponent,
+    ProfileComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
