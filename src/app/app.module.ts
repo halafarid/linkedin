@@ -11,12 +11,19 @@ import {
   MatCardModule,
   MatMenuModule,
   MatButtonModule,
+<<<<<<< HEAD
   MatFormFieldModule,
   MatInputModule
+=======
+  MatListModule
+>>>>>>> b118ffb48addf64f0c2fa214f6055f686bbc4fe9
 } from '@angular/material';
 
-import { CardsComponent } from './cards/cards.component';
+import { CardsComponent } from './cards/home-card/cards.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { WelcomeCardComponent } from './cards/welcome-card/welcome-card.component';
+import { StartPostComponent } from './cards/start-post/start-post.component';
+import { CreatePostComponent } from './cards/create-post/create-post.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegestrationComponent } from './components/regestration/regestration.component';
 import { SigninComponent } from './components/signin/signin.component';
@@ -27,9 +34,16 @@ import { from } from 'rxjs';
     AppComponent,
     CardsComponent,
     DropdownComponent,
+<<<<<<< HEAD
     ProfileComponent,
     RegestrationComponent,
     SigninComponent
+=======
+    WelcomeCardComponent,
+    StartPostComponent,
+    CreatePostComponent,
+    ProfileComponent
+>>>>>>> b118ffb48addf64f0c2fa214f6055f686bbc4fe9
   ],
   imports: [
     BrowserModule,
@@ -38,9 +52,13 @@ import { from } from 'rxjs';
     MatCardModule,
     MatMenuModule,
     MatButtonModule,
+<<<<<<< HEAD
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule
+=======
+    MatListModule
+>>>>>>> b118ffb48addf64f0c2fa214f6055f686bbc4fe9
   ],
   providers: [],
   bootstrap: [AppComponent]

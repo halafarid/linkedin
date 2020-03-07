@@ -4,7 +4,35 @@
         color: $light;
 
         &:hover {
+            color: $light;
             background-color: $dark-primary;
+        }
+    }
+
+    
+    &--center {
+        display: block !important;
+        margin: 0 auto !important;
+        width: 100%;
+    }
+
+    &-text {
+        padding: 10px !important;
+
+        &--primary {
+            color: $primary;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                color: $primary;
+                background-color: #93d8fc52;
+            }
+        }
+    }
+
+    &-border {
+        &--primary {
+            color: $primary;
         }
     }
 }

@@ -1,0 +1,71 @@
+<mat-card class="card card--pad">
+    <ng-content select=".coverProfile"></ng-content>
+</mat-card>
+
+<mat-card class="card card-border">
+    <mat-card-title class="card__title--lg">Strengthen your profile</mat-card-title>
+    <mat-card class="card--sub card-mr1">  
+        <ng-content select=".subCard1"></ng-content>
+    </mat-card>
+
+    <button mat-button class="card__btn">Not now</button>
+    <button mat-raised-button class="btn btn--primary">Add past position</button>
+</mat-card>
+
+<mat-card class="card">
+    <mat-card-title class="card__title--lg">Featured</mat-card-title>
+    <mat-card class="card--sub card-mr1">  
+        <ng-content select=".subCard2"></ng-content>
+    </mat-card>
+</mat-card>
+
+<mat-card class="card">
+    <mat-card-title class="card__title--lg">Experience</mat-card-title>
+    <mat-card-content class="card__content card--flex">
+        <ng-content select=".experience"></ng-content>
+    </mat-card-content>
+
+    <hr class="horizontal">
+    
+    <mat-card-title class="card__title--lg">Education</mat-card-title>
+    <mat-card-content class="card__content card--flex">
+        <ng-content select=".education"></ng-content>
+    </mat-card-content>
+</mat-card>
+
+
+<mat-card class="card card--pad-non">
+    <mat-card-content class="card-mr0">
+        <ng-content select=".skills"></ng-content>
+        <hr class="horizontal">
+    </mat-card-content>
+    <button mat-button class="btn btn--center btn-text--primary text--normal">Show more</button>
+</mat-card>
+
+<mat-card class="card">
+    <mat-card-title class="card__title--lg">Accomplishments</mat-card-title>
+    <mat-list>
+        <span class="card__accom-len">4</span>
+        <span class="text--primary">Courses</span>
+        <mat-list-item class="card__accom">
+            <ul class="list">
+                <li class="list--inline card__accom-item text--info">JavaScript Tutorial, Udemy</li>
+                <li class="list--inline card__accom-item text--info">Mastering React, Udemy</li>
+                <li class="list--inline card__accom-item text--info">Object-Oriented Programming in JavaScript, Udemy</li>
+                <li class="list--inline card__accom-item text--info">The Complete JQuery Course from Beginner To Advanced, Udemy</li>
+            </ul>
+        </mat-list-item>
+
+        <mat-divider></mat-divider>
+
+        <span class="card__accom-len">2</span>
+        <span class="text--primary">Languages</span>
+        <mat-list-item>
+            <ul class="list">
+                <li class="list--inline card__accom-item text--info">Arabic</li>
+                <li class="list--inline card__accom-item text--info">English</li>
+            </ul>
+        </mat-list-item>
+
+     </mat-list>
+</mat-card>
