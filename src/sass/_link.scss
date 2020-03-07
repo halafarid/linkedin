@@ -1,0 +1,17 @@
+.link {
+    text-decoration: none;
+    color: $primary;
+
+    &:hover {
+        text-decoration: underline;
+        color: $primary;
+    }
+
+    &--default {
+        color: $info;
+    }
+
+    &--lg {
+        margin: 20px;
+    }
+}
