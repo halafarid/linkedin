@@ -1,0 +1,17 @@
+<div class="dropdown">
+    <button class="btn"mat-raised-button [matMenuTriggerFor]="menu"><i class="fas fa-ellipsis-h"></i></button>
+    <mat-menu #menu="matMenu" >
+        <button mat-menu-item>
+                <i class="far fa-bookmark"></i> Save</button>
+                <p class="small-font--gray">Safe for later</p>
+        <button mat-menu-item>
+                <i class="far fa-comment-alt"></i> Send in a private message </button>
+        <button mat-menu-item>
+                <i class="fas fa-link"></i> Copy link to post </button>
+        <button mat-menu-item>
+                <i class="far fa-flag"></i> Report this ad </button>
+                <p class="small-font--gray">This post is offensive </p>
+        <button mat-menu-item>
+                <i class="far fa-eye"></i> Who can see this post </button>
+    </mat-menu>
+</div>

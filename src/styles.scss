@@ -9,7 +9,7 @@
 
 html, body { height: 100%; }
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-body { margin: 0; font-family: Roboto, "Monospace", sans-serif; }
+body { margin: 0; font-family: Roboto, "Monospace", sans-serif;}
 
 .colflex
 {
@@ -17,10 +17,11 @@ body { margin: 0; font-family: Roboto, "Monospace", sans-serif; }
     flex-direction: column;
     
 }
-.top-margin
+.bottom-margin
 {
-    margin-top: 110px;
+    margin-bottom: 330px;
 
 }
+
 
 

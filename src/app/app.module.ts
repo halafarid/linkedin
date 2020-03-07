@@ -15,6 +15,7 @@ import {
   MatFormFieldModule,
   MatInputModule,
 
+
   MatListModule
 } from '@angular/material';
 
@@ -24,6 +25,9 @@ import { WelcomeCardComponent } from './cards/welcome-card/welcome-card.componen
 import { StartPostComponent } from './cards/start-post/start-post.component';
 import { CreatePostComponent } from './cards/create-post/create-post.component';
 import { ProfileComponent } from './profile/profile.component';
+import { PostCardComponent } from './cards/post-card/post-card.component';
+import { OptionDropdownComponent } from './option-dropdown/option-dropdown.component';
+
 
 import { FooterComponent } from './footer/footer.component';
 
@@ -52,6 +56,10 @@ import { from } from 'rxjs';
     WelcomeCardComponent,
     StartPostComponent,
     CreatePostComponent,
+
+    ProfileComponent,
+    PostCardComponent,
+    OptionDropdownComponent,
     ProfileComponent
   ],
   imports: [
@@ -61,11 +69,9 @@ import { from } from 'rxjs';
     MatCardModule,
     MatMenuModule,
     MatButtonModule,
-
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-
     MatListModule
   ],
   providers: [],

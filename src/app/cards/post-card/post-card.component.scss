@@ -1,12 +1,12 @@
 .card {
     padding: 0;  
+    margin-left: 20px;
     margin-top:15px;
     &-small-font
     {
-        display: flex;
         margin-top: 15px;
         line-height: 5px;
-        font-size: 14px;
+        font-size: 15px;
         &--gray{
             color: gray;
         }
@@ -16,12 +16,46 @@
             align-items: center;
             flex-direction: column;
             line-height: 4px;
-
-
         }  
 
     }
+   &-footer{
+       display: flex;
+       flex-direction: row;
+       position: relative;
+
+       &-button{
+           position: absolute;
+           right:10px;
+           display: flex;
+           flex-direction:column;
+       }
+   }
     
+    &-text{
+        &--top{
+        padding-left: 5px;
+        padding-bottom: 5px;
+        }
+    }
+    &-img{
+        display: flex;
+        flex-direction: row;
+
+    &-logo{
+        padding: 11px;
+         width:55px;
+         height: 55px;
+    }
+}
+    &-head{
+    padding-top :15px;
+    padding-left: 5px; 
+    display: flex;
+    flex-direction: column;
+    line-height: 3px;
+    }
+
    
     &-content{
      padding: 10px;
@@ -68,13 +102,6 @@
             height: 54px;
         }
     }}
-    .plus
-    {
-        color: gray;
-     
-        margin-left: 50px;
-    }
-    .pointer:hover{
-        cursor: pointer;
-        color: cornflowerblue;;
-    }
+   .btn-light{
+       background-color: transparent;
+   }
