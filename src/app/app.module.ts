@@ -16,6 +16,7 @@ import { CardsComponent } from './cards/home-card/cards.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { WelcomeCardComponent } from './cards/welcome-card/welcome-card.component';
 import { StartPostComponent } from './cards/start-post/start-post.component';
+import { CreatePostComponent } from './cards/create-post/create-post.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { StartPostComponent } from './cards/start-post/start-post.component';
     CardsComponent,
     DropdownComponent,
     WelcomeCardComponent,
-    StartPostComponent
+    StartPostComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,
