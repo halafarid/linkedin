@@ -5,6 +5,10 @@
     
     &--pad {
         padding: 0 0 20px;
+
+        &-non {
+            padding: 0;
+        }
     }
     
     &__cover {
@@ -68,6 +72,10 @@
         &--lg {
             font-size: $font-lg;
         }
+
+        &--pad {
+            padding: 16px 0;
+        }
     }
 
     &__subtitle {
@@ -87,6 +95,38 @@
         color: $info;
     }
 
+    &__details {
+        margin-left: 40px;
+
+        &-img {
+            padding-top: 15px;
+        }
+    }
+
+    &__accom {
+        margin-bottom: 15px;
+        &-len {
+            display: inline-block;
+            position: relative;
+            top: 15px;
+            margin: 0 20px;
+            font-size: 32px;
+            color: $dark-primary;
+        }
+
+        &-item {
+            position: relative;
+            line-height: 1.5;
+
+            &:not(:first-child)::before {
+                content: '•';
+                position: absolute;
+                left: -10px;
+                top: -2px;
+            }
+        }
+    }
+
     &-info {
         width: 60%;
     }
@@ -94,15 +134,18 @@
     &-edu {
         width: 25%;
         margin-right: 5%;
-        line-height: 1.5;
+        line-height: 1.8;
     }
 
     &-job {
-        justify-content: flex-start;
-
+        
         &__title {
-            margin-left: 15px;
+            margin: 15px;
         }
+    }
+    
+    &--flex {
+        justify-content: flex-start;
     }
 
     &--sub {
@@ -131,6 +174,16 @@
     &--inline {
         display: inline;
         margin-right: 30px;
+
+        &.list__item {
+            &:not(:first-child)::before {
+                content: '.';
+                position: absolute;
+                left: -15px;
+                bottom: 3px;
+                font-size: 20px;
+            }
+        }
     }
 
     &__item {
@@ -138,12 +191,11 @@
         font-size: $font-normal;
         position: relative;
 
-        &:not(:first-child)::before {
-            content: '.';
-            position: absolute;
-            left: -15px;
-            bottom: 3px;
-            font-size: 20px;
+        &--underline {
+            &:not(:last-child) {
+                border-bottom: 1px solid #ddd;
+            }
+            padding-bottom: 15px !important;
         }
     }
 
@@ -169,4 +221,26 @@
     &--dark {
         color: $dark;
     }
+
+    &--light {
+        color: $light;
+    }
+
+    &--primary {
+        color: $primary;
+    }
+
+    &--info {
+        color: $info;
+    }
+}
+
+
+.horizontal {
+    position: relative;
+    left: -16px;
+    width: 103.5%;
+    border: none;
+    border-bottom: 2px solid #00000026;
+    margin-bottom: 16px;
 }
