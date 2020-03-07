@@ -12,17 +12,18 @@ import {
   MatButtonModule
 } from '@angular/material';
 
-
-import { CardsComponent } from './cards/cards.component';
+import { CardsComponent } from './cards/home-card/cards.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { WelcomeCardComponent } from './cards/welcome-card/welcome-card.component';
+import { StartPostComponent } from './cards/start-post/start-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
     DropdownComponent,
-    WelcomeCardComponent
+    WelcomeCardComponent,
+    StartPostComponent
   ],
   imports: [
     BrowserModule,
