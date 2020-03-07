@@ -5,11 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule} from '@angular/forms';
 
 import {
   MatCardModule,
   MatMenuModule,
   MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
   MatListModule
 } from '@angular/material';
 
@@ -22,17 +25,40 @@ import { ProfileComponent } from './profile/profile.component';
 import { PostCardComponent } from './cards/post-card/post-card.component';
 import { OptionDropdownComponent } from './option-dropdown/option-dropdown.component';
 
+
+import { FooterComponent } from './footer/footer.component';
+
+import { RegestrationComponent } from './components/regestration/regestration.component';
+import { SigninComponent } from './components/signin/signin.component';
+import { from } from 'rxjs';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
     DropdownComponent,
+
     WelcomeCardComponent,
     StartPostComponent,
     CreatePostComponent,
     ProfileComponent,
+    FooterComponent,
+
+
+    ProfileComponent,
+    RegestrationComponent,
+    SigninComponent,
+
+    WelcomeCardComponent,
+    StartPostComponent,
+    CreatePostComponent,
+
+    ProfileComponent,
     PostCardComponent,
-    OptionDropdownComponent
+    OptionDropdownComponent,
+    ProfileComponent
+
   ],
   imports: [
     BrowserModule,
@@ -41,6 +67,9 @@ import { OptionDropdownComponent } from './option-dropdown/option-dropdown.compo
     MatCardModule,
     MatMenuModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
     MatListModule
   ],
   providers: [],

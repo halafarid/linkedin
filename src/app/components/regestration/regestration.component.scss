@@ -1,0 +1,87 @@
+html,
+body {
+  overflow: hidden;
+}
+.groundcontainer {
+  background: linear-gradient(45deg, #0073b1, #0c8996);
+  background-attachment: fixed;
+  background-color: #0073b1;
+  height: 100vh;
+  width: 100vw;
+}
+
+.example-card {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+.form {
+  background-color: #edf0f3;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  width: 125vh;
+  margin: 0 auto;
+}
+input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: white;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 20px 0 0 0;
+}
+
+#label {
+  transform: translateY(20px);
+}
+h1,
+span {
+  color: white;
+  text-align: center;
+}
+h1 {
+  padding: 10px;
+}
+span {
+  font-size: 12px;
+  line-height: 1.33333;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 16px 0 16px 0;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  font-style: bold;
+}
+p a {
+  font-weight: 500;
+}
+a {
+  color: #0073b1;
+  text-decoration: none;
+}
+a:visited {
+  color: #665ed0;
+}
+
+button {
+  background-color: #0073b1;
+  border: 0;
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+}
