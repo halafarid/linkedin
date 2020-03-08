@@ -1,3 +1,5 @@
+@import 'variables';
+
 .container {
     width: 1200px;
     margin: 30px auto 0;
@@ -14,4 +16,36 @@
 
 button {
     outline: 0 !important;
+    box-shadow: none !important;
+}
+
+.overlay {
+    background-color: rgba(#000, 0.7);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    overflow-y: hidden;
+}
+
+.horizontal {
+    position: relative;
+    left: -16px;
+    width: 103.5%;
+    border: none;
+    border-bottom: 2px solid #00000026;
+    margin-bottom: 16px;
+
+    &__form {
+        margin: 0;
+    }
+}
+
+// toggle button in form
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: $primary;
+}
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color: $dark-primary;
 }

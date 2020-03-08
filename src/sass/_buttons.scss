@@ -16,6 +16,21 @@
         width: 100%;
     }
 
+    &--w {
+        width: 49%;
+        padding: 5px !important;
+        margin-bottom: 5px !important;
+
+        &:last-of-type {
+            margin-left: 2%;
+        }
+    }
+
+    &--right {
+        float: right;
+        text-align: right;
+    }
+
     &-text {
         padding: 10px !important;
 
