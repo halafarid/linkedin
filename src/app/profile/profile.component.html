@@ -81,6 +81,12 @@
 
     <ng-container class="skills">
         <mat-card-title class="card__title--lg card__title--pad">Skills & Endorsements</mat-card-title>
+        <mat-card-content class="card__icons">
+            <button mat-button class="btn text--info" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" (click)="addSkill()">Add a new skill</button>
+            <button mat-button class="btn text--info card__icons-feat">
+                <mat-icon class="text--primary">create</mat-icon>
+            </button>            
+        </mat-card-content>
         <button mat-stroked-button class="btn btn-text--primary btn-border--primary">Take skill quiz</button>
         <mat-list role="list">
             <mat-list-item class="list__item text--dark list__item--underline">Angular 2+</mat-list-item>
@@ -88,6 +94,7 @@
             <mat-list-item class="list__item text--dark list__item--underline">Bootstrap4</mat-list-item>
         </mat-list>
     </ng-container>
+
 </app-cards>
 
 

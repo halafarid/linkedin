@@ -1,0 +1,41 @@
+.form-control{
+    border-radius: 32px;
+     width:79%;
+    display:inline-block;
+    position: relative;
+}
+.fas{
+    padding: 7px;
+    padding-left: 10px;
+    font-size:25px;
+    color:grey;
+}
+.fa-camera{
+    position:absolute;
+    left:73%;
+    bottom:12px;
+}
+
+.comment{
+    padding: 13px;
+    border:1px solid #C1C1C1;
+    border-radius: 32px;
+    display: inline-block;
+    background-color: whitesmoke;
+    width:80%;
+    &-paragraph{
+        padding-top: 10px;
+        font-weight: bold;
+        line-height: 3px;
+     
+    }
+    &-reactions{
+        margin-left: 50px;
+        padding-top:3px;
+        font-size:12px;
+       
+    }
+}
+.borderless{
+    border-bottom: none;
+}

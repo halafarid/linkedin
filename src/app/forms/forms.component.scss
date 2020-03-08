@@ -1,0 +1,142 @@
+@import '../../sass/variables';
+@import '../../sass/text';
+@import '../cards/home-card/cards.component.scss';
+
+.form {
+  background-color: #fff;
+  padding: 15px 20px;
+  width: 50%;
+  height: 90%;
+  overflow-y: scroll;
+  margin: 30px auto;
+  font-size: 14px;
+  position: relative;
+
+    &__icons {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    &__field {
+        display: block;
+        margin-top: 15px;
+
+        &:first-of-type {
+            margin-top: 30px;
+        }
+
+        &--inline {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &--w {
+            width: 50%;
+            margin-top: 15px;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+    }
+
+    &__req {
+        color: $primary;
+    }
+
+    &__input,
+    &__select,
+    &__textarea {
+        outline: 0;
+        width: 100%;
+        height: 30px;
+        padding: 0px 10px;
+        border: 1px solid $info;
+        border-radius: 3px;
+        transition: border 0.3s ease-in-out;
+        
+        &:focus {
+            border: 1px solid $primary;
+            border-radius: 5px;
+            box-shadow: 0 0 3px $dark-primary;
+        }
+    }
+
+    &__select {
+        width: 99%;
+    }
+
+    &__textarea {
+        min-height: 110px;
+    }
+
+    &__hint {
+        font-size: 12px;
+        font-style: italic;
+    }
+
+    &__card {
+        margin: 20px 0;
+        padding-bottom: 15px;
+    }
+}
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: $primary !important;
+}
+// input {
+//   border: 1px solid #ccc;
+//   border-radius: 4px;
+//   box-sizing: border-box;
+//   background-color: white;
+//   width: 100%;
+//   padding: 12px 20px;
+//   margin: 20px 0 0 0;
+// }
+
+// #label {
+//   transform: translateY(20px);
+// }
+// h1,
+// span {
+//   color: white;
+//   text-align: center;
+// }
+// h1 {
+//   padding: 10px;
+// }
+// span {
+//   font-size: 12px;
+//   line-height: 1.33333;
+//   font-weight: 400;
+//   color: rgba(0, 0, 0, 0.6);
+//   margin: 16px 0 16px 0;
+//   text-align: center;
+// }
+
+// p {
+//   text-align: center;
+//   font-style: bold;
+// }
+// p a {
+//   font-weight: 500;
+// }
+// a {
+//   color: #0073b1;
+//   text-decoration: none;
+// }
+// a:visited {
+//   color: #665ed0;
+// }
+
+// button {
+//   background-color: #0073b1;
+//   border: 0;
+//   border-radius: 2px;
+//   box-sizing: border-box;
+//   color: #fff;
+//   cursor: pointer;
+//   display: inline-block;
+//   font-size: 16px;
+// }
