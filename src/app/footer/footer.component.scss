@@ -1,0 +1,44 @@
+.line
+{
+    border-top:solid 1px rgb(233, 227, 227);
+    margin-top: 30px;
+    width: 305px;
+    margin-left: 20px;
+
+}
+.word,.dropdown
+{
+    color: gray;
+    margin:8px 14px;
+    &:hover{
+        cursor: pointer;
+        color: #1881B1;
+    }
+    font-size:14px;
+}
+.container
+{
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.linked
+{
+    font-weight: bolder;
+}
+.linkedin
+{
+    display: flex;
+    margin-left: 35px;
+    margin-top: 20px;
+}
+.in
+{
+    margin:4px 0 10px 3px;
+    color: #1881B1;
+
+}
+.Corporation
+{margin:0 0 10px 7px;
+
+}

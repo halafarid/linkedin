@@ -4,9 +4,24 @@
 @import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 @import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
+
 @import 'sass/main.scss';
 
 html, body { height: 100%; }
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-body { margin: 0; font-family: Roboto, "Monospace", sans-serif; }
+body { margin: 0; font-family: Roboto, "Monospace", sans-serif;}
+
+.colflex
+{
+    display: flex;
+    flex-direction: column;
+    
+}
+.bottom-margin
+{
+    margin-bottom: 330px;
+
+}
+
+
 
