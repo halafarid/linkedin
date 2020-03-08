@@ -105,3 +105,26 @@
    .btn-light{
        background-color: transparent;
    }
+   .comment{
+    padding: 13px;
+    border:1px solid #C1C1C1;
+    border-radius: 32px;
+    display: inline-block;
+    background-color: whitesmoke;
+    &-paragraph{
+        padding-top: 10px;
+        font-weight: bold;
+        line-height: 3px;
+      
+    }
+    &-reactions{
+       &--top{
+           padding-left: 13px;
+           padding-top:13px;
+           font-size: 12px;
+       }
+    }
+}
+.active{
+    color: blue;
+}

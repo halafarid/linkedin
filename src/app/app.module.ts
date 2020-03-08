@@ -34,6 +34,7 @@ import { FooterComponent } from './footer/footer.component';
 import { RegestrationComponent } from './components/regestration/regestration.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { from } from 'rxjs';
+import { CommentComponent } from './comment/comment.component';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { from } from 'rxjs';
     ProfileComponent,
     PostCardComponent,
     OptionDropdownComponent,
-    ProfileComponent
+    ProfileComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
