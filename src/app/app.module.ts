@@ -15,6 +15,7 @@ import {
   MatFormFieldModule,
   MatSlideToggleModule,
   MatIconModule,
+  MatCheckboxModule,
 } from '@angular/material';
 
 import { CardsComponent } from './cards/home-card/cards.component';
@@ -24,6 +25,9 @@ import { StartPostComponent } from './cards/start-post/start-post.component';
 import { CreatePostComponent } from './cards/create-post/create-post.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsComponent } from './forms/forms.component';
+import { SkillsFormComponent } from './forms/skills-form/skills-form.component';
+import { EducationFormComponent } from './forms/education-form/education-form.component';
+import { ExperienceFormComponent } from './forms/experience-form/experience-form.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +39,9 @@ import { FormsComponent } from './forms/forms.component';
     CreatePostComponent,
     ProfileComponent,
     FormsComponent,
+    SkillsFormComponent,
+    EducationFormComponent,
+    ExperienceFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +54,8 @@ import { FormsComponent } from './forms/forms.component';
     MatListModule,
     MatFormFieldModule,
     MatSlideToggleModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

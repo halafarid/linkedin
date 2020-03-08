@@ -7,22 +7,23 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./forms.component.scss']
 })
 export class FormsComponent implements OnInit {
-  @Input() isShow = false;
+  // @Input() isShow = true;
 
-  myForm = new FormGroup({
-    schoolName: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3)
-    ]),
-  });
+  // myForm = new FormGroup({
+  //   schoolName: new FormControl('', [
+  //     Validators.required,
+  //     Validators.minLength(3)
+  //   ]),
+  // });
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  get schoolName() {
-    return this.myForm.get('schoolName');
-  }
+  
+  // get schoolName() {
+  //   return this.myForm.get('schoolName');
+  // }
 
 }
