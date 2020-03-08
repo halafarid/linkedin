@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +11,10 @@ import {
   MatCardModule,
   MatMenuModule,
   MatButtonModule,
-  MatListModule
+  MatListModule,
+  MatFormFieldModule,
+  MatSlideToggleModule,
+  MatIconModule,
 } from '@angular/material';
 
 import { CardsComponent } from './cards/home-card/cards.component';
@@ -19,6 +23,7 @@ import { WelcomeCardComponent } from './cards/welcome-card/welcome-card.componen
 import { StartPostComponent } from './cards/start-post/start-post.component';
 import { CreatePostComponent } from './cards/create-post/create-post.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -28,16 +33,21 @@ import { ProfileComponent } from './profile/profile.component';
     WelcomeCardComponent,
     StartPostComponent,
     CreatePostComponent,
-    ProfileComponent
+    ProfileComponent,
+    FormsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatMenuModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule,
+    MatSlideToggleModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
