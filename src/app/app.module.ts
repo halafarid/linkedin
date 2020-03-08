@@ -56,12 +56,9 @@ import { CommentComponent } from './comment/comment.component';
 
     PostCardComponent,
     OptionDropdownComponent,
-<<<<<<< HEAD
     ProfileComponent,
     CommentComponent
-=======
 
->>>>>>> b07f8a1382937fb1d40857439a3952506e63bfb3
   ],
   imports: [
     BrowserModule,
