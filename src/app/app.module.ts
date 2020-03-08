@@ -17,6 +17,7 @@ import {
   MatIconModule,
   MatInputModule,
   MatTabGroup,
+  MatCheckboxModule,
 } from '@angular/material';
 
 import { CardsComponent } from './cards/home-card/cards.component';
@@ -36,6 +37,9 @@ import { RegestrationComponent } from './components/regestration/regestration.co
 import { SigninComponent } from './components/signin/signin.component';
 import { from } from 'rxjs';
 import { CommentComponent } from './comment/comment.component';
+import { SkillsFormComponent } from './forms/skills-form/skills-form.component';
+import { EducationFormComponent } from './forms/education-form/education-form.component';
+import { ExperienceFormComponent } from './forms/experience-form/experience-form.component';
 
 @NgModule({
   declarations: [
@@ -57,8 +61,11 @@ import { CommentComponent } from './comment/comment.component';
     PostCardComponent,
     OptionDropdownComponent,
     ProfileComponent,
-    CommentComponent
+    CommentComponent,
 
+    SkillsFormComponent,
+    EducationFormComponent,
+    ExperienceFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,6 +82,7 @@ import { CommentComponent } from './comment/comment.component';
     MatInputModule,
     ReactiveFormsModule,
     MatListModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
