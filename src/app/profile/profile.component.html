@@ -1,105 +1,285 @@
 <app-cards>
-    <ng-container class="coverProfile">
+  <ng-container class="coverProfile">
+    <div class="card__cover">
+      <img
+        mat-card-cover-image
+        src="../../assets/profile/background.svg"
+        class="card__img-background"
+      />
+      <ng-container class="coverProfile">
         <div class="card__cover">
-            <img mat-card-cover-image src="../../assets/profile/background.svg" class="card__img-background">
-    
-            <div class="card__img-parent">
-                <div class="card__img card__img--radius">
-                    <img mat-card-avatar src="../../assets/profile/photo.png" class="card__img-profile">
-                </div>
+          <img
+            mat-card-cover-image
+            src="../../assets/profile/background.svg"
+            class="card__img-background"
+          />
+
+          <div class="card__img-parent">
+            <div class="card__img card__img--radius">
+              <img
+                mat-card-avatar
+                src="../../assets/profile/photo.png"
+                class="card__img-profile"
+              />
             </div>
+          </div>
         </div>
-    
+
         <app-dropdown></app-dropdown>
         <mat-card-content class="card__content card-mr0">
-            <div class="card-info">
-                <mat-card-title class="card__title">Profile Name</mat-card-title>
-                <mat-card-subtitle class="card__subtitle">Trainee Web & UI Development at Information Technology Institute (ITI)</mat-card-subtitle>
-                <ul class="card__list ">
-                    <li class="list__item list--inline">Egypt</li>
-                    <li class="list__item list--inline list--bold"><a href="#" class="list__link">500+ connections</a></li>
-                    <li class="list__item list--inline list--bold"><a href="#" class="list__link">Contact info</a></li>
-                </ul>
-            </div>
-            <mat-card-title-group class="card-edu">
-                <img mat-card-sm-image src="../../assets/profile/iti.png" class="card__img-logo">
-                <a href="#" class="card__subtitle text--sm link link--default">Information Technology Institute (ITI)</a>
-            </mat-card-title-group>
+          <div class="card-info">
+            <mat-card-title class="card__title">Profile Name</mat-card-title>
+            <mat-card-subtitle class="card__subtitle"
+              >Trainee Web & UI Development at Information Technology Institute
+              (ITI)</mat-card-subtitle
+            >
+            <ul class="card__list ">
+              <li class="list__item list--inline">Egypt</li>
+              <li class="list__item list--inline list--bold">
+                <a href="#" class="list__link">500+ connections</a>
+              </li>
+              <li class="list__item list--inline list--bold">
+                <a href="#" class="list__link">Contact info</a>
+              </li>
+            </ul>
+          </div>
+          <mat-card-title-group class="card-edu">
+            <img
+              mat-card-sm-image
+              src="../../assets/profile/iti.png"
+              class="card__img-logo"
+            />
+            <a href="#" class="card__subtitle text--sm link link--default"
+              >Information Technology Institute (ITI)</a
+            >
+          </mat-card-title-group>
         </mat-card-content>
-    
+
         <mat-card class="card__content card--sub card--light card-mr0">
-            <mat-card-content>
-                <mat-card-title class="card__title text--sm">Open to job opportunities</mat-card-title>
-                <mat-card-content class="card__icons">
-                    <button mat-button class="btn text--info card__icons-feat">
-                        <mat-icon class="text--primary">create</mat-icon>
-                    </button>            
-                </mat-card-content>
-                <mat-card-title-group>
-                    <mat-card-subtitle class="card__subtitle text--sm">Frontend Web Developer - FullStack Web Developer</mat-card-subtitle>
-                    <mat-card-subtitle class="text--sm"><a href="#" class="link">See all details</a></mat-card-subtitle>
-                </mat-card-title-group>
-    
-            </mat-card-content>
-        </mat-card>
-    </ng-container>
-
-    <ng-container class="subCard1">
-        <mat-card-content class="card__content card--flex">
-            <img mat-card-sm-image src="../../assets/profile/job.svg">
-            <mat-card-title-group class="card-job__title">
-                <mat-card-title class="card__title text--dark text--sm">Dummy, help hiring managers and old coworkers find you</mat-card-title>
-                <mat-card-subtitle class="card__subtitle text--sm">Add a past position so others can easily find and connect with you</mat-card-subtitle>
-            </mat-card-title-group>
-        </mat-card-content>
-    </ng-container>
-
-    <ng-container class="subCard2">
-        <mat-card-content class="card__content card__features">
-            <img mat-card-lg-image src="../../assets/profile/featured.png" class="card__features-img">
-            <mat-card-title-group class="card-info">
-                <mat-card-subtitle class="card__subtitle card--dark text--sm text--dark">Google Account</mat-card-subtitle>
-                <mat-card-subtitle class="card__subtitle text--sm">myaccount.google.com</mat-card-subtitle>
-                <mat-card-subtitle class="card__subtitle text--normal card__features-subtitle">Your Google Account gives you quick access to features, settings and tools that let you safeguard your data, protect your privacy, and decide how your information can make Google services work better for you. </mat-card-subtitle>
-            </mat-card-title-group>
-        </mat-card-content>
-    </ng-container>
-
-    <ng-container class="experience">
-        <img mat-card-sm-image src="../../assets/profile/iti.png" class="card__details-img">
-        <mat-card-title-group class="card__details">
-            <mat-card-subtitle class="card__subtitle card--dark text--normal text--dark">Web & UI Development</mat-card-subtitle>
-            <mat-card-subtitle class="card__subtitle text--sm">Information Technology Institute (ITI)</mat-card-subtitle>
-            <mat-card-subtitle class="card__subtitle text--sm text--info">Oct 2019 - Present . 6 mos</mat-card-subtitle>
-            <mat-card-subtitle class="card__subtitle text--sm text--info">Cairo Governorate, Egypt</mat-card-subtitle>            
-        </mat-card-title-group>
-    </ng-container>
-
-    <ng-container class="education">
-        <img mat-card-sm-image src="../../assets/profile/uni.png" class="card__details-img">
-        <mat-card-title-group class="card__details">
-            <mat-card-subtitle class="card__subtitle card--dark text--normal text--dark">Cairo University</mat-card-subtitle>
-            <mat-card-subtitle class="card__subtitle text--sm">Bachelor's degree, Computer Science</mat-card-subtitle>
-            <mat-card-subtitle class="card__subtitle text--sm text--info">2015 - 2019</mat-card-subtitle>
-        </mat-card-title-group>
-    </ng-container>
-
-    <ng-container class="skills">
-        <mat-card-title class="card__title--lg card__title--pad">Skills & Endorsements</mat-card-title>
-        <mat-card-content class="card__icons">
-            <button mat-button class="btn text--info" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" (click)="addSkill()">Add a new skill</button>
-            <button mat-button class="btn text--info card__icons-feat card__icons--inline">
+          <mat-card-content>
+            <mat-card-title class="card__title text--sm"
+              >Open to job opportunities</mat-card-title
+            >
+            <mat-card-content class="card__icons">
+              <button mat-button class="btn text--info card__icons-feat">
                 <mat-icon class="text--primary">create</mat-icon>
-            </button>            
-        </mat-card-content>
-        <button mat-stroked-button class="btn btn-text--primary btn-border--primary">Take skill quiz</button>
-        <mat-list role="list">
-            <mat-list-item class="list__item text--dark list__item--underline">Angular 2+</mat-list-item>
-            <mat-list-item class="list__item text--dark list__item--underline">EcmaScript6</mat-list-item>
-            <mat-list-item class="list__item text--dark list__item--underline">Bootstrap4</mat-list-item>
-        </mat-list>
-    </ng-container>
+              </button>
+            </mat-card-content>
+            <mat-card-title-group>
+              <mat-card-subtitle class="card__subtitle text--sm"
+                >Frontend Web Developer - FullStack Web
+                Developer</mat-card-subtitle
+              >
+              <mat-card-subtitle class="text--sm"
+                ><a href="#" class="link">See all details</a></mat-card-subtitle
+              >
+            </mat-card-title-group>
+          </mat-card-content>
+        </mat-card>
+      </ng-container>
 
+      <div class="card__img-parent">
+        <div class="card__img card__img--radius">
+          <img
+            mat-card-avatar
+            src="../../assets/profile/photo.png"
+            class="card__img-profile"
+          />
+        </div>
+      </div>
+    </div>
+
+    <app-dropdown></app-dropdown>
+    <mat-card-content class="card__content card-mr0">
+      <div class="card-info">
+        <mat-card-title class="card__title">Profile Name</mat-card-title>
+        <mat-card-subtitle class="card__subtitle"
+          >Trainee Web & UI Development at Information Technology Institute
+          (ITI)</mat-card-subtitle
+        >
+        <ul class="card__list ">
+          <li class="list__item list--inline">Egypt</li>
+          <li class="list__item list--inline list--bold">
+            <a href="#" class="list__link">500+ connections</a>
+          </li>
+          <li class="list__item list--inline list--bold">
+            <a href="#" class="list__link">Contact info</a>
+          </li>
+        </ul>
+      </div>
+      <mat-card-title-group class="card-edu">
+        <img
+          mat-card-sm-image
+          src="../../assets/profile/iti.png"
+          class="card__img-logo"
+        />
+        <a href="#" class="card__subtitle text--sm link link--default"
+          >Information Technology Institute (ITI)</a
+        >
+      </mat-card-title-group>
+    </mat-card-content>
+
+    <mat-card class="card__content card--sub card--light card-mr0">
+      <mat-card-content>
+        <mat-card-title class="card__title text--sm"
+          >Open to job opportunities</mat-card-title
+        >
+        <mat-card-title-group>
+          <mat-card-subtitle class="card__subtitle text--sm"
+            >Frontend Web Developer - FullStack Web Developer</mat-card-subtitle
+          >
+          <mat-card-subtitle class="text--sm"
+            ><a href="#" class="link">See all details</a></mat-card-subtitle
+          >
+        </mat-card-title-group>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+
+  <ng-container class="subCard1">
+    <mat-card-content class="card__content card--flex">
+      <img mat-card-sm-image src="../../assets/profile/job.svg" />
+      <mat-card-title-group class="card-job__title">
+        <mat-card-title class="card__title text--dark text--sm"
+          >Dummy, help hiring managers and old coworkers find
+          you</mat-card-title
+        >
+        <mat-card-subtitle class="card__subtitle text--sm"
+          >Add a past position so others can easily find and connect with
+          you</mat-card-subtitle
+        >
+      </mat-card-title-group>
+    </mat-card-content>
+  </ng-container>
+
+  <ng-container class="subCard2">
+    <mat-card-content class="card__content card__features">
+      <img
+        mat-card-lg-image
+        src="../../assets/profile/featured.png"
+        class="card__features-img"
+      />
+      <mat-card-title-group class="card-info">
+        <mat-card-subtitle class="card__subtitle card--dark text--sm text--dark"
+          >Google Account</mat-card-subtitle
+        >
+        <mat-card-subtitle class="card__subtitle text--sm"
+          >myaccount.google.com</mat-card-subtitle
+        >
+        <mat-card-subtitle
+          class="card__subtitle text--normal card__features-subtitle"
+          >Your Google Account gives you quick access to features, settings and
+          tools that let you safeguard your data, protect your privacy, and
+          decide how your information can make Google services work better for
+          you.
+        </mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-content>
+  </ng-container>
+
+  <ng-container class="experience">
+    <img
+      mat-card-sm-image
+      src="../../assets/profile/iti.png"
+      class="card__details-img"
+    />
+    <mat-card-title-group class="card__details">
+      <mat-card-subtitle
+        class="card__subtitle card--dark text--normal text--dark"
+        >Web & UI Development</mat-card-subtitle
+      >
+      <mat-card-subtitle class="card__subtitle text--sm"
+        >Information Technology Institute (ITI)</mat-card-subtitle
+      >
+      <mat-card-subtitle class="card__subtitle text--sm text--info"
+        >Oct 2019 - Present . 6 mos</mat-card-subtitle
+      >
+      <mat-card-subtitle class="card__subtitle text--sm text--info"
+        >Cairo Governorate, Egypt</mat-card-subtitle
+      >
+    </mat-card-title-group>
+  </ng-container>
+  <ng-container class="skills">
+    <mat-card-title class="card__title--lg card__title--pad"
+      >Skills & Endorsements</mat-card-title
+    >
+    <mat-card-content class="card__icons">
+      <button
+        mat-button
+        class="btn text--info"
+        data-toggle="modal"
+        data-target="#exampleModal"
+        data-whatever="@mdo"
+        (click)="addSkill()"
+      >
+        Add a new skill
+      </button>
+      <button
+        mat-button
+        class="btn text--info card__icons-feat card__icons--inline"
+      >
+        <mat-icon class="text--primary">create</mat-icon>
+      </button>
+    </mat-card-content>
+    <button
+      mat-stroked-button
+      class="btn btn-text--primary btn-border--primary"
+    >
+      Take skill quiz
+    </button>
+    <mat-list role="list">
+      <mat-list-item class="list__item text--dark list__item--underline"
+        >Angular 2+</mat-list-item
+      >
+      <mat-list-item class="list__item text--dark list__item--underline"
+        >EcmaScript6</mat-list-item
+      >
+      <mat-list-item class="list__item text--dark list__item--underline"
+        >Bootstrap4</mat-list-item
+      >
+    </mat-list>
+  </ng-container>
+
+  <ng-container class="education">
+    <img
+      mat-card-sm-image
+      src="../../assets/profile/uni.png"
+      class="card__details-img"
+    />
+    <mat-card-title-group class="card__details">
+      <mat-card-subtitle
+        class="card__subtitle card--dark text--normal text--dark"
+        >Cairo University</mat-card-subtitle
+      >
+      <mat-card-subtitle class="card__subtitle text--sm"
+        >Bachelor's degree, Computer Science</mat-card-subtitle
+      >
+      <mat-card-subtitle class="card__subtitle text--sm text--info"
+        >2015 - 2019</mat-card-subtitle
+      >
+    </mat-card-title-group>
+  </ng-container>
+
+  <ng-container class="skills">
+    <mat-card-title class="card__title--lg card__title--pad"
+      >Skills & Endorsements</mat-card-title
+    >
+    <button
+      mat-stroked-button
+      class="btn btn-text--primary btn-border--primary"
+    >
+      Take skill quiz
+    </button>
+    <mat-list role="list">
+      <mat-list-item class="list__item text--dark list__item--underline"
+        >Angular 2+</mat-list-item
+      >
+      <mat-list-item class="list__item text--dark list__item--underline"
+        >EcmaScript6</mat-list-item
+      >
+      <mat-list-item class="list__item text--dark list__item--underline"
+        >Bootstrap4</mat-list-item
+      >
+    </mat-list>
+  </ng-container>
 </app-cards>
-
-

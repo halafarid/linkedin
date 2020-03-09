@@ -3,6 +3,7 @@
      width:79%;
     display:inline-block;
     position: relative;
+    
 }
 .fas{
     padding: 7px;
@@ -18,8 +19,8 @@
 
 .comment{
     padding: 13px;
-    border:1px solid #C1C1C1;
-    border-radius: 32px;
+    // border:1px solid #C1C1C1;
+    // border: none;
     display: inline-block;
     background-color: whitesmoke;
     width:80%;
@@ -38,4 +39,5 @@
 }
 .borderless{
     border-bottom: none;
+    border-top:none;
 }
