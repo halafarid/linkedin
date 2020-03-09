@@ -1,6 +1,9 @@
 @import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+@import "sass/general.scss";
 @import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
+
 @import "sass/main.scss";
 
 html,
@@ -11,4 +14,17 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Monospace", sans-serif;
+}
+.align {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.colflex {
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+}
+.bottom-margin {
+  margin-bottom: 330px;
 }

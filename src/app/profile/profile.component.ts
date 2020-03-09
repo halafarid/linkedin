@@ -12,4 +12,8 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
   }
 
+  addSkill() {
+    console.log('hi');
+  }
+
 }

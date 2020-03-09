@@ -4,6 +4,7 @@
         color: $light;
 
         &:hover {
+            color: $light;
             background-color: $dark-primary;
         }
     }
@@ -15,6 +16,21 @@
         width: 100%;
     }
 
+    &--w {
+        width: 49%;
+        padding: 5px !important;
+        margin-bottom: 5px !important;
+
+        &:last-of-type {
+            margin-left: 2%;
+        }
+    }
+
+    &--right {
+        float: right;
+        text-align: right;
+    }
+
     &-text {
         padding: 10px !important;
 
@@ -23,6 +39,7 @@
             transition: all 0.3s ease-in-out;
 
             &:hover {
+                color: $primary;
                 background-color: #93d8fc52;
             }
         }

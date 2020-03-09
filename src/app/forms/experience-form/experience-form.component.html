@@ -1,0 +1,149 @@
+<div class="overlay" *ngIf="isShow">
+    <form class="form" [formGroup]="myForm">
+        <!-- <ng-container class="header"> -->
+            <label class="form__title">Add experience</label>
+        <!-- </ng-container> -->
+        <mat-icon class="form__icons text--info">clear</mat-icon>
+        <hr class="horizontal__form">
+
+        <!-- <ng-container class="body"> -->
+            <div class="form__field" appearance="fill">
+                <label class="form__label">Title <span class="form__req">*</span></label>
+                <input formControlName="title" matInput placeholder="Ex: Retail Sales Manager" class="form__input">
+                <mat-error *ngIf="title.touched && title.invalid">
+                    <mat-error *ngIf="title.errors.required">Please enter your title</mat-error>
+                    <mat-error *ngIf="title.errors.minlength">Title must be minimum {{ title.errors.minlength.requiredLength }} characters</mat-error>
+                </mat-error>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label">Employment type</label>
+                <select matNativeControl required class="form__select form__select--full">
+                    <option value="-">-</option>
+                    <option value="1">Full-time</option>
+                    <option value="2">Part-time</option>
+                    <option value="3">Self-employed</option>
+                    <option value="4">Freelance</option>
+                    <option value="5">Contract</option>
+                    <option value="6">Internship</option>
+                    <option value="7">Apprenticeship</option>
+                </select>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label">Company <span class="form__req">*</span></label>
+                <input matInput placeholder="Ex: Microsoft" class="form__input">
+                <mat-error *ngIf="company.touched && company.invalid">
+                    <mat-error *ngIf="company.errors.required">Please enter your company</mat-error>
+                    <mat-error *ngIf="company.errors.minlength">company must be minimum {{ company.errors.minlength.requiredLength }} characters</mat-error>
+                </mat-error>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label">Location</label>
+                <input matInput placeholder="Ex: London, United Kingdom" class="form__input">
+            </div>
+
+            <mat-checkbox class="form__checkbox" (click)="onChecked()">I am currently working in this role</mat-checkbox>
+
+            <div class="form__field--inline">
+                <div class="form__field--w">
+                    <label>Start Date <span class="form__req">*</span></label>
+                    <select matNativeControl required class="form__select form__select--sm">
+                        <option value="1">Month</option>
+                        <option value="2">January</option>
+                        <option value="3">February</option>
+                        <option value="4">March</option>
+                        <option value="5">April</option>
+                        <option value="6">May</option>
+                        <option value="7">June</option>
+                        <option value="8">July</option>
+                        <option value="9">August</option>
+                        <option value="10">September</option>
+                        <option value="11">October</option>
+                        <option value="12">November</option>
+                        <option value="13">December</option>
+                    </select>
+                </div>
+                <div class="form__field--w">
+                    <label></label>
+                    <select matNativeControl required class="form__select form__select--nolbl form__select--sm">
+                        <option value="Year">Year</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                    </select>
+                </div>
+                <div class="form__field--w" >
+                    <label>End Date <span class="form__req">*</span></label>
+                    <select matNativeControl required class="form__select form__select--sm" *ngIf="!isChecked">
+                        <option value="1">Month</option>
+                        <option value="2">January</option>
+                        <option value="3">February</option>
+                        <option value="4">March</option>
+                        <option value="5">April</option>
+                        <option value="6">May</option>
+                        <option value="7">June</option>
+                        <option value="8">July</option>
+                        <option value="9">August</option>
+                        <option value="10">September</option>
+                        <option value="11">October</option>
+                        <option value="12">November</option>
+                        <option value="13">December</option>
+                    </select>
+                    <p *ngIf="isChecked">Present</p>
+                </div>
+                <div class="form__field--w" *ngIf="!isChecked">
+                    <label></label>
+                    <select matNativeControl required class="form__select form__select--nolbl form__select--sm">
+                        <option value="Year">Year</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form__field" *ngIf="isChecked">
+                <label class="form__label">Headline <span class="form__req">*</span></label>
+                <textarea class="form__textarea form__textarea--sm"></textarea>
+                <mat-error *ngIf="headline.touched && headline.invalid">
+                    <mat-error *ngIf="headline.errors.required">Please enter your headline</mat-error>
+                    <mat-error *ngIf="headline.errors.minlength">headline must be minimum {{ headline.errors.minlength.requiredLength }} characters</mat-error>
+                </mat-error>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label">Description</label>
+                <textarea class="form__textarea"></textarea>
+            </div>
+
+            <div class="form__field">
+                <label class="form__label text--info">Media<br>Add or link to external documents, photos, sites, videos, and presentations.</label>
+                <button mat-raised-button class="btn btn--primary btn--w">Upload</button>
+                <button mat-stroked-button class="btn btn-text--primary text--normal btn--w">Link</button>
+                <a href="#" class="link text--xs">Supported formats</a>
+            </div>
+
+            <mat-card class="card__content card--sub card--light card--flex form__card">
+                <mat-slide-toggle></mat-slide-toggle>
+                
+                <mat-card-content>
+                    <mat-card-title class="card__title text--sm">Share with network</mat-card-title>
+                    <mat-card-subtitle class="card__subtitle text--sm">
+                        If enabled, your network may be informed of job changes, education changes, and work anniversaries. This may take up to 48 hours.
+                        <a href="#" class="link">Learn what's shared</a>
+                    </mat-card-subtitle>
+                </mat-card-content>
+            </mat-card>
+
+            <button mat-raised-button class="btn btn--primary btn--right">Save</button>
+        <!-- </ng-container> -->
+    </form>
+</div>
