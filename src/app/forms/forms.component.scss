@@ -36,6 +36,14 @@
             width: 50%;
             margin-top: 15px;
         }
+
+        &--mrg {
+            margin: 15px 20px;
+
+            &-none {
+                margin: 0;
+            }
+        }
     }
 
     &__title {
@@ -101,5 +109,15 @@
     &__checkbox {
         display: block;
         margin-top: 15px;
+    }
+
+    &--pad {
+        &-none {
+            padding: 0;
+        }
+    }
+
+    &--md {
+        height: 80%;
     }
 }

@@ -1,1 +1,113 @@
-<p>skills-form works!</p>
+<div class="overlay">
+    <form class="form form--pad-none form--md" [formGroup]="myForm">
+        <div class="form__field--mrg">
+            <label class="form__title">Reorder Skills & Endorsements (22)</label>
+            <mat-icon class="form__icons text--info">clear</mat-icon>
+            <hr class="horizontal__form">
+
+            <p class="text--info text--normal skills__info">Reorder your skills within a category or choose up to 3 skills to feature in your top skills.</p>        
+        </div>
+
+        <mat-card class="card__content card--light">
+                <mat-card-title class="card__title text--sm text--info skills__card">Top Skills</mat-card-title>
+        </mat-card>
+
+        <div class="form__field--mrg-none">
+            <mat-card class="card card--mrg-none">
+                <i class="fas fa-thumbtack text--primary text--lg"></i>
+                <mat-card-title class="text--normal skills__title">Angular 2+</mat-card-title>
+
+                <mat-card-content class="card__icons">
+                    <button mat-button class="btn text--info card__icons-feat--inline skills__icon">
+                        <mat-icon>delete_sweep</mat-icon>
+                    </button>            
+                    <button mat-button class="btn text--info card__icons-feat--inline skills__icon">
+                        <mat-icon>reorder</mat-icon>
+                    </button>
+                </mat-card-content>
+            </mat-card>
+            
+            <mat-card class="card card--mrg-none">
+                <i class="fas fa-thumbtack text--primary text--lg"></i>
+                <mat-card-title class="text--normal skills__title">EcmaScript6</mat-card-title>
+
+                <mat-card-content class="card__icons">
+                    <button mat-button class="btn text--info card__icons-feat--inline skills__icon">
+                        <mat-icon>delete_sweep</mat-icon>
+                    </button>            
+                    <button mat-button class="btn text--info card__icons-feat--inline skills__icon">
+                        <mat-icon>reorder</mat-icon>
+                    </button>
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card class="card card--mrg-none">
+                <i class="fas fa-thumbtack text--primary text--lg"></i>
+                <mat-card-title class="text--normal skills__title">Bootstrap4</mat-card-title>
+
+                <mat-card-content class="card__icons">
+                    <button mat-button class="btn text--info card__icons-feat--inline skills__icon">
+                        <mat-icon>delete_sweep</mat-icon>
+                    </button>            
+                    <button mat-button class="btn text--info card__icons-feat--inline skills__icon">
+                        <mat-icon>reorder</mat-icon>
+                    </button>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <mat-card class="card__content card--light">
+                <mat-card-title class="card__title text--sm text--info skills__card">Other Skills</mat-card-title>
+        </mat-card>
+
+        <div class="form__field--mrg-none">
+            <mat-card class="card card--mrg-none">
+                <i class="fas fa-thumbtack text--primary text--lg"></i>
+                <mat-card-title class="text--normal skills__title">HTML5</mat-card-title>
+
+                <mat-card-content class="card__icons">
+                    <button mat-button class="btn text--info card__icons-feat--inline skills__icon">
+                        <mat-icon>delete_sweep</mat-icon>
+                    </button>            
+                    <button mat-button class="btn text--info card__icons-feat--inline skills__icon">
+                        <mat-icon>reorder</mat-icon>
+                    </button>
+                </mat-card-content>
+            </mat-card>
+            
+            <mat-card class="card card--mrg-none">
+                <i class="fas fa-thumbtack text--primary text--lg"></i>
+                <mat-card-title class="text--normal skills__title">CSS3</mat-card-title>
+
+                <mat-card-content class="card__icons">
+                    <button mat-button class="btn text--info card__icons-feat--inline skills__icon">
+                        <mat-icon>delete_sweep</mat-icon>
+                    </button>            
+                    <button mat-button class="btn text--info card__icons-feat--inline skills__icon">
+                        <mat-icon>reorder</mat-icon>
+                    </button>
+                </mat-card-content>
+            </mat-card>
+
+            <mat-card class="card card--mrg-none">
+                <i class="fas fa-thumbtack text--primary text--lg"></i>
+                <mat-card-title class="text--normal skills__title">UI/UX</mat-card-title>
+
+                <mat-card-content class="card__icons">
+                    <button mat-button class="btn text--info card__icons-feat--inline skills__icon">
+                        <mat-icon>delete_sweep</mat-icon>
+                    </button>            
+                    <button mat-button class="btn text--info card__icons-feat--inline skills__icon">
+                        <mat-icon>reorder</mat-icon>
+                    </button>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+    </form>
+
+    <mat-card class="card__content skills__footer">
+        <button mat-button class="btn btn--default text--default">Adjust endorsement settings</button>
+        <button mat-raised-button class="btn btn--primary btn--right">Save</button>
+    </mat-card>
+</div>

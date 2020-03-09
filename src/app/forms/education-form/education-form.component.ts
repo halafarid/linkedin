@@ -7,7 +7,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./education-form.component.scss']
 })
 export class EducationFormComponent implements OnInit {
-  @Input() isShow = true;
+  @Input() isShow = false;
 
   myForm = new FormGroup({
     schoolName: new FormControl('', [
