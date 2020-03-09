@@ -1,0 +1,84 @@
+@import "../../../sass/variables.scss";
+mat-toolbar {
+  color: #e1e9ee;
+  background-color: #283e4a;
+  font-weight: 200;
+  font-size: small;
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+  padding: 0 5px;
+  &:hover {
+    color: white;
+  }
+  align-self: flex-start;
+  margin: 0 2%;
+}
+
+#me {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+}
+// img {
+//   border-radius: 50%;
+//   height: 50px;
+// }
+#profile-img {
+  border-radius: 50%;
+  height: 30px;
+}
+#logo-img {
+  border-radius: 5px;
+  height: 55px;
+  align-self: center;
+}
+.right {
+  display: flex;
+  align-self: flex-start;
+}
+.logo {
+  border-radius: 0;
+}
+.search {
+  align-self: center;
+  padding: 5px;
+}
+input {
+  background-color: #e1e9ee;
+}
+.mediv {
+  border-radius: 50%;
+  height: 30px;
+  width: 30%;
+}
+.nav-content {
+  height: 100%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0.2%;
+}
+.left {
+  height: 100%;
+  display: flex;
+  align-self: flex-end;
+  width: 60%;
+}
+i,
+mat-icon {
+  align-self: center;
+  height: 30%;
+  margin-bottom: 3px;
+}
+a {
+  color: #dccea4;
+}

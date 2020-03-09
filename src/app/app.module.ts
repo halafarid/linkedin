@@ -17,7 +17,8 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatCheckboxModule,
-  MatTabGroup
+  MatTabGroup,
+  MatToolbarModule
 } from "@angular/material";
 
 import { NetworkComponent } from "./network/network.component";
@@ -41,6 +42,7 @@ import { CommentComponent } from "./comment/comment.component";
 import { SkillsFormComponent } from "./forms/skills-form/skills-form.component";
 import { EducationFormComponent } from "./forms/education-form/education-form.component";
 import { ExperienceFormComponent } from "./forms/experience-form/experience-form.component";
+import { NavbarComponent } from "./shared/navbar/navbar.component";
 
 @NgModule({
   declarations: [
@@ -67,7 +69,8 @@ import { ExperienceFormComponent } from "./forms/experience-form/experience-form
 
     SkillsFormComponent,
     EducationFormComponent,
-    ExperienceFormComponent
+    ExperienceFormComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -90,8 +93,9 @@ import { ExperienceFormComponent } from "./forms/experience-form/experience-form
     MatSlideToggleModule,
     MatIconModule,
     MatInputModule,
-    MatTabGroup,
-    MatCheckboxModule
+    // MatTabGroup,
+    MatCheckboxModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
