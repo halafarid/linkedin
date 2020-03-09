@@ -6,17 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import {
-  MatCardModule,
-  MatMenuModule,
-  MatButtonModule,
-  MatListModule,
-  MatFormFieldModule,
-  MatSlideToggleModule,
-  MatIconModule,
-  MatCheckboxModule,
-} from '@angular/material';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { NetworkComponent } from './network/network.component';
 
 import { CardsComponent } from './cards/home-card/cards.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
@@ -25,23 +16,63 @@ import { StartPostComponent } from './cards/start-post/start-post.component';
 import { CreatePostComponent } from './cards/create-post/create-post.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsComponent } from './forms/forms.component';
+import { PostCardComponent } from './cards/post-card/post-card.component';
+import { OptionDropdownComponent } from './option-dropdown/option-dropdown.component';
+
+import { FooterComponent } from './footer/footer.component';
+
+import { RegestrationComponent } from './components/regestration/regestration.component';
+import { SigninComponent } from './components/signin/signin.component';
+import { CommentComponent } from './comment/comment.component';
 import { SkillsFormComponent } from './forms/skills-form/skills-form.component';
 import { EducationFormComponent } from './forms/education-form/education-form.component';
 import { ExperienceFormComponent } from './forms/experience-form/experience-form.component';
+
+import { FeatureItemComponent } from './components/feature-item/feature-item.component';
+import { UserFeaturesComponent } from './components/user-features/user-features.component';
+import { from } from 'rxjs';
+
+
+import {
+  MatCardModule,
+  MatMenuModule,
+  MatButtonModule,
+  MatListModule,
+  MatSlideToggleModule,
+  MatIconModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatCheckboxModule,
+  // MatTabGroup,
+  // MatTab
+} from '@angular/material';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
     DropdownComponent,
+    ProfileComponent,
+    NetworkComponent,
     WelcomeCardComponent,
     StartPostComponent,
     CreatePostComponent,
-    ProfileComponent,
     FormsComponent,
+    FooterComponent,
+    RegestrationComponent,
+    SigninComponent,
+
+    PostCardComponent,
+    OptionDropdownComponent,
+    CommentComponent,
+    UserFeaturesComponent,
+    FeatureItemComponent,
+
     SkillsFormComponent,
     EducationFormComponent,
-    ExperienceFormComponent,
+    ExperienceFormComponent
   ],
   imports: [
     BrowserModule,
@@ -52,12 +83,19 @@ import { ExperienceFormComponent } from './forms/experience-form/experience-form
     MatMenuModule,
     MatButtonModule,
     MatListModule,
-    MatFormFieldModule,
     MatSlideToggleModule,
     MatIconModule,
-    MatCheckboxModule
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    // MatTabGroup,
+    // MatTab,
+    ReactiveFormsModule,
+    MatListModule,
+    MatExpansionModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

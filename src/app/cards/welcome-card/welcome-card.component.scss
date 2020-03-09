@@ -1,6 +1,9 @@
 .card {
-
-    padding: 0;
+    padding: 0;  
+    // margin-top:15px;
+    width: 18rem;
+    margin-right: 20px;
+    margin-bottom: 20px;
     &-small-font
     {
         display: flex;
@@ -10,7 +13,21 @@
         &--gray{
             color: gray;
         }
+        &--center{
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            line-height: 4px;
 
+
+        }  
+
+    }
+    
+   
+    &-content{
+     padding: 10px;
     }
     &-center
     {
@@ -57,14 +74,10 @@
     .plus
     {
         color: gray;
-        &:hover{
-            color: black;
-            cursor: pointer;
-        }
-        margin-left: 60px;
+     
+        margin-left: 50px;
     }
     .pointer:hover{
         cursor: pointer;
         color: cornflowerblue;;
     }
-   

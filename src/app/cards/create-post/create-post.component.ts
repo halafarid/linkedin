@@ -10,6 +10,21 @@ export class CreatePostComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
 
+}
+onSpanClicked(modal)
+{
+  modal.style.display = "none";
+
+}
+// onWindowClick(modal)
+// {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+
+// }
+onBtnClick(modal) {
+  modal.style.display = "block";
+}
 }
