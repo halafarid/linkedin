@@ -43,9 +43,9 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatCheckboxModule,
-  // MatTabGroup,
-  // MatTab
+  MatChipsModule,
 } from '@angular/material';
+import { AddSkillsFormComponent } from './forms/add-skills-form/add-skills-form.component';
 
 
 
@@ -72,7 +72,8 @@ import {
 
     SkillsFormComponent,
     EducationFormComponent,
-    ExperienceFormComponent
+    ExperienceFormComponent,
+    AddSkillsFormComponent
   ],
   imports: [
     BrowserModule,
@@ -88,11 +89,10 @@ import {
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
-    // MatTabGroup,
-    // MatTab,
     ReactiveFormsModule,
     MatListModule,
     MatExpansionModule,
+    MatChipsModule
   
   ],
   providers: [],

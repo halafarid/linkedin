@@ -3,6 +3,10 @@
 .skills {
     &__info {
         margin: 30px 0;
+
+        &--mrg {
+            margin-bottom: 5px;
+        }
     }
 
     &__title {
@@ -26,5 +30,10 @@
         left: 25%;
         width: 50%;
         border-radius: 0;
+
+        &--rel {
+            position: relative;
+
+        }
     }
 }
