@@ -1,4 +1,5 @@
-import { UserComment } from './Comment';
+import { UserComment } from "./UserComment";
+
 
 export interface Posts
 {
