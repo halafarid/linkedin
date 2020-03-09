@@ -10,6 +10,12 @@
             padding: 0;
         }
     }
+
+    &--mrg {
+        &-none {
+            margin-bottom: 0;
+        }
+    }
     
     &__cover {
         position: relative;
@@ -133,13 +139,18 @@
         right: 0;
         
         &-feat {
+            display: block;
             border-radius: 50%;
             min-width: 40px;
             padding: 0 0 3px;
-            margin: 0 15px 0 10px;
+            margin: 0 15px 10px 10px;
             &:hover {
                 background-color: #93d8fc52;
             }
+        }
+
+        &--inline {
+            display: inline-block;
         }
     }
 
