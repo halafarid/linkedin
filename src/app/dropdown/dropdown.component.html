@@ -1,7 +1,11 @@
-<div class="dropdown dropdown--right">
-    <button mat-raised-button [matMenuTriggerFor]="menu" class="btn btn--primary">Add profile section</button>
-    <mat-menu #menu="matMenu">
-        <button mat-menu-item>Item 1</button>
-        <button mat-menu-item>Item 2</button>
-    </mat-menu>
+<div class=" dropdown--right">
+    <div class="dropdown">
+        <button mat-raised-button (click)="isClicked()" class="btn btn--primary dropdown--btn dropdown--item">Add profile section</button>
+        <app-user-features class="dropdown--features" *ngIf="isOpened" ></app-user-features>
+        <button mat-raised-button class="dropdown--item dropdown--borderedbtn">More ... </button>
+        <mat-icon class="dropdown--icon">edit</mat-icon>
+        <!-- <button mat-raised-button (click)="isClicked()" class="btn btn--primary dropdown--btn dropdown--item">Add profile section</button> -->
+
+    </div>
+    
 </div>
