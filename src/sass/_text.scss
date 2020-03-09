@@ -1,6 +1,14 @@
 .text {
     text-align: justify;
 
+    &--lg {
+        font-size: $font-lg;
+    }
+
+    &--mg {
+        font-size: $font-md;
+    }
+
     &--sm {
         font-size: $font-sm;
         margin-bottom: 10px;

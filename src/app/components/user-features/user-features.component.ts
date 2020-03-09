@@ -10,12 +10,10 @@ import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
 })
 export class UserFeaturesComponent implements OnInit {
   panelOpenState = false;
-  faBookOpen=faBookOpen;
+  faBookOpen = faBookOpen;
 
   constructor() { }
 
   ngOnInit() {
   }
- 
-
 }

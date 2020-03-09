@@ -127,17 +127,17 @@
 .active{
     color: blue;
 }
-.likebtn:hover{
- .icons{
-     visibility: visible;
- }
+.allicons{
+    position: relative;
 }
 .icons{
-    visibility: hidden;
-   
+    background-color: white;
+    position: absolute;
+    bottom: 37px;
+    overflow: hidden;
     border: 1px solid #C1C1C1;
     padding: 5px 15px;
-    width:50%;
+    width:52%;
     border-radius: 30px 30px;
     &-react{
         transition: all 0.2s ease-in-out;
@@ -151,4 +151,3 @@
 }
 
 
- 

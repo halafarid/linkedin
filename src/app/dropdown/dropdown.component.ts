@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DropdownComponent implements OnInit {
 
+
+  @Input() isOpened = false;
   constructor() { }
 
   ngOnInit() {
+  }
+  isClicked() {
+    this.isOpened = ! this.isOpened;
   }
 
 }

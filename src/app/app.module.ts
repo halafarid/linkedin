@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { NetworkComponent } from './network/network.component';
 
 import { CardsComponent } from './cards/home-card/cards.component';
@@ -27,10 +27,10 @@ import { CommentComponent } from './comment/comment.component';
 import { SkillsFormComponent } from './forms/skills-form/skills-form.component';
 import { EducationFormComponent } from './forms/education-form/education-form.component';
 import { ExperienceFormComponent } from './forms/experience-form/experience-form.component';
+
 import { FeatureItemComponent } from './components/feature-item/feature-item.component';
 import { UserFeaturesComponent } from './components/user-features/user-features.component';
 import { from } from 'rxjs';
-
 
 import {
   MatCardModule,
@@ -42,11 +42,12 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatCheckboxModule,
+  MatToolbarModule
   // MatTabGroup,
   // MatTab
 } from '@angular/material';
 
-
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -55,13 +56,11 @@ import {
     DropdownComponent,
     ProfileComponent,
     NetworkComponent,
-
     WelcomeCardComponent,
     StartPostComponent,
     CreatePostComponent,
     FormsComponent,
     FooterComponent,
-
     RegestrationComponent,
     SigninComponent,
 
@@ -73,7 +72,8 @@ import {
 
     SkillsFormComponent,
     EducationFormComponent,
-    ExperienceFormComponent
+    ExperienceFormComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -94,7 +94,14 @@ import {
     ReactiveFormsModule,
     MatListModule,
     MatExpansionModule,
-  
+
+    MatFormFieldModule,
+    MatSlideToggleModule,
+    MatIconModule,
+    MatInputModule,
+    // MatTabGroup,
+    MatCheckboxModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
