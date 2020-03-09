@@ -3,9 +3,11 @@
         <button mat-raised-button (click)="isClicked()" class="btn btn--primary dropdown--btn dropdown--item">Add profile section</button>
         <app-user-features class="dropdown--features" *ngIf="isOpened" ></app-user-features>
         <button mat-raised-button class="dropdown--item dropdown--borderedbtn">More ... </button>
-        <mat-icon class="dropdown--icon">edit</mat-icon>
-        <!-- <button mat-raised-button (click)="isClicked()" class="btn btn--primary dropdown--btn dropdown--item">Add profile section</button> -->
+        <div class="card__icons-feat">
+            <mat-icon class="dropdown--icon">edit</mat-icon>
 
+        </div>
+
+        <!-- <button mat-raised-button (click)="isClicked()" class="btn btn--primary dropdown--btn dropdown--item">Add profile section</button> -->
     </div>
-    
 </div>
