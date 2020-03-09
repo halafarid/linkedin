@@ -8,15 +8,13 @@ import { Component, OnInit, Output, Input } from '@angular/core';
 export class DropdownComponent implements OnInit {
 
 
-  @Input() isOpened=false;
-  
+  @Input() isOpened = false;
   constructor() { }
 
   ngOnInit() {
   }
-  isClicked()
-  {
-    this.isOpened=!this.isOpened;
+  isClicked() {
+    this.isOpened = ! this.isOpened;
   }
 
 }
