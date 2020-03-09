@@ -59,3 +59,14 @@ button {
     padding: 20px !important;
 }
 
+.mat-chip-list-wrapper .mat-standard-chip, 
+.mat-chip-list-wrapper input.mat-input-element{
+    background-color: $dark-info;
+    color: $light;
+
+    &:last-child {
+        background-color: $light;
+        color: $dark-info;
+        width: 20px !important;
+    }
+}

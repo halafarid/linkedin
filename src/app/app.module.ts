@@ -46,6 +46,7 @@ import {
   MatChipsModule,
 } from '@angular/material';
 import { AddSkillsFormComponent } from './forms/add-skills-form/add-skills-form.component';
+import { OpportunitiesComponent } from './forms/opportunities/opportunities.component';
 
 import { NavbarComponent } from './shared/navbar/navbar.component';
 
@@ -73,8 +74,9 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     SkillsFormComponent,
     EducationFormComponent,
     ExperienceFormComponent,
+    AddSkillsFormComponent,
+    OpportunitiesComponent,
     NavbarComponent,
-    AddSkillsFormComponent
   ],
   imports: [
     BrowserModule,
