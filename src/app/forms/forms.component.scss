@@ -98,7 +98,10 @@
 
     &__hint {
         font-size: 12px;
-        font-style: italic;
+        
+        &--italic {
+            font-style: italic;
+        }
     }
 
     &__card {
@@ -119,5 +122,10 @@
 
     &--md {
         height: 80%;
+    }
+
+    &--sm {
+        height: 50%;
+        overflow: auto;
     }
 }

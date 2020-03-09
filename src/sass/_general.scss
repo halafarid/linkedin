@@ -54,3 +54,8 @@ button {
 .mat-checkbox-checked.mat-accent .mat-checkbox-background {
     background-color: $primary !important;
 }
+
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 20px !important;
+}
+
