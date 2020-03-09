@@ -112,6 +112,10 @@
     &__checkbox {
         display: block;
         margin-top: 15px;
+
+        &--mrg {
+            margin-top: 0;
+        }
     }
 
     &--pad {
@@ -124,8 +128,16 @@
         height: 80%;
     }
 
+    &--lg {
+        height: 65%;
+    }
+
     &--sm {
         height: 50%;
         overflow: auto;
+    }
+
+    &--mrg {
+        margin-top: 40px;
     }
 }

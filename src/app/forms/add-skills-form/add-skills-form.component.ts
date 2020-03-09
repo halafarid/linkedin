@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material';
 
 export interface Fruit {

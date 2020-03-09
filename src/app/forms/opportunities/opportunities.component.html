@@ -1,0 +1,65 @@
+<div class="overlay" *ngIf="isShow">
+    <form class="form form--lg" [formGroup]="opporForm">
+        <label class="form__title">Edit job preferences</label>
+        <mat-icon class="form__icons text--info">clear</mat-icon>
+        <hr class="horizontal__form">
+
+
+        <div class="form__field">
+            <label class="form__label">Job titles <span class="form__req">*</span></label>
+            <mat-chip-list #chipList aria-label="Fruit selection">
+            
+                <mat-chip *ngFor="let title of titles" [selectable]="selectable"
+                        [removable]="removable" (removed)="removeTitle(title)">
+                    {{title.name}}
+                    <mat-icon class="oppor__icon"  matChipRemove *ngIf="removable">check</mat-icon>
+                </mat-chip>
+
+                <input matInput placeholder="Add title +" class="form__input oppor__input"
+                    [matChipInputFor]="chipList"
+                    [matChipInputAddOnBlur]="addOnBlur"
+                    (matChipInputTokenEnd)="addTitle($event)"
+                >
+            </mat-chip-list>
+        </div>
+
+        <div class="form__field form--mrg">
+            <label class="form__label">Job locations <span class="form__req">*</span></label>
+            <mat-chip-list #chipList aria-label="Fruit selection">
+            
+                <mat-chip *ngFor="let location of locations" [selectable]="selectable"
+                        [removable]="removable" (removed)="removeLocation(location)">
+                    {{location.name}}
+                    <mat-icon class="oppor__icon"  matChipRemove *ngIf="removable">check</mat-icon>
+                </mat-chip>
+
+                <input matInput placeholder="Add location +" class="form__input oppor__input"
+                    [matChipInputFor]="chipList"
+                    [matChipInputAddOnBlur]="addOnBlur"
+                    (matChipInputTokenEnd)="addLocations($event)"
+                >
+                <mat-error *ngIf="locationName.touched && locationName.invalid">
+                    <mat-error *ngIf="locationName.errors.required">Please enter a location</mat-error>
+                </mat-error>
+            </mat-chip-list>
+        </div>
+
+        <div class="form__field form--mrg">
+            <label class="form__label">Job types</label>
+            <mat-checkbox class="form__checkbox form__checkbox--mrg">Full-time</mat-checkbox>
+            <mat-checkbox class="form__checkbox form__checkbox--mrg">Contract</mat-checkbox>
+            <mat-checkbox class="form__checkbox form__checkbox--mrg">Part-time</mat-checkbox>
+            <mat-checkbox class="form__checkbox form__checkbox--mrg">Internship</mat-checkbox>
+            <mat-checkbox class="form__checkbox form__checkbox--mrg">Volunteer</mat-checkbox>
+            <mat-checkbox class="form__checkbox form__checkbox--mrg">Temporary</mat-checkbox>
+            <mat-checkbox class="form__checkbox form__checkbox--mrg">Remote</mat-checkbox>
+        </div>
+
+    </form>
+    
+    <mat-card class="card__content skills__footer skills__footer--rel">
+        <button mat-button class="btn btn--default btn-text--primary text--normal">I'm no longer open</button>
+
+        <button mat-raised-button class="btn btn--primary btn--right">Save</button>
+    </mat-card>
+</div>
