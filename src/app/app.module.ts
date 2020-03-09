@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 import {
   MatCardModule,
@@ -37,10 +39,16 @@ import { FooterComponent } from './footer/footer.component';
 
 import { RegestrationComponent } from './components/regestration/regestration.component';
 import { SigninComponent } from './components/signin/signin.component';
+<<<<<<< HEAD
 import { CommentComponent } from './comment/comment.component';
 import { SkillsFormComponent } from './forms/skills-form/skills-form.component';
 import { EducationFormComponent } from './forms/education-form/education-form.component';
 import { ExperienceFormComponent } from './forms/experience-form/experience-form.component';
+=======
+import { from } from 'rxjs';
+import { UserFeaturesComponent } from './components/user-features/user-features.component';
+import { FeatureItemComponent } from './components/feature-item/feature-item.component';
+>>>>>>> user-features
 
 @NgModule({
   declarations: [
@@ -61,7 +69,12 @@ import { ExperienceFormComponent } from './forms/experience-form/experience-form
 
     PostCardComponent,
     OptionDropdownComponent,
+<<<<<<< HEAD
     CommentComponent,
+=======
+    UserFeaturesComponent,
+    FeatureItemComponent,
+>>>>>>> user-features
 
     SkillsFormComponent,
     EducationFormComponent,
@@ -80,9 +93,16 @@ import { ExperienceFormComponent } from './forms/experience-form/experience-form
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
+<<<<<<< HEAD
     MatCheckboxModule,
     // MatTabGroup,
     // MatTab,
+=======
+    ReactiveFormsModule,
+    MatListModule,
+    MatExpansionModule,
+  
+>>>>>>> user-features
   ],
   providers: [],
   bootstrap: [AppComponent]
