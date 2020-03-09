@@ -42,13 +42,8 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatCheckboxModule,
-<<<<<<< HEAD
-  MatToolbarModule
-  // MatTabGroup,
-  // MatTab
-=======
+  MatToolbarModule,
   MatChipsModule,
->>>>>>> proForms
 } from '@angular/material';
 import { AddSkillsFormComponent } from './forms/add-skills-form/add-skills-form.component';
 
@@ -78,11 +73,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     SkillsFormComponent,
     EducationFormComponent,
     ExperienceFormComponent,
-<<<<<<< HEAD
-    NavbarComponent
-=======
+    NavbarComponent,
     AddSkillsFormComponent
->>>>>>> proForms
   ],
   imports: [
     BrowserModule,
@@ -101,19 +93,14 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     ReactiveFormsModule,
     MatListModule,
     MatExpansionModule,
-<<<<<<< HEAD
 
     MatFormFieldModule,
     MatSlideToggleModule,
     MatIconModule,
     MatInputModule,
-    // MatTabGroup,
     MatCheckboxModule,
-    MatToolbarModule
-=======
+    MatToolbarModule,
     MatChipsModule
-  
->>>>>>> proForms
   ],
   providers: [],
   bootstrap: [AppComponent]
