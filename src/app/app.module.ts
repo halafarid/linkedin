@@ -39,16 +39,13 @@ import { FooterComponent } from './footer/footer.component';
 
 import { RegestrationComponent } from './components/regestration/regestration.component';
 import { SigninComponent } from './components/signin/signin.component';
-<<<<<<< HEAD
 import { CommentComponent } from './comment/comment.component';
 import { SkillsFormComponent } from './forms/skills-form/skills-form.component';
 import { EducationFormComponent } from './forms/education-form/education-form.component';
 import { ExperienceFormComponent } from './forms/experience-form/experience-form.component';
-=======
 import { from } from 'rxjs';
 import { UserFeaturesComponent } from './components/user-features/user-features.component';
 import { FeatureItemComponent } from './components/feature-item/feature-item.component';
->>>>>>> user-features
 
 @NgModule({
   declarations: [
@@ -57,24 +54,19 @@ import { FeatureItemComponent } from './components/feature-item/feature-item.com
     DropdownComponent,
     ProfileComponent,
     NetworkComponent,
-
     WelcomeCardComponent,
     StartPostComponent,
     CreatePostComponent,
     FormsComponent,
     FooterComponent,
-
     RegestrationComponent,
     SigninComponent,
 
     PostCardComponent,
     OptionDropdownComponent,
-<<<<<<< HEAD
     CommentComponent,
-=======
     UserFeaturesComponent,
     FeatureItemComponent,
->>>>>>> user-features
 
     SkillsFormComponent,
     EducationFormComponent,
@@ -93,16 +85,13 @@ import { FeatureItemComponent } from './components/feature-item/feature-item.com
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-<<<<<<< HEAD
     MatCheckboxModule,
     // MatTabGroup,
     // MatTab,
-=======
     ReactiveFormsModule,
     MatListModule,
     MatExpansionModule,
   
->>>>>>> user-features
   ],
   providers: [],
   bootstrap: [AppComponent]
