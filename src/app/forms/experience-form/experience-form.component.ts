@@ -7,7 +7,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./experience-form.component.scss']
 })
 export class ExperienceFormComponent implements OnInit {
-  @Input() isShow = false;
+  @Input() isShow = true;
 
   isChecked = false;
 

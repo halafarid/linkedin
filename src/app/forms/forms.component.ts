@@ -20,8 +20,6 @@ export class FormsComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  
   // get schoolName() {
   //   return this.myForm.get('schoolName');
   // }
