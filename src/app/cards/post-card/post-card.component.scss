@@ -128,3 +128,27 @@
 .active{
     color: blue;
 }
+.likebtn:hover{
+ .icons{
+     display: block;
+ }
+}
+.icons{
+    overflow: hidden;
+    border: 1px solid #C1C1C1;
+    padding: 5px 15px;
+    width:50%;
+    border-radius: 30px 30px;
+    &-react{
+        transition: all 0.2s ease-in-out;
+        width: 42px;
+        padding: 3px;
+        cursor: pointer;
+        &:hover{
+        transform: scale(1.3);
+        }
+    }
+}
+
+
+ 
