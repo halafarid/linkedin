@@ -129,11 +129,12 @@
 }
 .likebtn:hover{
  .icons{
-     display: block;
+     visibility: visible;
  }
 }
 .icons{
-    overflow: hidden;
+    visibility: hidden;
+   
     border: 1px solid #C1C1C1;
     padding: 5px 15px;
     width:50%;
