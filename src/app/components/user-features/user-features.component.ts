@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
 
+
 @Component({
   selector: 'app-user-features',
   templateUrl: './user-features.component.html',

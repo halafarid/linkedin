@@ -23,12 +23,9 @@
     "@angular/router": "~8.2.14",
     "@fortawesome/angular-fontawesome": "^0.6.0",
     "@fortawesome/fontawesome-free": "^5.12.1",
-<<<<<<< HEAD
     "@material-ui/core": "^4.9.5",
-=======
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
->>>>>>> user-features
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^4.4.1",
     "font-awesome": "^4.7.0",

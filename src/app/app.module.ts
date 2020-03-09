@@ -7,22 +7,6 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
-
-
-import {
-  MatCardModule,
-  MatMenuModule,
-  MatButtonModule,
-  MatListModule,
-  MatSlideToggleModule,
-  MatIconModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatCheckboxModule,
-  // MatTabGroup,
-  // MatTab
-} from '@angular/material';
-
 import { NetworkComponent } from './network/network.component';
 
 import { CardsComponent } from './cards/home-card/cards.component';
@@ -43,9 +27,27 @@ import { CommentComponent } from './comment/comment.component';
 import { SkillsFormComponent } from './forms/skills-form/skills-form.component';
 import { EducationFormComponent } from './forms/education-form/education-form.component';
 import { ExperienceFormComponent } from './forms/experience-form/experience-form.component';
-import { from } from 'rxjs';
-import { UserFeaturesComponent } from './components/user-features/user-features.component';
+
 import { FeatureItemComponent } from './components/feature-item/feature-item.component';
+import { UserFeaturesComponent } from './components/user-features/user-features.component';
+import { from } from 'rxjs';
+
+
+import {
+  MatCardModule,
+  MatMenuModule,
+  MatButtonModule,
+  MatListModule,
+  MatSlideToggleModule,
+  MatIconModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatCheckboxModule,
+  // MatTabGroup,
+  // MatTab
+} from '@angular/material';
+
+
 
 @NgModule({
   declarations: [
