@@ -1,0 +1,71 @@
+<mat-toolbar>
+  <div class="nav-content">
+    <div class="right">
+      <div class="logo">
+        <img id="logo-img" src="../../../assets/logo.PNG" />
+      </div>
+      <div class="search">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search"
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+          />
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-secondary"
+              type="button"
+              id="button-addon2"
+            >
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="left">
+      <div class="nav-btn">
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          >home</mat-icon
+        >
+        <span>Home</span>
+      </div>
+      <div class="nav-btn">
+        <mat-icon>group</mat-icon>
+        <span>My Network</span>
+      </div>
+      <div class="nav-btn">
+        <mat-icon>card_travel</mat-icon>
+        <span>Jobs</span>
+      </div>
+      <div class="nav-btn">
+        <mat-icon> forum</mat-icon>
+        <span>Messaging</span>
+      </div>
+      <div class="nav-btn">
+        <mat-icon>notifications</mat-icon>
+        <span>Notifications</span>
+      </div>
+
+      <button id="me" mat-button [matMenuTriggerFor]="menu">
+        <div class="mediv">
+          <img id="profile-img" src="../../../assets/logo.PNG" />
+        </div>
+        <div>
+          <span>Me</span>
+          <i class="fas fa-sort-down"></i>
+        </div>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+
+      <div class="nav-btn">
+        <a href="#">Try Premium Free for 1 Month</a>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>

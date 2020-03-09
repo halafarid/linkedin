@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { NetworkComponent } from './network/network.component';
 
 import { CardsComponent } from './cards/home-card/cards.component';
@@ -32,7 +32,6 @@ import { FeatureItemComponent } from './components/feature-item/feature-item.com
 import { UserFeaturesComponent } from './components/user-features/user-features.component';
 import { from } from 'rxjs';
 
-
 import {
   MatCardModule,
   MatMenuModule,
@@ -43,11 +42,13 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatCheckboxModule,
+  MatToolbarModule,
   MatChipsModule,
 } from '@angular/material';
 import { AddSkillsFormComponent } from './forms/add-skills-form/add-skills-form.component';
 import { OpportunitiesComponent } from './forms/opportunities/opportunities.component';
 
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { OpportunitiesComponent } from './forms/opportunities/opportunities.comp
     ExperienceFormComponent,
     AddSkillsFormComponent,
     OpportunitiesComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -93,8 +95,14 @@ import { OpportunitiesComponent } from './forms/opportunities/opportunities.comp
     ReactiveFormsModule,
     MatListModule,
     MatExpansionModule,
+
+    MatFormFieldModule,
+    MatSlideToggleModule,
+    MatIconModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatToolbarModule,
     MatChipsModule
-  
   ],
   providers: [],
   bootstrap: [AppComponent]

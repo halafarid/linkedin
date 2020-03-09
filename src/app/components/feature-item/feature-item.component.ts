@@ -6,9 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feature-item.component.scss']
 })
 export class FeatureItemComponent implements OnInit {
-
-  constructor() { } 
-
+  constructor() { }
   ngOnInit() {
   }
 

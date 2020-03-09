@@ -6,15 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-post.component.scss']
 })
 export class CreatePostComponent implements OnInit {
-
-  constructor() { }
+  constructor() { 
+   
+  }
+  block=false;
 
   ngOnInit() {
 
 }
-onSpanClicked(modal)
+onSpanClicked()
 {
-  modal.style.display = "none";
+  this.block=false;
 
 }
 // onWindowClick(modal)
@@ -24,7 +26,10 @@ onSpanClicked(modal)
 //   }
 
 // }
-onBtnClick(modal) {
-  modal.style.display = "block";
+onBtnClick() {
+  console.log("ghjn")
+  this.block=true;
+  console.log(this.block)
+  // modal.style.display = "block";
 }
 }
