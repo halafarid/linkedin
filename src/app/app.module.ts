@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 import {
   MatCardModule,
@@ -35,6 +37,8 @@ import { FooterComponent } from './footer/footer.component';
 import { RegestrationComponent } from './components/regestration/regestration.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { from } from 'rxjs';
+import { UserFeaturesComponent } from './components/user-features/user-features.component';
+import { FeatureItemComponent } from './components/feature-item/feature-item.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +59,8 @@ import { from } from 'rxjs';
 
     PostCardComponent,
     OptionDropdownComponent,
+    UserFeaturesComponent,
+    FeatureItemComponent,
 
   ],
   imports: [
@@ -72,6 +78,8 @@ import { from } from 'rxjs';
     MatInputModule,
     ReactiveFormsModule,
     MatListModule,
+    MatExpansionModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
