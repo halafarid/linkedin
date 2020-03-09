@@ -1,23 +1,25 @@
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 
-@import 'sass/general.scss'; 
-@import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
-@import '../node_modules/bootstrap/dist/css/bootstrap.css';
+@import "sass/general.scss";
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
+@import "sass/main.scss";
 
-@import 'sass/main.scss';
-
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-body { margin: 0; font-family: Roboto, "Monospace", sans-serif;}
-.align
-{
+body {
+  margin: 0;
+  font-family: Roboto, "Monospace", sans-serif;
+}
+.align {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-
-
-}
+  }
 .colflex
 {
     display: flex;
@@ -25,11 +27,8 @@ body { margin: 0; font-family: Roboto, "Monospace", sans-serif;}
     justify-content: space-between;
     
 }
-.bottom-margin
-{
-    margin-bottom: 330px;
-
+.colflex {
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
 }
-
-
-
