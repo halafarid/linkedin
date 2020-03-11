@@ -51,6 +51,7 @@ import { OpportunitiesComponent } from "./forms/opportunities/opportunities.comp
 import { NetworkCardComponent } from "./cards/network-card/network-card.component";
 import { NetworkSideNavComponent } from "./cards/network-side-nav/network-side-nav.component";
 import { NavbarComponent } from "./shared/navbar/navbar.component";
+import { FriendsCardComponent } from './cards/friends-card/friends-card.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { NavbarComponent } from "./shared/navbar/navbar.component";
     OpportunitiesComponent,
     NetworkCardComponent,
     NetworkSideNavComponent,
-    NavbarComponent
+    NavbarComponent,
+    FriendsCardComponent
   ],
   imports: [
     BrowserModule,

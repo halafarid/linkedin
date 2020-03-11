@@ -1,54 +1,59 @@
-<!-- <div class="row">
-  <mat-card class="new-connections col">
-    <app-network-card></app-network-card>
-    <app-network-card></app-network-card>
-    <app-network-card></app-network-card>
-  </mat-card>
-</div> -->
-
 <div class="container align ">
   <app-network-side-nav></app-network-side-nav>
 
   <div class="colflex col-10">
-    <mat-card class="new-connections">
-      <app-network-card></app-network-card>
-      <app-network-card></app-network-card>
-      <app-network-card></app-network-card>
-      <app-network-card></app-network-card>
-      <app-network-card></app-network-card>
-      <app-network-card></app-network-card>
-      <app-network-card></app-network-card>
-      <app-network-card></app-network-card>
-    </mat-card>
+    <ng-container>
+      <mat-card class="new-connections">
+        <app-network-card></app-network-card>
+        <app-network-card></app-network-card>
+        <app-network-card></app-network-card>
+        <app-network-card></app-network-card>
+        <app-network-card></app-network-card>
+        <app-network-card></app-network-card>
+        <app-network-card></app-network-card>
+        <app-network-card></app-network-card>
+      </mat-card>
+    </ng-container>
+    <ng-container>
+      <mat-card class="friends">
+        <div class="search">
+          <mat-card-title class="card__title--lg card__title--pad"
+            >2 Connections</mat-card-title
+          >
+          <div class="input-group flex-nowrap">
+            <div class="search">
+              <div class="input-group mb-3 search">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search"
+                  aria-label="Recipient's username"
+                  aria-describedby="button-addon2"
+                />
+                <div class="input-group-append">
+                  <button
+                    class="btn btn-outline-secondary"
+                    type="button"
+                    id="button-addon2"
+                  >
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="friend-content">
+          <mat-list role="list">
+            <app-friends-card></app-friends-card>
+            <app-friends-card></app-friends-card>
+            <app-friends-card></app-friends-card>
+            <app-friends-card></app-friends-card>
+            <app-friends-card></app-friends-card>
+          </mat-list>
+        </div>
+      </mat-card>
+    </ng-container>
   </div>
 </div>
-
-<!-- <mat-card-title class="card__title--lg card__title--pad"
-  >2 Connections</mat-card-title
->
-<div class="input-group flex-nowrap">
-  <input type="text" class="form-control" placeholder="Search" />
-  <i class="fas fa-search"></i>
-</div>
-<mat-card>
-  <mat-list role="list">
-    <mat-list-item class="list__item text--dark list__item--underline"
-      ><mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <div class="content">
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </div> </mat-card-header
-      ><button class="btn btn--center btn-v">Message</button></mat-list-item
-    >
-    <mat-list-item class="list__item text--dark list__item--underline"
-      ><mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <div class="content">
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </div> </mat-card-header
-      ><button class="btn btn--center btn-v">Message</button></mat-list-item
-    >
-  </mat-list>
-</mat-card> -->

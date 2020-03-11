@@ -1,6 +1,43 @@
-@import "../../sass/variables.scss";
-@import "../../sass/buttons.scss";
-
+@import "../../../sass/variables.scss";
+@import "../../../sass/buttons.scss";
+.friend {
+  height: 5rem;
+  padding-top: 1rem;
+}
+mat-divider {
+  margin-top: 10px;
+}
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+.search {
+  left: 36.5rem;
+}
+.btn {
+  border: 1px solid $dark-primary;
+  color: $dark-primary;
+  align-self: center;
+  margin-bottom: 2%;
+}
+.btn-v {
+  width: 17%;
+  align-self: flex-end;
+}
+.vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+mat-card-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+mat-list {
+  width: 100%;
+}
 mat-card {
   display: flex;
   .card {
@@ -76,13 +113,4 @@ i {
 }
 .container {
   margin-top: 5rem;
-}
-.friends {
-  display: flex;
-  flex-direction: column;
-  left: 6rem;
-  margin-bottom: 1rem;
-}
-.search {
-  left: 36.5rem;
 }
