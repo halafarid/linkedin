@@ -48,6 +48,8 @@ import {
 import { AddSkillsFormComponent } from './forms/add-skills-form/add-skills-form.component';
 
 import { OpportunitiesComponent } from './forms/opportunities/opportunities.component';
+import { NetworkCardComponent } from './cards/network-card/network-card.component';
+import { NetworkSideNavComponent } from './cards/network-side-nav/network-side-nav.component';
 // import { NavbarComponent } from './shared/navbar/navbar.component';
 
 @NgModule({
@@ -76,6 +78,8 @@ import { OpportunitiesComponent } from './forms/opportunities/opportunities.comp
     ExperienceFormComponent,
     AddSkillsFormComponent,
     OpportunitiesComponent,
+    NetworkCardComponent,
+    NetworkSideNavComponent,
     // NavbarComponent,
   ],
   imports: [
