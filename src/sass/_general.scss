@@ -2,7 +2,7 @@
 
 .container {
     width: 1200px;
-    margin: 30px auto 0;
+    margin: 80px auto 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,8 +59,8 @@ button {
     padding: 20px !important;
 }
 
-.mat-chip-list-wrapper .mat-standard-chip, 
-.mat-chip-list-wrapper input.mat-input-element{
+.oppor .mat-chip-list-wrapper .mat-standard-chip, 
+.oppor .mat-chip-list-wrapper input.mat-input-element{
     background-color: $dark-info;
     color: $light;
 
