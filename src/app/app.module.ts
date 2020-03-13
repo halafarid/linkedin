@@ -1,36 +1,49 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { ReactiveFormsModule } from "@angular/forms";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
 
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatExpansionModule } from '@angular/material/expansion';
 
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MatExpansionModule } from "@angular/material/expansion";
-import { NetworkComponent } from "./network/network.component";
+import { AppComponent } from './app.component';
 
-import { CardsComponent } from "./cards/home-card/cards.component";
-import { DropdownComponent } from "./dropdown/dropdown.component";
-import { WelcomeCardComponent } from "./cards/welcome-card/welcome-card.component";
-import { StartPostComponent } from "./cards/start-post/start-post.component";
-import { CreatePostComponent } from "./cards/create-post/create-post.component";
-import { ProfileComponent } from "./profile/profile.component";
-import { FormsComponent } from "./forms/forms.component";
-import { PostCardComponent } from "./cards/post-card/post-card.component";
-import { OptionDropdownComponent } from "./option-dropdown/option-dropdown.component";
+// Core
+import { NavbarComponent } from './Core/navbar/navbar.component';
+import { HomeComponent } from './Core/home/home.component';
+import { FooterComponent } from './Core/footer/footer.component';
+import { SubFooterComponent } from './Core/footer/sub-footer/sub-footer.component';
+import { ErrorPageComponent } from './Core/error-page/error-page.component';
 
-import { FooterComponent } from "./footer/footer.component";
+// Features
+import { CommentComponent } from './Features/comment/comment.component';
+import { DropdownComponent } from './Features/dropdown/dropdown.component';
+import { OptionDropdownComponent } from './Features/dropdown/option-dropdown/option-dropdown.component';
+import { FeatureItemComponent } from './Features/dropdown/feature-item/feature-item.component';
+import { UserFeaturesComponent } from './Features/user-features/user-features.component';
 
-import { RegestrationComponent } from "./components/regestration/regestration.component";
-import { SigninComponent } from "./components/signin/signin.component";
-import { CommentComponent } from "./comment/comment.component";
-import { SkillsFormComponent } from "./forms/skills-form/skills-form.component";
-import { EducationFormComponent } from "./forms/education-form/education-form.component";
-import { ExperienceFormComponent } from "./forms/experience-form/experience-form.component";
+// Components
+import { CreatePostComponent } from './Components/cards/create-post/create-post.component';
+import { PostCardComponent } from './Components/cards/post-card/post-card.component';
+import { StartPostComponent } from './Components/cards/start-post/start-post.component';
+import { WelcomeCardComponent } from './Components/cards/welcome-card/welcome-card.component';
+import { ProfileCardsComponent } from './Components/cards/profile-cards/profile-cards.component';
+import { FriendsCardComponent } from './Components/cards/friends-card/friends-card.component';
+import { NetworkCardComponent } from './Components/cards/network-card/network-card.component';
+import { NetworkSideNavComponent } from './Components/cards/network-side-nav/network-side-nav.component';
 
-import { FeatureItemComponent } from "./components/feature-item/feature-item.component";
-import { UserFeaturesComponent } from "./components/user-features/user-features.component";
-import { from } from "rxjs";
+import { FormsComponent } from './Components/forms/forms.component';
+import { SkillsFormComponent } from './Components/forms/skills-form/skills-form.component';
+import { AddSkillsFormComponent } from './Components/forms/add-skills-form/add-skills-form.component';
+import { EducationFormComponent } from './Components/forms/education-form/education-form.component';
+import { ExperienceFormComponent } from './Components/forms/experience-form/experience-form.component';
+import { OpportunitiesComponent } from './Components/forms/opportunities/opportunities.component';
+
+import { RegestrationComponent } from './Components/Account/regestration/regestration.component';
+import { SigninComponent } from './Components/Account/signin/signin.component';
+
+import { ProfileComponent } from './Components/profile/profile.component';
+import { NetworkComponent } from './Components/network/network.component';
 
 import {
   MatCardModule,
@@ -43,52 +56,54 @@ import {
   MatInputModule,
   MatCheckboxModule,
   MatToolbarModule,
-  MatChipsModule
-} from "@angular/material";
-import { AddSkillsFormComponent } from "./forms/add-skills-form/add-skills-form.component";
-
-import { OpportunitiesComponent } from "./forms/opportunities/opportunities.component";
-import { NetworkCardComponent } from "./cards/network-card/network-card.component";
-import { NetworkSideNavComponent } from "./cards/network-side-nav/network-side-nav.component";
-import { NavbarComponent } from "./shared/navbar/navbar.component";
-import { FriendsCardComponent } from './cards/friends-card/friends-card.component';
+  MatChipsModule,
+} from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardsComponent,
-    DropdownComponent,
-    ProfileComponent,
-    NetworkComponent,
-    WelcomeCardComponent,
-    StartPostComponent,
-    CreatePostComponent,
-    FormsComponent,
+
+    NavbarComponent,
+    HomeComponent,
     FooterComponent,
-    RegestrationComponent,
-    SigninComponent,
+    SubFooterComponent,
+    ErrorPageComponent,
 
-    PostCardComponent,
-    OptionDropdownComponent,
     CommentComponent,
-    UserFeaturesComponent,
+    DropdownComponent,
     FeatureItemComponent,
+    OptionDropdownComponent,
+    UserFeaturesComponent,
 
-    SkillsFormComponent,
-    EducationFormComponent,
-    ExperienceFormComponent,
-    AddSkillsFormComponent,
-    OpportunitiesComponent,
+    CreatePostComponent,
+    PostCardComponent,
+    StartPostComponent,
+    WelcomeCardComponent,
+    ProfileCardsComponent,
+    FriendsCardComponent,
     NetworkCardComponent,
     NetworkSideNavComponent,
-    NavbarComponent,
-    FriendsCardComponent
+
+    FormsComponent,
+    SkillsFormComponent,
+    AddSkillsFormComponent,
+    EducationFormComponent,
+    ExperienceFormComponent,
+    OpportunitiesComponent,
+
+    SigninComponent,
+    RegestrationComponent,
+
+    ProfileComponent,
+    NetworkComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+
     MatCardModule,
     MatMenuModule,
     MatButtonModule,
@@ -98,18 +113,11 @@ import { FriendsCardComponent } from './cards/friends-card/friends-card.componen
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
-    ReactiveFormsModule,
-    MatListModule,
     MatExpansionModule,
-
-    MatFormFieldModule,
-    MatSlideToggleModule,
-    MatIconModule,
-    MatInputModule,
-    MatCheckboxModule,
     MatToolbarModule,
     MatChipsModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,33 @@
+@import '../../../../sass/variables';
+@import '../../../../sass/text';
+
+.label-container
+{
+    display:flex;
+    position: relative;
+    cursor: pointer;
+    
+}
+.dataContainer
+  {
+      padding: 0 10px;
+      width:90%;
+  }
+
+
+  #addicon
+  {
+      align-items: flex-end;
+      justify-content: flex-end;
+      align-self:center;
+      color: gray;
+
+  }
+  .addicon__styled
+  {
+    transform: translateX(16px);
+  }
+  #addicon:hover
+  {
+      color:$primary;
+  }
