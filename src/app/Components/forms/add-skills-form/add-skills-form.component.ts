@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatChipInputEvent } from '@angular/material';
 
-export interface Fruit {
+export interface Skills {
   name: string;
 }
 
@@ -19,17 +19,16 @@ export class AddSkillsFormComponent implements OnInit {
   selectable = true;
   removable = true;
   addOnBlur = true;
-  // readonly separatorKeysCodes: number[] = [ENTER, COMMA];
 
-  fruits: Fruit[] = [ ];
+  skills: Skills[] = [ ];
 
   add(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
 
-    // Add our fruit
+    // Add our Skill
     if ((value || '').trim()) {
-      this.fruits.push({name: value.trim()});
+      this.skills.push({name: value.trim()});
     }
 
     // Reset the input value
@@ -38,11 +37,11 @@ export class AddSkillsFormComponent implements OnInit {
     }
   }
 
-  remove(fruit: Fruit): void {
-    const index = this.fruits.indexOf(fruit);
+  remove(skill: Skills): void {
+    const index = this.skills.indexOf(skill);
 
     if (index >= 0) {
-      this.fruits.splice(index, 1);
+      this.skills.splice(index, 1);
     }
   }
 

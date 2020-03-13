@@ -1,7 +1,7 @@
 <div class="overlay" *ngIf="isShow">
     <form class="form form--sm" [formGroup]="">
         <label class="form__title">Add Skills</label>
-        <mat-icon class="form__icons text--info">clear</mat-icon>
+        <mat-icon class="form__icons text--info" routerLink="/profile">clear</mat-icon>
         <hr class="horizontal__form">
 
         <div class="form__field" appearance="fill">
@@ -16,9 +16,9 @@
         <mat-form-field class="example-chip-list form__field">
             <mat-chip-list #chipList aria-label="Fruit selection">
             
-                <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable"
-                       [removable]="removable" (removed)="remove(fruit)">
-                    {{fruit.name}}
+                <mat-chip *ngFor="let skill of skills" [selectable]="selectable"
+                       [removable]="removable" (removed)="remove(skill)">
+                    {{skill.name}}
                     <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
                 </mat-chip>
             </mat-chip-list>
@@ -27,6 +27,6 @@
     
     <mat-card class="card__content skills__footer skills__footer--rel">
         <button mat-button class="btn btn--default text--default">Adjust endorsement settings</button>
-        <button mat-raised-button class="btn btn--primary btn--right">Save</button>
+        <button mat-raised-button class="btn btn--primary btn--right" routerLink="/profile">Save</button>
     </mat-card>
 </div>
