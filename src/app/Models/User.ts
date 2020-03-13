@@ -5,7 +5,7 @@ import { Courses } from './Courses';
 import { Posts } from './Posts';
 import { UserInfo } from './UserInfo';
 export interface User{
-
+    id?:number;
     userName?: string , 
     password? : string,
     About? :string,
