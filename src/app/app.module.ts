@@ -8,6 +8,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 
 import { AppComponent } from './app.component';
 
+// Services
+import { UserService } from './services/user.service';
+
 // Core
 import { NavbarComponent } from './Core/navbar/navbar.component';
 import { HomeComponent } from './Core/home/home.component';
@@ -118,7 +121,7 @@ import {
     MatChipsModule
   ],
 
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

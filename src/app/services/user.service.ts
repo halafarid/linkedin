@@ -11,6 +11,7 @@ export class UserService {
     {
       id: 1,
       userName: 'bella',
+      email: 'bella@gmail.com',
       password: 'bella123',
       About: 'joined ITI, looking for front end position ',
       workExp: {
@@ -80,6 +81,7 @@ export class UserService {
     {
       id: 2,
       userName: 'sara',
+      email: 'sara@gmail.com',
       password: 'sara123',
       About: 'joined ITI, looking for front end position ',
       workExp: {
@@ -149,6 +151,7 @@ export class UserService {
     {
       id: 3,
       userName: 'hala',
+      email: 'hala@gmail.com',
       password: 'hala123',
       About: 'joined ITI, looking for front end position ',
       workExp: {
