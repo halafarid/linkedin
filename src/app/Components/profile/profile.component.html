@@ -55,7 +55,8 @@
               <mat-card-title class="card__title text--sm">Open to job opportunities</mat-card-title>
               <mat-card-content class="card__icons">
                 <button mat-button class="btn text--info card__icons-feat">
-                    <mat-icon class="text--primary">create</mat-icon>
+                    <mat-icon routerLink="/opportunities/add"
+                     class="text--primary">create</mat-icon>
                 </button>            
               </mat-card-content>
             <mat-card-title-group>
@@ -144,7 +145,7 @@
             data-toggle="modal"
             data-target="#exampleModal"
             data-whatever="@mdo"
-            routerLink= "profile/skills/add"
+            routerLink= "/skills/addnew"
           >
             Add a new skill
           </button>
@@ -152,7 +153,8 @@
             mat-button
             class="btn text--info card__icons-feat card__icons--inline"
           >
-            <mat-icon class="text--primary">create</mat-icon>
+            <mat-icon routerLink="/skills/add"
+             class="text--primary">create</mat-icon>
           </button>
         </mat-card-content>
         <button

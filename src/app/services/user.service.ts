@@ -1,80 +1,77 @@
-import { JobOpportunities } from "./../Models/JobOpportunities";
-import { User } from "./../Models/User";
-import { Injectable } from "@angular/core";
+import { JobOpportunities } from './../Models/JobOpportunities';
+import { User } from './../Models/User';
+import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class UserService {
   constructor() {}
   Users: User[] = [
     {
       id: 1,
-      userName: "bella",
-      password: "bella123",
-      About: "joined ITI, looking for front end position ",
+      userName: 'bella',
+      password: 'bella123',
+      About: 'joined ITI, looking for front end position ',
       workExp: {
         id: 1,
-        title: "frontend developer",
-        employmentType: { id: 1, name: "full-time" },
-        companyName: "vodafone",
-        location: "cairo",
+        title: 'frontend developer',
+        employmentType: { id: 1, name: 'full-time' },
+        companyName: 'vodafone',
+        location: 'cairo',
         isWorking: false,
-        startDate: "October",
-        endDate: "June",
-        description: "vodafone is good"
-        //headlines is created from title, companyName (frontend developer at vodafone)
+        startDate: 'October',
+        endDate: 'June',
+        description: 'vodafone is good'
       },
       userInfo: {
-        profilePhoto: "bella.jpg",
+        profilePhoto: 'bella.jpg',
         jobOpps: [
           {
             id: 1,
-            title: "UI and Web development",
-            jobLocation: ["maadi", "mokattam"],
+            title: 'UI and Web development',
+            jobLocation: ['maadi', 'mokattam'],
             jobTypes: [
-              { id: 2, name: "part-time" },
-              { id: 3, name: "temporary" }
+              { id: 2, name: 'part-time' },
+              { id: 3, name: 'temporary' }
             ]
           }
         ]
       },
       education: {
         id: 1,
-        schoolName: "computer science",
-        degree: "bachelor's",
-        fieldOfStudy: ["computer programming", "information technology"],
+        schoolName: 'computer science',
+        degree: 'bachelors',
+        fieldOfStudy: ['computer programming', 'information technology'],
         startYear: 2015,
         endYear: 2019,
-        grade: "good",
-        activity: "joined SCCI",
-        description: "computer science is good"
+        grade: 'good',
+        activity: 'joined SCCI',
+        description: 'computer science is good'
       },
       skills: [
-        { id: 1, name: "problem solver" },
-        { id: 2, name: "communication" }
+        { id: 1, name: 'problem solver' },
+        { id: 2, name: 'communication' }
       ],
       courses: [
         {
           id: 1,
-          name: "oop",
-          association: [] //from education
+          name: 'oop',
+          association: []
         }
       ],
       posts: [
         {
           id: 1,
-          //userId:,
           body:
-            "Looking to make a positive difference? Take part in our internship challenge and compete to win a 6-month paid global internship at JTI, Japan Tobacco International.",
+        // tslint:disable-next-line:max-line-length
+        'Looking to make a positive difference? Take part in our internship challenge and compete to win a 6-month paid global internship at JTI, Japan Tobacco International.',
           likes: 200,
-          ImageUrls: ["JTI.jpg"],
+          ImageUrls: ['JTI.jpg'],
           comments: [
             {
-              //postId: 1,
               commentId: 1,
-              //userId: 1,
-              body: "Sevgi metin salihoglu ask olsun.cvbh."
+              body: 'Sevgi metin salihoglu ask olsun.cvbh.'
             }
           ]
         }
@@ -83,71 +80,68 @@ export class UserService {
     },
     {
       id: 2,
-      userName: "sara",
-      password: "sara123",
-      About: "joined ITI, looking for front end position ",
+      userName: 'sara',
+      password: 'sara123',
+      About: 'joined ITI, looking for front end position ',
       workExp: {
         id: 1,
-        title: "frontend developer",
-        employmentType: { id: 1, name: "full-time" },
-        companyName: "vodafone",
-        location: "cairo",
+        title: 'frontend developer',
+        employmentType: { id: 1, name: 'full-time' },
+        companyName: 'vodafone',
+        location: 'cairo',
         isWorking: false,
-        startDate: "October",
-        endDate: "June",
-        description: "vodafone is good"
-        //headlines is created from title, companyName (frontend developer at vodafone)
+        startDate: 'October',
+        endDate: 'June',
+        description: 'vodafone is good'
       },
       userInfo: {
-        profilePhoto: "bella.jpg",
+        profilePhoto: 'bella.jpg',
         jobOpps: [
           {
             id: 1,
-            title: "UI and Web development",
-            jobLocation: ["madinaty"],
+            title: 'UI and Web development',
+            jobLocation: ['madinaty'],
             jobTypes: [
-              { id: 2, name: "part-time" },
-              { id: 3, name: "temporary" }
+              { id: 2, name: 'part-time' },
+              { id: 3, name: 'temporary' }
             ]
           }
         ]
       },
       education: {
         id: 1,
-        schoolName: "computer science",
-        degree: "bachelor's",
-        fieldOfStudy: ["computer programming", "information technology"],
+        schoolName: 'computer science',
+        degree: 'bachelors',
+        fieldOfStudy: ['computer programming', 'information technology'],
         startYear: 2015,
         endYear: 2019,
-        grade: "good",
-        activity: "joined SCCI",
-        description: "computer science is good"
+        grade: 'good',
+        activity: 'joined SCCI',
+        description: 'computer science is good'
       },
       skills: [
-        { id: 1, name: "problem solver" },
-        { id: 2, name: "communication" }
+        { id: 1, name: 'problem solver' },
+        { id: 2, name: 'communication' }
       ],
       courses: [
         {
           id: 1,
-          name: "oop",
-          association: [] //from education
+          name: 'oop',
+          association: []
         }
       ],
       posts: [
         {
           id: 1,
-          //userId:,
           body:
-            "Looking to make a positive difference? Take part in our internship challenge and compete to win a 6-month paid global internship at JTI, Japan Tobacco International.",
+            // tslint:disable-next-line:max-line-length
+            'Looking to make a positive difference? Take part in our internship challenge and compete to win a 6-month paid global internship at JTI, Japan Tobacco International.',
           likes: 200,
-          ImageUrls: ["JTI.jpg"],
+          ImageUrls: ['JTI.jpg'],
           comments: [
             {
-              //postId: 1,
               commentId: 1,
-              //userId: 1,
-              body: "Sevgi metin salihoglu ask olsun.cvbh."
+              body: 'Sevgi metin salihoglu ask olsun.cvbh.'
             }
           ]
         }
@@ -156,71 +150,68 @@ export class UserService {
     },
     {
       id: 3,
-      userName: "hala",
-      password: "hala123",
-      About: "joined ITI, looking for front end position ",
+      userName: 'hala',
+      password: 'hala123',
+      About: 'joined ITI, looking for front end position ',
       workExp: {
         id: 1,
-        title: "frontend developer",
-        employmentType: { id: 1, name: "full-time" },
-        companyName: "vodafone",
-        location: "cairo",
+        title: 'frontend developer',
+        employmentType: { id: 1, name: 'full-time' },
+        companyName: 'vodafone',
+        location: 'cairo',
         isWorking: false,
-        startDate: "October",
-        endDate: "June",
-        description: "vodafone is good"
-        //headlines is created from title, companyName (frontend developer at vodafone)
+        startDate: 'October',
+        endDate: 'June',
+        description: 'vodafone is good'
       },
       userInfo: {
-        profilePhoto: "bella.jpg",
+        profilePhoto: 'bella.jpg',
         jobOpps: [
           {
             id: 1,
-            title: "UI and Web development",
-            jobLocation: ["October"],
+            title: 'UI and Web development',
+            jobLocation: ['October'],
             jobTypes: [
-              { id: 2, name: "part-time" },
-              { id: 3, name: "temporary" }
+              { id: 2, name: 'part-time' },
+              { id: 3, name: 'temporary' }
             ]
           }
         ]
       },
       education: {
         id: 1,
-        schoolName: "computer science",
-        degree: "bachelor's",
-        fieldOfStudy: ["computer programming", "information technology"],
+        schoolName: 'computer science',
+        degree: 'bachelors',
+        fieldOfStudy: ['computer programming', 'information technology'],
         startYear: 2015,
         endYear: 2019,
-        grade: "good",
-        activity: "joined SCCI",
-        description: "computer science is good"
+        grade: 'good',
+        activity: 'joined SCCI',
+        description: 'computer science is good'
       },
       skills: [
-        { id: 1, name: "problem solver" },
-        { id: 2, name: "communication" }
+        { id: 1, name: 'problem solver' },
+        { id: 2, name: 'communication' }
       ],
       courses: [
         {
           id: 1,
-          name: "oop",
-          association: [] //from education
+          name: 'oop',
+          association: []
         }
       ],
       posts: [
         {
           id: 1,
-          //userId:,
           body:
-            "Looking to make a positive difference? Take part in our internship challenge and compete to win a 6-month paid global internship at JTI, Japan Tobacco International.",
+            // tslint:disable-next-line:max-line-length
+            'Looking to make a positive difference? Take part in our internship challenge and compete to win a 6-month paid global internship at JTI, Japan Tobacco International.',
           likes: 200,
-          ImageUrls: ["JTI.jpg"],
+          ImageUrls: ['JTI.jpg'],
           comments: [
             {
-              //postId: 1,
               commentId: 1,
-              //userId: 1,
-              body: "Sevgi metin salihoglu ask olsun.cvbh."
+              body: 'Sevgi metin salihoglu ask olsun.cvbh.'
             }
           ]
         }
@@ -236,7 +227,7 @@ export class UserService {
     id = +id;
 
     if (id >= 0) {
-      let user = this.Users.find(u => u.id === id);
+      const user = this.Users.find(u => u.id === id);
       console.log(user);
 
       return user;
@@ -250,12 +241,12 @@ export class UserService {
   deleteById(id: number) {
     id = +id;
 
-    let index = this.Users.findIndex(a => a.id === id);
+    const index = this.Users.findIndex(a => a.id === id);
     this.Users.splice(index, 1);
     console.log(this.Users);
   }
   updateById(newUser: User) {
-    let index = this.Users.findIndex(u => u.id === newUser.id);
+    const index = this.Users.findIndex(u => u.id === newUser.id);
     this.Users[index] = newUser;
     console.log(this.Users);
   }

@@ -8,7 +8,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class ExperienceFormComponent implements OnInit {
   @Input() isShow = true;
-
+  onAdd = true;
   isChecked = false;
 
   myForm = new FormGroup({
