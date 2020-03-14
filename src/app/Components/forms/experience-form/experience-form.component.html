@@ -1,7 +1,8 @@
 <div class="overlay" *ngIf="isShow">
     <form class="form" [formGroup]="myForm">
         <!-- <ng-container class="header"> -->
-            <label class="form__title">Add experience</label>
+            <label *ngIf="onAdd" class="form__title">Add experience</label>
+
         <!-- </ng-container> -->
         <mat-icon routerLink="/profile"
         class="form__icons text--info">clear</mat-icon>

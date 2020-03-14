@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ProfileComponent } from './Components/profile/profile.component';
@@ -13,6 +13,7 @@ import { RegestrationComponent } from './Components/Account/regestration/regestr
 import { NetworkComponent } from './Components/network/network.component';
 import { SkillsFormComponent } from './Components/forms/skills-form/skills-form.component';
 import { CreatePostComponent } from './Components/cards/create-post/create-post.component';
+import { ConnectionsComponent } from './components/network/connections/connections.component';
 
 const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
@@ -25,8 +26,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'regestration', component: RegestrationComponent },
-  { path: 'network', component: NetworkComponent }
-  // { path: '**', component: ErrorPageComponent },
+  { path: 'network', component: NetworkComponent },
+    {path: 'network/connections', component: ConnectionsComponent},
+  { path: '**', component: ErrorPageComponent },
 ];
 
 @NgModule({

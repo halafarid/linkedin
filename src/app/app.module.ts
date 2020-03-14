@@ -58,6 +58,7 @@ import {
   MatToolbarModule,
   MatChipsModule,
 } from '@angular/material';
+import { ConnectionsComponent } from './components/network/connections/connections.component';
 
 @NgModule({
   declarations: [
@@ -96,6 +97,7 @@ import {
 
     ProfileComponent,
     NetworkComponent,
+    ConnectionsComponent,
   ],
 
   imports: [
