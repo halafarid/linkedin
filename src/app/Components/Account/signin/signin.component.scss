@@ -27,13 +27,17 @@ input:focus {
   margin: 0 auto;
 }
 input {
-  border: 1px solid #ccc;
+  border: 1px solid #eee;
   border-radius: 4px;
   box-sizing: border-box;
   background-color: white;
   width: 100%;
   padding: 12px 20px;
   margin: 20px 0 0 0;
+
+  &:focus {
+    border: 2px solid #eee;
+  }
 }
 
 #label {
@@ -56,7 +60,7 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 5%;
+  // margin-top: 5%;
   margin-bottom: 0;
 }
 span {
@@ -92,5 +96,5 @@ button {
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
-  margin-bottom: 15px;
+  margin: 15px 0;
 }

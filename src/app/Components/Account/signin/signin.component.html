@@ -1,34 +1,37 @@
 <div > 
-    <div class="headerContainer">
+  <div class="headerContainer">
       <img src="../../../assets/Registration/signInlogo.PNG">
-    <h1> Welcome Back</h1>
-    <p class="text--sm">Don't miss your next opportunity. Sign in to stay updated on your professional world.</p>
-    </div>
-    <div class="main-div">
-        
-            <form class="form" [formGroup]="signInData">
-                <mat-form-field class="example-full-width">
-                  <mat-label id="label">Email</mat-label>
-                  <input formControlName="email" #email matInput placeholder="Enter your Email" >
-                </mat-form-field>
+      <h1> Welcome Back</h1>
+      <p class="text--sm">Don't miss your next opportunity. Sign in to stay updated on your professional world.</p>
+  </div>
+  <div class="main-div">   
+      <form class="form" [formGroup]="signInData">
+          <mat-form-field class="example-full-width">
+            <mat-label id="label">Email</mat-label>
+            <input type="email" formControlName="email" #email matInput placeholder="Enter your Email" >
 
-                <mat-form-field class="example-full-width">
-                    <mat-label  id="label">Password (6 or more characters)</mat-label>
-                    <input  formControlName="pass" #pass  matInput placeholder="Enter Your Password">
-                    
-                  </mat-form-field>
-                  
-                  <button mat-button routerLink="/home" >Sign In</button>
-                  <p>
-                    <a target="_blank" href="#">Forgot Password ? </a>
-                  </p>
-                  <p>
-                    New to LinkedIn ?
-                    <a target="_blank" href="#">Join Now </a>
-                  </p>
-              </form>
-            
-        
-        
-</div>
+            <mat-error *ngIf="signInData.get('email').errors?.required">Please enter an email address.</mat-error>
+            <mat-error *ngIf="signInData.get('email').errors?.pattern">Please enter correct email.</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+              <mat-label  id="label">Password</mat-label>
+              <input type="password" formControlName="pass" #pass  matInput placeholder="Enter Your Password">               
+
+              <mat-error *ngIf="signInData.get('pass').errors?.required">Please enter a password</mat-error>
+              <mat-error *ngIf="signInData.get('pass').errors?.minlength">The password you provided must have at least {{ signInData.get('pass').errors.minlength.requiredLength }} characters.</mat-error>
+          </mat-form-field>
+
+          <mat-error *ngIf="isValid">Sorry, Email or password is incorrect!.</mat-error>            
+          <button mat-button (click)="signIn($event)" >Sign In</button>
+
+          <p>
+            <a target="_blank" href="#">Forgot Password ? </a>
+          </p>
+          <p>
+            New to LinkedIn ?
+            <a href="#" routerLink="/regestration">Join Now </a>
+          </p>
+        </form>
+  </div>
 </div>
