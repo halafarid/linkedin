@@ -14,7 +14,8 @@ export interface User{
     education?:Education,
     skills ?:Skills[],
     courses?:Courses[],
-    posts?:Posts[]
+    posts?:Posts[],
+    friendsId?:number[]
 
 
 }

@@ -78,7 +78,8 @@ export class UserService {
             }
           ]
         }
-      ]
+      ],
+      friendsId:[2,3]
     },
     {
       id: 2,
@@ -150,7 +151,8 @@ export class UserService {
             }
           ]
         }
-      ]
+      ],
+      friendsId:[1]
     },
     {
       id: 3,
@@ -222,7 +224,8 @@ export class UserService {
             }
           ]
         }
-      ]
+      ],
+      friendsId:[1]
     }
   ];
   getAll(): User[] {

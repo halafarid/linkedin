@@ -1,7 +1,7 @@
 export interface UserComment
 {
-    postId?:number , 
+    // postId?:number , 
     commentId?:number,
-    userId?:number,
+    // userId?:number,
     body ?:string
 }
