@@ -6,16 +6,16 @@
     <title>Document</title>
    </head>
 <body>
-    <button id="myBtn" (click)="onBtnClick()">Open Modal</button>
+    <!-- <button id="myBtn" (click)="onBtnClick()">Open Modal</button> -->
 
-    <div *ngIf="block" id="myModal" class="modal">
+    <div  id="myModal" class="modal">
 
         <!-- Modal content -->
         <div class="modal-content">
           <div class="modal-header">
               <h4 class="font-weight-normal">Create a post</h4>
               
-              <span (click)="onSpanClicked()" class="close">&times;</span>
+              <span routerLink="/home" class="close">&times;</span>
             </div>
           <div class="modal-body">
               <!-- <div class="avatarDiv" >
