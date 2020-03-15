@@ -9,12 +9,20 @@
             <form class="form" [formGroup]="userData">
                 <mat-form-field class="example-full-width">
                   <mat-label id="label">Email</mat-label>
-                  <input formControlName="email" #email matInput placeholder="Enter your Email" >
+                  <input type="text" formControlName="email" #email matInput placeholder="Enter your Email" >
+
+                  <mat-error *ngIf="userData.get('email').errors?.required">Please enter an email address.</mat-error>
+                  <mat-error *ngIf="userData.get('email').errors?.pattern">Please enter correct email.</mat-error>
                 </mat-form-field>
+                
+                <mat-error *ngIf="isExist">This email is already exists.</mat-error>
 
                 <mat-form-field class="example-full-width">
-                    <mat-label  id="label">Password (6 or more characters)</mat-label>
-                    <input  formControlName="pass" #pass  matInput placeholder="Enter Your Password">
+                    <mat-label  id="label">Password</mat-label>
+                    <input type="password" formControlName="pass" #pass  matInput placeholder="Enter Your Password">
+
+                    <mat-error *ngIf="userData.get('pass').errors?.required">Please enter a password</mat-error>
+                    <mat-error *ngIf="userData.get('pass').errors?.minlength">The password you provided must have at least {{ userData.get('pass').errors.minlength.requiredLength }} characters.</mat-error>
                   </mat-form-field>
                   <span>
                     By clicking Agree & Join, you agree to the LinkedIn
@@ -23,10 +31,11 @@
                       and 
                       <a target="_blank" href="linkedin.com/legal/user-agreement?trk=registration-frontend_join-form-user-agreement"> Cookie Policy </a>.
                   </span>
-                  <button mat-button  routerLink="/signin" (click)="validateData(email , pass)">Agree & Join </button>
+                  <!-- <button mat-button  routerLink="/signin" (click)="validateData(email , pass)">Agree & Join </button> -->
+                  <button mat-button (click)="registration()">Agree & Join </button>
                   <p>
                     Already on LinkedIn? 
-                    <a target="_blank" >Sign in</a>
+                    <a href="#" routerLink="/signin" >Sign in</a>
                   </p>
               </form>
             
