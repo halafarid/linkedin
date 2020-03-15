@@ -17,6 +17,7 @@
                 mat-card-avatar
                 src="../../assets/profile/photo.png"
                 class="card__img-profile"
+                
               />
             </div>
           </div>
@@ -25,10 +26,9 @@
         <app-dropdown></app-dropdown>
         <mat-card-content class="card__content card-mr0">
           <div class="card-info">
-            <mat-card-title class="card__title">Profile Name</mat-card-title>
+            <mat-card-title class="card__title">{{currentUser.userName}}</mat-card-title>
             <mat-card-subtitle class="card__subtitle"
-              >Trainee Web & UI Development at Information Technology Institute
-              (ITI)</mat-card-subtitle
+              >{{currentUser.workExp.Headline}}</mat-card-subtitle
             >
             <ul class="card__list ">
               <li class="list__item list--inline">Egypt</li>
@@ -47,7 +47,7 @@
               class="card__img-logo"
             />
             <a href="#" class="card__subtitle text--sm link link--default"
-              >Information Technology Institute (ITI)</a
+              >{{currentUser.workExp.companyName}}</a
             >
           </mat-card-title-group>
         </mat-card-content>
@@ -62,9 +62,14 @@
                 </button>            
               </mat-card-content>
             <mat-card-title-group>
-              <mat-card-subtitle class="card__subtitle text--sm"
-                >Frontend Web Developer - FullStack Web Developer</mat-card-subtitle
+              <mat-card-subtitle class="card__subtitle text--sm">
+                <span  *ngFor="let job of currentUser.userInfo.jobOpps;let index=i"  >
+                  {{job.title}} -
+
+                </span>
+                </mat-card-subtitle
               >
+             
               <mat-card-subtitle class="text--sm"
                 ><a href="#" class="link">See all details</a></mat-card-subtitle
               >
@@ -114,22 +119,22 @@
         </mat-card-content>
       </ng-container>
     
-      <ng-container class="experience">
+      <ng-container class="experience" >
         <img
           mat-card-sm-image
           src="../../assets/profile/iti.png"
           class="card__details-img"
         />
-        <mat-card-title-group class="card__details">
+        <mat-card-title-group class="card__details" >
           <mat-card-subtitle
             class="card__subtitle card--dark text--normal text--dark"
-            >Web & UI Development</mat-card-subtitle
+            >{{currentUser.workExp.title}}</mat-card-subtitle
           >
           <mat-card-subtitle class="card__subtitle text--sm"
-            >Information Technology Institute (ITI)</mat-card-subtitle
+            >{{currentUser.workExp.companyName}}</mat-card-subtitle
           >
           <mat-card-subtitle class="card__subtitle text--sm text--info"
-            >Oct 2019 - Present . 6 mos</mat-card-subtitle
+            >{{currentUser.workExp.startDate}} - {{currentUser.workExp.endDate}} . {{calcDateOfWorkExp()}}mos</mat-card-subtitle
           >
           <mat-card-subtitle class="card__subtitle text--sm text--info"
             >Cairo Governorate, Egypt</mat-card-subtitle
@@ -137,8 +142,7 @@
         </mat-card-title-group>
       </ng-container>
       <ng-container class="skills">
-        <mat-card-title class="card__title--lg card__title--pad"
-          >Skills & Endorsements</mat-card-title
+        <mat-card-title class="card__title--lg card__title--pad">Skills & Endorsements</mat-card-title
         >
         <mat-card-content class="card__icons">
           <button
@@ -167,18 +171,13 @@
         </button>
         <mat-list role="list">
           <mat-list-item class="list__item text--dark list__item--underline"
-            >Angular 2+</mat-list-item
+            *ngFor="let skill of currentUser.skills ; let i = index"> {{skill.name}}</mat-list-item
           >
-          <mat-list-item class="list__item text--dark list__item--underline"
-            >EcmaScript6</mat-list-item
-          >
-          <mat-list-item class="list__item text--dark list__item--underline"
-            >Bootstrap4</mat-list-item
-          >
+          
         </mat-list>
       </ng-container>
     
-      <ng-container class="education">
+      <ng-container  class="education"  *ngIf="currentUser.education!== undefined">
         <img
           mat-card-sm-image
           src="../../assets/profile/uni.png"
@@ -187,13 +186,13 @@
         <mat-card-title-group class="card__details">
           <mat-card-subtitle
             class="card__subtitle card--dark text--normal text--dark"
-            >Cairo University</mat-card-subtitle
+            >{{currentUser.education.schoolName}}</mat-card-subtitle
           >
           <mat-card-subtitle class="card__subtitle text--sm"
-            >Bachelor's degree, Computer Science</mat-card-subtitle
+            >{{currentUser.education.degree}}</mat-card-subtitle
           >
           <mat-card-subtitle class="card__subtitle text--sm text--info"
-            >2015 - 2019</mat-card-subtitle
+            >{{currentUser.education.startYear}} - {{currentUser.education.endYear}}</mat-card-subtitle
           >
         </mat-card-title-group>
       </ng-container>

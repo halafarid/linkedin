@@ -31,7 +31,7 @@
     </mat-card>
 </mat-card>
   
-<mat-card class="card card--mrg-none">
+  <mat-card class="card card--mrg-none"  *ngIf="currentUser.workExp!== undefined">
     <mat-card-title class="card__title--lg">Experience</mat-card-title>
     <mat-card-content class="card__icons">
         <button mat-button class="btn text--info card__icons-feat">
@@ -48,7 +48,7 @@
     </mat-card-content>
 </mat-card>
   
-<mat-card class="card">
+  <mat-card class="card"  *ngIf="currentUser.education!== undefined">
     <mat-card-title class="card__title--lg">Education</mat-card-title>
     <mat-card-content class="card__icons">
         <button mat-button class="btn text--info card__icons-feat">
@@ -66,7 +66,7 @@
 </mat-card>
   
   
-<mat-card class="card card--pad-non">
+  <mat-card class="card card--pad-non"  *ngIf="currentUser.skills!== undefined">
     <mat-card-content class="card-mr0">
         <ng-content select=".skills"></ng-content>
         <hr class="horizontal">
@@ -74,7 +74,7 @@
     <button mat-button class="btn btn--center btn-text--primary text--normal">Show more</button>
 </mat-card>
   
-<mat-card class="card">
+  <mat-card class="card" >
     <mat-card-title class="card__title--lg">Accomplishments</mat-card-title>
     <mat-card-content class="card__icons" routerLink="/courses/add">
         <button mat-button class="btn text--info card__icons-feat">
@@ -82,14 +82,12 @@
         </button>        
     </mat-card-content>
     <mat-list>
-        <span class="card__accom-len">4</span>
+        <span class="card__accom-len">{{currentUser.courses.length}}</span>
         <span class="text--primary">Courses</span>
         <mat-list-item class="card__accom">
             <ul class="list">
-                <li class="list--inline card__accom-item text--info">JavaScript Tutorial, Udemy</li>
-                <li class="list--inline card__accom-item text--info">Mastering React, Udemy</li>
-                <li class="list--inline card__accom-item text--info">Object-Oriented Programming in JavaScript, Udemy</li>
-                <li class="list--inline card__accom-item text--info">The Complete JQuery Course from Beginner To Advanced, Udemy</li>
+                <li class="list--inline card__accom-item text--info" *ngFor="let course of currentUser.courses">{{course.name}}</li>
+               
             </ul>
         </mat-list-item>
   
