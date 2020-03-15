@@ -16,18 +16,21 @@ import { CreatePostComponent } from './Components/cards/create-post/create-post.
 import { ConnectionsComponent } from './components/network/connections/connections.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/signin', pathMatch: 'full'},
   { path: 'profile', component: ProfileComponent },
   { path: 'skills/addnew', component: AddSkillsFormComponent },
   { path: 'education/add', component: EducationFormComponent },
+  { path: 'education/edit', component: EducationFormComponent },
   { path: 'experience/add', component: ExperienceFormComponent },
+  { path: 'experience/edit', component: ExperienceFormComponent },
   { path: 'opportunities/add', component: OpportunitiesComponent },
   { path: 'skills/add', component: SkillsFormComponent },
-    {path: 'post/add', component: CreatePostComponent},
+  { path: 'post/add', component: CreatePostComponent },
   { path: 'home', component: HomeComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'regestration', component: RegestrationComponent },
   { path: 'network', component: NetworkComponent },
-    {path: 'network/connections', component: ConnectionsComponent},
+  { path: 'network/connections', component: ConnectionsComponent },
   { path: '**', component: ErrorPageComponent },
 ];
 

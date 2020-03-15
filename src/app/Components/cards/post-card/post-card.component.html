@@ -39,12 +39,12 @@
         </div>
                 <button type="button" class="likebtn btn btn-light" (mouseenter)="onhover()"  (mouseleave)="onleave()" >
                         <i class="like far fa-thumbs-up"></i> Like</button>
-                <button type="button" class="btn btn-light">
+                <button type="button" class="btn btn-light" (click)="togglecomment()">
                         <i class="far fa-comment-alt"></i> Comment</button>
                 <button type="button" class="btn btn-light">
                         <i class="fas fa-share"></i>Share</button>
         </div>
-        <app-comment></app-comment>
+        <app-comment [comment]="oncomment"></app-comment>
       </div>
 
   

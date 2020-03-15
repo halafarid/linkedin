@@ -20,6 +20,9 @@
           get up to 21x more profile views
         </p>
       </ng-container>
+      <ng-container id="addicon" class="addicon__styled">
+          <mat-icon >add_circle_outline</mat-icon>
+      </ng-container>
     </app-feature-item>
     <hr class="horizontal" />
     <app-feature-item>
@@ -31,6 +34,9 @@
         <p class=" text text--info">
           Show recruiters and others you’re open to job opportunities.
         </p>
+      </ng-container>
+      <ng-container id="addicon" class="addicon__styled">
+          <mat-icon routerLink="/opportunities/add" >add_circle_outline</mat-icon>
       </ng-container>
     </app-feature-item>
   </mat-expansion-panel>
@@ -57,6 +63,9 @@
           for
         </p>
       </ng-container>
+      <ng-container id="addicon" class="addicon__styled">
+          <mat-icon >add_circle_outline</mat-icon>
+      </ng-container>
     </app-feature-item>
   </mat-expansion-panel>
 
@@ -80,6 +89,9 @@
         Show content posted to LinkedIn
       </p>
     </ng-container>
+    <ng-container id="addicon" class="addicon__styled">
+        <mat-icon >add_circle_outline</mat-icon>
+    </ng-container>
   </app-feature-item>
   <hr class="horizontal" />
 
@@ -94,6 +106,9 @@
         Show links to web content
       </p>
     </ng-container>
+    <ng-container id="addicon" class="addicon__styled">
+        <mat-icon>add_circle_outline</mat-icon>
+    </ng-container>
   </app-feature-item>
   <hr class="horizontal" />
 
@@ -106,6 +121,9 @@
       <p class=" text text--info">
         Upload photos, documents, and presentations
       </p>
+    </ng-container>
+    <ng-container id="addicon" class="addicon__styled">
+        <mat-icon  >add_circle_outline</mat-icon>
     </ng-container>
   </app-feature-item>
 </mat-expansion-panel>
@@ -130,6 +148,9 @@
           List your work history including any contracts or internships
         </p>
       </ng-container>
+      <ng-container id="addicon" class="addicon__styled">
+          <mat-icon routerLink="/experience/add" >add_circle_outline</mat-icon>
+      </ng-container>
     </app-feature-item>
 
     <hr class="horizontal" />
@@ -144,6 +165,9 @@
           Get 11x more profile views by adding your school
         </p>
       </ng-container>
+      <ng-container id="addicon" class="addicon__styled">
+          <mat-icon routerLink="/education/add" >add_circle_outline</mat-icon>
+      </ng-container>
     </app-feature-item>
   </mat-expansion-panel>
 
@@ -157,13 +181,16 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <app-feature-item>
+    <app-feature-item routerLink="/skills/add">
       <ng-container class="icon">
         <mat-icon>shutter_speed</mat-icon>
       </ng-container>
       <ng-container class="content">
         <h2 class="text">Skills</h2>
         <p class=" text text--info">Showcase your strengths as a professional</p>
+      </ng-container>
+      <ng-container id="addicon" class="addicon__styled">
+          <mat-icon  routerLink="/skills/add" >add_circle_outline</mat-icon>
       </ng-container>
     </app-feature-item>
 </mat-expansion-panel>
@@ -189,6 +216,9 @@
         Add compelling projects to demonstrate your experience
     </p>
   </ng-container>
+  <ng-container id="addicon" class="addicon__styled">
+      <mat-icon >add_circle_outline</mat-icon>
+  </ng-container>
 </app-feature-item>
 
 <hr class="horizontal" />
@@ -202,6 +232,9 @@
     <p class=" text text--info">
         List coursework from your prior or continuing education
     </p>
+  </ng-container>
+  <ng-container id="addicon" class="addicon__styled">
+      <mat-icon  >add_circle_outline</mat-icon>
   </ng-container>
 </app-feature-item>
 </mat-expansion-panel>
