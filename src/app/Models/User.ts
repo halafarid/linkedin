@@ -16,7 +16,8 @@ export interface User{
     skills ?:Skills[],
     courses?:Courses[],
     posts?:Posts[],
-    friendsId?:number[]
+    friendsId?:number[],
+    headline?:string;
 
 
 }

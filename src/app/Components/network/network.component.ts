@@ -1,4 +1,6 @@
+import { User } from './../../Models/User';
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-network',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./network.component.scss']
 })
 export class NetworkComponent implements OnInit {
-
-  constructor() { }
+networkUsers:User[];
+  constructor(public us:UserService) { }
 
   ngOnInit() {
+    
+  this.networkUsers=[...this.us.getAllExceptCurr()]
+  // console.log(this.networkUsers);
+  
+
   }
 
 }

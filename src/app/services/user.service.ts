@@ -77,7 +77,8 @@ export class UserService {
           ]
         }
       ],
-      friendsId:[2,3]
+      friendsId:[2,3],
+      headline:"Web and User interface student at ITI"
     },
     {
       id: 2,
@@ -148,7 +149,9 @@ export class UserService {
           ]
         }
       ],
-      friendsId:[1]
+      friendsId:[1],
+      headline:"Web and User interface student at ITI"
+
     },
     {
       id: 3,
@@ -219,9 +222,157 @@ export class UserService {
           ]
         }
       ],
-      friendsId:[1]
-    }
+      friendsId:[1],
+      headline:"Web and User interface student at ITI"
+
+    },
+    {
+      id: 4,
+      userName: 'mariam',
+      email: 'mariam@gmail.com',
+      password: 'mariam123',
+      About: 'joined ITI, looking for front end position ',
+      workExp: {
+        id: 1,
+        title: 'frontend developer',
+        employmentType: { id: 1, name: 'full-time' },
+        companyName: 'vodafone',
+        location: 'cairo',
+        isWorking: false,
+        startDate: 'October',
+        endDate: 'June',
+        description: 'vodafone is good'
+      },
+      userInfo: {
+        profilePhoto: 'bella.jpg',
+        jobOpps: [
+          {
+            id: 1,
+            title: 'UI and Web development',
+            jobLocation: ['October'],
+            jobTypes: [
+              { id: 2, name: 'part-time' },
+              { id: 3, name: 'temporary' }
+            ]
+          }
+        ]
+      },
+      education: {
+        id: 1,
+        schoolName: 'computer science',
+        degree: 'bachelors',
+        fieldOfStudy: ['computer programming', 'information technology'],
+        startYear: 2015,
+        endYear: 2019,
+        grade: 'good',
+        activity: 'joined SCCI',
+        description: 'computer science is good'
+      },
+      skills: [
+        { id: 1, name: 'problem solver' },
+        { id: 2, name: 'communication' }
+      ],
+      courses: [
+        {
+          id: 1,
+          name: 'oop',
+          association: []
+        }
+      ],
+      posts: [
+        {
+          id: 1,
+          body:
+            // tslint:disable-next-line:max-line-length
+            'Looking to make a positive difference? Take part in our internship challenge and compete to win a 6-month paid global internship at JTI, Japan Tobacco International.',
+          likes: 200,
+          ImageUrls: ['JTI.jpg'],
+          comments: [
+            {
+              commentId: 1,
+              body: 'Sevgi metin salihoglu ask olsun.cvbh.'
+            }
+          ]
+        }
+      ],
+      friendsId:[1],
+      headline:"Web and User interface student at ITI"
+
+    },
   ];
+  currentUser:User=  {
+    id: 1,
+    userName: 'bella',
+    email: 'bella@gmail.com',
+    password: 'bella123',
+    About: 'joined ITI, looking for front end position ',
+    workExp: {
+      id: 1,
+      title: 'frontend developer',
+      employmentType: { id: 1, name: 'full-time' },
+      companyName: 'vodafone',
+      location: 'cairo',
+      isWorking: false,
+      startDate: 'October',
+      endDate: 'June',
+      description: 'vodafone is good'
+    },
+    userInfo: {
+      profilePhoto: 'bella.jpg',
+      jobOpps: [
+        {
+          id: 1,
+          title: 'UI and Web development',
+          jobLocation: ['maadi', 'mokattam'],
+          jobTypes: [
+            { id: 2, name: 'part-time' },
+            { id: 3, name: 'temporary' }
+          ]
+        }
+      ]
+    },
+    education: {
+      id: 1,
+      schoolName: 'computer science',
+      degree: 'bachelors',
+      fieldOfStudy: ['computer programming', 'information technology'],
+      startYear: 2015,
+      endYear: 2019,
+      grade: 'good',
+      activity: 'joined SCCI',
+      description: 'computer science is good'
+    },
+    skills: [
+      { id: 1, name: 'problem solver' },
+      { id: 2, name: 'communication' }
+    ],
+    courses: [
+      {
+        id: 1,
+        name: 'oop',
+        association: []
+      }
+    ],
+    posts: [
+      {
+        id: 1,
+        body:
+      // tslint:disable-next-line:max-line-length
+      'Looking to make a positive difference? Take part in our internship challenge and compete to win a 6-month paid global internship at JTI, Japan Tobacco International.',
+        likes: 200,
+        ImageUrls: ['JTI.jpg'],
+        comments: [
+          {
+            commentId: 1,
+            body: 'Sevgi metin salihoglu ask olsun.cvbh.'
+          }
+        ]
+      }
+    ],
+    friendsId:[2,3],
+    headline:"Web and User interface student at ITI"
+
+  }
   getAll(): User[] {
     return this.Users;
   }
@@ -252,5 +403,17 @@ export class UserService {
     const index = this.Users.findIndex(u => u.id === newUser.id);
     this.Users[index] = newUser;
     console.log(this.Users);
+  }
+  getFriends()
+  { let friends:User[]=[];
+    for (const userid of this.currentUser.friendsId) {
+      const friendUser=this.getById(userid)
+      friends.push(friendUser)
+    }
+    return friends;
+  }
+  getAllExceptCurr():User[]
+  {
+    return this.Users.filter(u=>u.id!=this.currentUser.id)
   }
 }

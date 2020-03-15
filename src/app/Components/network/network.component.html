@@ -6,14 +6,8 @@
   <div class="colflex col-10">
     <ng-container>
       <mat-card class="new-connections">
-        <app-network-card></app-network-card>
-        <app-network-card></app-network-card>
-        <app-network-card></app-network-card>
-        <app-network-card></app-network-card>
-        <app-network-card></app-network-card>
-        <app-network-card></app-network-card>
-        <app-network-card></app-network-card>
-        <app-network-card></app-network-card>
+        <app-network-card *ngFor="let user of networkUsers"[user]="user"></app-network-card>
+       
       </mat-card>
     </ng-container>
   </div>
