@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -11,6 +11,7 @@ export class ExperienceFormComponent implements OnInit {
   @Input() isShow = true;
   editroute=this.router.url==='/experience/edit'
   isChecked = false;
+
   myForm = new FormGroup({
     title: new FormControl('', [
       Validators.required,
@@ -25,6 +26,7 @@ export class ExperienceFormComponent implements OnInit {
       Validators.minLength(3)
     ]),
   });
+
   constructor( public router: Router
   ) { }
   ngOnInit() {}

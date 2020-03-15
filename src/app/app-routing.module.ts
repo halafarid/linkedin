@@ -16,6 +16,7 @@ import { CreatePostComponent } from './Components/cards/create-post/create-post.
 import { ConnectionsComponent } from './components/network/connections/connections.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/signin', pathMatch: 'full'},
   { path: 'profile', component: ProfileComponent },
   { path: 'skills/addnew', component: AddSkillsFormComponent },
   { path: 'education/add', component: EducationFormComponent },
