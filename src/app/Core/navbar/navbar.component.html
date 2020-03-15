@@ -4,9 +4,10 @@
       <div class="logo">
         <img id="logo-img" src="../../../assets/logo.PNG" />
       </div>
-      <div class="search">
+      <div class="search" (click)="enableSeachBy()">
         <div class="input-group mb-3">
           <input
+            (keyup)="SeachResult($event)"
             type="text"
             class="form-control"
             placeholder="Search"
@@ -27,14 +28,16 @@
     </div>
     <div class="left">
       <div class="nav-btn">
-        <mat-icon routerLink="/home" aria-hidden="false" aria-label="Example home icon"
+        <mat-icon
+          routerLink="/home"
+          aria-hidden="false"
+          aria-label="Example home icon"
           >home</mat-icon
         >
         <span routerLink="/home">Home</span>
       </div>
       <div class="nav-btn">
-        <mat-icon routerLink="/network"
-        >group</mat-icon>
+        <mat-icon routerLink="/network">group</mat-icon>
         <span routerLink="/network">My Network</span>
       </div>
       <div class="nav-btn">
@@ -50,16 +53,19 @@
         <span>Notifications</span>
       </div>
 
-       <button id="me" mat-button> 
+      <button id="me" mat-button>
         <div class="mediv">
-          <img  routerLink="/profile"
-          id="profile-img" src="../../../assets/logo.PNG" />
+          <img
+            routerLink="/profile"
+            id="profile-img"
+            src="../../../assets/logo.PNG"
+          />
         </div>
         <div>
           <span routerLink="/profile">Me</span>
           <i class="fas fa-sort-down"></i>
         </div>
-       </button>
+      </button>
       <!-- <mat-menu #menu="matMenu">
         <button mat-menu-item>Item 1</button>
         <button mat-menu-item>Item 2</button>
@@ -71,3 +77,29 @@
     </div>
   </div>
 </mat-toolbar>
+<div class="dark-background" *ngIf="subNav" (click)="disableSeachBy()">
+  <mat-toolbar class="sub-nav">
+    <mat-chip-list aria-label="Fish selection">
+      <mat-chip routerLink="/search/people">People</mat-chip>
+      <mat-chip routerLink="/search/jobs">Jobs</mat-chip>
+    </mat-chip-list>
+  </mat-toolbar>
+</div>
+<div
+  class="dark-background"
+  *ngIf="searchResult"
+  (click)="disableSeachResult()"
+>
+  <!-- <mat-toolbar class="sub-nav">
+    <mat-chip-list aria-label="Fish selection"> -->
+  <mat-card class="search-result-sm">
+    <app-search-card-sm
+      *ngFor="let user of users"
+      [user]="user"
+    ></app-search-card-sm>
+    <span class="match" *ngIf="!match">Show more</span>
+    <span class="match" *ngIf="match">No Match</span>
+  </mat-card>
+  <!-- </mat-chip-list> -->
+  <!-- </mat-toolbar> -->
+</div>

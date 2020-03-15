@@ -62,6 +62,9 @@ import {
   MatChipsModule,
 } from '@angular/material';
 import { ConnectionsComponent } from './components/network/connections/connections.component';
+import { SearchComponent } from './components/search/search.component';
+import { PeopleCardComponent } from './components/cards/people-card/people-card.component';
+import { SearchCardSmComponent } from './components/cards/search-card-sm/search-card-sm.component';
 
 @NgModule({
   declarations: [
@@ -101,6 +104,9 @@ import { ConnectionsComponent } from './components/network/connections/connectio
     ProfileComponent,
     NetworkComponent,
     ConnectionsComponent,
+    SearchComponent,
+    PeopleCardComponent,
+    SearchCardSmComponent,
   ],
 
   imports: [
