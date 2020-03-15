@@ -10,13 +10,12 @@ export class PostCardComponent implements OnInit {
   constructor() { }
   ishover = false;
   ishoverReact = false;
+  oncomment=false;
   ngOnInit() {
   }
 onhover() {
     this.ishover = true;
     this.ishoverReact = true;
-
-
 }
 
 onleave() {
@@ -26,4 +25,7 @@ this.ishover = false;
 onleaveReact() {
   this.ishoverReact = false;
   }
+togglecomment(){
+  this.oncomment = !this.oncomment
+}
 }

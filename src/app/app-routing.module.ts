@@ -24,12 +24,12 @@ const routes: Routes = [
   { path: 'experience/edit', component: ExperienceFormComponent },
   { path: 'opportunities/add', component: OpportunitiesComponent },
   { path: 'skills/add', component: SkillsFormComponent },
-    {path: 'post/add', component: CreatePostComponent},
+  { path: 'post/add', component: CreatePostComponent },
   { path: 'home', component: HomeComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'regestration', component: RegestrationComponent },
   { path: 'network', component: NetworkComponent },
-    {path: 'network/connections', component: ConnectionsComponent},
+  { path: 'network/connections', component: ConnectionsComponent },
   { path: '**', component: ErrorPageComponent },
 ];
 
