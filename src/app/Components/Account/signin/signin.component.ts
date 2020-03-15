@@ -37,12 +37,14 @@ export class SigninComponent implements OnInit {
 
       const userAccount = users.filter(user => {
         if ( this.signInData.controls.email.value === user.email && this.signInData.controls.pass.value === user.password ) {
+          
           return user;
         } else {
           return false;
         }
       })[0];
-
+      this.userService.currentUser=userAccount;
+      console.log(this.userService.currentUser)
       userAccount !== undefined ? this.router.navigate(['/home'], { replaceUrl: true }) : this.isValid = true;
     }
   }

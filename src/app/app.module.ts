@@ -41,12 +41,16 @@ import { AddSkillsFormComponent } from './Components/forms/add-skills-form/add-s
 import { EducationFormComponent } from './Components/forms/education-form/education-form.component';
 import { ExperienceFormComponent } from './Components/forms/experience-form/experience-form.component';
 import { OpportunitiesComponent } from './Components/forms/opportunities/opportunities.component';
+import { IntroFormComponent } from './Components/forms/intro-form/intro-form.component';
+import { AboutFormComponent } from './Components/forms/about-form/about-form.component';
+import { CourseFormComponent } from './Components/forms/course-form/course-form.component';
 
 import { RegestrationComponent } from './Components/Account/regestration/regestration.component';
 import { SigninComponent } from './Components/Account/signin/signin.component';
 
 import { ProfileComponent } from './Components/profile/profile.component';
 import { NetworkComponent } from './Components/network/network.component';
+import { ConnectionsComponent } from './components/network/connections/connections.component';
 
 import {
   MatCardModule,
@@ -61,7 +65,9 @@ import {
   MatToolbarModule,
   MatChipsModule,
 } from '@angular/material';
-import { ConnectionsComponent } from './components/network/connections/connections.component';
+import { SearchComponent } from './components/search/search.component';
+import { PeopleCardComponent } from './components/cards/people-card/people-card.component';
+import { SearchCardSmComponent } from './components/cards/search-card-sm/search-card-sm.component';
 
 @NgModule({
   declarations: [
@@ -94,6 +100,9 @@ import { ConnectionsComponent } from './components/network/connections/connectio
     EducationFormComponent,
     ExperienceFormComponent,
     OpportunitiesComponent,
+    IntroFormComponent,
+    AboutFormComponent,
+    CourseFormComponent,
 
     SigninComponent,
     RegestrationComponent,
@@ -101,6 +110,9 @@ import { ConnectionsComponent } from './components/network/connections/connectio
     ProfileComponent,
     NetworkComponent,
     ConnectionsComponent,
+    SearchComponent,
+    PeopleCardComponent,
+    SearchCardSmComponent,
   ],
 
   imports: [

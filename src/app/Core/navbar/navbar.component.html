@@ -7,6 +7,7 @@
       <div class="search" (click)="enableSeachBy()">
         <div class="input-group mb-3">
           <input
+            (keyup)="SeachResult($event)"
             type="text"
             class="form-control"
             placeholder="Search"
@@ -79,8 +80,26 @@
 <div class="dark-background" *ngIf="subNav" (click)="disableSeachBy()">
   <mat-toolbar class="sub-nav">
     <mat-chip-list aria-label="Fish selection">
-      <mat-chip>People</mat-chip>
-      <mat-chip>Job</mat-chip>
+      <mat-chip routerLink="/search/people">People</mat-chip>
+      <mat-chip routerLink="/search/jobs">Jobs</mat-chip>
     </mat-chip-list>
   </mat-toolbar>
+</div>
+<div
+  class="dark-background"
+  *ngIf="searchResult"
+  (click)="disableSeachResult()"
+>
+  <!-- <mat-toolbar class="sub-nav">
+    <mat-chip-list aria-label="Fish selection"> -->
+  <mat-card class="search-result-sm">
+    <app-search-card-sm
+      *ngFor="let user of users"
+      [user]="user"
+    ></app-search-card-sm>
+    <span class="match" *ngIf="!match">Show more</span>
+    <span class="match" *ngIf="match">No Match</span>
+  </mat-card>
+  <!-- </mat-chip-list> -->
+  <!-- </mat-toolbar> -->
 </div>
