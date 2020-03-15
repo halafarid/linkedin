@@ -89,6 +89,11 @@
         font-size: $font-md;
         line-height: 1.4;
         padding-top: 10px;
+
+        &--wd {
+            width: 95%;
+            line-height: 1.7;
+        }
     }
     
     &__list {
