@@ -1,7 +1,10 @@
 <div class="overlay" *ngIf="isShow">
     <form class="form" [formGroup]="myForm">
         <!-- <ng-container class="header"> -->
-            <label *ngIf="onAdd" class="form__title">Add experience</label>
+            <ng-container>
+            <label *ngIf="this.router.url==='/experience/add'; else editroute" class="form__title">Add experience</label>
+            </ng-container>
+            <ng-template  #editroute ><label class="form__title">Edit experience</label></ng-template>
 
         <!-- </ng-container> -->
         <mat-icon routerLink="/profile"

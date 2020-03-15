@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-education-form',
   templateUrl: './education-form.component.html',
@@ -8,7 +8,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class EducationFormComponent implements OnInit {
   @Input() isShow = true;
-
+  editroute=this.router.url==='/education/edit';
   myForm = new FormGroup({
     schoolName: new FormControl('', [
       Validators.required,
@@ -16,8 +16,8 @@ export class EducationFormComponent implements OnInit {
     ]),
   });
 
-  constructor() { }
-
+  constructor(public router:Router) { }
+  
   ngOnInit() {
   }
 

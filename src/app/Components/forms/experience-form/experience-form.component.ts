@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-experience-form',
@@ -8,9 +9,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class ExperienceFormComponent implements OnInit {
   @Input() isShow = true;
-  onAdd = true;
+  editroute=this.router.url==='/experience/edit'
   isChecked = false;
-
   myForm = new FormGroup({
     title: new FormControl('', [
       Validators.required,
@@ -25,12 +25,9 @@ export class ExperienceFormComponent implements OnInit {
       Validators.minLength(3)
     ]),
   });
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  constructor( public router: Router
+  ) { }
+  ngOnInit() {}
   onChecked() {
     this.isChecked = !this.isChecked;
     // tslint:disable-next-line: no-unused-expression
