@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { User } from './../../../Models/User';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-friends-card',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./friends-card.component.scss']
 })
 export class FriendsCardComponent implements OnInit {
-
+@Input()friend:User;
   constructor() { }
 
   ngOnInit() {

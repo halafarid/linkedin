@@ -9,7 +9,7 @@
         <mat-card class="friends">
           <div class="search">
             <mat-card-title class="card__title--lg card__title--pad"
-              >2 Connections</mat-card-title
+              >{{friends.length}} Connections</mat-card-title
             >
             <div class="input-group flex-nowrap">
               <div class="search">
@@ -37,11 +37,8 @@
 
           <div class="friend-content">
             <mat-list role="list">
-              <app-friends-card></app-friends-card>
-              <app-friends-card></app-friends-card>
-              <app-friends-card></app-friends-card>
-              <app-friends-card></app-friends-card>
-              <app-friends-card></app-friends-card>
+              <app-friends-card *ngFor="let friend of friends" [friend]="friend"></app-friends-card>
+              
             </mat-list>
           </div>
         </mat-card>

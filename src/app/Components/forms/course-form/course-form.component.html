@@ -1,0 +1,38 @@
+<app-profile></app-profile>
+
+<div class="overlay">
+    <form class="form form--sm form--pad-none" [formGroup]="courseForm">
+
+        <div class="form__field--mrg">
+            <label class="form__title">Add course</label>
+            <mat-icon routerLink="/profile"
+            class="form__icons text--info">clear</mat-icon>
+            <hr class="horizontal__form">
+        </div>
+
+        <div class="form__field--mrg" appearance="fill">
+            <label class="form__label">Course name <span class="form__req">*</span></label>
+            <input formControlName="schoolName" matInput class="form__input">
+            <mat-error *ngIf="name.touched && name.invalid">
+                <mat-error *ngIf="name.errors.required">Please enter a course name</mat-error>
+            </mat-error>
+        </div>
+
+        <div class="form__field--mrg">
+            <label class="form__label">Employment type</label>
+            <select matNativeControl required class="form__select form__select--full">
+                <option value="-">-</option>
+                <option value="1">Education Name</option>
+                <option value="2">Experience Name</option>
+            </select>
+        </div>
+
+        <mat-card class="card__content card--light">
+            <mat-card-title class="card__title text--sm text--info">We no longer share changes to courses with your network. <a href="#" class="text--primary">Learn what’s shared</a></mat-card-title>
+        </mat-card>
+
+        <div class="form__field--mrg">
+            <button mat-raised-button class="btn btn--primary btn--right">Save</button>
+        </div>
+    </form>
+</div>
