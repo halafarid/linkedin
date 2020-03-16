@@ -65,14 +65,10 @@ import {
   MatToolbarModule,
   MatChipsModule,
 } from '@angular/material';
-<<<<<<< HEAD
-import { ConnectionsComponent } from './components/network/connections/connections.component';
 import { JobsComponent } from './components/jobs/jobs.component';
-=======
 import { SearchComponent } from './components/search/search.component';
 import { PeopleCardComponent } from './components/cards/people-card/people-card.component';
 import { SearchCardSmComponent } from './components/cards/search-card-sm/search-card-sm.component';
->>>>>>> 8629e2ba5bdd004a10a938dbd8575325e62e71bd
 
 @NgModule({
   declarations: [
@@ -115,13 +111,10 @@ import { SearchCardSmComponent } from './components/cards/search-card-sm/search-
     ProfileComponent,
     NetworkComponent,
     ConnectionsComponent,
-<<<<<<< HEAD
     JobsComponent,
-=======
     SearchComponent,
     PeopleCardComponent,
     SearchCardSmComponent,
->>>>>>> 8629e2ba5bdd004a10a938dbd8575325e62e71bd
   ],
 
   imports: [

@@ -15,12 +15,9 @@ import { NetworkComponent } from './Components/network/network.component';
 import { SkillsFormComponent } from './Components/forms/skills-form/skills-form.component';
 import { CreatePostComponent } from './Components/cards/create-post/create-post.component';
 import { ConnectionsComponent } from './components/network/connections/connections.component';
-<<<<<<< HEAD
 import {JobsComponent } from './components/jobs/jobs.component';
-=======
 import { AboutFormComponent } from './Components/forms/about-form/about-form.component';
 import { CourseFormComponent } from './Components/forms/course-form/course-form.component';
->>>>>>> 8629e2ba5bdd004a10a938dbd8575325e62e71bd
 
 const routes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full' },
