@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   
   ngOnInit() {
     
-    console.log(this.us.getAll());
+    // console.log(this.us.getAll());
     // this.us.getById(1);
     // this.us.add({id:2,userName:"sara"})
     // this.us.updateById({id:1,userName:"sara"})

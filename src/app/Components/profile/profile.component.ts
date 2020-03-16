@@ -14,19 +14,13 @@ export class ProfileComponent implements OnInit {
     'June', 'July', 'August', 'September',
     'October', 'November', 'December'
     ];
-  constructor( public userService : UserService) {
-
-    
-    console.log(this.currentUser.workExp);
-   }
+  constructor( public userService : UserService) { }
+  
    calcDateOfWorkExp()
    {
     var endMonth = this.months.indexOf(this.currentUser.workExp.endDate);
-    console.log(endMonth);
     var startMonth = this.months.indexOf(this.currentUser.workExp.startDate);
-    console.log(startMonth)
     var month = endMonth-startMonth;
-    console.log(month);
     return month ? month + 1 : 0;
    }
 

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-post-card',
@@ -7,25 +8,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostCardComponent implements OnInit {
 
-  constructor() { }
   ishover = false;
   ishoverReact = false;
-  oncomment=false;
+  oncomment = false;
+  
+  currentUser = this.userService.currentUser;
+  posts = [];
+  wholePosts = [];
+  currentPost = {};
+
+  constructor(public userService: UserService) { }
+
   ngOnInit() {
-  }
-onhover() {
-    this.ishover = true;
-    this.ishoverReact = true;
-}
+    this.currentUser.friendsId.map(friendID => this.posts.push(this.userService.Users[friendID - 1].posts));
 
-onleave() {
-this.ishover = false;
-
-}
-onleaveReact() {
-  this.ishoverReact = false;
+    this.posts.map(postArr => {
+      postArr.map(post => this.wholePosts.push(post));
+    });
   }
-togglecomment(){
-  this.oncomment = !this.oncomment
-}
+
+  onhover() {
+      this.ishover = true;
+      this.ishoverReact = true;
+  }
+
+  onleave() {
+  this.ishover = false;
+
+  }
+  onleaveReact() {
+    this.ishoverReact = false;
+  }
+
+  togglecomment(post) {
+    this.currentPost = post;
+    this.oncomment = !this.oncomment;
+  }
 }
