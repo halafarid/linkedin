@@ -14,9 +14,10 @@ import { NetworkComponent } from './Components/network/network.component';
 import { SkillsFormComponent } from './Components/forms/skills-form/skills-form.component';
 import { CreatePostComponent } from './Components/cards/create-post/create-post.component';
 import { ConnectionsComponent } from './components/network/connections/connections.component';
+import {JobsComponent } from './components/jobs/jobs.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/signin', pathMatch: 'full'},
+  { path: '', redirectTo: '/signin', pathMatch: 'full' },
   { path: 'profile', component: ProfileComponent },
   { path: 'skills/addnew', component: AddSkillsFormComponent },
   { path: 'education/add', component: EducationFormComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'regestration', component: RegestrationComponent },
   { path: 'network', component: NetworkComponent },
   { path: 'network/connections', component: ConnectionsComponent },
+  { path: 'jobs', component: JobsComponent },
   { path: '**', component: ErrorPageComponent },
 ];
 

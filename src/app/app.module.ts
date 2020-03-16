@@ -62,6 +62,7 @@ import {
   MatChipsModule,
 } from '@angular/material';
 import { ConnectionsComponent } from './components/network/connections/connections.component';
+import { JobsComponent } from './components/jobs/jobs.component';
 
 @NgModule({
   declarations: [
@@ -101,6 +102,7 @@ import { ConnectionsComponent } from './components/network/connections/connectio
     ProfileComponent,
     NetworkComponent,
     ConnectionsComponent,
+    JobsComponent,
   ],
 
   imports: [

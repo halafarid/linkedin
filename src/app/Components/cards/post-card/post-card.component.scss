@@ -16,7 +16,9 @@
             flex-direction: column;
             line-height: 4px;
         }  
-
+        &-text{
+            font-weight: bold;
+        }
     }
    &-footer{
        display: flex;

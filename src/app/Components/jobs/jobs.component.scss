@@ -1,0 +1,101 @@
+.container{
+    margin-top:7%;
+    flex-direction: column;
+
+}
+.card{
+    width:95%;
+    margin:0 auto;
+
+    &-small-font
+    {
+        margin-top: 15px;
+        font-size: 15px;
+        &--gray{
+            color: gray;
+            font-size: 14px;
+            &--center{
+                text-align: center;
+            }
+        }
+    }
+    &-body{
+          height:125px;
+          background-color: #E6EDF1;
+        
+    }
+    &-title{
+        text-align: center;
+        font-size:25px;
+        display: block;
+    }
+    &-jobs{
+      margin:13px;
+        
+    }
+   
+    &-text{
+        // line-height: px;
+        font-weight: bold;
+        &--gray{
+            color: gray;
+        }
+        &--blue{
+            color:#0062AE;
+            font-weight: bold;
+        }
+    }
+}
+
+.input-group{
+    width:90%;
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+.form-control{
+    margin:6px;
+  
+}
+.btn{
+    position: relative;
+    top:4px;
+    height:40px;
+}
+
+.card-job{
+    line-height: 5px;
+    padding: 9px;
+    margin-right: 6px;
+    width:30%;
+    height:30%;
+    border:1px solid grey;
+    border-radius: 5px 5px;
+    box-shadow: 3px 2px gainsboro
+}
+.card-search{
+    display: flex;
+}
+.card-jobs-head{
+    display: flex;
+    justify-content: space-between;
+}
+ 
+.card-relevantjobs{
+    margin:0 auto;
+    margin-top:10px;
+    width:95%;
+    border: 1px solid gainsboro;
+    height: 90%;
+}
+.icon{
+    color: gainsboro;
+    position: relative;
+    top:7px;
+}
+.forward{
+    color: gray;
+    position: relative;
+    top:7px;
+}

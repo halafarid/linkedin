@@ -8,7 +8,6 @@ import {Input} from '@angular/core';
 export class CommentComponent implements OnInit {
   @Input() comment:false
   constructor() { }
-
   ngOnInit() {
   }
 
