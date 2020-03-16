@@ -20,13 +20,9 @@ currPrivacy:string="Anyone";
   constructor(public us:UserService) { 
    
   }
-  block=false;
 
-  onSpanClicked()
-  {
-    this.block=false;
-    
-  }
+
+ 
 // onWindowClick(modal)
 // {
   //   if (event.target == modal) {
@@ -34,29 +30,27 @@ currPrivacy:string="Anyone";
     //   }
     
     // }
-    onBtnClick() {
-      console.log("ghjn")
-      this.block=true;
-      console.log(this.block)
-  // modal.style.display = "block";
-}
+ 
 onPrivacyClick(privacy)
 {
   this.currPrivacy=privacy;
 }
 post(text)
-{ let post:Posts={
+{ 
+ 
+  let post:Posts={
 id:this.us.currentUser.posts.length+1,
 userId:this.us.currentUser.id,
 body:text.value,
 likes:0,
-ImageUrls:this.imgUrls,
+imageUrls:this.imgUrls,
 comments:[]
 };
 this.us.currentUser.posts.push(post);
 this.us.update(this.us.currentUser)
 console.log(this.us.currentUser)
 console.log(this.us.Users)
+
   // console.log(text.value)
   // console.log(this.currPrivacy)
   // console.log(this.imgUrls)

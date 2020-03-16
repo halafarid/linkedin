@@ -10,6 +10,6 @@ export interface Posts
     likes?:number;
     replies?: number;
     imageUrls?:string[],
-    comments?:UserComment[]
+    comments?:UserComment[],
      
 }

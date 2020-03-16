@@ -106,6 +106,7 @@ export class UserService {
           imageUrls: ['../../../assets/JTI.jpg'],
           comments: [
             {
+              userId:3,
               commentId: 1,
               body: 'Sevgi metin salihoglu ask olsun.cvbh.',
               likes: 10,
@@ -289,14 +290,14 @@ export class UserService {
           comments: [
             {
               commentId: 1,
-              userId: 1,
+              userId: 2,
               body: '.1Sevgi metin salihoglu ask olsun.cvbh.',
               likes: 20,
               replies: 10,
             },
             {
               commentId: 1,
-              userId: 2,
+              userId: 3,
               body: '.2Sevgi metin salihoglu ask olsun.cvbh.',
               likes: 0,
               replies: 0
