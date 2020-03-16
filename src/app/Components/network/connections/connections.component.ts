@@ -1,4 +1,6 @@
+import { User } from './../../../Models/User';
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-connections',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./connections.component.scss']
 })
 export class ConnectionsComponent implements OnInit {
-
-  constructor() { }
+friends:User[];
+  constructor(public us:UserService) { }
 
   ngOnInit() {
+    this.friends=[...this.us.getFriends()]
+    
   }
 
 }

@@ -114,7 +114,7 @@ export class UserService {
         }
       ],
       friendsId:[2,3],
-      headline:"Web and User interface student at ITI"
+      
     },
     {
       id: 2,
@@ -204,7 +204,7 @@ export class UserService {
         }
       ],
       friendsId:[1],
-      headline:"Web and User interface student at ITI"
+      
 
     },
     {
@@ -295,7 +295,7 @@ export class UserService {
         }
       ],
       friendsId:[1],
-      headline:"Web and User interface student at ITI"
+      
 
     },
     {
@@ -368,7 +368,7 @@ export class UserService {
         }
       ],
       friendsId:[1],
-      headline:"Web and User interface student at ITI"
+      
 
     },
   ];
@@ -442,7 +442,7 @@ export class UserService {
       }
     ],
     friendsId:[2,3],
-    headline:"Web and User interface student at ITI"
+    
 
   }
   getAll(): User[] {
@@ -479,7 +479,7 @@ export class UserService {
     this.Users[index] = newUser;
     console.log(this.Users);
   }
-  getFriends()
+  getFriends=()=>
   { let friends:User[]=[];
     for (const userid of this.currentUser.friendsId) {
       const friendUser=this.getById(userid)
@@ -487,8 +487,15 @@ export class UserService {
     }
     return friends;
   }
-  getAllExceptCurr():User[]
+  getAllExceptCurr=()=>
   {
-    return this.Users.filter(u=>u.id!=this.currentUser.id)
+    let network=this.Users.filter(u=>u.id!=this.currentUser.id)
+    for (const userid of this.currentUser.friendsId) {
+      const friendUser=this.getById(userid)
+      const index=network.indexOf(friendUser)
+      network.splice(index,1)
+    }
+    return network;
+  
   }
 }

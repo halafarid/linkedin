@@ -17,7 +17,6 @@ export interface User{
     courses?:Courses[],
     posts?:Posts[],
     friendsId?:number[],
-    headline?:string;
 
 
 }
