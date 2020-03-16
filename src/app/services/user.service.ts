@@ -96,24 +96,25 @@ export class UserService {
       ],
       posts: [
         {
-          userId: 1,
           id: 1,
+          userId: 1,
           body:
             // tslint:disable-next-line:max-line-length
-            '1.All of us know the compiler and some of them know the interpreter, but a lot of us don\'t know the transpiler.',
-          likes: 200,
-          replies: 40,
-          imageUrls: ['../../../assets/JTI.jpg'],
+            'salsabils\'s post',
+          likes: 50,
+          replies: 20,
+          imageUrls: [],
           comments: [
             {
               userId:3,
               commentId: 1,
-              body: 'Sevgi metin salihoglu ask olsun.cvbh.',
-              likes: 10,
-              replies: 0
-            }
+              body: 'comment',
+              likes: 5,
+              replies: 0,
+            },
           ]
-        }
+        },
+
       ],
       friendsId:[2,3],
       
