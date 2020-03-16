@@ -25,7 +25,10 @@ export class PostCardComponent implements OnInit {
     this.posts.map(postArr => {
       postArr.map(post => this.wholePosts.push(post));
     });
+
+    this.currentUser.posts.map(post => this.wholePosts.unshift(post));
   }
+
 
   onhover() {
       this.ishover = true;
