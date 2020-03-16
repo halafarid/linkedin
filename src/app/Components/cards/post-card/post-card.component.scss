@@ -1,5 +1,11 @@
 .card {
     padding: 0;  
+    
+    &__post {
+        width: 30rem;
+        margin-bottom: 30px;
+    }
+    
    
     &-small-font
     {
