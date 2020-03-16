@@ -16,14 +16,12 @@
                 <i class="avatarIcon fas fa-user"></i>
               <div>
 
-                  <p class="userName font-weight-normal">UserName</p>
+                  <p class="userName font-weight-normal">{{this.us.currentUser.userName}}</p>
                   <div class="dropdown dropdown--right">
                     <button mat-raised-button [matMenuTriggerFor]="menu" class=""><i class="earth fas fa-globe-americas"></i>Anyone  <i class="dropdown fas fa-caret-down"></i></button>
                     <mat-menu #menu="matMenu">
-                        <button mat-menu-item>Anyone</button>
-                        <button mat-menu-item>Anyone + Twitter</button>
-                        <button mat-menu-item>Connections Only</button>
-                        <button mat-menu-item>Advanced Settings</button>
+                        <button (click)="onPrivacyClick(p)" *ngFor="let p of privacy" mat-menu-item>{{p}}</button>
+                  
 
                     </mat-menu>
                 </div>
@@ -31,7 +29,7 @@
                 
                 
               </div>
-              <textarea cols="40" rows="5" class="post" placeholder="What do you want to talk about?" ></textarea>
+              <textarea #text cols="40" rows="5" class="post" placeholder="What do you want to talk about?" ></textarea>
               <div class="hashtag">
 
             <a href="#" class="card-link">Add hashtag</a>
@@ -40,10 +38,11 @@
               </div>
           <div class="hashtag" >
             <i class="icon fas fa-plus"></i>
-            <i class="icon camera fa fa-camera"></i>
+            <input accept='image/*' #fileInput (change)="onFileChanged($event)" type="file"multiple style="display: none"><i (click)="fileInput.click()" class="icon camera fa fa-camera"></i>
+            
             <i class="icon video fas fa-video"></i>
             <i class="icon file far fa-file-alt"></i>
-          <button class="btn btn-primary postbtn">Post</button>
+          <button (click)="post(text)" class="btn btn-primary postbtn">Post</button>
           </div>
         </div>
       

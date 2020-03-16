@@ -474,7 +474,7 @@ export class UserService {
     this.Users.splice(index, 1);
     console.log(this.Users);
   }
-  updateById(newUser: User) {
+  update(newUser: User) {
     const index = this.Users.findIndex(u => u.id === newUser.id);
     this.Users[index] = newUser;
     console.log(this.Users);
