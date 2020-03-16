@@ -8,110 +8,7 @@ import { Injectable } from '@angular/core';
 export class UserService {
   constructor() { }
 
-  // currentUser: User = {};
-  currentUser: User = {
-    id: 1,
-    userName: 'bella',
-    email: 'bella@gmail.com',
-    password: 'bella123',
-    About: 'joined ITI, looking for front end position ',
-    workExp: {
-      id: 1,
-      title: 'frontend developer',
-      employmentType: { id: 1, name: 'full-time' },
-      companyName: 'Information Technology Institute (ITI)',
-      location: 'cairo',
-      isWorking: false,
-      startDate: 'June',
-      endDate: 'October',
-      description: 'ITI is good' , 
-      Headline:'Trainee Web & UI Development at Information Technology Institute(ITI)'
-    },
-    userInfo: {
-      profilePhoto: 'bella.jpg',
-      jobOpps: [
-        {
-          id: 1,
-          title: 'UI and Web development',
-          jobLocation: ['maadi', 'mokattam'],
-          jobTypes: [
-            { id: 2, name: 'part-time' },
-            { id: 3, name: 'temporary' }
-          ]
-        }, {
-          id: 2,
-          title: 'Frontend Web developer',
-          jobLocation: ['October'],
-          jobTypes: [
-            { id: 2, name: 'part-time' },
-            { id: 3, name: 'temporary' }
-          ]
-        }, {
-          id: 3,
-          title: 'full stack Web developer',
-          jobLocation: ['October'],
-          jobTypes: [
-            { id: 2, name: 'part-time' },
-            { id: 3, name: 'temporary' }
-          ]
-        }
-      ]
-    },
-    education: {
-      id: 1,
-      schoolName: 'Cairo University',
-      degree: 'Bachelors degree, Computer Science',
-      fieldOfStudy: ['computer programming', 'information technology'],
-      startYear: 2015,
-      endYear: 2019,
-      grade: 'good',
-      activity: 'joined SCCI',
-      description: 'computer science is good'
-    },
-    skills: [
-      { id: 1, name: 'problem solver' },
-      { id: 2, name: 'communication' }
-    ],
-    courses: [
-      {
-        id: 1,
-        name: 'Object-Oriented Programming in JavaScript, Udemy',
-        association: []
-      },{
-        id: 2,
-        name: 'JavaScript Tutorial, Udemy',
-        association: []
-      },{
-        id: 3,
-        name: 'Mastering React, Udemy',
-        association: []
-      }
-      // },{
-      //   id: 4,
-      //   name: 'The Complete JQuery Course from Beginner To Advanced, Udemy',
-      //   association: []
-      // }
-    ],
-    posts: [
-      {
-        userId: 1,
-        id: 1,
-        body:
-          // tslint:disable-next-line:max-line-length
-          '1.All of us know the compiler and some of them know the interpreter, but a lot of us don\'t know the transpiler.',
-        likes: 200,
-        replies: 40,
-        imageUrls: ['../../../assets/JTI.jpg'],
-        comments: [
-          {
-            commentId: 1,
-            body: 'Sevgi metin salihoglu ask olsun.cvbh.'
-          }
-        ]
-      }
-    ],
-    friendsId: [2, 3]
-  };
+  currentUser: User = {};
 
   Users: User[] = [
     {
@@ -199,23 +96,25 @@ export class UserService {
       ],
       posts: [
         {
-          userId: 1,
           id: 1,
+          userId: 1,
           body:
             // tslint:disable-next-line:max-line-length
-            '1.All of us know the compiler and some of them know the interpreter, but a lot of us don\'t know the transpiler.',
-          likes: 200,
-          replies: 40,
-          imageUrls: ['../../../assets/JTI.jpg'],
+            'salsabils\'s post',
+          likes: 50,
+          replies: 20,
+          imageUrls: [],
           comments: [
             {
               commentId: 1,
-              body: 'Sevgi metin salihoglu ask olsun.cvbh.',
-              likes: 10,
-              replies: 0
-            }
+              userId: 3,
+              body: 'comment',
+              likes: 5,
+              replies: 0,
+            },
           ]
-        }
+        },
+
       ],
       friendsId: [2, 3]
     },
