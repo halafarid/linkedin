@@ -1,14 +1,9 @@
+import { JobTypes } from './../../../Models/JobTypes';
 import { Component, OnInit, Input } from '@angular/core';
 import { MatChipInputEvent } from '@angular/material';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-
-export interface Titles {
-  name: string;
-}
-
-export interface Locations {
-  name: string;
-}
+import { FormGroup, FormControl, Validators, NgForm, FormArray } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
+import { JobOpportunities } from 'src/app/Models/JobOpportunities';
 
 @Component({
   selector: 'app-opportunities',
@@ -24,23 +19,35 @@ export class OpportunitiesComponent implements OnInit {
   selectable = true;
   removable = true;
   addOnBlur = true;
-
-  titles: Titles[] = [ ];
-  locations: Locations[] = [];
-
-  opporForm = new FormGroup({
+  jobTypes:JobTypes[]=[];
+  titles: string[] = [ ];
+  locations: string[] = [];
+  jobType:FormArray;
+  // opporForm:FormGroup;
+  opporForm=new FormGroup({
     locationName: new FormControl('', [
-      Validators.required
-    ])
-  });
+          Validators.required
+        ]),
+    jobType:new FormArray([]),
+   
+
+  })
+
+
+  // opporForm = new FormGroup({
+  //   locationName: new FormControl('', [
+  //     Validators.required
+  //   ])
+  // });
 
   addTitle(event: MatChipInputEvent): void {
+    console.log(event.value)
     const input = event.input;
     const value = event.value;
 
     // Add our fruit
     if ((value || '').trim()) {
-      this.titles.push({name: value.trim()});
+      this.titles.push(value.trim());
     }
 
     // Reset the input value
@@ -55,7 +62,7 @@ export class OpportunitiesComponent implements OnInit {
 
     // Add our fruit
     if ((value || '').trim()) {
-      this.locations.push({name: value.trim()});
+      this.locations.push(value.trim());
     }
 
     // Reset the input value
@@ -64,7 +71,7 @@ export class OpportunitiesComponent implements OnInit {
     }
   }
 
-  removeTitle(title: Titles): void {
+  removeTitle(title: string): void {
     const index = this.titles.indexOf(title);
 
     if (index >= 0) {
@@ -72,7 +79,7 @@ export class OpportunitiesComponent implements OnInit {
     }
   }
 
-  removeLocation(location: Locations): void {
+  removeLocation(location: string): void {
     const index = this.locations.indexOf(location);
 
     if (index >= 0) {
@@ -80,13 +87,61 @@ export class OpportunitiesComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor(public us:UserService) { }
 
   ngOnInit() {
+    this.jobTypes=this.us.jopTypes;
+this.titles=this.us.currentUser.userInfo.jobOpps.title;  
+this.locations=this.us.currentUser.userInfo.jobOpps.jobLocation;    
   }
 
   get locationName() {
     return this.opporForm.get('locationName');
+  }
+  getById(id: number): JobTypes {
+    id = +id;
+
+    if (id >= 0) {
+      const job = this.us.jopTypes.find(u => u.id === id);
+      return job;
+    }
+  }
+  onSave(opporForm:NgForm)
+  {
+    console.log(opporForm);
+
+   this.us.currentUser.userInfo.jobOpps.title=this.titles;
+   this.us.currentUser.userInfo.jobOpps.jobLocation=this.locations;
+   this.us.currentUser.userInfo.jobOpps.jobTypes=this.opporForm.getRawValue().jobType.map(j=>this.getById(j))
+this.us.update(this.us.currentUser)
+console.log(this.us.Users);
+
+    // console.log(this.opporForm.getRawValue());
+    //update
+
+    
+
+  }
+  onJobTypeClicked(event)
+  {
+    const checkBox=event.target.firstChild;
+     this.jobType= this.opporForm.controls.jobType as FormArray;
+    console.log(checkBox.checked)
+    if(!checkBox.checked)
+    {
+     this.jobType.push(new FormControl(checkBox.value));
+     console.log(checkBox.value)
+     
+    }
+    else
+    {
+     console.log(checkBox.value)
+
+      const index= this.jobType.controls.findIndex(a => a.value==+checkBox.value)
+      this.jobType.controls.splice(index,1);
+    }
+    console.log(this.jobType)
+
   }
 }
 

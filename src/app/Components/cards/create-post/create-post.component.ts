@@ -8,13 +8,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./create-post.component.scss']
 })
 export class CreatePostComponent implements OnInit {
-  privacy:string[]=[
-    "Anyone",
-    "Anyone + Twitter",
-    "Connections Only",
-    "Advanced Settings"
-
-  ]
+  privacy:string[]=[]
   imgUrls:string[]=[]
 currPrivacy:string="Anyone";
   constructor(public us:UserService) { 
@@ -69,6 +63,6 @@ onFileChanged(e)
  
 }
 ngOnInit() {
-
+this.privacy=this.us.privacy;
 }
 }
