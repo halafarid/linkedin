@@ -187,12 +187,12 @@
 
           
           <mat-card-subtitle
-          class="card__subtitle card--dark text--normal text--dark"
-          >{{edu.schoolName}}</mat-card-subtitle
-          >
+          class="card__subtitle card--dark text--normal text--dark">
+            {{edu.schoolName}}
+          </mat-card-subtitle>
 
           <button mat-button class="btn text--info card__icons card__icons-feat card__icons--mr">
-              <mat-icon routerLink="/education/edit"
+              <mat-icon routerLink="/education/edit" (click)="getEducation(edu.id)"
               class="text--primary">create</mat-icon>
           </button>
 

@@ -28,4 +28,8 @@ export class ProfileComponent implements OnInit {
   
   ngOnInit() {
   }
+
+  getEducation(id: number) {
+    this.userService.getEducationById(id);
+  }
 }
