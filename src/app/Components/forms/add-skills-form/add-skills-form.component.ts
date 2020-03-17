@@ -1,6 +1,6 @@
+import { Skills } from './../../../Models/Skills';
 import { Component, OnInit, Input } from '@angular/core';
 import { MatChipInputEvent } from '@angular/material';
-import { Skills } from 'src/app/Models/Skills';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormArray, FormControl, Validators } from '../../../../../node_modules/@angular/forms';
@@ -52,18 +52,15 @@ export class AddSkillsFormComponent implements OnInit {
   private router:Router) { }
 
   ngOnInit() {
-    // this.skillsForm = new FormGroup({
-    //   locationName: new FormControl('', [
-    //     Validators.required
-    //   ])
-    // });
-  }
-  get skill(){
-    return this.skillsForm.get('skill');
+  
   }
 
+
   onSubmit(){
-    this.user.addskills(this.skillsForm.value)
+    this.skills.map(skill=>this.user.currentUser.skills.push(skill))
+    this.user.update(this.user.currentUser)
+    console.log(this.user.currentUser)
+    console.log(this.user.Users);    
     this.router.navigate(['/profile'])
   }
 }
