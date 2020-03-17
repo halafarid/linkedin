@@ -19,6 +19,15 @@ export class CommentComponent implements OnInit {
 
   addComment(e) {
     const value = e.target.value;
-    this.comments.push({commentId: 1, userId: this.currentPost.userId, body: value, likes: 0, replies: 0});
+    this.currentPost.replies++;
+    this.comments.push({commentId: 1, userId: this.userService.currentUser.id, body: value, likes: 0, replies: 0,liked:false});
+    e.target.value="";
+  }
+  onLike(comment) {
+    if(!comment.liked)
+    {comment.likes++;comment.liked=!comment.liked;}
+    else
+    {comment.likes--;comment.liked=!comment.liked;}
+  
   }
 }

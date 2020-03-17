@@ -1,3 +1,4 @@
+import { Posts } from '../../../../../../linkedin/src/app/Models/Posts';
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 
@@ -10,12 +11,12 @@ export class PostCardComponent implements OnInit {
 
   ishover = false;
   ishoverReact = false;
-  oncomment = false;
+  // oncomment = false;
   
   currentUser = this.userService.currentUser;
   posts = [];
-  wholePosts = [];
-  currentPost = {};
+  wholePosts:Posts[] = [];
+  currentPost:Posts = {};
 
   constructor(public userService: UserService) { }
 
@@ -25,26 +26,43 @@ export class PostCardComponent implements OnInit {
     this.posts.map(postArr => {
       postArr.map(post => this.wholePosts.push(post));
     });
-
-    this.currentUser.posts.map(post => this.wholePosts.unshift(post));
+    this.currentUser.posts.map(post=>this.wholePosts.unshift(post))
   }
 
 
-  onhover() {
-      this.ishover = true;
-      this.ishoverReact = true;
+  onhover(post) {
+      // this.ishover = true;
+      // this.ishoverReact = true;
+      post.onHover=true;
+      post.onHoverReact=true;
   }
 
-  onleave() {
-  this.ishover = false;
+  onleave(post) {
+  // this.ishover = false;
+  post.onHover=false;
+
 
   }
-  onleaveReact() {
-    this.ishoverReact = false;
+  onleaveReact(post) {
+    // this.ishoverReact = false;
+    post.onHoverReact=false;
+
   }
 
   togglecomment(post) {
-    this.currentPost = post;
-    this.oncomment = !this.oncomment;
+    // this.currentPost = post;
+    post.onComment=!post.onComment;
+    // this.oncomment = !this.oncomment;
+  }
+  addLike(post)
+  {if(!post.liked)
+    {post.likes++;post.liked=!post.liked;}
+    else
+    {post.likes--;post.liked=!post.liked;}
+  }
+  onReactionClick(post)
+  {
+    post.onHover=false;
+      post.onHoverReact=false;
   }
 }

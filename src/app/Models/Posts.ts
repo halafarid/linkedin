@@ -10,6 +10,10 @@ export interface Posts
     likes?:number;
     replies?: number;
     imageUrls?:string[],
-    comments?:UserComment[]
+    comments?:UserComment[],
+    onComment?:boolean,
+    onHover?:boolean,
+    onHoverReact?:boolean;
+    liked?:boolean;
      
 }

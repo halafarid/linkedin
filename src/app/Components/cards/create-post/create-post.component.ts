@@ -22,6 +22,7 @@ export class CreatePostComponent implements OnInit {
   onSpanClicked() {
     this.block = false;
   }
+<<<<<<< HEAD
   // onWindowClick(modal)
   // {
   //   if (event.target == modal) {
@@ -37,6 +38,53 @@ export class CreatePostComponent implements OnInit {
   }
   onPrivacyClick(privacy) {
     this.currPrivacy = privacy;
+=======
+
+
+ 
+// onWindowClick(modal)
+// {
+  //   if (event.target == modal) {
+    //     modal.style.display = "none";
+    //   }
+    
+    // }
+ 
+onPrivacyClick(privacy)
+{
+  this.currPrivacy=privacy;
+}
+post(text)
+{ 
+ 
+  let post:Posts={
+id:this.us.currentUser.posts.length+1,
+userId:this.us.currentUser.id,
+body:text.value,
+likes:0,
+replies:0,
+onComment:false,
+onHoverReact:false,
+onHover:false,
+liked:false,
+imageUrls:this.imgUrls,
+comments:[]
+};
+this.us.currentUser.posts.push(post);
+this.us.update(this.us.currentUser)
+console.log(this.us.currentUser)
+console.log(this.us.Users)
+
+  // console.log(text.value)
+  // console.log(this.currPrivacy)
+  // console.log(this.imgUrls)
+}
+onFileChanged(e)
+{
+  this.imgUrls=[];
+  for (const img of e.target.files) {
+    this.imgUrls.push(img.name)
+>>>>>>> 56c3cdae35b403bbf1025a9fcf21f52d574c56f0
   }
   post(text) {
     let post: Posts = {

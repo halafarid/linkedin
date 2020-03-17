@@ -177,48 +177,36 @@
         </mat-list>
       </ng-container>
     
-      <ng-container  class="education"  *ngIf="currentUser.education!== undefined">
+      <ng-container  class="education" *ngFor="let edu of educationArr">
         <img
           mat-card-sm-image
           src="../../assets/profile/uni.png"
           class="card__details-img"
         />
         <mat-card-title-group class="card__details">
+
+          
           <mat-card-subtitle
-            class="card__subtitle card--dark text--normal text--dark"
-            >{{currentUser.education.schoolName}}</mat-card-subtitle
-          >
+          class="card__subtitle card--dark text--normal text--dark">
+            {{edu.schoolName}}
+          </mat-card-subtitle>
+
+          <button mat-button class="btn text--info card__icons card__icons-feat card__icons--mr">
+              <mat-icon routerLink="/education/edit" (click)="getEducation(edu.id)"
+              class="text--primary">create</mat-icon>
+          </button>
+
           <mat-card-subtitle class="card__subtitle text--sm"
-            >{{currentUser.education.degree}}</mat-card-subtitle
+            >{{edu.degree}}</mat-card-subtitle
           >
           <mat-card-subtitle class="card__subtitle text--sm text--info"
-            >{{currentUser.education.startYear}} - {{currentUser.education.endYear}}</mat-card-subtitle
+            >{{edu.startYear}} - {{edu.endYear}}</mat-card-subtitle
           >
         </mat-card-title-group>
+
+        <hr class="horizontal">
       </ng-container>
-    
-      <!-- <ng-container class="skills">
-        <mat-card-title class="card__title--lg card__title--pad"
-          >Skills & Endorsements</mat-card-title
-        >
-        <button
-          mat-stroked-button
-          class="btn btn-text--primary btn-border--primary"
-        >
-          Take skill quiz
-        </button>
-        <mat-list role="list">
-          <mat-list-item class="list__item text--dark list__item--underline"
-            >Angular 2+</mat-list-item
-          >
-          <mat-list-item class="list__item text--dark list__item--underline"
-            >EcmaScript6</mat-list-item
-          >
-          <mat-list-item class="list__item text--dark list__item--underline"
-            >Bootstrap4</mat-list-item
-          >
-        </mat-list>
-      </ng-container> -->
+      
   </app-profile-cards>
   
   <img

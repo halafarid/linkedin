@@ -1,6 +1,7 @@
 import { JobOpportunities } from './../Models/JobOpportunities';
 import { User } from './../Models/User';
 import { Injectable } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,7 @@ import { Injectable } from '@angular/core';
 export class UserService {
   constructor() { }
 
+  educationForm = {};
   currentUser: User = {};
 
   Users: User[] = [
@@ -59,17 +61,17 @@ export class UserService {
           }
         ]
       },
-      education: {
+      education: [{
         id: 1,
         schoolName: 'Cairo University',
         degree: 'Bachelors degree, Computer Science',
-        fieldOfStudy: ['computer programming', 'information technology'],
+        fieldOfStudy: 'information technology',
         startYear: 2015,
         endYear: 2019,
         grade: 'good',
         activity: 'joined SCCI',
         description: 'computer science is good'
-      },
+      }],
       skills: [
         { id: 1, name: 'problem solver' },
         { id: 2, name: 'communication' }
@@ -106,18 +108,24 @@ export class UserService {
           imageUrls: [],
           comments: [
             {
+              userId:3,
               commentId: 1,
-              userId: 3,
               body: 'comment',
               likes: 5,
               replies: 0,
+              liked:false,
+
             },
-          ]
+          ],
+          onComment:false,
+          onHover:false,
+          onHoverReact:false,
+          liked:false,
         },
 
       ],
       friendsId:[2,3],
-      
+    
     },
     {
       id: 2,
@@ -168,17 +176,17 @@ export class UserService {
           }
         ]
       },
-      education: {
+      education: [{
         id: 1,
         schoolName: 'computer science',
         degree: 'bachelors',
-        fieldOfStudy: ['computer programming', 'information technology'],
+        fieldOfStudy: 'information technology',
         startYear: 2015,
         endYear: 2019,
         grade: 'good',
         activity: 'joined SCCI',
         description: 'computer science is good'
-      },
+      }],
       skills: [
         { id: 1, name: 'problem solver' },
         { id: 2, name: 'communication' }
@@ -200,9 +208,16 @@ export class UserService {
           likes: 200,
           replies: 0,
           imageUrls: [],
-          comments: [ ]
-        }
+          comments: [ ],
+          onComment:false,
+          onHover:false,
+          onHoverReact:false,
+          liked:false,
+
+        },
+        
       ],
+      
       friendsId:[1],
       
 
@@ -256,17 +271,17 @@ export class UserService {
           }
         ]
       },
-      education: {
+      education: [{
         id: 1,
         schoolName: 'computer science',
         degree: 'bachelors',
-        fieldOfStudy: ['computer programming', 'information technology'],
+        fieldOfStudy: 'information technology',
         startYear: 2015,
         endYear: 2019,
         grade: 'good',
         activity: 'joined SCCI',
         description: 'computer science is good'
-      },
+      }],
       skills: [
         { id: 1, name: 'problem solver' },
         { id: 2, name: 'communication' }
@@ -291,19 +306,29 @@ export class UserService {
           comments: [
             {
               commentId: 1,
-              userId: 1,
+              userId: 2,
               body: '.1Sevgi metin salihoglu ask olsun.cvbh.',
               likes: 20,
               replies: 10,
+              liked:false,
+
             },
             {
               commentId: 1,
-              userId: 2,
+              userId: 3,
               body: '.2Sevgi metin salihoglu ask olsun.cvbh.',
               likes: 0,
-              replies: 0
-            }
-          ]
+              replies: 0,
+              liked:false,
+
+            },
+            
+          ],
+          onComment:false,
+          onHover:false,
+          onHoverReact:false,
+          liked:false,
+
         },
         {
           userId: 3,
@@ -320,9 +345,15 @@ export class UserService {
               userId: 2,
               body: 'comment 1',
               likes: 5,
-              replies: 2
+              replies: 2,
+              liked:false,
+
             }
-          ]
+          ],
+          onComment:false,
+          onHover:false,
+          onHoverReact:false,
+          liked:false,
         }
       ],
       friendsId:[1],
@@ -360,17 +391,17 @@ export class UserService {
           }
         ]
       },
-      education: {
+      education: [{
         id: 1,
         schoolName: 'computer science',
         degree: 'bachelors',
-        fieldOfStudy: ['computer programming', 'information technology'],
+        fieldOfStudy: 'information technology',
         startYear: 2015,
         endYear: 2019,
         grade: 'good',
         activity: 'joined SCCI',
         description: 'computer science is good'
-      },
+      }],
       skills: [
         { id: 1, name: 'problem solver' },
         { id: 2, name: 'communication' }
@@ -393,9 +424,15 @@ export class UserService {
           comments: [
             {
               commentId: 1,
-              body: 'Sevgi metin salihoglu ask olsun.cvbh.'
+              body: 'Sevgi metin salihoglu ask olsun.cvbh.',
+              liked:false
             }
-          ]
+          ],
+          onComment:false,
+          onHover:false,
+          onHoverReact:false,
+          liked:false,
+
         }
       ],
       friendsId:[1],
@@ -453,6 +490,23 @@ export class UserService {
       network.splice(index,1)
     }
     return network;
-  
+  }
+
+  addEducation = form => {
+    const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
+    form.id = selectUser.education.length + 1;
+    selectUser.education.push(form);
+    this.currentUser.education.push(form);
+  }
+
+  getEducationById = id => {
+    const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
+    this.educationForm = selectUser.education[id - 1];
+  }
+
+  editEducation = (form, id) => {
+    const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
+    selectUser.education[id - 1] = form;
+    console.log(this.Users);
   }
 }

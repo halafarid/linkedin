@@ -6,4 +6,5 @@ export interface UserComment
     body ?: string;
     likes?: number;
     replies?: number;
+    liked?:boolean;
 }

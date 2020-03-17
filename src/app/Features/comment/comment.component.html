@@ -17,7 +17,7 @@
 
       <div class="comment-reactions">
         <p>
-          <i class="far fa-thumbs-up"></i> . {{comment.likes}} Likes 
+          <i (click)="onLike(comment)" class="far fa-thumbs-up" style="cursor: pointer;"></i> . {{comment.likes}} Likes 
           <i class="far fa-comment-alt"></i> | . {{comment.replies}} Replies
         </p>
       </div>
