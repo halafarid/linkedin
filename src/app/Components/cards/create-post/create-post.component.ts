@@ -43,6 +43,11 @@ id:this.us.currentUser.posts.length+1,
 userId:this.us.currentUser.id,
 body:text.value,
 likes:0,
+replies:0,
+onComment:false,
+onHoverReact:false,
+onHover:false,
+liked:false,
 imageUrls:this.imgUrls,
 comments:[]
 };

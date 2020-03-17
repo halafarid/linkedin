@@ -35,22 +35,22 @@
          
         <div class="allicons" >
             
-      <div class="icons" *ngIf="(ishover || ishoverReact)"  (mouseleave)="onleaveReact()">
-            <img src="../../../assets/Reactions/like .jpeg" class="icons-react" />
-            <img src="../../../assets/Reactions/celebrate.jpeg" class="icons-react" />
-            <img src="../../../assets/Reactions/heart.jpeg" class="icons-react" />
-            <img src="../../../assets/Reactions/inspire.jpeg" class="icons-react" />
-            <img src="../../../assets/Reactions/curious.jpeg" class="icons-react" />
+      <div class="icons" *ngIf="(post.onHover || post.onHoverReact)"  (mouseleave)="onleaveReact(post)">
+            <img (click)="addLike(post)" (click)="onReactionClick(post)" src="../../../assets/Reactions/like .jpeg" class="icons-react" />
+            <img (click)="onReactionClick(post)" src="../../../assets/Reactions/celebrate.jpeg" class="icons-react" />
+            <img (click)="onReactionClick(post)" src="../../../assets/Reactions/heart.jpeg" class="icons-react" />
+            <img (click)="onReactionClick(post)" src="../../../assets/Reactions/inspire.jpeg" class="icons-react" />
+            <img (click)="onReactionClick(post)" src="../../../assets/Reactions/curious.jpeg" class="icons-react" />
         </div>
-        <button type="button" class="likebtn btn btn-light" (mouseenter)="onhover()"  (mouseleave)="onleave()" >
-                <i class="like far fa-thumbs-up"></i> Like</button>
+        <button (click)="addLike(post)" type="button" class="likebtn btn btn-light" [ngClass]="{'active':post.liked}" (mouseenter)="onhover(post)"  (mouseleave)="onleave(post)" >
+                <i  class="like far fa-thumbs-up "[ngClass]="{'active':post.liked}"></i> Like</button>
         <button type="button" class="btn btn-light" (click)="togglecomment(post)">
                 <i class="far fa-comment-alt"></i> Comment</button>
         <button type="button" class="btn btn-light">
                 <i class="fas fa-share"></i>Share</button>
         </div>
 
-        <app-comment *ngIf="oncomment" [currentPost]="currentPost"></app-comment>
+        <app-comment *ngIf="post.onComment" [currentPost]="post"></app-comment>
 </div>
 
   

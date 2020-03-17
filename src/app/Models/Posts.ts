@@ -11,5 +11,9 @@ export interface Posts
     replies?: number;
     imageUrls?:string[],
     comments?:UserComment[],
+    onComment?:boolean,
+    onHover?:boolean,
+    onHoverReact?:boolean;
+    liked?:boolean;
      
 }

@@ -111,13 +111,19 @@ export class UserService {
               body: 'comment',
               likes: 5,
               replies: 0,
+              liked:false,
+
             },
-          ]
+          ],
+          onComment:false,
+          onHover:false,
+          onHoverReact:false,
+          liked:false,
         },
 
       ],
       friendsId:[2,3],
-      
+    
     },
     {
       id: 2,
@@ -200,9 +206,16 @@ export class UserService {
           likes: 200,
           replies: 0,
           imageUrls: [],
-          comments: [ ]
-        }
+          comments: [ ],
+          onComment:false,
+          onHover:false,
+          onHoverReact:false,
+          liked:false,
+
+        },
+        
       ],
+      
       friendsId:[1],
       
 
@@ -295,15 +308,25 @@ export class UserService {
               body: '.1Sevgi metin salihoglu ask olsun.cvbh.',
               likes: 20,
               replies: 10,
+              liked:false,
+
             },
             {
               commentId: 1,
               userId: 3,
               body: '.2Sevgi metin salihoglu ask olsun.cvbh.',
               likes: 0,
-              replies: 0
-            }
-          ]
+              replies: 0,
+              liked:false,
+
+            },
+            
+          ],
+          onComment:false,
+          onHover:false,
+          onHoverReact:false,
+          liked:false,
+
         },
         {
           userId: 3,
@@ -320,9 +343,15 @@ export class UserService {
               userId: 2,
               body: 'comment 1',
               likes: 5,
-              replies: 2
+              replies: 2,
+              liked:false,
+
             }
-          ]
+          ],
+          onComment:false,
+          onHover:false,
+          onHoverReact:false,
+          liked:false,
         }
       ],
       friendsId:[1],
@@ -393,9 +422,15 @@ export class UserService {
           comments: [
             {
               commentId: 1,
-              body: 'Sevgi metin salihoglu ask olsun.cvbh.'
+              body: 'Sevgi metin salihoglu ask olsun.cvbh.',
+              liked:false
             }
-          ]
+          ],
+          onComment:false,
+          onHover:false,
+          onHoverReact:false,
+          liked:false,
+
         }
       ],
       friendsId:[1],
