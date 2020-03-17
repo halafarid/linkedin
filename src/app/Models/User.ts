@@ -10,7 +10,7 @@ export interface User{
     email?: string,
     password? : string,
     About? :string,
-    workExp?:WorkExperience,
+    workExp?:WorkExperience[],
     userInfo?:UserInfo
     education?:Education,
     skills ?:Skills[],

@@ -28,7 +28,7 @@
           <div class="card-info">
             <mat-card-title class="card__title">{{currentUser.userName}}</mat-card-title>
             <mat-card-subtitle class="card__subtitle"
-              >{{currentUser.workExp.Headline}}</mat-card-subtitle
+              >{{currentUser.workExp[0].Headline}}</mat-card-subtitle
             >
             <ul class="card__list ">
               <li class="list__item list--inline">Egypt</li>
@@ -47,7 +47,7 @@
               class="card__img-logo"
             />
             <a href="#" class="card__subtitle text--sm link link--default"
-              >{{currentUser.workExp.companyName}}</a
+              >{{currentUser.workExp[0].companyName}}</a
             >
           </mat-card-title-group>
         </mat-card-content>
@@ -119,28 +119,34 @@
         </mat-card-content>
       </ng-container>
     
-      <ng-container class="experience" >
-        <img
-          mat-card-sm-image
-          src="../../assets/profile/iti.png"
-          class="card__details-img"
-        />
-        <mat-card-title-group class="card__details" >
-          <mat-card-subtitle
-            class="card__subtitle card--dark text--normal text--dark"
-            >{{currentUser.workExp.title}}</mat-card-subtitle
-          >
-          <mat-card-subtitle class="card__subtitle text--sm"
-            >{{currentUser.workExp.companyName}}</mat-card-subtitle
-          >
-          <mat-card-subtitle class="card__subtitle text--sm text--info"
-            >{{currentUser.workExp.startDate}} - {{currentUser.workExp.endDate}} . {{calcDateOfWorkExp()}}mos</mat-card-subtitle
-          >
-          <mat-card-subtitle class="card__subtitle text--sm text--info"
-            >Cairo Governorate, Egypt</mat-card-subtitle
-          >
-        </mat-card-title-group>
-      </ng-container>
+
+     
+
+        <ng-container class="experience" *ngFor="let exp of workExps ; let i=index ">
+        
+          <img
+            mat-card-sm-image
+            src="../../assets/profile/iti.png"
+            class="card__details-img"
+          />
+          <mat-card-title-group class="card__details" >
+            <mat-card-subtitle
+              class="card__subtit le card--dark text--normal text--dark"
+              >{{exp.title}}</mat-card-subtitle
+            >
+            <mat-card-subtitle class="card__subtitle text--sm"
+              >{{exp.companyName}}</mat-card-subtitle
+            >
+            <mat-card-subtitle class="card__subtitle text--sm text--info"
+              >{{exp.startDate}} - {{exp.endDate}} . {{calcDateOfWorkExp(i)}}mos</mat-card-subtitle
+            >
+            <mat-card-subtitle class="card__subtitle text--sm text--info"
+              >Cairo Governorate, Egypt</mat-card-subtitle
+            >
+          </mat-card-title-group>
+          <hr class="horizontal">
+        </ng-container>
+  
       <ng-container class="skills">
         <mat-card-title class="card__title--lg card__title--pad">Skills & Endorsements</mat-card-title
         >

@@ -9,7 +9,9 @@ export interface WorkExperience
     location ?:string,
     isWorking?:boolean,
     startDate?:string,
+    startYear?:string;
     endDate?:string,
+    endYear?:string,
     description?:string,
     Headline?:string
 
