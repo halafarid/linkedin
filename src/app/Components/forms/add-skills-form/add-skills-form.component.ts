@@ -1,9 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatChipInputEvent } from '@angular/material';
+import { Skills } from 'src/app/Models/Skills';
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
+import { FormGroup, FormArray, FormControl, Validators } from '../../../../../node_modules/@angular/forms';
 
-export interface Skills {
-  name: string;
-}
+
 
 @Component({
   selector: 'app-add-skills-form',
@@ -14,21 +16,22 @@ export interface Skills {
 
 export class AddSkillsFormComponent implements OnInit {
   @Input() isShow = true;
-
+  skillsForm: FormGroup;
   visible = true;
   selectable = true;
   removable = true;
   addOnBlur = true;
-
+  // names:string[]=[];
   skills: Skills[] = [ ];
 
   add(event: MatChipInputEvent): void {
+    console.log(event.value);
     const input = event.input;
     const value = event.value;
 
     // Add our Skill
     if ((value || '').trim()) {
-      this.skills.push({name: value.trim()});
+      this.skills.push({name:value.trim()});
     }
 
     // Reset the input value
@@ -45,8 +48,22 @@ export class AddSkillsFormComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor(private user:UserService,
+  private router:Router) { }
 
   ngOnInit() {
+    // this.skillsForm = new FormGroup({
+    //   locationName: new FormControl('', [
+    //     Validators.required
+    //   ])
+    // });
+  }
+  get skill(){
+    return this.skillsForm.get('skill');
+  }
+
+  onSubmit(){
+    this.user.addskills(this.skillsForm.value)
+    this.router.navigate(['/profile'])
   }
 }

@@ -609,4 +609,18 @@ export class UserService {
     console.log(this.Users);
     console.log(this.currentUser);
   }
+  addskills =skillsForm => {
+    const User = this.Users.filter(user => user.id === this.currentUser.id)[0];
+    skillsForm.id = User.skills.length + 1;
+    User.skills.push(skillsForm);
+    this.currentUser.skills.push(skillsForm);
+    console.log(this.currentUser);
+  }
+  addcourses= courseForm =>{
+    const User = this.Users.filter(user => user.id === this.currentUser.id)[0];
+    courseForm.id = User.skills.length + 1;
+    User.skills.push(courseForm);
+    this.currentUser.skills.push(courseForm);
+
+}
 }

@@ -12,7 +12,7 @@
 
         <div class="form__field--mrg" appearance="fill">
             <label class="form__label">Course name <span class="form__req">*</span></label>
-            <input formControlName="schoolName" matInput class="form__input">
+            <input formControlName="name" matInput class="form__input">
             <mat-error *ngIf="name.touched && name.invalid">
                 <mat-error *ngIf="name.errors.required">Please enter a course name</mat-error>
             </mat-error>
@@ -32,7 +32,7 @@
         </mat-card>
 
         <div class="form__field--mrg">
-            <button mat-raised-button class="btn btn--primary btn--right">Save</button>
+            <button mat-raised-button class="btn btn--primary btn--right" (click)="onSubmit()">Save</button>
         </div>
     </form>
 </div>
