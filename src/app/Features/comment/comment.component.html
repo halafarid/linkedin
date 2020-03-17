@@ -1,20 +1,25 @@
- <ul class="list-group" *ngIf="comment" >
-    <li class="list-group-item borderless"> <i class="fas fa-user-circle"></i>
-      <input type="text" class=" form-control" placeholder="Add a comment..." aria-label="addcomment"
-        aria-describedby="addon-wrapping">
-      <i class="fas fa-camera"></i></li>
-    <li class="list-group-item "><i class="fas fa-user-circle"></i>
+<div class="list-group-item borderless"> <i class="fas fa-user-circle"></i>
+  <input type="text" class=" form-control" placeholder="Add a comment..." aria-label="addcomment"
+    aria-describedby="addon-wrapping" (keyup.enter)="addComment($event)">
+<i class="fas fa-camera"></i></div>
+
+<ul class="list-group">
+    <li class="list-group-item " *ngFor="let comment of comments" >
+      <i class="fas fa-user-circle"></i>
       <div class="comment">
         <p class="comment-paragraph">
-          Sara Tarek
+          {{userService.getById(comment.userId).userName}}
         </p>
         <p class="comment-paragraph--small">
-          Sevgi metin salihoglu ask olsun.cvbh.
+          {{comment.body}}
         </p>
       </div>
-      <div class="comment-reactions">
-        <p><i class="far fa-thumbs-up"></i> . 153 Likes | <i class="far fa-comment-alt"></i> . 31 Replies</p>
 
+      <div class="comment-reactions">
+        <p>
+          <i (click)="onLike(comment)" class="far fa-thumbs-up" style="cursor: pointer;"></i> . {{comment.likes}} Likes 
+          <i class="far fa-comment-alt"></i> | . {{comment.replies}} Replies
+        </p>
       </div>
     </li>
-  </ul>
+</ul>

@@ -1,17 +1,16 @@
 import { JobOpportunities } from './../Models/JobOpportunities';
 import { User } from './../Models/User';
 import { Injectable } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  constructor() {
-    
-    
-  }
+  constructor() { }
 
-  currentUser :User = {};
+  educationForm = {};
+  currentUser: User = {};
 
   months = [
     'January', 'February', 'March', 'April', 'May',
@@ -69,17 +68,17 @@ export class UserService {
           }
         ]
       },
-      education: {
+      education: [{
         id: 1,
         schoolName: 'Cairo University',
         degree: 'Bachelors degree, Computer Science',
-        fieldOfStudy: ['computer programming', 'information technology'],
+        fieldOfStudy: 'information technology',
         startYear: 2015,
         endYear: 2019,
         grade: 'good',
         activity: 'joined SCCI',
         description: 'computer science is good'
-      },
+      }],
       skills: [
         { id: 1, name: 'problem solver' },
         { id: 2, name: 'communication' }
@@ -107,21 +106,33 @@ export class UserService {
       posts: [
         {
           id: 1,
+          userId: 1,
           body:
             // tslint:disable-next-line:max-line-length
-            'Looking to make a positive difference? Take part in our internship challenge and compete to win a 6-month paid global internship at JTI, Japan Tobacco International.',
-          likes: 200,
-          ImageUrls: ['JTI.jpg'],
+            'salsabils\'s post',
+          likes: 50,
+          replies: 20,
+          imageUrls: [],
           comments: [
             {
+              userId:3,
               commentId: 1,
-              body: 'Sevgi metin salihoglu ask olsun.cvbh.'
-            }
-          ]
-        }
+              body: 'comment',
+              likes: 5,
+              replies: 0,
+              liked:false,
+
+            },
+          ],
+          onComment:false,
+          onHover:false,
+          onHoverReact:false,
+          liked:false,
+        },
+
       ],
       friendsId:[2,3],
-      
+    
     },
     {
       id: 2,
@@ -172,17 +183,17 @@ export class UserService {
           }
         ]
       },
-      education: {
+      education: [{
         id: 1,
         schoolName: 'computer science',
         degree: 'bachelors',
-        fieldOfStudy: ['computer programming', 'information technology'],
+        fieldOfStudy: 'information technology',
         startYear: 2015,
         endYear: 2019,
         grade: 'good',
         activity: 'joined SCCI',
         description: 'computer science is good'
-      },
+      }],
       skills: [
         { id: 1, name: 'problem solver' },
         { id: 2, name: 'communication' }
@@ -196,20 +207,24 @@ export class UserService {
       ],
       posts: [
         {
+          userId: 2,
           id: 1,
           body:
             // tslint:disable-next-line:max-line-length
             'Looking to make a positive difference? Take part in our internship challenge and compete to win a 6-month paid global internship at JTI, Japan Tobacco International.',
           likes: 200,
-          ImageUrls: ['JTI.jpg'],
-          comments: [
-            {
-              commentId: 1,
-              body: 'Sevgi metin salihoglu ask olsun.cvbh.'
-            }
-          ]
-        }
+          replies: 0,
+          imageUrls: [],
+          comments: [ ],
+          onComment:false,
+          onHover:false,
+          onHoverReact:false,
+          liked:false,
+
+        },
+        
       ],
+      
       friendsId:[1],
       
 
@@ -263,17 +278,17 @@ export class UserService {
           }
         ]
       },
-      education: {
+      education: [{
         id: 1,
         schoolName: 'computer science',
         degree: 'bachelors',
-        fieldOfStudy: ['computer programming', 'information technology'],
+        fieldOfStudy: 'information technology',
         startYear: 2015,
         endYear: 2019,
         grade: 'good',
         activity: 'joined SCCI',
         description: 'computer science is good'
-      },
+      }],
       skills: [
         { id: 1, name: 'problem solver' },
         { id: 2, name: 'communication' }
@@ -288,17 +303,64 @@ export class UserService {
       posts: [
         {
           id: 1,
+          userId: 3,
           body:
             // tslint:disable-next-line:max-line-length
-            'Looking to make a positive difference? Take part in our internship challenge and compete to win a 6-month paid global internship at JTI, Japan Tobacco International.',
-          likes: 200,
-          ImageUrls: ['JTI.jpg'],
+            'All of us know the compiler and some of them know the interpreter, but a lot of us don\'t know the transpiler.',
+          likes: 100,
+          replies: 20,
+          imageUrls: ['../../../assets/JTI.jpg'],
           comments: [
             {
               commentId: 1,
-              body: 'Sevgi metin salihoglu ask olsun.cvbh.'
+              userId: 2,
+              body: '.1Sevgi metin salihoglu ask olsun.cvbh.',
+              likes: 20,
+              replies: 10,
+              liked:false,
+
+            },
+            {
+              commentId: 1,
+              userId: 3,
+              body: '.2Sevgi metin salihoglu ask olsun.cvbh.',
+              likes: 0,
+              replies: 0,
+              liked:false,
+
+            },
+            
+          ],
+          onComment:false,
+          onHover:false,
+          onHoverReact:false,
+          liked:false,
+
+        },
+        {
+          userId: 3,
+          id: 2,
+          body:
+            // tslint:disable-next-line:max-line-length
+            'post 3',
+          likes: 0,
+          replies: 0,
+          imageUrls: [],
+          comments: [
+            {
+              commentId: 1,
+              userId: 2,
+              body: 'comment 1',
+              likes: 5,
+              replies: 2,
+              liked:false,
+
             }
-          ]
+          ],
+          onComment:false,
+          onHover:false,
+          onHoverReact:false,
+          liked:false,
         }
       ],
       friendsId:[1],
@@ -336,17 +398,17 @@ export class UserService {
           }
         ]
       },
-      education: {
+      education: [{
         id: 1,
         schoolName: 'computer science',
         degree: 'bachelors',
-        fieldOfStudy: ['computer programming', 'information technology'],
+        fieldOfStudy: 'information technology',
         startYear: 2015,
         endYear: 2019,
         grade: 'good',
         activity: 'joined SCCI',
         description: 'computer science is good'
-      },
+      }],
       skills: [
         { id: 1, name: 'problem solver' },
         { id: 2, name: 'communication' }
@@ -365,13 +427,19 @@ export class UserService {
             // tslint:disable-next-line:max-line-length
             'Looking to make a positive difference? Take part in our internship challenge and compete to win a 6-month paid global internship at JTI, Japan Tobacco International.',
           likes: 200,
-          ImageUrls: ['JTI.jpg'],
+          imageUrls: ['JTI.jpg'],
           comments: [
             {
               commentId: 1,
-              body: 'Sevgi metin salihoglu ask olsun.cvbh.'
+              body: 'Sevgi metin salihoglu ask olsun.cvbh.',
+              liked:false
             }
-          ]
+          ],
+          onComment:false,
+          onHover:false,
+          onHoverReact:false,
+          liked:false,
+
         }
       ],
       friendsId:[1],
@@ -452,6 +520,7 @@ export class UserService {
     
 
   // }
+
   getAll(): User[] {
     return this.Users;
   }
@@ -487,7 +556,7 @@ export class UserService {
     this.Users.splice(index, 1);
     console.log(this.Users);
   }
-  updateById(newUser: User) {
+  update(newUser: User) {
     const index = this.Users.findIndex(u => u.id === newUser.id);
     this.Users[index] = newUser;
     console.log(this.Users);
@@ -509,6 +578,23 @@ export class UserService {
       network.splice(index,1)
     }
     return network;
-  
+  }
+
+  addEducation = form => {
+    const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
+    form.id = selectUser.education.length + 1;
+    selectUser.education.push(form);
+    this.currentUser.education.push(form);
+  }
+
+  getEducationById = id => {
+    const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
+    this.educationForm = selectUser.education[id - 1];
+  }
+
+  editEducation = (form, id) => {
+    const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
+    selectUser.education[id - 1] = form;
+    console.log(this.Users);
   }
 }

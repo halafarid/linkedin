@@ -12,7 +12,7 @@ export interface User{
     About? :string,
     workExp?:WorkExperience[],
     userInfo?:UserInfo
-    education?:Education,
+    education?:Education[],
     skills ?:Skills[],
     courses?:Courses[],
     posts?:Posts[],

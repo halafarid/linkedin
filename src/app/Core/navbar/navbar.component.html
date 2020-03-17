@@ -27,8 +27,8 @@
       </div>
     </div>
     <div class="left">
-      <div class="nav-btn">
-        <mat-icon
+      <div class="nav-btn" routerLink="/home" >
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
           routerLink="/home"
           aria-hidden="false"
           aria-label="Example home icon"
@@ -36,11 +36,12 @@
         >
         <span routerLink="/home">Home</span>
       </div>
-      <div class="nav-btn">
+
+      <div class="nav-btn"  routerLink="/network">
         <mat-icon routerLink="/network">group</mat-icon>
         <span routerLink="/network">My Network</span>
       </div>
-      <div class="nav-btn">
+      <div class="nav-btn" routerLink="/jobs">
         <mat-icon>card_travel</mat-icon>
         <span>Jobs</span>
       </div>
@@ -53,8 +54,8 @@
         <span>Notifications</span>
       </div>
 
-      <button id="me" mat-button>
-        <div class="mediv">
+       <button id="me" mat-button> 
+        <div class="mediv" routerLink="/profile">
           <img
             routerLink="/profile"
             id="profile-img"
@@ -62,7 +63,7 @@
           />
         </div>
         <div>
-          <span routerLink="/profile">Me</span>
+          <span >Me</span>
           <i class="fas fa-sort-down"></i>
         </div>
       </button>

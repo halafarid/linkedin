@@ -48,17 +48,13 @@
     </mat-card-content>
 </mat-card>
   
-  <mat-card class="card"  *ngIf="currentUser.education!== undefined">
+<mat-card class="card"  *ngIf="currentUser.education!== undefined">
     <mat-card-title class="card__title--lg">Education</mat-card-title>
     <mat-card-content class="card__icons">
         <button mat-button class="btn text--info card__icons-feat">
             <mat-icon  routerLink= "/education/add"
             class="text--primary">add</mat-icon>
-        </button>
-        <button mat-button class="btn text--info card__icons-feat">
-            <mat-icon routerLink="/education/edit"
-            class="text--primary">create</mat-icon>
-        </button>            
+        </button>           
     </mat-card-content>
     <mat-card-content class="card__content card--flex">
         <ng-content select=".education"></ng-content>

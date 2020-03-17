@@ -10,6 +10,7 @@ import { WorkExperience } from './../../Models/WorkExperience';
 })
 export class ProfileComponent implements OnInit {
 
+
    currentUser:User={};
     workExps :WorkExperience[]=[];
    months=[];
@@ -18,19 +19,31 @@ export class ProfileComponent implements OnInit {
     this.months=this.userService.months;
   
    }
-   calcDateOfWorkExp(index)
-   {
 
+
+  
+   educationArr = this.currentUser.education;
+
+    
+    calcDateOfWorkExp(index)
+    {
     var endMonth = this.months.indexOf(this.currentUser.workExp[index].endDate);
     var startMonth = this.months.indexOf(this.currentUser.workExp[index].startDate);
     var month = endMonth-startMonth;
     return month ? month + 1 : 0;
-   }
-
+  }
+  
   ngOnInit() {
+
     this.currentUser=this.userService.currentUser;
     this.workExps=this.currentUser.workExp;
     console.log(this.workExps);
+
   }
 
+  getEducation(id: number) {
+    this.userService.getEducationById(id);
+
+
+}
 }

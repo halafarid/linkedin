@@ -65,6 +65,7 @@ import {
   MatToolbarModule,
   MatChipsModule,
 } from '@angular/material';
+import { JobsComponent } from './components/jobs/jobs.component';
 import { SearchComponent } from './components/search/search.component';
 import { PeopleCardComponent } from './components/cards/people-card/people-card.component';
 import { SearchCardSmComponent } from './components/cards/search-card-sm/search-card-sm.component';
@@ -110,6 +111,7 @@ import { SearchCardSmComponent } from './components/cards/search-card-sm/search-
     ProfileComponent,
     NetworkComponent,
     ConnectionsComponent,
+    JobsComponent,
     SearchComponent,
     PeopleCardComponent,
     SearchCardSmComponent,
