@@ -108,6 +108,8 @@
 
     &__details {
         margin-left: 40px;
+        position: relative;
+        width: 84%;
 
         &-img {
             padding-top: 15px;
@@ -152,6 +154,11 @@
             &:hover {
                 background-color: #93d8fc52;
             }
+
+        }
+
+        &--mr {
+            margin: 0;
         }
 
         &--inline {

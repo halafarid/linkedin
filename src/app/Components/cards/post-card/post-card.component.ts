@@ -1,4 +1,4 @@
-import { Posts } from './../../../../../linkedin/src/app/Models/Posts';
+import { Posts } from '../../../../../../linkedin/src/app/Models/Posts';
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 
