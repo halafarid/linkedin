@@ -4,6 +4,7 @@ import { MatChipInputEvent } from '@angular/material';
 import { FormGroup, FormControl, Validators, NgForm, FormArray } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { JobOpportunities } from 'src/app/Models/JobOpportunities';
+import { Router } from '../../../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-opportunities',
@@ -87,7 +88,7 @@ export class OpportunitiesComponent implements OnInit {
     }
   }
 
-  constructor(public us:UserService) { }
+  constructor(public us:UserService, private router:Router) { }
 
   ngOnInit() {
     this.jobTypes=this.us.jopTypes;
@@ -115,7 +116,7 @@ this.locations=this.us.currentUser.userInfo.jobOpps.jobLocation;
    this.us.currentUser.userInfo.jobOpps.jobTypes=this.opporForm.getRawValue().jobType.map(j=>this.getById(j))
 this.us.update(this.us.currentUser)
 console.log(this.us.Users);
-
+this.router.navigate(['/profile']);
     // console.log(this.opporForm.getRawValue());
     //update
 
