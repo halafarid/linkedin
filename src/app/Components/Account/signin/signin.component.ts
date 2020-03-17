@@ -44,7 +44,7 @@ export class SigninComponent implements OnInit {
         }
       })[0];
       this.userService.currentUser=userAccount;
-      console.log(this.userService.currentUser)
+      
       userAccount !== undefined ? this.router.navigate(['/home'], { replaceUrl: true }) : this.isValid = true;
     }
   }

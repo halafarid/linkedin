@@ -12,6 +12,7 @@ export class PostCardComponent implements OnInit {
   ishover = false;
   ishoverReact = false;
   // oncomment = false;
+  reaction="";
   
   currentUser = this.userService.currentUser;
   posts = [];
@@ -60,8 +61,10 @@ export class PostCardComponent implements OnInit {
     else
     {post.likes--;post.liked=!post.liked;}
   }
-  onReactionClick(post)
+  onReactionClick(post,react)
   {
+    if(react=="celebrate")
+    {this.reaction="celebrate"}
     post.onHover=false;
       post.onHoverReact=false;
   }

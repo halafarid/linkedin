@@ -3,9 +3,8 @@
     <form class="form" [formGroup]="myForm">
         <!-- <ng-container class="header"> -->
             <ng-container>
-            <label *ngIf="this.router.url==='/experience/add'; else editroute" class="form__title">Add experience</label>
+            <label class="form__title">{{formtitle}}</label>
             </ng-container>
-            <ng-template  #editroute ><label class="form__title">Edit experience</label></ng-template>
 
         <!-- </ng-container> -->
         <mat-icon routerLink="/profile"
@@ -24,101 +23,71 @@
 
             <div class="form__field">
                 <label class="form__label">Employment type</label>
-                <select matNativeControl required class="form__select form__select--full">
+                <select formControlName="employmentType" matNativeControl  class="form__select form__select--full">
                     <option value="-">-</option>
-                    <option value="1">Full-time</option>
-                    <option value="2">Part-time</option>
-                    <option value="3">Self-employed</option>
-                    <option value="4">Freelance</option>
-                    <option value="5">Contract</option>
-                    <option value="6">Internship</option>
-                    <option value="7">Apprenticeship</option>
+                    <option [value]="i" *ngFor="let type of employmentTypes ; let index = i">{{type}}</option>
+                    
                 </select>
             </div>
 
             <div class="form__field">
                 <label class="form__label">Company <span class="form__req">*</span></label>
-                <input matInput placeholder="Ex: Microsoft" class="form__input">
-                <mat-error *ngIf="company.touched && company.invalid">
-                    <mat-error *ngIf="company.errors.required">Please enter your company</mat-error>
-                    <mat-error *ngIf="company.errors.minlength">company must be minimum {{ company.errors.minlength.requiredLength }} characters</mat-error>
+                <input matInput formControlName="companyName" placeholder="Ex: Microsoft" class="form__input">
+                <mat-error *ngIf="companyName.touched && companyName.invalid">
+                    <mat-error *ngIf="companyName.errors.required">Please enter your companyName</mat-error>
+                    <mat-error *ngIf="companyName.errors.minlength">companyName must be minimum {{ companyName.errors.minlength.requiredLength }} characters</mat-error>
                 </mat-error>
             </div>
 
             <div class="form__field">
                 <label class="form__label">Location</label>
-                <input matInput placeholder="Ex: London, United Kingdom" class="form__input">
+                <input matInput formControlName="location" placeholder="Ex: London, United Kingdom" class="form__input">
+                <mat-error *ngIf="location.touched && location.invalid">
+                    <mat-error *ngIf="location.errors.required">Please enter your company location</mat-error>
+                </mat-error>
             </div>
 
-            <mat-checkbox class="form__checkbox" (click)="onChecked()">I am currently working in this role</mat-checkbox>
+            <mat-checkbox class="form__checkbox"  (click)="onCheckboxClicked($event)">I am currently working in this role</mat-checkbox>
 
             <div class="form__field--inline">
                 <div class="form__field--w">
                     <label>Start Date <span class="form__req">*</span></label>
-                    <select matNativeControl required class="form__select form__select--sm">
+                    <select formControlName="startDate" matNativeControl  class="form__select form__select--sm">
                         <option value="1">Month</option>
-                        <option value="2">January</option>
-                        <option value="3">February</option>
-                        <option value="4">March</option>
-                        <option value="5">April</option>
-                        <option value="6">May</option>
-                        <option value="7">June</option>
-                        <option value="8">July</option>
-                        <option value="9">August</option>
-                        <option value="10">September</option>
-                        <option value="11">October</option>
-                        <option value="12">November</option>
-                        <option value="13">December</option>
+                        <option *ngFor="let mon of months ; let i = index" [value]="mon">{{mon}}</option>
+                        
                     </select>
                 </div>
                 <div class="form__field--w">
                     <label></label>
-                    <select matNativeControl required class="form__select form__select--nolbl form__select--sm">
+                    <select matNativeControl  formControlName="startYear" class="form__select form__select--nolbl form__select--sm">
                         <option value="Year">Year</option>
-                        <option value="2015">2015</option>
-                        <option value="2016">2016</option>
-                        <option value="2017">2017</option>
-                        <option value="2018">2018</option>
-                        <option value="2019">2019</option>
-                        <option value="2020">2020</option>
+                        <option *ngFor="let year of years" [value]="year">{{year}}</option>
+                        
                     </select>
                 </div>
                 <div class="form__field--w" >
                     <label>End Date <span class="form__req">*</span></label>
-                    <select matNativeControl required class="form__select form__select--sm" *ngIf="!isChecked">
+                    <select matNativeControl formControlName="endDate"  class="form__select form__select--sm" *ngIf="!isChecked">
+                    
                         <option value="1">Month</option>
-                        <option value="2">January</option>
-                        <option value="3">February</option>
-                        <option value="4">March</option>
-                        <option value="5">April</option>
-                        <option value="6">May</option>
-                        <option value="7">June</option>
-                        <option value="8">July</option>
-                        <option value="9">August</option>
-                        <option value="10">September</option>
-                        <option value="11">October</option>
-                        <option value="12">November</option>
-                        <option value="13">December</option>
+                        <option *ngFor="let mon of months ; let i = index" [value]="mon">{{mon }}</option>
                     </select>
                     <p *ngIf="isChecked">Present</p>
                 </div>
                 <div class="form__field--w" *ngIf="!isChecked">
                     <label></label>
-                    <select matNativeControl required class="form__select form__select--nolbl form__select--sm">
+                    <select formControlName="endYear" matNativeControl  class="form__select form__select--nolbl form__select--sm">
                         <option value="Year">Year</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                        <option value="2025">2025</option>
+                        <option *ngFor="let year of years" [value]="year+5">{{year+5}}</option>
+
                     </select>
                 </div>
             </div>
 
             <div class="form__field" *ngIf="isChecked">
                 <label class="form__label">Headline <span class="form__req">*</span></label>
-                <textarea class="form__textarea form__textarea--sm"></textarea>
+                <textarea formControlName="headline" class="form__textarea form__textarea--sm"></textarea>
                 <mat-error *ngIf="headline.touched && headline.invalid">
                     <mat-error *ngIf="headline.errors.required">Please enter your headline</mat-error>
                     <mat-error *ngIf="headline.errors.minlength">headline must be minimum {{ headline.errors.minlength.requiredLength }} characters</mat-error>
@@ -127,12 +96,15 @@
 
             <div class="form__field">
                 <label class="form__label">Description</label>
-                <textarea class="form__textarea"></textarea>
+                <textarea formControlName="description" class="form__textarea"></textarea>
+                <mat-error *ngIf="description.touched && description.invalid">
+                    <mat-error *ngIf="description.errors.required">Please enter Description</mat-error>
+                </mat-error>
             </div>
 
             <div class="form__field">
                 <label class="form__label text--info">Media<br>Add or link to external documents, photos, sites, videos, and presentations.</label>
-                <button mat-raised-button class="btn btn--primary btn--w">Upload</button>
+                <button mat-raised-button class="btn btn--primary btn--w" type="file">Upload</button>
                 <button mat-stroked-button class="btn btn-text--primary text--normal btn--w">Link</button>
                 <a href="#" class="link text--xs">Supported formats</a>
             </div>
@@ -149,7 +121,7 @@
                 </mat-card-content>
             </mat-card>
 
-            <button mat-raised-button class="btn btn--primary btn--right">Save</button>
+            <button  mat-raised-button class="btn btn--primary btn--right" (click)="handleSubmit()">{{formBtn}}</button>
         <!-- </ng-container> -->
     </form>
 </div>

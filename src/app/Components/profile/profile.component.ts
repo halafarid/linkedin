@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/Models/User';
+import { WorkExperience } from './../../Models/WorkExperience';
 
 @Component({
   selector: 'app-profile',
@@ -8,24 +10,40 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ProfileComponent implements OnInit {
 
-   currentUser = this.userService.currentUser;
+
+   currentUser:User={};
+    workExps :WorkExperience[]=[];
+   months=[];
+  constructor( public userService : UserService) {
+
+    this.months=this.userService.months;
+  
+   }
+
+
+  
    educationArr = this.currentUser.education;
 
-   months = [
-     'January', 'February', 'March', 'April', 'May',
-     'June', 'July', 'August', 'September',
-     'October', 'November', 'December'
-    ];
-    constructor( public userService : UserService) { }
     
-    calcDateOfWorkExp()
+    calcDateOfWorkExp(index)
     {
-    var endMonth = this.months.indexOf(this.currentUser.workExp.endDate);
-    var startMonth = this.months.indexOf(this.currentUser.workExp.startDate);
+    var endMonth = this.months.indexOf(this.currentUser.workExp[index].endDate);
+    var startMonth = this.months.indexOf(this.currentUser.workExp[index].startDate);
     var month = endMonth-startMonth;
     return month ? month + 1 : 0;
   }
   
   ngOnInit() {
+
+    this.currentUser=this.userService.currentUser;
+    this.workExps=this.currentUser.workExp;
+    console.log(this.workExps);
+
   }
+
+  getEducation(id: number) {
+    this.userService.getEducationById(id);
+
+
+}
 }

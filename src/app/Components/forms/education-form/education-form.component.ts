@@ -13,19 +13,20 @@ export class EducationFormComponent implements OnInit {
 
   currentUser = this.userService.currentUser;
 
-  educationForm = new FormGroup({
+  eduForm = new FormGroup({
     schoolName: new FormControl('', [
       Validators.required,
       Validators.minLength(3)
     ]),
     degree: new FormControl(),
-    FieldOfStudy: new FormControl(),
+    fieldOfStudy: new FormControl(),
     startYear: new FormControl(),
     endYear: new FormControl(),
     grade: new FormControl(),
-    activities: new FormControl(),
+    activity: new FormControl(),
     description: new FormControl()
   });
+
 
   constructor(
     public router: Router,
@@ -33,21 +34,28 @@ export class EducationFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if (this.isAdd) {
-      console.log('add')
-    } else {
-      console.log('edit');
+    if (!this.isAdd) {
+      const eduObj = this.userService.educationForm;
+      const education = this.eduForm.controls;
+      // tslint:disable-next-line: forin
+      
+      // for (const edu in education) {
+      //   education[edu].value = eduObj[edu];
+      // }
     }
   }
 
   submit() {
-    if (this.isAdd && this.educationForm.valid) {
-      this.userService.addEducation(this.educationForm.value);
+    if (this.isAdd && this.eduForm.valid) {
+      this.userService.addEducation(this.eduForm.value);
+      this.router.navigate(['/profile']);
+    } else if (!this.isAdd) {
+      // this.userService.editEducation(this.eduForm.value, this.userService.educationForm.id);
       this.router.navigate(['/profile']);
     }
   }
 
   get schoolName() {
-    return this.educationForm.get('schoolName');
+    return this.eduForm.get('schoolName');
   }
 }

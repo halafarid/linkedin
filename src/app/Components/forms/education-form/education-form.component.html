@@ -1,6 +1,6 @@
 <app-profile></app-profile>
 <div class="overlay" *ngIf="isShow">
-    <form class="form" [formGroup]="educationForm" (submit)="submit()">
+    <form class="form" [formGroup]="eduForm" (submit)="submit()">
 
         <label class="form__title">{{isAdd ? 'Add' : 'Edit'}} education</label>
         <mat-icon routerLink="/profile"
@@ -8,7 +8,7 @@
         <hr class="horizontal__form">
 
         <div class="form__field" appearance="fill">
-            <label class="form__label">School <span class="form__req">*</span></label>
+            <label class="form_label">School <span class="form_req">*</span></label>
             <input formControlName="schoolName" matInput placeholder="Ex: Boston University" class="form__input">
             <mat-error *ngIf="schoolName.touched && schoolName.invalid && isAdd">
                 <mat-error *ngIf="schoolName.errors.required">Please enter a school name</mat-error>
@@ -18,18 +18,18 @@
 
         <div class="form__field">
             <label class="form__label">Degree</label>
-            <input matInput placeholder="Ex: Bachelor's" class="form__input">
+            <input formControlName="degree" matInput placeholder="Ex: Bachelor's" class="form__input">
         </div>
 
         <div class="form__field">
             <label class="form__label">Field of study</label>
-            <input matInput placeholder="Ex: Business" class="form__input">
+            <input formControlName="fieldOfStudy" matInput placeholder="Ex: Business" class="form__input">
         </div>
 
         <div class="form__field--inline">
             <div class="form__field--w">
                 <label>Start Year</label>
-                <select matNativeControl required class="form__select">
+                <select formControlName="startYear" matNativeControl required class="form__select">
                     <option value="Year">Year</option>
                     <option value="2015">2015</option>
                     <option value="2016">2016</option>
@@ -41,7 +41,7 @@
             </div>
             <div class="form__field--w">
                 <label>End Year (or expected)</label>
-                <select matNativeControl required class="form__select">
+                <select formControlName="endYear" matNativeControl required class="form__select">
                     <option value="Year">Year</option>
                     <option value="2020">2020</option>
                     <option value="2021">2021</option>
@@ -55,18 +55,18 @@
 
         <div class="form__field">
             <label class="form__label">Grade</label>
-            <input matInput class="form__input">
+            <input formControlName="grade" matInput class="form__input">
         </div>
 
         <div class="form__field">
             <label class="form__label">Activities and societies</label>
-            <textarea class="form__textarea"></textarea>
+            <textarea formControlName="activity" class="form__textarea"></textarea>
             <mat-hint class="form__hint--italic">Ex: Alpha Phi Omega, Marching Band, Volleyball</mat-hint>
         </div>
 
         <div class="form__field">
             <label class="form__label">Description</label>
-            <textarea class="form__textarea"></textarea>
+            <textarea formControlName="description" class="form__textarea"></textarea>
         </div>
 
         <div class="form__field">
@@ -76,7 +76,7 @@
             <a href="#" class="link text--xs">Supported formats</a>
         </div>
 
-        <mat-card class="card__content card--sub card--light card--flex form__card">
+        <mat-card class="card_content card--sub card--light card--flex form_card">
             <mat-slide-toggle></mat-slide-toggle>
             
             <mat-card-content>
