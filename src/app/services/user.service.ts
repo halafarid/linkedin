@@ -39,7 +39,7 @@ export class UserService {
   educationForm = {
     id: 1
   };
-  // currentUser: User = {};
+    // currentUser: User = {};
 
   currentUser: User = {
     id: 1,
@@ -604,13 +604,12 @@ export class UserService {
 
    getFormById <T> (id:number, obj : string) 
    {
-     debugger;
     const user=this.Users.filter(user => user.id===this.currentUser.id)[0];
     let form = {};
     if(obj==='workExp')
     {
       form = user.workExp.filter(exp => exp.id===id)[0];
-     this.workExpId=id;
+      this.workExpId = id;
     }
     console.log(form);
     
@@ -620,6 +619,7 @@ export class UserService {
    getEducationById = id => {
     const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
     this.educationForm = selectUser.education[id - 1];
+    console.log(id);
   }
 
 

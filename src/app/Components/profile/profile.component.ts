@@ -26,9 +26,7 @@ export class ProfileComponent implements OnInit {
     // this.months=this.userService.months;
     this.currentUser=this.userService.currentUser;
     let user = this.userService.Users.filter(user => user.id===this.currentUser.id)[0];
-    debugger;
     this.workExps=user.workExp;
-  
    }
   
   ngOnInit() {
@@ -52,9 +50,8 @@ export class ProfileComponent implements OnInit {
  
 
   getEducation(id: number) {
-    this.userService.getFormById(id,'education');
-
-
+    // this.userService.educationForm =  this.userService.getFormById(id,'education');
+    this.userService.getEducationById(id);
 }
 getExperience(id:number)
 {
