@@ -20,10 +20,8 @@
 
         <div class="form__field--mrg">
             <label class="form__label">Employment type</label>
-            <select matNativeControl required class="form__select form__select--full">
-                <option value="-">-</option>
-                <option value="1">Education Name</option>
-                <option value="2">Experience Name</option>
+            <select formControlName="association"  matNativeControl required class="form__select form__select--full">
+                <option *ngFor="let work of workExp" [value]="work.id">{{work.title}}</option>
             </select>
         </div>
 

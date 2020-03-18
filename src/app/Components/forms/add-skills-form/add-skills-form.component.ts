@@ -57,10 +57,11 @@ export class AddSkillsFormComponent implements OnInit {
 
 
   onSubmit(){
+    
     this.skills.map(skill=>this.user.currentUser.skills.push(skill))
     this.user.update(this.user.currentUser)
-    console.log(this.user.currentUser)
-    console.log(this.user.Users);    
+     console.log(this.user.currentUser)
+    // console.log(this.user.Users);    
     this.router.navigate(['/profile'])
   }
 }

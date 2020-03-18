@@ -37,7 +37,7 @@ export class ProfileComponent implements OnInit {
 
     this.currentUser=this.userService.currentUser;
     this.workExps=this.currentUser.workExp;
-    console.log(this.workExps);
+    // console.log(this.workExps);
 
   }
 

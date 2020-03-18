@@ -3,6 +3,8 @@ import { JobOpportunities } from './../Models/JobOpportunities';
 import { User } from './../Models/User';
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { User } from 'src/app/Models/User';
+import { Courses } from './../Models/Courses';
 
 @Injectable({
   providedIn: 'root'
@@ -565,18 +567,10 @@ export class UserService {
     selectUser.education[id - 1] = form;
     console.log(this.Users);
   }
-  addskills =skillsForm => {
-    const User = this.Users.filter(user => user.id === this.currentUser.id)[0];
-    skillsForm.id = User.skills.length + 1;
-    User.skills.push(skillsForm);
-    this.currentUser.skills.push(skillsForm);
-    console.log(this.currentUser);
-  }
+  
   addcourses= courseForm =>{
     const User = this.Users.filter(user => user.id === this.currentUser.id)[0];
-    courseForm.id = User.skills.length + 1;
-    User.skills.push(courseForm);
-    this.currentUser.skills.push(courseForm);
-
+    courseForm.id = User.courses.length + 1;
+    this.currentUser.courses.push(courseForm);
 }
 }
