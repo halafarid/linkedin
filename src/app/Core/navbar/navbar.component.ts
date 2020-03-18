@@ -8,7 +8,10 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./navbar.component.scss"]
 })
 export class NavbarComponent implements OnInit {
-  constructor(private userService: UserService) {}
+
+  constructor(public userService: UserService) {}
+
+  invitations = this.userService.currentUser.invitations.length;
   users;
   subNav = false;
   searchResult = false;

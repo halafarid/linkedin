@@ -64,12 +64,15 @@ import {
   MatCheckboxModule,
   MatToolbarModule,
   MatChipsModule,
+  MatBadgeModule,
 } from '@angular/material';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { SearchComponent } from './components/search/search.component';
 import { PeopleCardComponent } from './components/cards/people-card/people-card.component';
 import { SearchCardSmComponent } from './components/cards/search-card-sm/search-card-sm.component';
 import { NavdropdownComponent } from './Features/dropdown/navdropdown/navdropdown.component';
+import { InvitationsCardComponent } from './Components/cards/invitations-card/invitations-card.component';
+import { NotificationsComponent } from './Components/notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -117,6 +120,8 @@ import { NavdropdownComponent } from './Features/dropdown/navdropdown/navdropdow
     PeopleCardComponent,
     SearchCardSmComponent,
     NavdropdownComponent,
+    InvitationsCardComponent,
+    NotificationsComponent,
   ],
 
   imports: [
@@ -136,7 +141,8 @@ import { NavdropdownComponent } from './Features/dropdown/navdropdown/navdropdow
     MatCheckboxModule,
     MatExpansionModule,
     MatToolbarModule,
-    MatChipsModule
+    MatChipsModule,
+    MatBadgeModule
   ],
 
   providers: [UserService],
