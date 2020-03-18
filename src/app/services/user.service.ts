@@ -27,6 +27,11 @@ export class UserService {
     {id:6,name:"Temporary"},
     {id:7,name:"Remote"},
   ]
+<<<<<<< HEAD
+=======
+  
+  
+>>>>>>> 21e22a5abf073be4d07f8ef5b7d62765b3fd1a06
   educationForm = {
     id: 1
   };
@@ -122,13 +127,17 @@ export class UserService {
         onComment:false,
         onHover:false,
         onHoverReact:false,
-        liked:false,
+        liked:"",
       },
 
     ],
     friendsId:[2,3],
-  
+<<<<<<< HEAD
+=======
   };
+>>>>>>> 21e22a5abf073be4d07f8ef5b7d62765b3fd1a06
+  
+ 
 
 
   months = [
@@ -230,7 +239,7 @@ export class UserService {
           onComment:false,
           onHover:false,
           onHoverReact:false,
-          liked:false,
+          liked:"",
         },
 
       ],
@@ -306,7 +315,7 @@ export class UserService {
           onComment:false,
           onHover:false,
           onHoverReact:false,
-          liked:false,
+          liked:"",
 
         },
         
@@ -404,7 +413,7 @@ export class UserService {
           onComment:false,
           onHover:false,
           onHoverReact:false,
-          liked:false,
+          liked:"",
 
         },
         {
@@ -430,7 +439,7 @@ export class UserService {
           onComment:false,
           onHover:false,
           onHoverReact:false,
-          liked:false,
+          liked:"",
         }
       ],
       friendsId:[1],
@@ -508,7 +517,7 @@ export class UserService {
           onComment:false,
           onHover:false,
           onHoverReact:false,
-          liked:false,
+          liked:"",
 
         }
       ],
