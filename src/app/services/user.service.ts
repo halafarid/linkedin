@@ -1,6 +1,5 @@
 import { JobTypes } from './../Models/JobTypes';
 import { JobOpportunities } from './../Models/JobOpportunities';
-import { User } from './../Models/User';
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { User } from 'src/app/Models/User';
