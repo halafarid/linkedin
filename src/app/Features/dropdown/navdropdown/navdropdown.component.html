@@ -1,0 +1,40 @@
+<button id="me" mat-button [matMenuTriggerFor]="menu"  > 
+    <div class="mediv" >
+      <img
+        id="profile-img"
+        src="../../../assets/profile.png"
+      />
+    </div>
+    <div>
+      <span >Me</span>
+      <i class="fas fa-sort-down"></i>
+    </div>
+  </button>
+<mat-menu #menu="matMenu" class="menuuu">
+    <div  class="menu-items">
+        <div class="menu-profile">
+        <img class="menu-img" src="../../../assets/avatar.png"/>
+        <div routerLink="/profile" class="profile">
+        <p class="menu-head">{{currentUser.userName}}</p>
+        <p class="menu-head--small">{{currentUser.workExp[0].Headline}}</p>
+        <p class="menu-head--blue" >View profile</p>
+        </div>
+        </div>
+    </div>
+    <p class="menu-head">ACCOUNT</p>
+    <div class="menu-items">
+            <button mat-menu-item>Settings & Privacy</button>
+            <button mat-menu-item>Help</button>
+            <button mat-menu-item>Language</button>
+    </div>
+ <p class="menu-head">MANAGE</p>
+ <div class="menu-items">
+        <button mat-menu-item>Posts & Activity</button>
+        <button mat-menu-item>Job posting account</button>
+        <button mat-menu-item routerLink="/signin">Sign out </button>
+      
+ </div>
+ 
+
+
+</mat-menu>

@@ -1,20 +1,147 @@
+import { JobTypes } from './../Models/JobTypes';
 import { JobOpportunities } from './../Models/JobOpportunities';
-import { User } from './../Models/User';
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { WorkExperience } from './../Models/WorkExperience';
 import { Education } from '../Models/Education';
+import { User } from 'src/app/Models/User';
+import { Courses } from './../Models/Courses';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   constructor() { }
-  educationForm = {};
+
+  // educationForm = {};
   workExpId=0;
   experienceForm :WorkExperience ={};
   currentUser: User = {};
 
+
+  privacy:string[]=[
+    "Anyone",
+    "Anyone + Twitter",
+    "Connections Only",
+    "Advanced Settings"
+
+  ]
+  jopTypes:JobTypes[]=[
+    {id:1,name:"Full-time"},
+    {id:2,name:"Contract"},
+    {id:3,name:"Part-time"},
+    {id:4,name:"Internship"},
+    {id:5,name:"Volunteer"},
+    {id:6,name:"Temporary"},
+    {id:7,name:"Remote"},
+  ]
+
+  educationForm = {
+    id: 1
+  };
+  // currentUser: User = {};
+
+  // currentUser: User = {
+  //   id: 1,
+  //   userName: 'bella',
+  //   email: 'bella@gmail.com',
+  //   password: 'bella123',
+  //   About: 'joined ITI, looking for front end position ',
+  //   workExp: [{
+  //     id: 1,
+  //     title: 'frontend developer',
+  //     employmentType: { id: 1, name: 'Full-time' },
+  //     companyName: 'Information Technology Institute (ITI)',
+  //     location: 'cairo',
+  //     isWorking: false,
+  //     startDate: 'June',
+  //     endDate: 'October',
+  //     description: 'ITI is good' , 
+  //     Headline:'Trainee Web & UI Development at Information Technology Institute(ITI)'
+  //   }],
+  //   userInfo: {
+  //     profilePhoto: 'bella.jpg',
+  //     jobOpps: 
+  //       {
+  //         id: 1,
+  //         title: ['UI and Web development','Full Stack'],
+  //         jobLocation: ['maadi', 'mokattam'],
+  //         jobTypes: [
+  //           { id: 2, name: 'part-time' },
+  //           { id: 3, name: 'temporary' }
+  //         ]
+  //       }, 
+      
+  //   },
+  //   education: [{
+  //     id: 1,
+  //     schoolName: 'Cairo University',
+  //     degree: 'Bachelors degree, Computer Science',
+  //     fieldOfStudy: 'information technology',
+  //     startYear: 2015,
+  //     endYear: 2019,
+  //     grade: 'good',
+  //     activity: 'joined SCCI',
+  //     description: 'computer science is good'
+  //   }],
+  //   skills: [
+  //     { id: 1, name: 'problem solver' },
+  //     { id: 2, name: 'communication' }
+  //   ],
+  //   courses: [
+  //     {
+  //       id: 1,
+  //       name: 'Object-Oriented Programming in JavaScript, Udemy',
+  //       association: []
+  //     },{
+  //       id: 2,
+  //       name: 'JavaScript Tutorial, Udemy',
+  //       association: []
+  //     },{
+  //       id: 3,
+  //       name: 'Mastering React, Udemy',
+  //       association: []
+  //     }
+  //     // },{
+  //     //   id: 4,
+  //     //   name: 'The Complete JQuery Course from Beginner To Advanced, Udemy',
+  //     //   association: []
+  //     // }
+  //   ],
+  //   posts: [
+  //     {
+  //       id: 1,
+  //       userId: 1,
+  //       body:
+  //         // tslint:disable-next-line:max-line-length
+  //         'salsabils\'s post',
+  //       likes: 50,
+  //       replies: 20,
+  //       imageUrls: [],
+  //       comments: [
+  //         {
+  //           userId:3,
+  //           commentId: 1,
+  //           body: 'comment',
+  //           likes: 5,
+  //           replies: 0,
+  //           liked:false,
+
+  //         },
+  //       ],
+  //       onComment:false,
+  //       onHover:false,
+  //       onHoverReact:false,
+  //       liked:"",
+  //     },
+
+  //   ],
+  //   friendsId:[2,3],
+  // };
+  
+ 
+
+   
   months = [
     'January', 'February', 'March', 'April', 'May',
     'June', 'July', 'August', 'September',
@@ -32,7 +159,7 @@ export class UserService {
       workExp: [{
         id: 1,
         title: 'frontend developer',
-        employmentType: { id: 1, name: 'full-time' },
+        employmentType: { id: 1, name: 'Full-time' },
         companyName: 'Information Technology Institute (ITI)',
         location: 'cairo',
         isWorking: false,
@@ -43,33 +170,17 @@ export class UserService {
       }],
       userInfo: {
         profilePhoto: 'bella.jpg',
-        jobOpps: [
+        jobOpps: 
           {
             id: 1,
-            title: 'UI and Web development',
+            title: ['UI and Web development','Full Stack'],
             jobLocation: ['maadi', 'mokattam'],
             jobTypes: [
               { id: 2, name: 'part-time' },
               { id: 3, name: 'temporary' }
             ]
-          }, {
-            id: 2,
-            title: 'Frontend Web developer',
-            jobLocation: ['October'],
-            jobTypes: [
-              { id: 2, name: 'part-time' },
-              { id: 3, name: 'temporary' }
-            ]
-          }, {
-            id: 3,
-            title: 'full stack Web developer',
-            jobLocation: ['October'],
-            jobTypes: [
-              { id: 2, name: 'part-time' },
-              { id: 3, name: 'temporary' }
-            ]
-          }
-        ]
+          }, 
+        
       },
       education: [{
         id: 1,
@@ -130,7 +241,7 @@ export class UserService {
           onComment:false,
           onHover:false,
           onHoverReact:false,
-          liked:false,
+          liked:"",
         },
 
       ],
@@ -146,7 +257,7 @@ export class UserService {
       workExp: [{
         id: 1,
         title: 'frontend developer',
-        employmentType: { id: 1, name: 'full-time' },
+        employmentType: { id: 1, name: 'Full-time' },
         companyName: 'Information Technology Institute (ITI)',
         location: 'cairo',
         isWorking: false,
@@ -158,33 +269,17 @@ export class UserService {
       }],
       userInfo: {
         profilePhoto: 'bella.jpg',
-        jobOpps: [
+        jobOpps: 
           {
             id: 1,
-            title: 'UI and Web development',
+            title: ['UI and Web development','Full Stack'],
             jobLocation: ['madinaty'],
             jobTypes: [
               { id: 2, name: 'part-time' },
               { id: 3, name: 'temporary' }
             ]
-          }, {
-            id: 2,
-            title: 'Frontend Web developer',
-            jobLocation: ['October'],
-            jobTypes: [
-              { id: 2, name: 'part-time' },
-              { id: 3, name: 'temporary' }
-            ]
-          }, {
-            id: 3,
-            title: 'full stack Web developer',
-            jobLocation: ['October'],
-            jobTypes: [
-              { id: 2, name: 'part-time' },
-              { id: 3, name: 'temporary' }
-            ]
-          }
-        ]
+          }, 
+        
       },
       education: [{
         id: 1,
@@ -222,7 +317,7 @@ export class UserService {
           onComment:false,
           onHover:false,
           onHoverReact:false,
-          liked:false,
+          liked:"",
 
         },
         
@@ -253,33 +348,16 @@ export class UserService {
       }],
       userInfo: {
         profilePhoto: 'bella.jpg',
-        jobOpps: [
+        jobOpps: 
           {
             id: 1,
-            title: 'UI and Web development',
+            title: ['UI and Web development','Full Stack'],
             jobLocation: ['October'],
             jobTypes: [
               { id: 2, name: 'part-time' },
               { id: 3, name: 'temporary' }
             ]
-          }, {
-            id: 2,
-            title: 'Frontend Web developer',
-            jobLocation: ['October'],
-            jobTypes: [
-              { id: 2, name: 'part-time' },
-              { id: 3, name: 'temporary' }
-            ]
-          }, {
-            id: 3,
-            title: 'full stack Web developer',
-            jobLocation: ['October'],
-            jobTypes: [
-              { id: 2, name: 'part-time' },
-              { id: 3, name: 'temporary' }
-            ]
-          }
-        ]
+          }, 
       },
       education: [{
         id: 1,
@@ -337,7 +415,7 @@ export class UserService {
           onComment:false,
           onHover:false,
           onHoverReact:false,
-          liked:false,
+          liked:"",
 
         },
         {
@@ -363,7 +441,7 @@ export class UserService {
           onComment:false,
           onHover:false,
           onHoverReact:false,
-          liked:false,
+          liked:"",
         }
       ],
       friendsId:[1],
@@ -379,7 +457,7 @@ export class UserService {
       workExp: [{
         id: 1,
         title: 'frontend developer',
-        employmentType: { id: 1, name: 'full-time' },
+        employmentType: { id: 1, name: 'Full-time' },
         companyName: 'vodafone',
         location: 'cairo',
         isWorking: false,
@@ -389,17 +467,17 @@ export class UserService {
       }],
       userInfo: {
         profilePhoto: 'bella.jpg',
-        jobOpps: [
+        jobOpps: 
           {
             id: 1,
-            title: 'UI and Web development',
+            title: ['UI and Web development','Full Stack'],
             jobLocation: ['October'],
             jobTypes: [
               { id: 2, name: 'part-time' },
               { id: 3, name: 'temporary' }
             ]
           }
-        ]
+        
       },
       education: [{
         id: 1,
@@ -441,7 +519,7 @@ export class UserService {
           onComment:false,
           onHover:false,
           onHoverReact:false,
-          liked:false,
+          liked:"",
 
         }
       ],
@@ -527,7 +605,6 @@ export class UserService {
   getAll(): User[] {
     return this.Users;
   }
-  
 
   getById(id: number): User {
     id = +id;
@@ -573,13 +650,12 @@ export class UserService {
     }
     return friends;
   }
-  getAllExceptCurr=()=>
-  {
-    let network=this.Users.filter(u=>u.id!=this.currentUser.id)
+  getAllExceptCurr = () => {
+    const network = this.Users.filter(u => u.id !== this.currentUser.id);
     for (const userid of this.currentUser.friendsId) {
-      const friendUser=this.getById(userid)
-      const index=network.indexOf(friendUser)
-      network.splice(index,1)
+      const friendUser = this.getById(userid);
+      const index = network.indexOf(friendUser);
+      network.splice(index, 1);
     }
     return network;
   }
@@ -623,6 +699,16 @@ export class UserService {
   editEducation = (form, id) => {
     const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
     selectUser.education[id - 1] = form;
+    selectUser.education[id - 1].id = id;
+    this.currentUser.education[id - 1] = form;
+    this.currentUser.education[id - 1].id = id;
+    console.log(this.Users);
+  }
+
+  deleteEducation = id => {
+    const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
+    selectUser.education.splice(id - 1, 1);
+    this.currentUser.education.splice(id - 1, 1);
     console.log(this.Users);
   } 
   //obj like workExp or education ..etc
@@ -633,13 +719,13 @@ export class UserService {
   }
   
   
-  privacy:string[]=[
-    "Anyone",
-    "Anyone + Twitter",
-    "Connections Only",
-    "Advanced Settings"
+  // privacy:string[]=[
+  //   "Anyone",
+  //   "Anyone + Twitter",
+  //   "Connections Only",
+  //   "Advanced Settings"
 
-  ]
+  // ]
   // editExpForm(myForm)
   // {
     
@@ -658,4 +744,11 @@ export class UserService {
   //   headline: this.experienceForm.Headline
   //   });
   // }
+
+  addcourses = courseForm => {
+    // tslint:disable-next-line: no-shadowed-variable
+    const User = this.Users.filter(user => user.id === this.currentUser.id)[0];
+    courseForm.id = User.courses.length + 1;
+    this.currentUser.courses.push(courseForm);
+  }
 }

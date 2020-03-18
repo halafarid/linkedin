@@ -11,6 +11,9 @@
     font-size:25px;
     color:grey;
 }
+.active{
+    color: blue;
+}
 .fa-camera{
     position:absolute;
     left:75%;
@@ -22,6 +25,7 @@
     padding: 13px;
     display: inline-block;
     background-color: whitesmoke;
+    border-radius: 15px 15px;
     width:80%;
     &-paragraph{
         padding-top: 10px;

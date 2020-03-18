@@ -12,7 +12,7 @@
 
         <div class="form__field--mrg" appearance="fill">
             <label class="form__label">Course name <span class="form__req">*</span></label>
-            <input formControlName="schoolName" matInput class="form__input">
+            <input formControlName="name" matInput class="form__input">
             <mat-error *ngIf="name.touched && name.invalid">
                 <mat-error *ngIf="name.errors.required">Please enter a course name</mat-error>
             </mat-error>
@@ -20,10 +20,8 @@
 
         <div class="form__field--mrg">
             <label class="form__label">Employment type</label>
-            <select matNativeControl required class="form__select form__select--full">
-                <option value="-">-</option>
-                <option value="1">Education Name</option>
-                <option value="2">Experience Name</option>
+            <select formControlName="association"  matNativeControl required class="form__select form__select--full">
+                <option *ngFor="let work of workExp" [value]="work.id">{{work.title}}</option>
             </select>
         </div>
 
@@ -32,7 +30,7 @@
         </mat-card>
 
         <div class="form__field--mrg">
-            <button mat-raised-button class="btn btn--primary btn--right">Save</button>
+            <button mat-raised-button class="btn btn--primary btn--right" (click)="onSubmit()">Save</button>
         </div>
     </form>
 </div>

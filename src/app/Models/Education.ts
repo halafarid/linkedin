@@ -1,6 +1,6 @@
 export interface Education
 {
-    id ?:number , 
+    id:number , 
     schoolName?:string,
     degree ? :string,
     fieldOfStudy?:string,
@@ -10,3 +10,4 @@ export interface Education
     activity?:string,
     description?:string
 }
+

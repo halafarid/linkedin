@@ -1,6 +1,6 @@
 <app-profile></app-profile>
 <div class="overlay" *ngIf="isShow">
-    <form class="form" [formGroup]="eduForm" (submit)="submit()">
+    <form class="form" [formGroup]="eduForm">
 
         <label class="form__title">{{isAdd ? 'Add' : 'Edit'}} education</label>
         <mat-icon routerLink="/profile"
@@ -8,7 +8,7 @@
         <hr class="horizontal__form">
 
         <div class="form__field" appearance="fill">
-            <label class="form__label">School <span class="form__req">*</span></label>
+            <label class="form_label">School <span class="form_req">*</span></label>
             <input formControlName="schoolName" matInput placeholder="Ex: Boston University" class="form__input">
             <mat-error *ngIf="schoolName.touched && schoolName.invalid && isAdd">
                 <mat-error *ngIf="schoolName.errors.required">Please enter a school name</mat-error>
@@ -76,7 +76,7 @@
             <a href="#" class="link text--xs">Supported formats</a>
         </div>
 
-        <mat-card class="card__content card--sub card--light card--flex form__card">
+        <mat-card class="card_content card--sub card--light card--flex form_card">
             <mat-slide-toggle></mat-slide-toggle>
             
             <mat-card-content>
@@ -88,7 +88,7 @@
             </mat-card-content>
         </mat-card>
 
-        <button mat-stroked-button class="btn btn--info btn__text--info" *ngIf="!isAdd">Delete</button>
-        <button mat-raised-button class="btn btn--primary btn--right">{{isAdd ? 'Add' : 'Save'}}</button>
+        <button mat-stroked-button class="btn btn--info btn__text--info" *ngIf="!isAdd" (click)="onDelete()" routerLink="/profile">Delete</button>
+        <button mat-raised-button class="btn btn--primary btn--right" (click)="submit()">{{isAdd ? 'Add' : 'Save'}}</button>
     </form>
 </div>

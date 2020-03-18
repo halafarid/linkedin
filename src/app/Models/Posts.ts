@@ -14,6 +14,6 @@ export interface Posts
     onComment?:boolean,
     onHover?:boolean,
     onHoverReact?:boolean;
-    liked?:boolean;
+    liked?:string;
      
 }

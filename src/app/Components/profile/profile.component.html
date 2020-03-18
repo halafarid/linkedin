@@ -63,8 +63,8 @@
               </mat-card-content>
             <mat-card-title-group>
               <mat-card-subtitle class="card__subtitle text--sm">
-                <span  *ngFor="let job of currentUser.userInfo.jobOpps;let index=i"  >
-                  {{job.title}} -
+                <span  *ngFor="let job of currentUser.userInfo.jobOpps.title;let index=i"  >
+                  {{job}} -
 
                 </span>
                 </mat-card-subtitle

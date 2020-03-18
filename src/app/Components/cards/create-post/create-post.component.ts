@@ -41,7 +41,7 @@ replies:0,
 onComment:false,
 onHoverReact:false,
 onHover:false,
-liked:false,
+liked:"",
 imageUrls:this.imgUrls,
 comments:[]
 };
@@ -65,4 +65,5 @@ onFileChanged(e)
 ngOnInit() {
 this.privacy=this.us.privacy;
 }
+
 }

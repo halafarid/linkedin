@@ -10,6 +10,7 @@
                 [matChipInputFor]="chipList"
                 [matChipInputAddOnBlur]="addOnBlur"
                 (matChipInputTokenEnd)="add($event)"
+               
             >
             <mat-hint class="form__hint">You can add 28 more skills</mat-hint>
         </div>
@@ -28,6 +29,6 @@
     
     <mat-card class="card__content skills__footer skills__footer--rel">
         <button mat-button class="btn btn--default text--default">Adjust endorsement settings</button>
-        <button mat-raised-button class="btn btn--primary btn--right" routerLink="/profile">Save</button>
+        <button mat-raised-button class="btn btn--primary btn--right" (click)="onSubmit()">Save</button>
     </mat-card>
 </div>
