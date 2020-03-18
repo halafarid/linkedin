@@ -129,7 +129,7 @@ export class UserService {
           onComment:false,
           onHover:false,
           onHoverReact:false,
-          liked:false,
+          liked:"",
         },
 
       ],
@@ -205,7 +205,7 @@ export class UserService {
           onComment:false,
           onHover:false,
           onHoverReact:false,
-          liked:false,
+          liked:"",
 
         },
         
@@ -303,7 +303,7 @@ export class UserService {
           onComment:false,
           onHover:false,
           onHoverReact:false,
-          liked:false,
+          liked:"",
 
         },
         {
@@ -329,7 +329,7 @@ export class UserService {
           onComment:false,
           onHover:false,
           onHoverReact:false,
-          liked:false,
+          liked:"",
         }
       ],
       friendsId:[1],
@@ -407,7 +407,7 @@ export class UserService {
           onComment:false,
           onHover:false,
           onHoverReact:false,
-          liked:false,
+          liked:"",
 
         }
       ],

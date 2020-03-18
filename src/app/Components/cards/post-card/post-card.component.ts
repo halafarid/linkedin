@@ -55,16 +55,21 @@ export class PostCardComponent implements OnInit {
     post.onComment=!post.onComment;
     // this.oncomment = !this.oncomment;
   }
-  addLike(post)
-  {if(!post.liked)
-    {post.likes++;post.liked=!post.liked;}
-    else
-    {post.likes--;post.liked=!post.liked;}
+  addLike(post,reaction)
+  {console.log(post.liked);
+    console.log(reaction);
+    if(post.liked=="")
+    {post.likes++;post.liked=reaction;}
+    else if(post.liked!=""&&reaction=="like"  )
+    {post.likes--;post.liked="";}
+    else if(reaction=="like" ||reaction=="inspire" ||reaction=="curious" ||reaction=="heart"||reaction=="celebrate")
+    {
+      post.liked=reaction;
+    }
   }
-  onReactionClick(post,react)
+  onReactionClick(post)
   {
-    if(react=="celebrate")
-    {this.reaction="celebrate"}
+
     post.onHover=false;
       post.onHoverReact=false;
   }
