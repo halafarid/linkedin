@@ -16,7 +16,12 @@ export class ProfileComponent implements OnInit {
    months=[];
   constructor( public userService : UserService) {
 
+
     this.months=this.userService.months;
+    this.currentUser=this.userService.currentUser;
+    let user = this.userService.Users.filter(user => user.id===this.currentUser.id)[0];
+    debugger;
+    this.workExps=user.workExp;
   
    }
 
@@ -35,15 +40,19 @@ export class ProfileComponent implements OnInit {
   
   ngOnInit() {
 
-    this.currentUser=this.userService.currentUser;
-    this.workExps=this.currentUser.workExp;
-    console.log(this.workExps);
+ 
+
 
   }
 
   getEducation(id: number) {
-    this.userService.getEducationById(id);
+    this.userService.getFormById(id,'education');
 
+
+}
+getExperience(id:number)
+{
+  this.userService.experienceForm=this.userService.getFormById(id ,'workExp');
 
 }
 }

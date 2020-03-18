@@ -39,7 +39,7 @@ export class EducationFormComponent implements OnInit {
       const education = this.eduForm.controls;
       // tslint:disable-next-line: forin
       for (const edu in education) {
-        education[edu].value = eduObj[edu];
+        // education[edu].value = eduObj[edu];
       }
     }
   }
@@ -49,7 +49,7 @@ export class EducationFormComponent implements OnInit {
       this.userService.addEducation(this.eduForm.value);
       this.router.navigate(['/profile']);
     } else if (!this.isAdd) {
-      this.userService.editEducation(this.eduForm.value, this.userService.educationForm.id);
+      // this.userService.editEducation(this.eduForm.value, this.userService.educationForm.id);
       this.router.navigate(['/profile']);
     }
   }

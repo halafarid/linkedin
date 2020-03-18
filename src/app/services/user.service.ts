@@ -2,14 +2,17 @@ import { JobOpportunities } from './../Models/JobOpportunities';
 import { User } from './../Models/User';
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { WorkExperience } from './../Models/WorkExperience';
+import { Education } from '../Models/Education';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   constructor() { }
-
   educationForm = {};
+  workExpId=0;
+  experienceForm :WorkExperience ={};
   currentUser: User = {};
 
   months = [
@@ -453,7 +456,7 @@ export class UserService {
   //   email: 'bella@gmail.com',
   //   password: 'bella123',
   //   About: 'joined ITI, looking for front end position ',
-  //   workExp: {
+  //   workExp: [{
   //     id: 1,
   //     title: 'frontend developer',
   //     employmentType: { id: 1, name: 'full-time' },
@@ -463,7 +466,7 @@ export class UserService {
   //     startDate: 'October',
   //     endDate: 'June',
   //     description: 'vodafone is good'
-  //   },
+  //   }],
   //   userInfo: {
   //     profilePhoto: 'bella.jpg',
   //     jobOpps: [
@@ -478,17 +481,17 @@ export class UserService {
   //       }
   //     ]
   //   },
-  //   education: {
+  //   education:[ {
   //     id: 1,
   //     schoolName: 'computer science',
   //     degree: 'bachelors',
-  //     fieldOfStudy: ['computer programming', 'information technology'],
+  //     fieldOfStudy: 'computer programming',
   //     startYear: 2015,
   //     endYear: 2019,
   //     grade: 'good',
   //     activity: 'joined SCCI',
   //     description: 'computer science is good'
-  //   },
+  //   }],
   //   skills: [
   //     { id: 1, name: 'problem solver' },
   //     { id: 2, name: 'communication' }
@@ -507,7 +510,7 @@ export class UserService {
   //     // tslint:disable-next-line:max-line-length
   //     'Looking to make a positive difference? Take part in our internship challenge and compete to win a 6-month paid global internship at JTI, Japan Tobacco International.',
   //       likes: 200,
-  //       ImageUrls: ['JTI.jpg'],
+  //       imageUrls: ['JTI.jpg'],
   //       comments: [
   //         {
   //           commentId: 1,
@@ -540,7 +543,8 @@ export class UserService {
 
   // addIdGeneric<T>(param:T , arr:[T])
   // {   
-  //     param.id=arr.length+1;
+      
+  //     param[id]=arr.length+1;
   //     arr.push(param);
   //   }
 
@@ -587,14 +591,71 @@ export class UserService {
     this.currentUser.education.push(form);
   }
 
-  getEducationById = id => {
-    const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
-    this.educationForm = selectUser.education[id - 1];
-  }
+  // getEducationById = id => {
+  //   const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
+  //   this.educationForm = selectUser.education[id - 1];
+  // }
+  // getExperienceById=id =>
+  // {
+
+  //   const user=this.Users.filter(user => user.id===this.currentUser.id)[0];
+  //   const experienceForm=user.workExp[id-1];
+  //   return experienceForm;
+
+  // }
+
+   getFormById <T> (id:number, obj : string) 
+   {
+     debugger;
+    const user=this.Users.filter(user => user.id===this.currentUser.id)[0];
+    let form = {};
+    if(obj==='workExp')
+    {
+      form = user.workExp.filter(exp => exp.id===id)[0];
+     this.workExpId=id;
+    }
+    console.log(form);
+    
+    return form;
+   }
+
 
   editEducation = (form, id) => {
     const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
     selectUser.education[id - 1] = form;
     console.log(this.Users);
+  } 
+  //obj like workExp or education ..etc
+  editFormGeneric = (form, id , obj : string) => {
+    const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
+    selectUser[obj][id - 1] = form;
+    return true;
   }
+  
+  
+  privacy:string[]=[
+    "Anyone",
+    "Anyone + Twitter",
+    "Connections Only",
+    "Advanced Settings"
+
+  ]
+  // editExpForm(myForm)
+  // {
+    
+  //   myForm.patchValue({
+
+  //     title: this.experienceForm.title,
+  //   employmentType:this.experienceForm.employmentType.id,
+  //   companyName:this.experienceForm.companyName ,
+  //   location: this.experienceForm.location,
+  //   isWorking: this.experienceForm.isWorking,
+  //   startDate:this.experienceForm.startDate,
+  //   startYear:this.experienceForm.startYear,
+  //   endDate:this.experienceForm.endDate ,
+  //   endYear:this.experienceForm.endYear,
+  //   description:this.experienceForm.description ,
+  //   headline: this.experienceForm.Headline
+  //   });
+  // }
 }

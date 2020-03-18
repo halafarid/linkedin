@@ -88,10 +88,10 @@
             <div class="form__field" *ngIf="isChecked">
                 <label class="form__label">Headline <span class="form__req">*</span></label>
                 <textarea formControlName="headline" class="form__textarea form__textarea--sm"></textarea>
-                <mat-error *ngIf="headline.touched && headline.invalid">
+                <!-- <mat-error *ngIf="headline.touched && headline.invalid">
                     <mat-error *ngIf="headline.errors.required">Please enter your headline</mat-error>
                     <mat-error *ngIf="headline.errors.minlength">headline must be minimum {{ headline.errors.minlength.requiredLength }} characters</mat-error>
-                </mat-error>
+                </mat-error> -->
             </div>
 
             <div class="form__field">
@@ -121,7 +121,7 @@
                 </mat-card-content>
             </mat-card>
 
-            <button  mat-raised-button class="btn btn--primary btn--right" (click)="handleSubmit()">{{formBtn}}</button>
+            <button  mat-raised-button class="btn btn--primary btn--right" (click)="handleSubmit(formBtn)">{{formBtn}}</button>
         <!-- </ng-container> -->
     </form>
 </div>

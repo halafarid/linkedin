@@ -34,19 +34,20 @@ export class ExperienceFormComponent implements OnInit {
       Validators.minLength(3)
     ]),
     location: new FormControl("", Validators.required),
-    isWorking: new FormControl("",Validators.required),
+    isWorking: new FormControl(),
     startDate: new FormControl(),
     startYear:new FormControl(),
     endDate: new FormControl(),
     endYear:new FormControl(),
     description: new FormControl(),
-    headline: new FormControl("", [
-      Validators.required,
-      Validators.minLength(3)
-    ])
+    headline: new FormControl()
   });
   
-  constructor(public router: Router , public userService : UserService) {}
+  constructor(public router: Router , public userService : UserService) {
+    debugger;
+    // this.myForm.controls=this.userService.experienceForm;
+  
+  }
   ngOnInit() {
     
     this.currentUser=this.userService.currentUser;
@@ -56,8 +57,11 @@ export class ExperienceFormComponent implements OnInit {
       this.formtitle = "Add experience";
       this.formBtn="Add";
     } else {
+    debugger;
       this.formtitle = "Edit experience";
       this.formBtn="Save";
+      this.fillForm();
+      // this.editExpForm(this.userService.workExpId);
     }
     this.months=this.userService.months;
     this.years=this.userService.years;
@@ -113,52 +117,94 @@ export class ExperienceFormComponent implements OnInit {
     this.curYear=y[0];
   }
 
-  handleSubmit()
+  handleSubmit(btn)
   {
-
-    console.log(this.userId);
-    console.log(this.myForm.value.title);
-    console.log(this.currentUser.workExp.length);
-    debugger
     if(this.myForm.valid)
+    
     {
-      this.addWorkExp();
+      debugger;
+      if(btn==='Add')
+      {
+        this.addWorkExp();
+        
+      }
+      else if(btn==='Save')
+      {
+        this.editExpForm(this.userService.workExpId);
+      }
       this.router.navigate(['/profile']);
 
-    }
-    console.log(this.myForm)
-    // console.log(this.userService.Users[this.currentUser.id]);
+     }
+    
   }
+  
 
   addWorkExp()
   {
-    this.userWorkExp.id=this.currentUser.workExp.length+1;
-    const userData = this.userService.Users[this.userId];
-    this.userWorkExp.title=this.myForm.value.title;
-    debugger;
-    this.userWorkExp.employmentType=this.myForm.value.employmentType;
+   
+    const userData = this.userService.Users[+this.userId -1];
+    const userWorkExp=this.getFormData();
+    let user =this.userService.Users.filter(user=> user.id===this.currentUser.id)[0];
+    user.workExp.unshift(userWorkExp);
+    userWorkExp.id=this.currentUser.workExp.length+1;
+    this.userWorkExp=userWorkExp;
+    this.userService.Users[this.currentUser.id]=user;
+    
+  }
+  getFormData()
+  {
     // this.userWorkExp.employmentType.name=this.employmentTypes[this.myForm.value.employmentType];
-    this.userWorkExp.location=this.myForm.value.location;
-    this.userWorkExp.startDate=this.myForm.value.startDate;
-    this.userWorkExp.startYear=this.myForm.value.startYear;
-    this.userWorkExp.description=this.myForm.value.description;
-    this.userWorkExp.Headline=this.myForm.value.headline;
+    const userWorkExp :WorkExperience={};
+    userWorkExp.title=this.myForm.value.title;
+    userWorkExp.employmentType=this.myForm.value.employmentType;
+    userWorkExp.location=this.myForm.value.location;
+    userWorkExp.startDate=this.myForm.value.startDate;
+    userWorkExp.startYear=this.myForm.value.startYear;
+    userWorkExp.description=this.myForm.value.description;
+    userWorkExp.Headline=this.myForm.value.headline;
     if(this.checkboxId===0)
     {
-      debugger;
-      this.userWorkExp.isWorking=true;
-      this.userWorkExp.endDate=this.curMonth;
-      this.userWorkExp.endYear=this.curYear;
+      
+      userWorkExp.isWorking=true;
+      userWorkExp.endDate=this.curMonth;
+      userWorkExp.endYear=this.curYear;
     }
     else 
     {
-      this.userWorkExp.isWorking=false;
-      this.userWorkExp.endDate=this.myForm.value.endDate;
-      this.userWorkExp.endYear=this.myForm.value.endYear;
+      userWorkExp.isWorking=false;
+      userWorkExp.endDate=this.myForm.value.endDate;
+      userWorkExp.endYear=this.myForm.value.endYear;
 
 
     }
+    return userWorkExp;
 
-    this.userService.currentUser.workExp.unshift(this.userWorkExp);
+  }
+  fillForm()
+  {
+    debugger;
+    this.myForm.controls["title"].setValue(this.userService.experienceForm.title);
+    this.myForm.controls["employmentType"].setValue(this.userService.experienceForm.employmentType);
+    this.myForm.controls["companyName"].setValue(this.userService.experienceForm.companyName);
+    this.myForm.controls["location"].setValue(this.userService.experienceForm.location);
+    this.myForm.controls["startDate"].setValue(this.userService.experienceForm.startDate);
+    this.myForm.controls["startYear"].setValue(this.userService.experienceForm.startYear);
+  }
+  editExpForm(id:number)
+  {
+   const userWorkExp=this.getFormData();
+   console.log(userWorkExp);
+   debugger;
+   let currentWorkExp= this.userService.Users[this.currentUser.id].workExp.filter(user=>user.id===this.currentUser.id)[0];
+   currentWorkExp.title=userWorkExp.title;
+   this.userService.Users[this.currentUser.id].workExp.filter(user=>user.id===this.currentUser.id)[0]=userWorkExp;
+   console.log(this.userService.Users[this.currentUser.id].workExp.filter(user=>user.id===this.currentUser.id)[0])
+
+   //  debugger;
+  //  let user =this.userService.Users.filter(user=> user.id===this.currentUser.id)[0];
+  //  user.workExp[id]=userWorkExp;
+  //  this.userService.Users[this.currentUser.id-1]=user;
+
+
   }
 }
