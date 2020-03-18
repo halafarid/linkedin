@@ -3,7 +3,7 @@
         <img src="../../../assets/download.png" class="card-img-logo" alt="logo company"/>
          <div class="card-head">
            
-            <p >{{userService.getById(post.userId).userName}}</p>
+            <p class="username">{{userService.getById(post.userId).userName}}</p>
             <p class=" card-small-font--gray">{{userService.getById(post.userId).workExp.title}}</p>
         </div>
          <app-option-dropdown></app-option-dropdown> 
