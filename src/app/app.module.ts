@@ -69,6 +69,7 @@ import { JobsComponent } from './components/jobs/jobs.component';
 import { SearchComponent } from './components/search/search.component';
 import { PeopleCardComponent } from './components/cards/people-card/people-card.component';
 import { SearchCardSmComponent } from './components/cards/search-card-sm/search-card-sm.component';
+import { NavdropdownComponent } from './Features/dropdown/navdropdown/navdropdown.component';
 
 @NgModule({
   declarations: [
@@ -115,6 +116,7 @@ import { SearchCardSmComponent } from './components/cards/search-card-sm/search-
     SearchComponent,
     PeopleCardComponent,
     SearchCardSmComponent,
+    NavdropdownComponent,
   ],
 
   imports: [

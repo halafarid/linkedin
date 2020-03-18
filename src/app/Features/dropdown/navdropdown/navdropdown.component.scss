@@ -1,0 +1,63 @@
+.active {
+  color: gainsboro;
+}
+
+#profile-img {
+  border-radius: 50%;
+  height: 30px;
+}
+.menu-head{
+    font-size: 15px;
+    color:black;
+    padding: 10px 0px 0px 15px ;
+    font-weight: bold;
+    &--small{
+        color: grey;
+        padding: 10px 0px 0px 15px ;
+    }
+    &--blue{
+        color:royalblue;
+        padding: 10px 0px 0px 15px ;
+        outline: none;
+    }
+}
+
+::ng-deep .mat-menu-content {
+    width:250px;
+    
+}
+.menu-items{
+border: 1px solid gainsboro;
+}
+
+.menu-img{
+    width: 55px;
+    height: 55px;
+    padding:10px 0px 0px 15px ;
+}
+.menu-profile{
+    display: flex;
+}
+#me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+  }
+  #logo-img {
+    border-radius: 5px;
+    height: 55px;
+    align-self: center;
+  }
+
+  i,
+mat-icon {
+  align-self: center;
+  height: 30%;
+  margin-bottom: 3px;
+}
+.profile{
+    outline: none;
+    cursor: pointer;
+}

@@ -1,6 +1,6 @@
 <app-profile></app-profile>
 <div class="overlay" *ngIf="isShow">
-    <form class="form" [formGroup]="eduForm" (submit)="submit()">
+    <form class="form" [formGroup]="eduForm">
 
         <label class="form__title">{{isAdd ? 'Add' : 'Edit'}} education</label>
         <mat-icon routerLink="/profile"
@@ -88,7 +88,7 @@
             </mat-card-content>
         </mat-card>
 
-        <button mat-stroked-button class="btn btn--info btn__text--info" *ngIf="!isAdd">Delete</button>
-        <button mat-raised-button class="btn btn--primary btn--right">{{isAdd ? 'Add' : 'Save'}}</button>
+        <button mat-stroked-button class="btn btn--info btn__text--info" *ngIf="!isAdd" (click)="onDelete()" routerLink="/profile">Delete</button>
+        <button mat-raised-button class="btn btn--primary btn--right" (click)="submit()">{{isAdd ? 'Add' : 'Save'}}</button>
     </form>
 </div>

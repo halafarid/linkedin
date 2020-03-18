@@ -38,10 +38,9 @@ export class EducationFormComponent implements OnInit {
       const eduObj = this.userService.educationForm;
       const education = this.eduForm.controls;
       // tslint:disable-next-line: forin
-      
-      // for (const edu in education) {
-      //   education[edu].value = eduObj[edu];
-      // }
+      for (const edu in education) {
+        education[edu].setValue(eduObj[edu]);
+      }
     }
   }
 
@@ -50,9 +49,14 @@ export class EducationFormComponent implements OnInit {
       this.userService.addEducation(this.eduForm.value);
       this.router.navigate(['/profile']);
     } else if (!this.isAdd) {
-      // this.userService.editEducation(this.eduForm.value, this.userService.educationForm.id);
+      this.userService.editEducation(this.eduForm.value, this.userService.educationForm.id);
       this.router.navigate(['/profile']);
     }
+  }
+
+  onDelete() {
+    this.userService.deleteEducation(this.userService.educationForm.id);
+    console.log(this.eduForm.value);
   }
 
   get schoolName() {
