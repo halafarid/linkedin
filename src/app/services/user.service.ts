@@ -27,11 +27,7 @@ export class UserService {
     {id:6,name:"Temporary"},
     {id:7,name:"Remote"},
   ]
-<<<<<<< HEAD
-=======
   
-  
->>>>>>> 21e22a5abf073be4d07f8ef5b7d62765b3fd1a06
   educationForm = {
     id: 1
   };
@@ -132,14 +128,9 @@ export class UserService {
 
     ],
     friendsId:[2,3],
-<<<<<<< HEAD
-=======
+    invitations: [4]
   };
->>>>>>> 21e22a5abf073be4d07f8ef5b7d62765b3fd1a06
   
- 
-
-
   months = [
     'January', 'February', 'March', 'April', 'May',
     'June', 'July', 'August', 'September',
@@ -244,7 +235,7 @@ export class UserService {
 
       ],
       friendsId:[2,3],
-    
+      invitations: [4]
     },
     {
       id: 2,
@@ -318,12 +309,9 @@ export class UserService {
           liked:"",
 
         },
-        
       ],
-      
       friendsId:[1],
-      
-
+      invitations: [3]
     },
     {
       id: 3,
