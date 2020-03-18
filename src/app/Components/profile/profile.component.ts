@@ -11,39 +11,36 @@ import { WorkExperience } from './../../Models/WorkExperience';
 export class ProfileComponent implements OnInit {
 
 
-   currentUser:User={};
-    workExps :WorkExperience[]=[];
-   months=[];
-  constructor( public userService : UserService) {
+  currentUser=this.userService.currentUser;
+  educationArr = this.currentUser.education;
 
-    this.months=this.userService.months;
-  
+  workExps: WorkExperience[] = [];
+  months = [];
+
+
+  constructor( public userService: UserService) {
+    this.months = this.userService.months;
    }
-
-
-  
-   educationArr = this.currentUser.education;
-
-    
-    calcDateOfWorkExp(index)
-    {
-    var endMonth = this.months.indexOf(this.currentUser.workExp[index].endDate);
-    var startMonth = this.months.indexOf(this.currentUser.workExp[index].startDate);
-    var month = endMonth-startMonth;
-    return month ? month + 1 : 0;
-  }
   
   ngOnInit() {
-
-    this.currentUser=this.userService.currentUser;
     this.workExps=this.currentUser.workExp;
     // console.log(this.workExps);
+  }
 
+  // tslint:disable-next-line: use-lifecycle-interface
+  ngOnChanges() {
+    console.log(this.currentUser.education);
+    this.educationArr = this.currentUser.education;
+  }
+
+  calcDateOfWorkExp(index) {
+    var endMonth = this.months.indexOf(this.currentUser.workExp[index].endDate);
+    var startMonth = this.months.indexOf(this.currentUser.workExp[index].startDate);
+    var month = endMonth - startMonth;
+    return month ? month + 1 : 0;
   }
 
   getEducation(id: number) {
     this.userService.getEducationById(id);
-
-
 }
 }
