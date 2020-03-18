@@ -27,17 +27,14 @@ export class UserService {
     {id:6,name:"Temporary"},
     {id:7,name:"Remote"},
   ]
-<<<<<<< HEAD
-  educationForm = {};
-  currentUser: User = {id: 1,
-=======
+  
+  
   educationForm = {
     id: 1
   };
   // currentUser: User = {};
   currentUser: User = {
     id: 1,
->>>>>>> 849e0e31a1ea9a2058dd6f7b6d8c9407767ccbaa
     userName: 'bella',
     email: 'bella@gmail.com',
     password: 'bella123',
@@ -127,18 +124,15 @@ export class UserService {
         onComment:false,
         onHover:false,
         onHoverReact:false,
-        liked:false,
+        liked:"",
       },
 
     ],
     friendsId:[2,3],
-<<<<<<< HEAD
   };
-=======
   
-  };
+ 
 
->>>>>>> 849e0e31a1ea9a2058dd6f7b6d8c9407767ccbaa
 
   months = [
     'January', 'February', 'March', 'April', 'May',
