@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
 
   
    
-  workExps: WorkExperience[] = [];
+  workExps: WorkExperience[] = [{}];
   months = [];
 
 
@@ -26,11 +26,16 @@ export class ProfileComponent implements OnInit {
     // this.months=this.userService.months;
     this.currentUser=this.userService.currentUser;
     let user = this.userService.Users.filter(user => user.id===this.currentUser.id)[0];
-    this.workExps=user.workExp;
+    if(user.workExp.length>0)
+    {
+
+      this.workExps=user.workExp;
+    }
    }
   
   ngOnInit() {
-    this.workExps=this.currentUser.workExp;
+    debugger;
+    this.workExps=this.userService.Users[this.currentUser.id].workExp;
     // console.log(this.workExps);
   }
 
