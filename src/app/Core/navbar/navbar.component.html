@@ -29,17 +29,16 @@
     <div class="left">
       <div class="nav-btn" routerLink="/home" >
         <mat-icon aria-hidden="false" aria-label="Example home icon"
-          routerLink="/home"
           aria-hidden="false"
           aria-label="Example home icon"
           >home</mat-icon
         >
-        <span routerLink="/home">Home</span>
+        <span>Home</span>
       </div>
 
       <div class="nav-btn"  routerLink="/network">
-        <mat-icon routerLink="/network">group</mat-icon>
-        <span routerLink="/network">My Network</span>
+        <mat-icon>group</mat-icon>
+        <span>My Network</span>
       </div>
       <div class="nav-btn" routerLink="/jobs">
         <mat-icon>card_travel</mat-icon>
@@ -49,8 +48,9 @@
         <mat-icon> forum</mat-icon>
         <span>Messaging</span>
       </div>
-      <div class="nav-btn">
-        <mat-icon>notifications</mat-icon>
+      <div class="nav-btn" routerLink="/notifications">
+        <mat-icon *ngIf="invitations > 0" matBadge={{invitations}} matBadgeColor="warn">notifications</mat-icon>
+        <mat-icon *ngIf="invitations <= 0">notifications</mat-icon>
         <span>Notifications</span>
       </div>
 

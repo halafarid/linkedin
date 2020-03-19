@@ -17,6 +17,5 @@ export interface User{
     courses?:Courses[],
     posts?:Posts[],
     friendsId?:number[],
-
-
+    invitations?: number[]
 }

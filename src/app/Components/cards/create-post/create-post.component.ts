@@ -65,4 +65,5 @@ onFileChanged(e)
 ngOnInit() {
 this.privacy=this.us.privacy;
 }
+
 }

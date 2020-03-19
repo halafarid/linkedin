@@ -16,9 +16,12 @@ mat-toolbar {
   align-content: center;
   height: 100%;
   padding: 0 5px;
+  outline: 0;
   &:hover {
-    color: white;
+    color: $light;
+    cursor: pointer;
   }
+
   align-self: flex-start;
   margin: 0 2%;
 }
@@ -40,18 +43,23 @@ mat-toolbar {
 }
 #logo-img {
   border-radius: 5px;
-  height: 55px;
+  // height: 55px;
+  height: 35px;
   align-self: center;
 }
 .right {
   display: flex;
   align-self: flex-start;
+  position: relative;
+  bottom: 5px;
 }
 .logo {
   border-radius: 0;
 }
 .search {
-  align-self: center;
+  // align-self: center;
+  position: relative;
+  bottom: 6px;
   padding: 5px;
 }
 input {
@@ -68,7 +76,8 @@ input {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 0.2%;
+  // padding: 10px;
+  padding: 20px 0 10px;
 }
 .left {
   height: 100%;
@@ -118,4 +127,17 @@ mat-chip {
   margin: 0 auto;
   color: #0073b1;
   font-weight: 500;
+}
+
+span {
+  outline: 0 !important;
+  padding-top: 5px;
+}
+
+.mat-badge-medium.mat-badge-above .mat-badge-content {
+  top: -7px;
+}
+.mat-badge-medium .mat-badge-content {
+  height: 18px;
+  line-height: 10px;
 }
