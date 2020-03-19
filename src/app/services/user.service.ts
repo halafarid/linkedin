@@ -2,6 +2,8 @@ import { JobTypes } from './../Models/JobTypes';
 import { JobOpportunities } from './../Models/JobOpportunities';
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { WorkExperience } from './../Models/WorkExperience';
+import { Education } from '../Models/Education';
 import { User } from 'src/app/Models/User';
 import { Courses } from './../Models/Courses';
 
@@ -10,6 +12,12 @@ import { Courses } from './../Models/Courses';
 })
 export class UserService {
   constructor() { }
+
+  // educationForm = {};
+  workExpId=0;
+  experienceForm :WorkExperience ={};
+  // currentUser: User = {};
+
 
   privacy:string[]=[
     "Anyone",
@@ -32,7 +40,8 @@ export class UserService {
   educationForm = {
     id: 1
   };
-  // currentUser: User = {};
+    // currentUser: User = {};
+
   currentUser: User = {
     id: 1,
     userName: 'bella',
@@ -129,11 +138,9 @@ export class UserService {
 
     ],
     friendsId:[2,3],
+    invitations: [4]
   };
   
- 
-
-
   months = [
     'January', 'February', 'March', 'April', 'May',
     'June', 'July', 'August', 'September',
@@ -238,7 +245,7 @@ export class UserService {
 
       ],
       friendsId:[2,3],
-    
+      invitations: [4]
     },
     {
       id: 2,
@@ -312,12 +319,9 @@ export class UserService {
           liked:"",
 
         },
-        
       ],
-      
       friendsId:[1],
-      
-
+      invitations: [3]
     },
     {
       id: 3,
@@ -539,7 +543,8 @@ export class UserService {
 
   // addIdGeneric<T>(param:T , arr:[T])
   // {   
-  //     param.id=arr.length+1;
+      
+  //     param[id]=arr.length+1;
   //     arr.push(param);
   //   }
 
@@ -585,12 +590,41 @@ export class UserService {
     this.currentUser.education.push(form);
   }
 
-  getEducationById = id => {
+  // getEducationById = id => {
+  //   const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
+  //   this.educationForm = selectUser.education[id - 1];
+  // }
+  // getExperienceById=id =>
+  // {
+
+  //   const user=this.Users.filter(user => user.id===this.currentUser.id)[0];
+  //   const experienceForm=user.workExp[id-1];
+  //   return experienceForm;
+
+  // }
+
+   getFormById <T> (id:number, obj : string) 
+   {
+    const user=this.Users.filter(user => user.id===this.currentUser.id)[0];
+    let form = {};
+    if(obj==='workExp')
+    {
+      form = user.workExp.filter(exp => exp.id===id)[0];
+      this.workExpId = id;
+    }
+    console.log(form);
+    
+    return form;
+   }
+
+   getEducationById = id => {
     const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
     this.educationForm = selectUser.education[id - 1];
+    console.log(id);
   }
 
-  editEducation = (form, id) => {
+
+   editEducation = (form, id) => {
     const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
     selectUser.education[id - 1] = form;
     selectUser.education[id - 1].id = id;
@@ -599,12 +633,46 @@ export class UserService {
     console.log(this.Users);
   }
 
+
   deleteEducation = id => {
     const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
     selectUser.education.splice(id - 1, 1);
     this.currentUser.education.splice(id - 1, 1);
     console.log(this.Users);
   }
+  //obj like workExp or education ..etc
+  editFormGeneric = (form, id , obj : string) => {
+    const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
+    selectUser[obj][id - 1] = form;
+    return true;
+  }
+  
+  
+  // privacy:string[]=[
+  //   "Anyone",
+  //   "Anyone + Twitter",
+  //   "Connections Only",
+  //   "Advanced Settings"
+
+  // ]
+  // editExpForm(myForm)
+  // {
+    
+  //   myForm.patchValue({
+
+  //     title: this.experienceForm.title,
+  //   employmentType:this.experienceForm.employmentType.id,
+  //   companyName:this.experienceForm.companyName ,
+  //   location: this.experienceForm.location,
+  //   isWorking: this.experienceForm.isWorking,
+  //   startDate:this.experienceForm.startDate,
+  //   startYear:this.experienceForm.startYear,
+  //   endDate:this.experienceForm.endDate ,
+  //   endYear:this.experienceForm.endYear,
+  //   description:this.experienceForm.description ,
+  //   headline: this.experienceForm.Headline
+  //   });
+  // }
 
   addcourses = courseForm => {
     // tslint:disable-next-line: no-shadowed-variable
