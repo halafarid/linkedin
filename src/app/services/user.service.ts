@@ -40,106 +40,106 @@ export class UserService {
   educationForm = {
     id: 1
   };
-    // currentUser: User = {};
+    currentUser: User = {};
 
-  currentUser: User = {
-    id: 1,
-    userName: 'bella',
-    email: 'bella@gmail.com',
-    password: 'bella123',
-    About: 'joined ITI, looking for front end position ',
-    workExp: [{
-      id: 1,
-      title: 'frontend developer',
-      employmentType: { id: 1, name: 'Full-time' },
-      companyName: 'Information Technology Institute (ITI)',
-      location: 'cairo',
-      isWorking: false,
-      startDate: 'June',
-      endDate: 'October',
-      description: 'ITI is good' , 
-      Headline:'Trainee Web & UI Development at Information Technology Institute(ITI)'
-    }],
-    userInfo: {
-      profilePhoto: 'bella.jpg',
-      jobOpps: 
-        {
-          id: 1,
-          title: ['UI and Web development','Full Stack'],
-          jobLocation: ['maadi', 'mokattam'],
-          jobTypes: [
-            { id: 2, name: 'part-time' },
-            { id: 3, name: 'temporary' }
-          ]
-        }, 
+  // currentUser: User = {
+  //   id: 1,
+  //   userName: 'bella',
+  //   email: 'bella@gmail.com',
+  //   password: 'bella123',
+  //   About: 'joined ITI, looking for front end position ',
+  //   workExp: [{
+  //     id: 1,
+  //     title: 'frontend developer',
+  //     employmentType: { id: 1, name: 'Full-time' },
+  //     companyName: 'Information Technology Institute (ITI)',
+  //     location: 'cairo',
+  //     isWorking: false,
+  //     startDate: 'June',
+  //     endDate: 'October',
+  //     description: 'ITI is good' , 
+  //     Headline:'Trainee Web & UI Development at Information Technology Institute(ITI)'
+  //   }],
+  //   userInfo: {
+  //     profilePhoto: 'bella.jpg',
+  //     jobOpps: 
+  //       {
+  //         id: 1,
+  //         title: ['UI and Web development','Full Stack'],
+  //         jobLocation: ['maadi', 'mokattam'],
+  //         jobTypes: [
+  //           { id: 2, name: 'part-time' },
+  //           { id: 3, name: 'temporary' }
+  //         ]
+  //       }, 
       
-    },
-    education: [{
-      id: 1,
-      schoolName: 'Cairo University',
-      degree: 'Bachelors degree, Computer Science',
-      fieldOfStudy: 'information technology',
-      startYear: 2015,
-      endYear: 2019,
-      grade: 'good',
-      activity: 'joined SCCI',
-      description: 'computer science is good'
-    }],
-    skills: [
-      { id: 1, name: 'problem solver' },
-      { id: 2, name: 'communication' }
-    ],
-    courses: [
-      {
-        id: 1,
-        name: 'Object-Oriented Programming in JavaScript, Udemy',
-        association: []
-      },{
-        id: 2,
-        name: 'JavaScript Tutorial, Udemy',
-        association: []
-      },{
-        id: 3,
-        name: 'Mastering React, Udemy',
-        association: []
-      }
+  //   },
+  //   education: [{
+  //     id: 1,
+  //     schoolName: 'Cairo University',
+  //     degree: 'Bachelors degree, Computer Science',
+  //     fieldOfStudy: 'information technology',
+  //     startYear: 2015,
+  //     endYear: 2019,
+  //     grade: 'good',
+  //     activity: 'joined SCCI',
+  //     description: 'computer science is good'
+  //   }],
+  //   skills: [
+  //     { id: 1, name: 'problem solver' },
+  //     { id: 2, name: 'communication' }
+  //   ],
+  //   courses: [
+  //     {
+  //       id: 1,
+  //       name: 'Object-Oriented Programming in JavaScript, Udemy',
+  //       association: []
+  //     },{
+  //       id: 2,
+  //       name: 'JavaScript Tutorial, Udemy',
+  //       association: []
+  //     },{
+  //       id: 3,
+  //       name: 'Mastering React, Udemy',
+  //       association: []
+  //     }
       // },{
       //   id: 4,
       //   name: 'The Complete JQuery Course from Beginner To Advanced, Udemy',
       //   association: []
       // }
-    ],
-    posts: [
-      {
-        id: 1,
-        userId: 1,
-        body:
-          // tslint:disable-next-line:max-line-length
-          'salsabils\'s post',
-        likes: 50,
-        replies: 20,
-        imageUrls: [],
-        comments: [
-          {
-            userId:3,
-            commentId: 1,
-            body: 'comment',
-            likes: 5,
-            replies: 0,
-            liked:false,
+  //   ],
+  //   posts: [
+  //     {
+  //       id: 1,
+  //       userId: 1,
+  //       body:
+  //         // tslint:disable-next-line:max-line-length
+  //         'salsabils\'s post',
+  //       likes: 50,
+  //       replies: 20,
+  //       imageUrls: [],
+  //       comments: [
+  //         {
+  //           userId:3,
+  //           commentId: 1,
+  //           body: 'comment',
+  //           likes: 5,
+  //           replies: 0,
+  //           liked:false,
 
-          },
-        ],
-        onComment:false,
-        onHover:false,
-        onHoverReact:false,
-        liked:"",
-      },
+  //         },
+  //       ],
+  //       onComment:false,
+  //       onHover:false,
+  //       onHoverReact:false,
+  //       liked:"",
+  //     },
 
-    ],
-    friendsId:[2,3],
-    invitations: [4]
-  };
+  //   ],
+  //   friendsId:[2,3],
+  //   invitations: [4]
+  // };
   
   months = [
     'January', 'February', 'March', 'April', 'May',
@@ -450,16 +450,18 @@ export class UserService {
       email: 'mariam@gmail.com',
       password: 'mariam123',
       About: 'joined ITI, looking for front end position ',
-      workExp: [{
+      workExp:[ {
         id: 1,
         title: 'frontend developer',
-        employmentType: { id: 1, name: 'Full-time' },
+        employmentType: { id: 1, name: 'full-time' },
         companyName: 'vodafone',
         location: 'cairo',
         isWorking: false,
         startDate: 'October',
         endDate: 'June',
-        description: 'vodafone is good'
+        description: 'vodafone is good',
+        Headline:'Trainee Web & UI Development at Information Technology Institute(ITI)'
+
       }],
       userInfo: {
         profilePhoto: 'bella.jpg',
@@ -472,8 +474,7 @@ export class UserService {
               { id: 2, name: 'part-time' },
               { id: 3, name: 'temporary' }
             ]
-          }
-        
+          }, 
       },
       education: [{
         id: 1,
@@ -500,26 +501,67 @@ export class UserService {
       posts: [
         {
           id: 1,
+          userId: 3,
           body:
             // tslint:disable-next-line:max-line-length
-            'Looking to make a positive difference? Take part in our internship challenge and compete to win a 6-month paid global internship at JTI, Japan Tobacco International.',
-          likes: 200,
-          imageUrls: ['JTI.jpg'],
+            'All of us know the compiler and some of them know the interpreter, but a lot of us don\'t know the transpiler.',
+          likes: 100,
+          replies: 20,
+          imageUrls: ['../../../assets/JTI.jpg'],
           comments: [
             {
               commentId: 1,
-              body: 'Sevgi metin salihoglu ask olsun.cvbh.',
-              liked:false
-            }
+              userId: 2,
+              body: '.1Sevgi metin salihoglu ask olsun.cvbh.',
+              likes: 20,
+              replies: 10,
+              liked:false,
+
+            },
+            {
+              commentId: 1,
+              userId: 3,
+              body: '.2Sevgi metin salihoglu ask olsun.cvbh.',
+              likes: 0,
+              replies: 0,
+              liked:false,
+
+            },
+            
           ],
           onComment:false,
           onHover:false,
           onHoverReact:false,
           liked:"",
 
+        },
+        {
+          userId: 3,
+          id: 2,
+          body:
+            // tslint:disable-next-line:max-line-length
+            'post 3',
+          likes: 0,
+          replies: 0,
+          imageUrls: [],
+          comments: [
+            {
+              commentId: 1,
+              userId: 2,
+              body: 'comment 1',
+              likes: 5,
+              replies: 2,
+              liked:false,
+
+            }
+          ],
+          onComment:false,
+          onHover:false,
+          onHoverReact:false,
+          liked:"",
         }
       ],
-      friendsId:[1],
+      friendsId:[2],
       
 
     },

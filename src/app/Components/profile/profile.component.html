@@ -28,7 +28,7 @@
           <div class="card-info">
             <mat-card-title class="card__title">{{currentUser.userName}}</mat-card-title>
             <mat-card-subtitle class="card__subtitle"
-              >{{currentUser.workExp[0].Headline}}</mat-card-subtitle
+              >{{currentUser.workExp[0]?.Headline}}</mat-card-subtitle
             >
             <ul class="card__list ">
               <li class="list__item list--inline">Egypt</li>
@@ -47,7 +47,7 @@
               class="card__img-logo"
             />
             <a href="#" class="card__subtitle text--sm link link--default"
-              >{{currentUser.workExp[0].companyName}}</a
+              >{{currentUser.workExp[0]?.companyName}}</a
             >
           </mat-card-title-group>
         </mat-card-content>
@@ -122,7 +122,8 @@
 
      
 
-      <ng-container  class="experience" *ngFor="let exp of workExps ; let i=index ">
+      
+      <ng-container  class="experience"  *ngFor="let exp of workExps ; let i=index ">
         <img
           mat-card-sm-image
           src="../../assets/profile/uni.png"
@@ -133,7 +134,7 @@
           
           <mat-card-subtitle
           class="card__subtitle card--dark text--normal text--dark">
-            {{exp.title}}
+            {{exp?.title}}
           </mat-card-subtitle>
 
           <button mat-button class="btn text--info card__icons card__icons-feat card__icons--mr">
@@ -142,44 +143,17 @@
           </button>
 
           <mat-card-subtitle class="card__subtitle text--sm"
-            >{{exp.companyName}}</mat-card-subtitle
+            >{{exp?.companyName}}</mat-card-subtitle
           >
           <mat-card-subtitle class="card__subtitle text--sm text--info"
-            >{{exp.startDate}} - {{exp.endDate}} . {{calcDateOfWorkExp(i)}}mos</mat-card-subtitle
+            >{{exp?.startDate}} - {{exp?.endDate}} </mat-card-subtitle
           >
         </mat-card-title-group>
 
         <hr class="horizontal">
       </ng-container>
 
-        <!-- <ng-container class="experience" *ngFor="let exp of workExps ; let i=index ">
-        
-          <img
-            mat-card-sm-image
-            src="../../assets/profile/iti.png"
-            class="card__details-img"
-          />
-          <mat-card-title-group class="card__details" >
-            <mat-card-subtitle
-              class="card__subtit le card--dark text--normal text--dark"
-              >{{exp.title}}</mat-card-subtitle
-            >
-             <button mat-button class="btn text--info card__icons card__icons-feat card__icons--mr">
-              <mat-icon routerLink="/education/edit" (click)="getEducation(edu.id)"
-              class="text--primary">create</mat-icon>
-          </button>
-            <mat-card-subtitle class="card__subtitle text--sm"
-              >{{exp.companyName}}</mat-card-subtitle
-            >
-            <mat-card-subtitle class="card__subtitle text--sm text--info"
-              >{{exp.startDate}} - {{exp.endDate}} . {{calcDateOfWorkExp(i)}}mos</mat-card-subtitle
-            >
-            <mat-card-subtitle class="card__subtitle text--sm text--info"
-              >Cairo Governorate, Egypt</mat-card-subtitle
-            >
-          </mat-card-title-group>
-          <hr class="horizontal">
-        </ng-container> -->
+      
   
       <ng-container class="skills">
         <mat-card-title class="card__title--lg card__title--pad">Skills & Endorsements</mat-card-title
