@@ -103,9 +103,8 @@ export class ExperienceFormComponent implements OnInit {
   }
   onCheckboxClicked($event: MouseEvent)
   {
-    
+    debugger;
     this.isChecked = !this.isChecked;
-    // tslint:disable-next-line: no-unused-expression
     this.isChecked ? true : false;
     const checkbox = $event.target as HTMLInputElement;
     this.checkboxId = +checkbox.id;
@@ -192,7 +191,8 @@ export class ExperienceFormComponent implements OnInit {
   }
   fillForm()
   {
-    debugger;
+ 
+    this.isChecked=this.userService.experienceForm.isWorking;
     this.myForm.controls["title"].setValue(this.userService.experienceForm.title);
     const name = +this.userService.experienceForm.employmentType;
     this.myForm.controls["employmentType"].setValue(name);

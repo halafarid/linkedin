@@ -47,7 +47,7 @@
                 </mat-error>
             </div>
 
-            <mat-checkbox class="form__checkbox"  (click)="onCheckboxClicked($event)">I am currently working in this role</mat-checkbox>
+            <mat-checkbox class="form__checkbox" [checked]="isChecked" (click)="onCheckboxClicked($event)">I am currently working in this role</mat-checkbox>
 
             <div class="form__field--inline">
                 <div class="form__field--w">
