@@ -446,16 +446,18 @@ export class UserService {
       email: 'mariam@gmail.com',
       password: 'mariam123',
       About: 'joined ITI, looking for front end position ',
-      workExp: [{
+      workExp:[ {
         id: 1,
         title: 'frontend developer',
-        employmentType: { id: 1, name: 'Full-time' },
+        employmentType: { id: 1, name: 'full-time' },
         companyName: 'vodafone',
         location: 'cairo',
         isWorking: false,
         startDate: 'October',
         endDate: 'June',
-        description: 'vodafone is good'
+        description: 'vodafone is good',
+        Headline:'Trainee Web & UI Development at Information Technology Institute(ITI)'
+
       }],
       userInfo: {
         profilePhoto: 'bella.jpg',
@@ -468,8 +470,7 @@ export class UserService {
               { id: 2, name: 'part-time' },
               { id: 3, name: 'temporary' }
             ]
-          }
-        
+          }, 
       },
       education: [{
         id: 1,
@@ -496,26 +497,67 @@ export class UserService {
       posts: [
         {
           id: 1,
+          userId: 3,
           body:
             // tslint:disable-next-line:max-line-length
-            'Looking to make a positive difference? Take part in our internship challenge and compete to win a 6-month paid global internship at JTI, Japan Tobacco International.',
-          likes: 200,
-          imageUrls: ['JTI.jpg'],
+            'All of us know the compiler and some of them know the interpreter, but a lot of us don\'t know the transpiler.',
+          likes: 100,
+          replies: 20,
+          imageUrls: ['../../../assets/JTI.jpg'],
           comments: [
             {
               commentId: 1,
-              body: 'Sevgi metin salihoglu ask olsun.cvbh.',
-              liked:false
-            }
+              userId: 2,
+              body: '.1Sevgi metin salihoglu ask olsun.cvbh.',
+              likes: 20,
+              replies: 10,
+              liked:false,
+
+            },
+            {
+              commentId: 1,
+              userId: 3,
+              body: '.2Sevgi metin salihoglu ask olsun.cvbh.',
+              likes: 0,
+              replies: 0,
+              liked:false,
+
+            },
+            
           ],
           onComment:false,
           onHover:false,
           onHoverReact:false,
           liked:"",
 
+        },
+        {
+          userId: 3,
+          id: 2,
+          body:
+            // tslint:disable-next-line:max-line-length
+            'post 3',
+          likes: 0,
+          replies: 0,
+          imageUrls: [],
+          comments: [
+            {
+              commentId: 1,
+              userId: 2,
+              body: 'comment 1',
+              likes: 5,
+              replies: 2,
+              liked:false,
+
+            }
+          ],
+          onComment:false,
+          onHover:false,
+          onHoverReact:false,
+          liked:"",
         }
       ],
-      friendsId:[1],
+      friendsId:[2],
       
 
     },
