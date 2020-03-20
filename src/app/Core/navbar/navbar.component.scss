@@ -65,6 +65,10 @@ mat-toolbar {
 input {
   background-color: #e1e9ee;
 }
+.active{
+  background-color: $light;
+
+}
 .mediv {
   border-radius: 50%;
   height: 30px;
@@ -99,19 +103,20 @@ a {
   width: 40%;
   height: 7%;
   border-radius: 5px;
-  position: relative;
+  position: fixed;
   top: 9%;
-  left: 10.5%;
+  left: 8.6%;
 }
 mat-chip {
   border: 1.5px solid #485d69;
   color: #485d69;
   background-color: white;
+  cursor: pointer;
 }
 .dark-background {
   height: 100vh;
   width: 100vw;
-  position: absolute;
+  position: fixed;
   z-index: 50;
   background-color: #80808080;
   top: 0;
@@ -119,8 +124,8 @@ mat-chip {
 }
 .search-result-sm {
   width: 60%;
-  top: 10%;
-  left: 10.5%;
+  top: 9%;
+  left: 8.6%;
 }
 .match {
   display: block;

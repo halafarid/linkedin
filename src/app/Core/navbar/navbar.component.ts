@@ -13,9 +13,15 @@ export class NavbarComponent implements OnInit {
 
   invitations = this.userService.currentUser.invitations.length;
   users;
+  
   subNav = false;
   searchResult = false;
   match = false;
+  searchedBy="people"
+  activeClicked(searchedBy){
+
+this.searchedBy=searchedBy;
+  }
   enableSeachBy() {
     this.subNav = true;
   }
@@ -30,8 +36,29 @@ export class NavbarComponent implements OnInit {
     this.searchResult = false;
   }
   SeachResult(e) {
-    this.enableSeachResult();
-    this.users = this.userService.getByName(e.target["value"]);
+    if(e.target["value"]!="")
+    {
+      this.enableSeachResult();
+
+    }
+    else
+    {
+      this.disableSeachResult();
+      this.enableSeachBy();
+    }
+    if(this.searchedBy=="people"){
+
+      this.users = this.userService.getByName(e.target["value"]);
+    }
+    else if(this.searchedBy=="job"){
+
+      this.users = this.userService.getByJob(e.target["value"]);
+    }
+    else if(this.searchedBy=="loc"){
+
+      this.users = this.userService.getByLoc(e.target["value"]);
+    }
+    console.log(this.users)
     if (this.users.length === 0) {
       this.match = true;
       this.disableSeachBy();

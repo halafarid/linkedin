@@ -64,7 +64,7 @@ export class UserService {
       jobOpps: 
         {
           id: 1,
-          title: ['UI and Web development','Full Stack'],
+          title: ['UI and Web development','full Stack'],
           jobLocation: ['maadi', 'mokattam'],
           jobTypes: [
             { id: 2, name: 'part-time' },
@@ -171,7 +171,7 @@ export class UserService {
         jobOpps: 
           {
             id: 1,
-            title: ['UI and Web development','Full Stack'],
+            title: ['UI and Web development','front end'],
             jobLocation: ['maadi', 'mokattam'],
             jobTypes: [
               { id: 2, name: 'part-time' },
@@ -270,7 +270,7 @@ export class UserService {
         jobOpps: 
           {
             id: 1,
-            title: ['UI and Web development','Full Stack'],
+            title: ['full stack'],
             jobLocation: ['madinaty'],
             jobTypes: [
               { id: 2, name: 'part-time' },
@@ -346,7 +346,7 @@ export class UserService {
         jobOpps: 
           {
             id: 1,
-            title: ['UI and Web development','Full Stack'],
+            title: ['software developer'],
             jobLocation: ['October'],
             jobTypes: [
               { id: 2, name: 'part-time' },
@@ -467,7 +467,7 @@ export class UserService {
         jobOpps: 
           {
             id: 1,
-            title: ['UI and Web development','Full Stack'],
+            title: ['manager'],
             jobLocation: ['October'],
             jobTypes: [
               { id: 2, name: 'part-time' },
@@ -579,9 +579,30 @@ export class UserService {
     }
   }
   getByName(name: string): User[] {
-    return this.Users.filter(user => user.userName.includes(name));
+    return this.Users.filter(user => user.userName.includes(name.toLowerCase()));
   }
-
+  getByJob(name: string):User[] {
+    let users=[]
+    for (const user of this.Users) {
+      const title=user.userInfo.jobOpps.title.filter(t=>t.toLowerCase().includes(name.toLowerCase()))
+      if(title.length!=0)
+      {
+        users.push(user)
+      }
+    }
+    return users
+  }
+  getByLoc(name: string): User[] {
+    let users=[]
+    for (const user of this.Users) {
+      const title=user.userInfo.jobOpps.jobLocation.filter(t=>t.toLowerCase().includes(name))
+      if(title.length!=0)
+      {
+        users.push(user)
+      }
+    }
+    return users
+  }
   // addIdGeneric<T>(param:T , arr:[T])
   // {   
       

@@ -65,8 +65,10 @@
 <div class="dark-background" *ngIf="subNav" (click)="disableSeachBy()">
   <mat-toolbar class="sub-nav">
     <mat-chip-list aria-label="Fish selection">
-      <mat-chip routerLink="/search/people">People</mat-chip>
-      <mat-chip routerLink="/search/jobs">Jobs</mat-chip>
+      <mat-chip (click)="activeClicked('people')" >People</mat-chip>
+      <mat-chip (click)="activeClicked('job')" >Jobs</mat-chip>
+      <mat-chip (click)="activeClicked('loc')" >Location</mat-chip>
+
     </mat-chip-list>
   </mat-toolbar>
 </div>
