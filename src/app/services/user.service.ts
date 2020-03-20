@@ -31,106 +31,109 @@ export class UserService {
   educationForm = {
     id: 1
   };
-  // currentUser: User = {};
-  currentUser: User = {
-    id: 1,
-    userName: 'bella',
-    email: 'bella@gmail.com',
-    password: 'bella123',
-    About: 'joined ITI, looking for front end position ',
-    workExp: [{
-      id: 1,
-      title: 'frontend developer',
-      employmentType: { id: 1, name: 'Full-time' },
-      companyName: 'Information Technology Institute (ITI)',
-      location: 'cairo',
-      isWorking: false,
-      startDate: 'June',
-      endDate: 'October',
-      description: 'ITI is good' , 
-      Headline:'Trainee Web & UI Development at Information Technology Institute(ITI)'
-    }],
-    userInfo: {
-      profilePhoto: 'bella.jpg',
-      jobOpps: 
-        {
-          id: 1,
-          title: ['UI and Web development','Full Stack'],
-          jobLocation: ['maadi', 'mokattam'],
-          jobTypes: [
-            { id: 2, name: 'part-time' },
-            { id: 3, name: 'temporary' }
-          ]
-        }, 
+
+  currentUser: User = {};
+
+  // currentUser: User = {
+  //   id: 4,
+  //   userName: 'mariam',
+  //   email: 'mariam@gmail.com',
+  //   password: 'mariam123',
+  //   About: 'joined ITI, looking for front end position ',
+  //   workExp: [{
+  //     id: 1,
+  //     title: 'frontend developer',
+  //     employmentType: { id: 1, name: 'Full-time' },
+  //     companyName: 'Information Technology Institute (ITI)',
+  //     location: 'cairo',
+  //     isWorking: false,
+  //     startDate: 'June',
+  //     endDate: 'October',
+  //     description: 'ITI is good' , 
+  //     Headline:'Trainee Web & UI Development at Information Technology Institute(ITI)'
+  //   }],
+  //   userInfo: {
+  //     profilePhoto: 'bella.jpg',
+  //     jobOpps: 
+  //       {
+  //         id: 1,
+  //         title: ['UI and Web development','Full Stack'],
+  //         jobLocation: ['maadi', 'mokattam'],
+  //         jobTypes: [
+  //           { id: 2, name: 'part-time' },
+  //           { id: 3, name: 'temporary' }
+  //         ]
+  //       }, 
       
-    },
-    education: [{
-      id: 1,
-      schoolName: 'Cairo University',
-      degree: 'Bachelors degree, Computer Science',
-      fieldOfStudy: 'information technology',
-      startYear: 2015,
-      endYear: 2019,
-      grade: 'good',
-      activity: 'joined SCCI',
-      description: 'computer science is good'
-    }],
-    skills: [
-      { id: 1, name: 'problem solver' },
-      { id: 2, name: 'communication' }
-    ],
-    courses: [
-      {
-        id: 1,
-        name: 'Object-Oriented Programming in JavaScript, Udemy',
-        association: []
-      },{
-        id: 2,
-        name: 'JavaScript Tutorial, Udemy',
-        association: []
-      },{
-        id: 3,
-        name: 'Mastering React, Udemy',
-        association: []
-      }
-      // },{
-      //   id: 4,
-      //   name: 'The Complete JQuery Course from Beginner To Advanced, Udemy',
-      //   association: []
-      // }
-    ],
-    posts: [
-      {
-        id: 1,
-        userId: 1,
-        body:
-          // tslint:disable-next-line:max-line-length
-          'salsabils\'s post',
-        likes: 50,
-        replies: 20,
-        imageUrls: [],
-        comments: [
-          {
-            userId:3,
-            commentId: 1,
-            body: 'comment',
-            likes: 5,
-            replies: 0,
-            liked:false,
+  //   },
+  //   education: [{
+  //     id: 1,
+  //     schoolName: 'Cairo University',
+  //     degree: 'Bachelors degree, Computer Science',
+  //     fieldOfStudy: 'information technology',
+  //     startYear: 2015,
+  //     endYear: 2019,
+  //     grade: 'good',
+  //     activity: 'joined SCCI',
+  //     description: 'computer science is good'
+  //   }],
+  //   skills: [
+  //     { id: 1, name: 'problem solver' },
+  //     { id: 2, name: 'communication' }
+  //   ],
+  //   courses: [
+  //     {
+  //       id: 1,
+  //       name: 'Object-Oriented Programming in JavaScript, Udemy',
+  //       association: []
+  //     },{
+  //       id: 2,
+  //       name: 'JavaScript Tutorial, Udemy',
+  //       association: []
+  //     },{
+  //       id: 3,
+  //       name: 'Mastering React, Udemy',
+  //       association: []
+  //     }
+  //     // },{
+  //     //   id: 4,
+  //     //   name: 'The Complete JQuery Course from Beginner To Advanced, Udemy',
+  //     //   association: []
+  //     // }
+  //   ],
+  //   posts: [
+  //     {
+  //       id: 1,
+  //       userId: 1,
+  //       body:
+  //         // tslint:disable-next-line:max-line-length
+  //         'salsabil\'s post',
+  //       likes: 50,
+  //       replies: 20,
+  //       imageUrls: [],
+  //       comments: [
+  //         {
+  //           userId:3,
+  //           commentId: 1,
+  //           body: 'comment',
+  //           likes: 5,
+  //           replies: 0,
+  //           liked:false,
 
-          },
-        ],
-        onComment:false,
-        onHover:false,
-        onHoverReact:false,
-        liked:"",
-      },
+  //         },
+  //       ],
+  //       onComment:false,
+  //       onHover:false,
+  //       onHoverReact:false,
+  //       liked:"",
+  //     },
 
-    ],
-    friendsId:[2,3],
-    invitations: [4]
-  };
-  
+  //   ],
+  //   friendsId:[3],
+  //   invitations: [2],
+  //   invitationsSend: [5]
+  // };
+
   months = [
     'January', 'February', 'March', 'April', 'May',
     'June', 'July', 'August', 'September',
@@ -235,7 +238,8 @@ export class UserService {
 
       ],
       friendsId:[2,3],
-      invitations: [4]
+      invitations: [],
+      invitationsSend: []
     },
     {
       id: 2,
@@ -311,7 +315,8 @@ export class UserService {
         },
       ],
       friendsId:[1],
-      invitations: [3]
+      invitations: [3],
+      invitationsSend: [4]
     },
     {
       id: 3,
@@ -431,8 +436,8 @@ export class UserService {
         }
       ],
       friendsId:[1],
-      
-
+      invitations: [],
+      invitationsSend: [],
     },
     {
       id: 4,
@@ -444,12 +449,13 @@ export class UserService {
         id: 1,
         title: 'frontend developer',
         employmentType: { id: 1, name: 'Full-time' },
-        companyName: 'vodafone',
+        companyName: 'Information Technology Institute (ITI)',
         location: 'cairo',
         isWorking: false,
-        startDate: 'October',
-        endDate: 'June',
-        description: 'vodafone is good'
+        startDate: 'June',
+        endDate: 'October',
+        description: 'ITI is good' , 
+        Headline:'Trainee Web & UI Development at Information Technology Institute(ITI)'
       }],
       userInfo: {
         profilePhoto: 'bella.jpg',
@@ -457,18 +463,18 @@ export class UserService {
           {
             id: 1,
             title: ['UI and Web development','Full Stack'],
-            jobLocation: ['October'],
+            jobLocation: ['maadi', 'mokattam'],
             jobTypes: [
               { id: 2, name: 'part-time' },
               { id: 3, name: 'temporary' }
             ]
-          }
+          }, 
         
       },
       education: [{
         id: 1,
-        schoolName: 'computer science',
-        degree: 'bachelors',
+        schoolName: 'Cairo University',
+        degree: 'Bachelors degree, Computer Science',
         fieldOfStudy: 'information technology',
         startYear: 2015,
         endYear: 2019,
@@ -483,35 +489,153 @@ export class UserService {
       courses: [
         {
           id: 1,
-          name: 'oop',
+          name: 'Object-Oriented Programming in JavaScript, Udemy',
+          association: []
+        },{
+          id: 2,
+          name: 'JavaScript Tutorial, Udemy',
+          association: []
+        },{
+          id: 3,
+          name: 'Mastering React, Udemy',
           association: []
         }
+        // },{
+        //   id: 4,
+        //   name: 'The Complete JQuery Course from Beginner To Advanced, Udemy',
+        //   association: []
+        // }
       ],
       posts: [
         {
           id: 1,
+          userId: 1,
           body:
             // tslint:disable-next-line:max-line-length
-            'Looking to make a positive difference? Take part in our internship challenge and compete to win a 6-month paid global internship at JTI, Japan Tobacco International.',
-          likes: 200,
-          imageUrls: ['JTI.jpg'],
+            'salsabil\'s post',
+          likes: 50,
+          replies: 20,
+          imageUrls: [],
           comments: [
             {
+              userId:3,
               commentId: 1,
-              body: 'Sevgi metin salihoglu ask olsun.cvbh.',
-              liked:false
-            }
+              body: 'comment',
+              likes: 5,
+              replies: 0,
+              liked:false,
+
+            },
           ],
           onComment:false,
           onHover:false,
           onHoverReact:false,
           liked:"",
+        },
 
-        }
       ],
-      friendsId:[1],
-      
+      friendsId:[3],
+      invitations: [2],
+      invitationsSend: [5]
+    },
+    {
+      id: 5,
+      userName: 'mirna',
+      email: 'mirna@gmail.com',
+      password: 'mirna',
+      About: 'joined ITI, looking for front end position ',
+      workExp: [{
+        id: 1,
+        title: 'frontend developer',
+        employmentType: { id: 1, name: 'Full-time' },
+        companyName: 'Information Technology Institute (ITI)',
+        location: 'cairo',
+        isWorking: false,
+        startDate: 'June',
+        endDate: 'October',
+        description: 'ITI is good' , 
+        Headline:'Trainee Web & UI Development at Information Technology Institute(ITI)'
+      }],
+      userInfo: {
+        profilePhoto: 'bella.jpg',
+        jobOpps: 
+          {
+            id: 1,
+            title: ['UI and Web development','Full Stack'],
+            jobLocation: ['maadi', 'mokattam'],
+            jobTypes: [
+              { id: 2, name: 'part-time' },
+              { id: 3, name: 'temporary' }
+            ]
+          }, 
+        
+      },
+      education: [{
+        id: 1,
+        schoolName: 'Cairo University',
+        degree: 'Bachelors degree, Computer Science',
+        fieldOfStudy: 'information technology',
+        startYear: 2015,
+        endYear: 2019,
+        grade: 'good',
+        activity: 'joined SCCI',
+        description: 'computer science is good'
+      }],
+      skills: [
+        { id: 1, name: 'problem solver' },
+        { id: 2, name: 'communication' }
+      ],
+      courses: [
+        {
+          id: 1,
+          name: 'Object-Oriented Programming in JavaScript, Udemy',
+          association: []
+        },{
+          id: 2,
+          name: 'JavaScript Tutorial, Udemy',
+          association: []
+        },{
+          id: 3,
+          name: 'Mastering React, Udemy',
+          association: []
+        }
+        // },{
+        //   id: 4,
+        //   name: 'The Complete JQuery Course from Beginner To Advanced, Udemy',
+        //   association: []
+        // }
+      ],
+      posts: [
+        {
+          id: 1,
+          userId: 1,
+          body:
+            // tslint:disable-next-line:max-line-length
+            'salsabil\'s post',
+          likes: 50,
+          replies: 20,
+          imageUrls: [],
+          comments: [
+            {
+              userId:3,
+              commentId: 1,
+              body: 'comment',
+              likes: 5,
+              replies: 0,
+              liked:false,
 
+            },
+          ],
+          onComment:false,
+          onHover:false,
+          onHoverReact:false,
+          liked:"",
+        },
+
+      ],
+      friendsId:[],
+      invitations: [4],
+      invitationsSend: []
     },
   ];
 
@@ -567,6 +691,11 @@ export class UserService {
     for (const userid of this.currentUser.friendsId) {
       const friendUser = this.getById(userid);
       const index = network.indexOf(friendUser);
+      network.splice(index, 1);
+    }
+    for (const userid of this.currentUser.invitations) {
+      const inviteUser = this.getById(userid);
+      const index = network.indexOf(inviteUser);
       network.splice(index, 1);
     }
     return network;

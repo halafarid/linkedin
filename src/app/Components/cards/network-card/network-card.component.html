@@ -7,11 +7,11 @@
     />
     <div class="card__img-parent">
       <div class="card_img card_img--radius">
-        <img
+        <!-- <img
           id="profile-img"
           src="../../assets/logo.PNG"
           class="card__img-profile"
-        />
+        /> -->
       </div>
     </div>
   </div>
@@ -19,7 +19,7 @@
     <div class="card-center">
       <h5 class="card-title">{{user.userName}}</h5>
       <p class="card-small-font--gray">
-        {{user.workExp.title}}
+        <!-- {{user.workExp.title}} -->
       </p>
       <p class="card-small-font--gray">
         <i class="fas fa-link"></i> {{user.friendsId.length}}conections
@@ -27,5 +27,6 @@
     </div>
   </div>
 
-  <button class="btn btn--center">Connect</button>
+  <button #pindingBtn mat-stroked-button class="btn btn--center btn-text--info btn-border--info" *ngIf="pinding.includes(user.id)" (click)="onClick(pindingBtn, user.id)">Pinding</button>
+  <button #connectionBtn mat-stroked-button class="btn btn--center btn-text--primary btn-border--primar" *ngIf="!pinding.includes(user.id)" (click)="onClick(connectionBtn, user.id)">Connect</button>
 </div>

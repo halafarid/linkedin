@@ -15,8 +15,8 @@
                 </mat-card-subtitle>
     
                 <div class="card--mrg-t">
-                    <button mat-button class="btn text--info card__btn">Ignore</button>
-                    <button mat-stroked-button class="btn btn-text--primary">Accept</button>
+                    <button mat-button class="btn text--info card__btn" (click)="onIgnore(user)">Ignore</button>
+                    <button mat-stroked-button class="btn btn-text--primary" (click)="onAccept(user)">Accept</button>
                 </div>
     
                 <mat-card-subtitle class="card__subtitle text--sm"

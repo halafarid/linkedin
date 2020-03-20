@@ -14,7 +14,7 @@ networkUsers:User[];
   ngOnInit() {
     
   this.networkUsers=[...this.us.getAllExceptCurr()]
-  console.log(this.networkUsers);
+  // console.log(this.networkUsers);
   
 
   }
