@@ -13,10 +13,11 @@ export class DropdownComponent implements OnInit {
   
   @Input() isOpened = false;
   isSearchedFor:boolean=false;
+  messageOpended:boolean=false;
   SignedInId:number;
   invitorId:number;
   btnText:string='Connect';
-  pendingRequest:PendingRequest={};
+   pendingRequest:PendingRequest={};
    id = this.userService.searchedForProfile.id;
    penddingRequestid=this.userService.pendingRequests.findIndex(request => request.receiverId === this.id)
   constructor(public userService : UserService , public router : Router) { 
@@ -79,5 +80,8 @@ export class DropdownComponent implements OnInit {
 
 
   }
-
+  messageClicked()
+  {
+    this.messageOpended=!this.messageOpended;
+  }
 }

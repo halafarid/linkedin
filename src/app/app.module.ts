@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {ModalModule} from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
 
@@ -74,6 +75,7 @@ import { SearchCardSmComponent } from './components/cards/search-card-sm/search-
 import { NavdropdownComponent } from './Features/dropdown/navdropdown/navdropdown.component';
 import { InvitationsCardComponent } from './Components/cards/invitations-card/invitations-card.component';
 import { NotificationsComponent } from './Components/notifications/notifications.component';
+import { MessageUserComponent } from './Features/message-user/message-user.component';
 
 @NgModule({
   declarations: [
@@ -123,6 +125,7 @@ import { NotificationsComponent } from './Components/notifications/notifications
     NavdropdownComponent,
     InvitationsCardComponent,
     NotificationsComponent,
+    MessageUserComponent,
   ],
 
   imports: [
@@ -130,7 +133,7 @@ import { NotificationsComponent } from './Components/notifications/notifications
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-
+    ModalModule.forRoot(),
     MatCardModule,
     MatMenuModule,
     MatButtonModule,
