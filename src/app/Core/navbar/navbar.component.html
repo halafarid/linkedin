@@ -65,9 +65,10 @@
 <div class="dark-background" *ngIf="subNav" (click)="disableSeachBy()">
   <mat-toolbar class="sub-nav">
     <mat-chip-list aria-label="Fish selection">
-      <mat-chip (click)="activeClicked('people')" >People</mat-chip>
-      <mat-chip (click)="activeClicked('job')" >Jobs</mat-chip>
-      <mat-chip (click)="activeClicked('loc')" >Location</mat-chip>
+      <mat-chip (click)="activeClicked('all')" >All</mat-chip>
+      <mat-chip  mat-raised-button matTooltip="Search By people" (click)="activeClicked('people')" >People</mat-chip>
+      <mat-chip  mat-raised-button matTooltip="Search By jobs"(click)="activeClicked('job')" >Jobs</mat-chip>
+      <mat-chip  mat-raised-button matTooltip="Search By locations" (click)="activeClicked('loc')" >Location</mat-chip>
 
     </mat-chip-list>
   </mat-toolbar>

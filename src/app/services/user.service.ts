@@ -492,8 +492,8 @@ export class UserService {
         jobOpps: 
           {
             id: 1,
-            title: ['UI and Web development','Full Stack'],
-            jobLocation: ['maadi', 'mokattam'],
+            title: ['manager'],
+            jobLocation: ['october'],
             jobTypes: [
               { id: 2, name: 'part-time' },
               { id: 3, name: 'temporary' }
@@ -591,8 +591,8 @@ export class UserService {
         jobOpps: 
           {
             id: 1,
-            title: ['UI and Web development','Full Stack'],
-            jobLocation: ['maadi', 'mokattam'],
+            title: ['civil engineer'],
+            jobLocation: ['october'],
             jobTypes: [
               { id: 2, name: 'part-time' },
               { id: 3, name: 'temporary' }
