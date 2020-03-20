@@ -5,6 +5,8 @@
       <div class="content">
         <mat-card-title>{{ user.userName }}</mat-card-title>
         <small *ngFor="let title of user.userInfo.jobOpps.title"> . {{  title }}</small>
+        <small *ngFor="let loc of user.userInfo.jobOpps.jobLocation"> . {{  loc }}</small>
+
       </div>
     </mat-card-header></mat-list-item
   >

@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
   subNav = false;
   searchResult = false;
   match = false;
-  searchedBy="people"
+  searchedBy="all"
   activeClicked(searchedBy){
 
 this.searchedBy=searchedBy;
@@ -46,9 +46,13 @@ this.searchedBy=searchedBy;
       this.disableSeachResult();
       this.enableSeachBy();
     }
-    if(this.searchedBy=="people"){
+    if(this.searchedBy=="all"){
+     const allUsers=this.userService.getByName(e.target["value"]).concat(this.userService.getByJob(e.target["value"])).concat(this.userService.getByLoc(e.target["value"]))
+      this.users=[...new Set(allUsers)]
 
-      debugger;
+    }
+    else if(this.searchedBy=="people"){
+
       this.users = this.userService.getByName(e.target["value"]);
       console.log(this.users);
     }

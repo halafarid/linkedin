@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatExpansionModule } from '@angular/material/expansion';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { AppComponent } from './app.component';
 
@@ -142,7 +143,8 @@ import { NotificationsComponent } from './Components/notifications/notifications
     MatExpansionModule,
     MatToolbarModule,
     MatChipsModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatTooltipModule,
   ],
 
   providers: [UserService],
