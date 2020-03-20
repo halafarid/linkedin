@@ -47,11 +47,24 @@
                 background-color: #93d8fc52;
             }
         }
+
+        &--info {
+            color: $info;
+            transition: all 0.3s ease-in-out;
+        }
     }
 
     &-border {
         &--primary {
             color: $primary;
+        }
+
+        &--primar {
+            border: 1px solid $dark-primary;
+        }
+
+        &--info {
+            border: 1px solid $dark-info;
         }
     }
 }
