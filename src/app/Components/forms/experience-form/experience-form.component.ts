@@ -103,9 +103,8 @@ export class ExperienceFormComponent implements OnInit {
   }
   onCheckboxClicked($event: MouseEvent)
   {
-    
+    debugger;
     this.isChecked = !this.isChecked;
-    // tslint:disable-next-line: no-unused-expression
     this.isChecked ? true : false;
     const checkbox = $event.target as HTMLInputElement;
     this.checkboxId = +checkbox.id;
@@ -139,14 +138,22 @@ export class ExperienceFormComponent implements OnInit {
   }
   
 
+  onDelete()
+  {
+
+    const id=this.userService.workExpId;
+    this.userService.Users[+this.currentUser.id-1].workExp.splice(id-1,1);
+    this.currentUser.workExp.splice(id-1,1);
+
+  }
   addWorkExp()
   {
    
     const userData = this.userService.Users[+this.userId -1];
     const userWorkExp=this.getFormData();
     let user =this.userService.Users.filter(user=> user.id===this.currentUser.id)[0];
-    user.workExp.unshift(userWorkExp);
     userWorkExp.id=this.currentUser.workExp.length+1;
+    user.workExp.push(userWorkExp);
     this.userWorkExp=userWorkExp;
     this.userService.Users[this.currentUser.id]=user;
     
@@ -154,10 +161,12 @@ export class ExperienceFormComponent implements OnInit {
   getFormData()
   {
     // this.userWorkExp.employmentType.name=this.employmentTypes[this.myForm.value.employmentType];
+    debugger;
     const userWorkExp :WorkExperience={};
     userWorkExp.title=this.myForm.value.title;
     userWorkExp.employmentType=this.myForm.value.employmentType;
     userWorkExp.location=this.myForm.value.location;
+    userWorkExp.companyName=this.myForm.value.companyName;
     userWorkExp.startDate=this.myForm.value.startDate;
     userWorkExp.startYear=this.myForm.value.startYear;
     userWorkExp.description=this.myForm.value.description;
@@ -182,29 +191,35 @@ export class ExperienceFormComponent implements OnInit {
   }
   fillForm()
   {
-    debugger;
+ 
+    this.isChecked=this.userService.experienceForm.isWorking;
     this.myForm.controls["title"].setValue(this.userService.experienceForm.title);
-    this.myForm.controls["employmentType"].setValue(this.userService.experienceForm.employmentType);
+    const name = +this.userService.experienceForm.employmentType;
+    this.myForm.controls["employmentType"].setValue(name);
     this.myForm.controls["companyName"].setValue(this.userService.experienceForm.companyName);
     this.myForm.controls["location"].setValue(this.userService.experienceForm.location);
     this.myForm.controls["startDate"].setValue(this.userService.experienceForm.startDate);
     this.myForm.controls["startYear"].setValue(this.userService.experienceForm.startYear);
+    this.myForm.controls["endDate"].setValue(this.userService.experienceForm.endDate);
+    this.myForm.controls["endYear"].setValue(this.userService.experienceForm.endYear);
+    this.myForm.controls["headline"].setValue(this.userService.experienceForm.Headline);
+    this.myForm.controls["description"].setValue(this.userService.experienceForm.description);
+
+
+    
   }
   editExpForm(id:number)
   {
+    debugger;
    const userWorkExp=this.getFormData();
-   console.log(userWorkExp);
-   debugger;
-   let currentWorkExp= this.userService.Users[this.currentUser.id].workExp.filter(user=>user.id===this.currentUser.id)[0];
-   currentWorkExp.title=userWorkExp.title;
-   this.userService.Users[this.currentUser.id].workExp.filter(user=>user.id===this.currentUser.id)[0]=userWorkExp;
-   console.log(this.userService.Users[this.currentUser.id].workExp.filter(user=>user.id===this.currentUser.id)[0])
-
-   //  debugger;
-  //  let user =this.userService.Users.filter(user=> user.id===this.currentUser.id)[0];
-  //  user.workExp[id]=userWorkExp;
-  //  this.userService.Users[this.currentUser.id-1]=user;
-
+   userWorkExp.id=id;
+   let currentWorkExp= this.userService.Users[this.currentUser.id].workExp.filter(exp=>exp.id=== userWorkExp.id)[0];
+   currentWorkExp=userWorkExp;
+   this.currentUser.workExp[userWorkExp.id-1]=userWorkExp;
+   console.log(this.currentUser.workExp[userWorkExp.id-1]);
+   this.userService.Users[this.currentUser.id].workExp[userWorkExp.id-1]=userWorkExp;
+  //  console.log( this.userService.Users[this.currentUser.id].workExp[userWorkExp.id-1]);
+ 
 
   }
 }
