@@ -6,6 +6,8 @@ import { WorkExperience } from './../Models/WorkExperience';
 import { Education } from '../Models/Education';
 import { User } from 'src/app/Models/User';
 import { Courses } from './../Models/Courses';
+import { BindingFlags } from '@angular/compiler/src/core';
+import { PendingRequest } from './../Models/pendingReaquest';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +23,7 @@ export class UserService {
   SignedInId:number;
   invitorId:number;
     // currentUser: User = {};
+  pendingRequests :PendingRequest[] =[];
 
 
   privacy:string[]=[

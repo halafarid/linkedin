@@ -8,6 +8,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class InvitationsCardComponent implements OnInit {
 
+
   currentUser = this.userService.currentUser;
   invitations = this.currentUser.invitations;
   invitationsUsers = this.invitations.map(invitation => this.userService.getById(invitation));
