@@ -16,7 +16,11 @@ export class UserService {
   // educationForm = {};
   workExpId=0;
   experienceForm :WorkExperience ={};
-  // currentUser: User = {};
+  isSearchedFor : boolean = false;
+  searchedForProfile : User={};
+  SignedInId:number;
+  invitorId:number;
+    // currentUser: User = {};
 
 
   privacy:string[]=[
@@ -255,18 +259,18 @@ export class UserService {
       userName: 'sara',
       email: 'sara@gmail.com',
       password: 'sara123',
-      About: 'joined ITI, looking for front end position ',
+      About: 'joined Vodafone, looking for front end position ',
       workExp: [{
         id: 1,
-        title: 'frontend developer',
+        title: 'Full Stack developer',
         employmentType: { id: 1, name: 'Full-time' },
-        companyName: 'Information Technology Institute (ITI)',
+        companyName: 'Vodafone Egypt',
         location: 'cairo',
-        isWorking: false,
+        isWorking: true,
         startDate: 'October',
         endDate: 'June',
         description: 'vodafone is good',
-        Headline:'Trainee Web & UI Development at Information Technology Institute(ITI)'
+        Headline:'Full Stack Developer in Web Development at Vodafone Egypt'
 
       }],
       userInfo: {
@@ -285,7 +289,7 @@ export class UserService {
       },
       education: [{
         id: 1,
-        schoolName: 'computer science',
+        schoolName: 'computer science & Information Systems',
         degree: 'bachelors',
         fieldOfStudy: 'information technology',
         startYear: 2015,
@@ -296,12 +300,29 @@ export class UserService {
       }],
       skills: [
         { id: 1, name: 'problem solver' },
-        { id: 2, name: 'communication' }
+        { id: 2, name: 'communication' },
+        { id: 3, name: 'fast learner' }
       ],
       courses: [
         {
           id: 1,
           name: 'oop',
+          association: []
+        },
+        {
+          id: 2,
+          name: 'Data Structures',
+          association: []
+        },
+        {
+          id: 3,
+          name: 'Design Patterns',
+          association: []
+        },
+        ,
+        {
+          id: 4,
+          name: 'Sass',
           association: []
         }
       ],

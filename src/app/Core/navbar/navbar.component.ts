@@ -48,7 +48,7 @@ this.searchedBy=searchedBy;
     }
     if(this.searchedBy=="people"){
 
-      debugger;
+    
       this.users = this.userService.getByName(e.target["value"]);
       console.log(this.users);
     }

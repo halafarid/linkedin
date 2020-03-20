@@ -6,7 +6,7 @@
     <mat-card-title class="card__title--lg">About</mat-card-title>
     <mat-card-content class="card__icons" routerLink="/about">
         <button mat-button class="btn text--info card__icons-feat">
-            <mat-icon class="text--primary">create</mat-icon>
+            <mat-icon class="text--primary" *ngIf="!isSearchedFor">create</mat-icon>
         </button>            
     </mat-card-content>
     <mat-card-subtitle class="card__subtitle text--sm card__subtitle--wd">
@@ -36,7 +36,7 @@
     <mat-card-content class="card__icons">
         <button mat-button class="btn text--info card__icons-feat">
             <mat-icon routerLink="/experience/add"
-             class="text--primary">add</mat-icon>
+             class="text--primary" *ngIf="!isSearchedFor">add</mat-icon>
         </button>
                  
     </mat-card-content>
@@ -50,7 +50,7 @@
     <mat-card-content class="card__icons">
         <button mat-button class="btn text--info card__icons-feat">
             <mat-icon  routerLink= "/education/add"
-            class="text--primary">add</mat-icon>
+            class="text--primary" *ngIf="!isSearchedFor">add</mat-icon>
         </button>           
     </mat-card-content>
     <mat-card-content class="card__content card--flex">
@@ -71,7 +71,7 @@
     <mat-card-title class="card__title--lg">Accomplishments</mat-card-title>
     <mat-card-content class="card__icons" routerLink="/courses/add">
         <button mat-button class="btn text--info card__icons-feat">
-            <mat-icon class="text--primary">add</mat-icon>
+            <mat-icon class="text--primary" *ngIf="!isSearchedFor">add</mat-icon>
         </button>        
     </mat-card-content>
     <mat-list>

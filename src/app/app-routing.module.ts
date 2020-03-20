@@ -23,6 +23,7 @@ import { NotificationsComponent } from './Components/notifications/notifications
 const routes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full' },
   { path: 'profile', component: ProfileComponent },
+  {path: 'profile/:id', component: ProfileComponent},
   { path: 'about', component: AboutFormComponent },
   { path: 'skills/addnew', component: AddSkillsFormComponent },
   { path: 'education/add', component: EducationFormComponent },

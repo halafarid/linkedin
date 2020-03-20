@@ -26,7 +26,7 @@
         <app-dropdown></app-dropdown>
         <mat-card-content class="card__content card-mr0">
           <div class="card-info">
-            <mat-card-title class="card__title">{{currentUser.userName}}</mat-card-title>
+            <mat-card-title  class="card__title">{{currentUser.userName}}</mat-card-title>
             <mat-card-subtitle class="card__subtitle"
               >{{currentUser.workExp[0]?.Headline}}</mat-card-subtitle
             >
@@ -58,7 +58,7 @@
               <mat-card-content class="card__icons">
                 <button mat-button class="btn text--info card__icons-feat">
                     <mat-icon routerLink="/opportunities/add"
-                     class="text--primary">create</mat-icon>
+                     class="text--primary" *ngIf="!isSerchedFor">create</mat-icon>
                 </button>            
               </mat-card-content>
             <mat-card-title-group>
@@ -138,8 +138,8 @@
           </mat-card-subtitle>
 
           <button mat-button class="btn text--info card__icons card__icons-feat card__icons--mr">
-              <mat-icon routerLink="/experience/edit" (click)="getExperience(exp.id)"
-              class="text--primary">create</mat-icon>
+              <mat-icon routerLink="/experience/edit" (click)="getExperience(exp.id)" *ngIf="!isSerchedFor"
+              class="text--primary" >create</mat-icon>
           </button>
 
           <mat-card-subtitle class="card__subtitle text--sm"
@@ -166,20 +166,23 @@
             data-target="#exampleModal"
             data-whatever="@mdo"
             routerLink= "/skills/addnew"
+            *ngIf="!isSerchedFor"
           >
             Add a new skill
           </button>
           <button
             mat-button
             class="btn text--info card__icons-feat card__icons--inline"
+            *ngIf="!isSerchedFor"
           >
             <mat-icon routerLink="/skills/add"
-             class="text--primary">create</mat-icon>
+             class="text--primary" *ngIf="!isSerchedFor">create</mat-icon>
           </button>
         </mat-card-content>
         <button
           mat-stroked-button
           class="btn btn-text--primary btn-border--primary"
+          *ngIf="!isSerchedFor"
         >
           Take skill quiz
         </button>
@@ -207,7 +210,7 @@
 
           <button mat-button class="btn text--info card__icons card__icons-feat card__icons--mr">
               <mat-icon routerLink="/education/edit"  (click)="getEducation(edu.id)"
-              class="text--primary">create</mat-icon>
+              class="text--primary" *ngIf="!isSerchedFor">create</mat-icon>
           </button>
 
           <mat-card-subtitle class="card__subtitle text--sm"

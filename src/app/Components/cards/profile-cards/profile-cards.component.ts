@@ -8,8 +8,11 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ProfileCardsComponent implements OnInit {
 
+  isSearchedFor : boolean=false;
   currentUser = this.userService.currentUser;
-  constructor( public userService : UserService) { }
+  constructor( public userService : UserService) {
+    this.isSearchedFor=this.userService.isSearchedFor;
+   }
 
   ngOnInit() {
   }

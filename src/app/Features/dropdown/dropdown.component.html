@@ -1,10 +1,13 @@
 <div class=" dropdown--right">
     <div class="dropdown">
-        <button mat-raised-button (click)="isClicked()" class="btn btn--primary dropdown--btn dropdown--item">Add profile section</button>
-        <app-user-features class="dropdown--features" *ngIf="isOpened" ></app-user-features>
-        <button mat-raised-button class="dropdown--item dropdown--borderedbtn">More ... </button>
+
+        <button mat-raised-button (click)="isClicked()"  *ngIf="isSearchedFor" (click)="handleConnection()" class="btn btn--primary dropdown--btn dropdown--item">{{btnText}}</button>
+        <button mat-stroked-button   *ngIf="isSearchedFor" >Message</button>
+        <button mat-raised-button (click)="isClicked()" *ngIf="!isSearchedFor" class="btn btn--primary dropdown--btn dropdown--item">Add profile section</button>
+        <app-user-features class="dropdown--features" *ngIf="!isSearchedFor&&isOpened " ></app-user-features>
+        <button mat-stroked-button >More ... </button>
         <div class="card__icons-feat">
-            <mat-icon class="dropdown--icon">edit</mat-icon>
+            <mat-icon class="dropdown--icon" *ngIf="!isSearchedFor">edit</mat-icon>
 
         </div>
 
