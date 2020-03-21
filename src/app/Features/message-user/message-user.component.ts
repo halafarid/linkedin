@@ -6,13 +6,12 @@ import { UserService } from './../../services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-message-user',
-  templateUrl: './message-user.component.html',
-  styleUrls: ['./message-user.component.scss']
+  selector: "app-message-user",
+  templateUrl: "./message-user.component.html",
+  styleUrls: ["./message-user.component.scss"]
 })
 export class MessageUserComponent implements OnInit {
 
-  modalRef : BsModalRef;
   // @Output() isOpened : EventEmitter<boolean>;
   open:boolean=true;
   senderId:number;
@@ -20,8 +19,9 @@ export class MessageUserComponent implements OnInit {
   sender:User={};
   Reciever:User={};
 
+  isOpened: false;
   myForm = new FormGroup({
-    message : new FormControl("" , Validators.required)
+    message: new FormControl("", Validators.required)
   });
   constructor(public router:Router, public userService:UserService) { 
     this.senderId=this.userService.SignedInId;

@@ -1,24 +1,44 @@
 <app-profile></app-profile>
 
 <div class="overlay" *ngIf="isShow">
-    <form class="form form--lg form--ov" [formGroup]="aboutForm">
-        <label class="form__title">Edit About</label>
+  <form class="form form--lg form--ov" [formGroup]="aboutForm">
+    <label class="form__title">Edit About</label>
 
-        <mat-icon class="form__icons text--info" routerLink="/profile">clear</mat-icon>
-        <hr class="horizontal__form">
+    <mat-icon class="form__icons text--info" routerLink="/profile"
+      >clear</mat-icon
+    >
+    <hr class="horizontal__form" />
 
-        <div class="form__field">
-            <label class="form__label">Summary</label>
-            <textarea class="form__textarea"></textarea>
-        </div>
+    <div class="form__field">
+      <label class="form__label">Summary</label>
+      <textarea
+        class="form__textarea"
+        [formControl]="aboutForm.controls['summary']"
+      ></textarea>
+    </div>
 
-        <div class="form__field">
-            <label class="form__label text--info">Media<br>Add or link to external documents, photos, sites, videos, and presentations.</label>
-            <button mat-raised-button class="btn btn--primary btn--w">Upload</button>
-            <button mat-stroked-button class="btn btn-text--primary text--normal btn--w">Link</button>
-            <a href="#" class="link text--xs">Supported formats</a>
-        </div>
+    <div class="form__field">
+      <label class="form__label text--info"
+        >Media<br />Add or link to external documents, photos, sites, videos,
+        and presentations.</label
+      >
+      <button mat-raised-button class="btn btn--primary btn--w">Upload</button>
+      <button
+        mat-stroked-button
+        class="btn btn-text--primary text--normal btn--w"
+      >
+        Link
+      </button>
+      <a href="#" class="link text--xs">Supported formats</a>
+    </div>
 
-        <button mat-raised-button class="btn btn--primary btn--right btn--mr" routerLink="/profile">Save</button>
-    </form>
+    <button
+      mat-raised-button
+      class="btn btn--primary btn--right btn--mr"
+      routerLink="/profile"
+      (click)="submitSummary(this.aboutForm.controls.summary.value)"
+    >
+      Save
+    </button>
+  </form>
 </div>
