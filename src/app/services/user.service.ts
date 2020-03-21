@@ -815,6 +815,7 @@ export class UserService {
   }
   //obj like workExp or education ..etc
   editFormGeneric = (form, id , obj : string) => {
+    
     const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
     selectUser[obj][id - 1] = form;
     return true;

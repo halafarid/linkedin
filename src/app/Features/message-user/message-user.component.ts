@@ -10,6 +10,7 @@ import {BsModalService ,BsModalRef} from "ngx-bootstrap/modal"
 export class MessageUserComponent implements OnInit {
 
   modalRef : BsModalRef;
+  isOpened:false;
   myForm = new FormGroup({
     message : new FormControl("" , Validators.required)
   });
