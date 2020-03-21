@@ -1,6 +1,9 @@
-import { Component, OnInit ,TemplateRef} from '@angular/core';
+import { Component, OnInit ,TemplateRef, Output, EventEmitter} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {BsModalService ,BsModalRef} from "ngx-bootstrap/modal"
+import { User } from 'src/app/Models/User';
+import { UserService } from './../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-message-user',
@@ -10,21 +13,50 @@ import {BsModalService ,BsModalRef} from "ngx-bootstrap/modal"
 export class MessageUserComponent implements OnInit {
 
   modalRef : BsModalRef;
-  isOpened:false;
+  // @Output() isOpened : EventEmitter<boolean>;
+  open:boolean=true;
+  senderId:number;
+  recievierId:number;
+  sender:User={};
+  Reciever:User={};
+
   myForm = new FormGroup({
     message : new FormControl("" , Validators.required)
   });
-  constructor(private modalService :BsModalService) { }
+  constructor(public router:Router, public userService:UserService) { 
+    this.senderId=this.userService.SignedInId;
+    this.recievierId=this.userService.invitorId;
+    this.sender=this.userService.getById(this.senderId);
+    this.Reciever=this.userService.getById(this.recievierId);
+    
+
+  }
 
   ngOnInit() {
+    debugger;
   }
-  public openModal(template:TemplateRef<any>)
-  {
-    this.modalRef=this.modalService.show(template);
-  }
-  sendMessage()
-  {
+ 
+  // sendMessage(text)
+  // {
+  //    console.log(text)
+  //    this.Reciever.messages.push({senderId:this.senderId,message:'hii'})
+  // }
 
+  closeMessage()
+  {
+    this.open=false;
+    // this.isOpened.next(false);
+  }
+  sendMessageToUser(msg)
+  {
+    debugger;
+    this.Reciever.messages.push({senderId:this.senderId,senderName:this.sender.userName,message:msg});
+    // console.log(this.userService.Users[this.recievierId].messages);
+    this.router.navigate(['profile', this.recievierId]);
+    this.open=false;
+    // this.isOpened.next(false);
+    
+    
   }
 
 }

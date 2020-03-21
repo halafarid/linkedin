@@ -1,26 +1,39 @@
-<!-- <mat-card class="example-card">
-    <mat-card-header>
-     
-      <mat-card-title color="primary">Shiba Inu</mat-card-title>
-      <mat-card-subtitle>From : Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-        <form formGroupName="myForm" class="example-form">
-            <mat-form-field class="example-full-width">
-              <mat-label>Message</mat-label>
-              <input matInput #message maxlength="256" formControlName="message" placeholder="Type Your Message ...">
-              <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
-              <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
-            </mat-form-field>
-          </form>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button (click)="sendMessage()">Send</button>
-      <button mat-button>Discard</button>
-    </mat-card-actions>
-  </mat-card>
-   -->
-   <button (click)="openModal(template)"> open modal</button>
+
+    <div  id="myModal" class="modal" *ngIf="open">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="font-weight-normal">Send Message</h4>
+              <span (click)="closeMessage()" class="close">&times;</span>
+            </div>
+          <div class="modal-body">
+             
+                <i class="avatarIcon fas fa-user"></i>
+              <div>
+
+                  <p class="userName font-weight-normal"></p>
+                  <div class="dropdown dropdown--right">
+                    <button mat-raised-button [matMenuTriggerFor]="menu" class=""><mat-icon>drafts</mat-icon>   To {{Reciever.userName}}  <i class="dropdown fas fa-caret-down"></i></button>
+                    <mat-menu #menu="matMenu">
+                        <button  mat-menu-item>	<mat-icon>alternate_email</mat-icon>{{Reciever.email}}</button>
+                    </mat-menu>
+                </div>
+                </div>
+              </div>
+              <textarea #text cols="40" rows="5" class="post" placeholder="Type Your Message Here ... " ></textarea>
+            
+          <div class="hashtag" >
+        
+          <button  class="btn btn-primary postbtn" (click)="sendMessageToUser(text.value)">Send</button>
+          <button  class="btn btn-border postbtn" (click)="closeMessage()">Discard</button>
+
+          </div>
+        </div>
+      
+      </div>
+
+<!-- 
    <ng-template #template>
     <div class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -41,4 +54,4 @@
           </div>
         </div>
       </div>
-   </ng-template>
+   </ng-template> -->

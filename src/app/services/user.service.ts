@@ -255,7 +255,8 @@ export class UserService {
       ],
       friendsId:[2,3],
       invitations: [],
-      invitationsSend: []
+      invitationsSend: [],
+      messages:[{senderId:2,senderName:'sara',message:"Hi Can We Connect ? "}]
     },
     {
       id: 2,
@@ -349,7 +350,11 @@ export class UserService {
       ],
       friendsId:[1],
       invitations: [3],
-      invitationsSend: [4]
+      invitationsSend: [4],
+      messages:[
+        {senderId:1,senderName:'bella',message:"Hi Can We Connect ? "},
+        {senderId:4,senderName:'mariam',message:"What About Your Company Job Offers ? "}]
+
     },
     {
       id: 3,
@@ -569,7 +574,10 @@ export class UserService {
       ],
       friendsId:[3],
       invitations: [2],
-      invitationsSend: [5]
+      invitationsSend: [5],
+      messages:[
+        {senderId:1,senderName:'bella',message:"Hi Can We Connect ? "},
+        {senderId:3,senderName:'mariam',message:"What About Your Company Job Offers ? "}]
     },
     {
       id: 5,
@@ -668,7 +676,10 @@ export class UserService {
       ],
       friendsId:[],
       invitations: [4],
-      invitationsSend: []
+      invitationsSend: [],
+      messages:[
+        {senderId:1,senderName:'bella',message:"Hi Can We Connect ? "},
+        {senderId:3,senderName:'hala',message:"What About Your Company Job Offers ? "}]
     },
   ];
 

@@ -13,7 +13,7 @@ export class DropdownComponent implements OnInit {
   
   @Input() isOpened = false;
   isSearchedFor:boolean=false;
-  messageOpended:boolean=false;
+  @Input() messageOpended=false;
   SignedInId:number;
   invitorId:number;
   btnText:string='Connect';
@@ -82,6 +82,9 @@ export class DropdownComponent implements OnInit {
   }
   messageClicked()
   {
+    debugger;
+    this.router.url==='/message';
     this.messageOpended=!this.messageOpended;
+    
   }
 }

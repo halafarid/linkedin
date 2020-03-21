@@ -19,6 +19,7 @@ import {JobsComponent } from './components/jobs/jobs.component';
 import { AboutFormComponent } from './Components/forms/about-form/about-form.component';
 import { CourseFormComponent } from './Components/forms/course-form/course-form.component';
 import { NotificationsComponent } from './Components/notifications/notifications.component';
+import { MessageUserComponent } from './Features/message-user/message-user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/signin', pathMatch: 'full' },
@@ -34,6 +35,8 @@ const routes: Routes = [
   { path: 'courses/add', component: CourseFormComponent },
   { path: 'skills/add', component: SkillsFormComponent },
   { path: 'post/add', component: CreatePostComponent },
+  {path:'message',component:MessageUserComponent},
+  {path:'messages',component:NotificationsComponent},
   { path: 'notifications', component: NotificationsComponent},
   { path: 'home', component: HomeComponent },
   { path: 'signin', component: SigninComponent },
@@ -46,6 +49,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 export class AppRoutingModule {}

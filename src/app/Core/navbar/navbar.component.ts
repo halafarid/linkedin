@@ -12,6 +12,8 @@ export class NavbarComponent implements OnInit {
   constructor(public userService: UserService) {}
 
   invitations = this.userService.currentUser.invitations.length;
+  messages:number;
+ 
   users;
   
   subNav = false;
@@ -71,5 +73,14 @@ this.searchedBy=searchedBy;
       this.disableSeachBy();
     }
   }
-  ngOnInit() {}
+  ngOnInit() {
+    if(this.userService.currentUser.messages!=undefined)
+    {
+      this.messages=this.userService.currentUser.messages.length;
+    }
+    else 
+    {
+      this.messages=0;
+    }
+  }
 }

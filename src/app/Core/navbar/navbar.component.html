@@ -44,10 +44,13 @@
         <mat-icon>card_travel</mat-icon>
         <span>Jobs</span>
       </div>
-      <div class="nav-btn">
-        <mat-icon> forum</mat-icon>
+
+      <div class="nav-btn" routerLink="/messages">
+        <mat-icon *ngIf="messages > 0" matBadge={{messages}} matBadgeColor="warn">Messaging</mat-icon>
+        <mat-icon *ngIf="messages <= 0">Messaging</mat-icon>
         <span>Messaging</span>
       </div>
+      
       <div class="nav-btn" routerLink="/notifications">
         <mat-icon *ngIf="invitations > 0" matBadge={{invitations}} matBadgeColor="warn">notifications</mat-icon>
         <mat-icon *ngIf="invitations <= 0">notifications</mat-icon>

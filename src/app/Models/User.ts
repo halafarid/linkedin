@@ -4,6 +4,7 @@ import { Skills } from './Skills';
 import { Courses } from './Courses';
 import { Posts } from './Posts';
 import { UserInfo } from './UserInfo';
+import { userMessage } from './userMessage';
 export interface User{
     id?:number;
     userName?: string , 
@@ -19,4 +20,5 @@ export interface User{
     friendsId?:number[],
     invitations?: number[];
     invitationsSend?: number[];
+    messages?:userMessage[];
 }
