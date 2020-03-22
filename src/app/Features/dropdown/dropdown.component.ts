@@ -35,7 +35,6 @@ export class DropdownComponent implements OnInit {
 
   ngOnInit() {
 
-    debugger;
 
     if(this.penddingRequestid!== -1)
     {
@@ -82,7 +81,6 @@ export class DropdownComponent implements OnInit {
   }
   messageClicked()
   {
-    debugger;
     this.router.url==='/message';
     this.messageOpended=!this.messageOpended;
     

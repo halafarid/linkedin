@@ -6,7 +6,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatTooltipModule } from "@angular/material/tooltip";
-import {ModalModule} from 'ngx-bootstrap/modal';
 
 import { AppComponent } from "./app.component";
 
@@ -124,7 +123,7 @@ import { MessageUserComponent } from "./Features/message-user/message-user.compo
     SearchCardSmComponent,
     NavdropdownComponent,
     InvitationsCardComponent,
-    NotificationsComponent
+    NotificationsComponent,
     MessageUserComponent
   ],
 
@@ -133,7 +132,6 @@ import { MessageUserComponent } from "./Features/message-user/message-user.compo
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ModalModule.forRoot(),
     MatCardModule,
     MatMenuModule,
     MatButtonModule,

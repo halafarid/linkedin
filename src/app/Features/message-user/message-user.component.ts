@@ -1,6 +1,5 @@
 import { Component, OnInit ,TemplateRef, Output, EventEmitter} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import {BsModalService ,BsModalRef} from "ngx-bootstrap/modal"
 import { User } from 'src/app/Models/User';
 import { UserService } from './../../services/user.service';
 import { Router } from '@angular/router';
@@ -33,7 +32,7 @@ export class MessageUserComponent implements OnInit {
   }
 
   ngOnInit() {
-    debugger;
+  
   }
  
   // sendMessage(text)
@@ -49,7 +48,7 @@ export class MessageUserComponent implements OnInit {
   }
   sendMessageToUser(msg)
   {
-    debugger;
+    
     this.Reciever.messages.push({senderId:this.senderId,senderName:this.sender.userName,message:msg});
     // console.log(this.userService.Users[this.recievierId].messages);
     this.router.navigate(['profile', this.recievierId]);

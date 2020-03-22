@@ -26,7 +26,6 @@ export class InvitationsCardComponent implements OnInit {
    }
 
   ngOnInit() {
-    debugger;
     if(this.router.url==='/notifications')
     {
       this.items=this.invitationsUsers;

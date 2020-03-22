@@ -30,7 +30,6 @@ export class ProfileComponent implements OnInit {
       this.isSerchedFor = false;
       this.currentUser = this.userService.currentUser;
     } else {
-      debugger;
       this.isSerchedFor = this.userService.isSearchedFor;
       this.SignedInId = this.currentUser.id;
       this.invitorId = this.userService.searchedForProfile.id;
