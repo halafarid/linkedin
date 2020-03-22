@@ -4,7 +4,7 @@
          <div class="card-head">
            
             <p class="username">{{userService.getById(post.userId).userName}}</p>
-            <p class=" card-small-font--gray">{{userService.getById(post.userId).workExp.title}}</p>
+            <p class=" card-small-font--gray">{{userService.getById(post.userId).workExp[0].title}}</p>
         </div>
          <app-option-dropdown></app-option-dropdown> 
         
