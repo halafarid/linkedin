@@ -21,16 +21,21 @@ export class ProfileComponent implements OnInit {
   invitorId: number;
 
   constructor(public userService: UserService, public router: Router) {
+   
     this.months = this.userService.months;
     // this.months=this.userService.months;
   }
 
   ngOnInit() {
+    debugger;
     if (this.router.url === "/profile") {
       this.isSerchedFor = false;
       this.currentUser = this.userService.currentUser;
-    } else if (this.router.url ==="/profile/:id")
+    }
+     
+    else if (this.router.url ==='/profile/'+this.userService.searchedForProfile.id)
     {
+    
       this.isSerchedFor = this.userService.isSearchedFor;
       this.SignedInId = this.currentUser.id;
       this.invitorId = this.userService.searchedForProfile.id;
