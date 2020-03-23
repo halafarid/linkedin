@@ -45,7 +45,7 @@ export class RegestrationComponent implements OnInit {
           email: this.userData.value.email,
           password: this.userData.value.pass,
           About: "...",
-          workExp: [],
+          workExp: [{}],
           userInfo: {
             jobOpps: {
               title: [],

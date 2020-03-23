@@ -777,7 +777,7 @@ export class UserService {
   // getUserById, getEducationById, getExperienceById
   getById<T>(id: number, obj: string = '') {
     const selectUser = this.Users.filter( user => user.id === this.currentUser.id)[0];
-    let form = {};
+    let form ;
 
     if (obj === '') {
       return selectUser;

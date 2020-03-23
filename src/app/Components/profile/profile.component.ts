@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
   currentUser = this.userService.currentUser;
   educationArr = this.currentUser.education;
 
-  workExps: WorkExperience[] = [{}];
+  workExps: WorkExperience[] = [];
   months = [];
   isSerchedFor: boolean = false;
   searchedForUser: User = {};
