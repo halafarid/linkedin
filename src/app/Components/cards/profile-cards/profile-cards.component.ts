@@ -12,13 +12,12 @@ export class ProfileCardsComponent implements OnInit {
   currentUser = this.userService.currentUser;
   courses =[];
   constructor( public userService : UserService) {
-    debugger;
     this.courses=this.userService.currentUser.courses;
     this.isSearchedFor=this.userService.isSearchedFor;
    }
 
   ngOnInit() {
-    console.log(this.currentUser.courses[0].name);
+    // console.log(this.currentUser.courses[0].name);
   }
 
 }

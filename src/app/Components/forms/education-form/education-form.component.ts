@@ -46,17 +46,16 @@ export class EducationFormComponent implements OnInit {
 
   submit() {
     if (this.isAdd && this.eduForm.valid) {
-      this.userService.addEducation(this.eduForm.value);
+      this.userService.addGeneric(this.eduForm.value, 'education');
       this.router.navigate(['/profile']);
     } else if (!this.isAdd) {
-      this.userService.editEducation(this.eduForm.value, this.userService.educationForm.id);
+      this.userService.editGeneric(this.eduForm.value, this.userService.educationForm.id, 'education');
       this.router.navigate(['/profile']);
     }
   }
 
   onDelete() {
-    this.userService.deleteEducation(this.userService.educationForm.id);
-    console.log(this.eduForm.value);
+    this.userService.deleteGeneric(this.userService.educationForm.id, 'education');
   }
 
   get schoolName() {

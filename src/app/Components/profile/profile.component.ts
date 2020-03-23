@@ -27,7 +27,6 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    debugger;
     if (this.router.url === "/profile") {
       this.isSerchedFor = false;
       this.currentUser = this.userService.currentUser;
@@ -68,13 +67,10 @@ export class ProfileComponent implements OnInit {
   }
 
   getEducation(id: number) {
-    // this.userService.educationForm =  this.userService.getFormById(id,'education');
-    this.userService.getEducationById(id);
+    this.userService.educationForm =  this.userService.getById(id, 'education');
   }
+
   getExperience(id: number) {
-    this.userService.experienceForm = this.userService.getFormById(
-      id,
-      "workExp"
-    );
+    this.userService.experienceForm = this.userService.getById(id, 'workExp');
   }
 }
