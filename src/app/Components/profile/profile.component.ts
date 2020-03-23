@@ -31,7 +31,6 @@ export class ProfileComponent implements OnInit {
       this.currentUser = this.userService.currentUser;
     } else if (this.router.url ==="/profile/:id")
     {
-      debugger;
       this.isSerchedFor = this.userService.isSearchedFor;
       this.SignedInId = this.currentUser.id;
       this.invitorId = this.userService.searchedForProfile.id;
@@ -45,7 +44,8 @@ export class ProfileComponent implements OnInit {
     if (user.workExp.length > 0) {
       this.workExps = user.workExp;
     }
-    this.workExps = this.userService.Users[this.currentUser.id].workExp;
+    
+    this.workExps =  this.userService.getById(this.currentUser.id).workExp;
   }
 
   // tslint:disable-next-line: use-lifecycle-interface

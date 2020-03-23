@@ -702,7 +702,7 @@ export class UserService {
       id: 5,
       userName: "mirna",
       email: "mirna@gmail.com",
-      password: "mirna",
+      password: "mirna123",
       About: "joined ITI, looking for front end position ",
       workExp: [
         {
@@ -818,8 +818,8 @@ export class UserService {
     }
   }
   getByName(name: string): User[] {
-    return this.Users.filter(user =>
-      user.userName.includes(name.toLowerCase())
+    return this.Users.filter(user =>user.id !== this.currentUser.id&&
+      user.userName.toLowerCase().includes(name.toLowerCase())
     );
   }
   getByJob(name: string): User[] {
@@ -828,7 +828,7 @@ export class UserService {
       const title = user.userInfo.jobOpps.title.filter(t =>
         t.toLowerCase().includes(name.toLowerCase())
       );
-      if (title.length != 0) {
+      if (title.length != 0 && user.id !== this.currentUser.id) {
         users.push(user);
       }
     }
@@ -838,9 +838,9 @@ export class UserService {
     let users = [];
     for (const user of this.Users) {
       const title = user.userInfo.jobOpps.jobLocation.filter(t =>
-        t.toLowerCase().includes(name)
+        t.toLowerCase().includes(name.toLowerCase())
       );
-      if (title.length != 0) {
+      if (title.length != 0 && user.id !== this.currentUser.id) {
         users.push(user);
       }
     }

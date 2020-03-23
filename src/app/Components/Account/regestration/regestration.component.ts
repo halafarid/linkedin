@@ -1,3 +1,4 @@
+import { User } from './../../../Models/User';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -40,12 +41,58 @@ export class RegestrationComponent implements OnInit {
     if (this.userData.valid) {
       const users = this.userService.getAll();
       const userAccount = users.filter(user => user.email === this.userData.controls.email.value );
-      console.log(userAccount);
-
+    
       if (userAccount.length === 0) {
-        this.userService.add(this.userData.value);
+        var res = this.userData.value.email.split("@");
+        console.log(res[0])
+                const newUser:User=  {
+                  userName: res[0],
+                  email: this.userData.value.email,
+                  password: this.userData.value.pass,
+                  About: "...",
+                  workExp: [
+                    {title:"..."}
+                  ],
+                  userInfo: {
+                    jobOpps: {
+                     
+                      title: [],
+                      jobLocation: [],
+                      jobTypes: [
+                       
+                      ]
+                    }
+                  },
+                  education: [
+                    {
+                      id: 1,
+                      
+                    }
+                  ],
+                  skills: [
+                    {  },
+                    
+                  ],
+                  courses: [
+                    {
+                    },
+                   
+                  ],
+                  posts: [
+                
+                  ],
+                  friendsId: [],
+                  invitations: [],
+                  invitationsSend: [],
+                  messages:[]
+                }
+        newUser.email=this.userData.value.email;
+        newUser.password=this.userData.value.pass
+      
+        this.userService.add(newUser);
+        this.userService.currentUser=newUser;
         setTimeout(() => {
-          this.router.navigate(['/signin'], { replaceUrl: true });
+          this.router.navigate(['/home'], { replaceUrl: true });
         }, 500);
       } else {
         this.isExist = true;
