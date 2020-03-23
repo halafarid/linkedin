@@ -21,20 +21,23 @@ export class AddSkillsFormComponent implements OnInit {
   selectable = true;
   removable = true;
   addOnBlur = true;
-  // names:string[]=[];
   skills: Skills[] = [ ];
 
+  constructor(
+    private userService: UserService,
+    private router: Router) { }
+
+  ngOnInit() { }
+
   add(event: MatChipInputEvent): void {
-    console.log(event.value);
     const input = event.input;
     const value = event.value;
 
-    // Add our Skill
     if ((value || '').trim()) {
-      this.skills.push({name:value.trim()});
+      this.userService.addGeneric({name: value.trim()}, 'skills');
+      this.skills.push({name: value.trim()});
     }
 
-    // Reset the input value
     if (input) {
       input.value = '';
     }
@@ -48,20 +51,7 @@ export class AddSkillsFormComponent implements OnInit {
     }
   }
 
-  constructor(private user:UserService,
-  private router:Router) { }
-
-  ngOnInit() {
-  
-  }
-
-
-  onSubmit(){
-    
-    this.skills.map(skill=>this.user.currentUser.skills.push(skill))
-    this.user.update(this.user.currentUser)
-     console.log(this.user.currentUser)
-    // console.log(this.user.Users);    
-    this.router.navigate(['/profile'])
+  onSubmit() {
+    this.router.navigate(['/profile']);
   }
 }

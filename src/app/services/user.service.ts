@@ -18,11 +18,15 @@ export class UserService {
   // educationForm = {};
   workExpId = 0;
   experienceForm: WorkExperience = {};
+
+  educationId = 0;
+  educationForm: Education = {};
+
   isSearchedFor: boolean = false;
   searchedForProfile: User = {};
   SignedInId: number;
   invitorId: number;
-  currentUser: User = {};
+  // currentUser: User = {};
   pendingRequests: PendingRequest[] = [];
 
   privacy: string[] = [
@@ -41,212 +45,112 @@ export class UserService {
     { id: 7, name: "Remote" }
   ];
 
-  educationForm = {
-    id: 1
+  // educationForm = {
+  //   id: 1
+  // };
+
+  currentUser: User = {
+    id: 1,
+    userName: "bella",
+    email: "bella@gmail.com",
+    password: "bella123",
+    About: "joined ITI, looking for front end position ",
+    workExp: [
+      {
+        id: 1,
+        title: "frontend developer",
+        employmentType: { id: 1, name: "Full-time" },
+        companyName: "Information Technology Institute (ITI)",
+        location: "cairo",
+        isWorking: false,
+        startDate: "June",
+        endDate: "October",
+        description: "ITI is good",
+        Headline:
+          "Trainee Web & UI Development at Information Technology Institute(ITI)"
+      }
+    ],
+    userInfo: {
+      profilePhoto: "bella.jpg",
+      jobOpps: {
+        id: 1,
+        title: ["UI and Web development", "front end"],
+        jobLocation: ["maadi", "mokattam"],
+        jobTypes: [
+          { id: 2, name: "part-time" },
+          { id: 3, name: "temporary" }
+        ]
+      }
+    },
+    education: [
+      {
+        id: 1,
+        schoolName: "Cairo University",
+        degree: "Bachelors degree, Computer Science",
+        fieldOfStudy: "information technology",
+        startYear: 2015,
+        endYear: 2019,
+        grade: "good",
+        activity: "joined SCCI",
+        description: "computer science is good"
+      }
+    ],
+    skills: [
+      { id: 1, name: "problem solver" },
+      { id: 2, name: "communication" }
+    ],
+    courses: [
+      {
+        id: 1,
+        name: "Object-Oriented Programming in JavaScript, Udemy",
+        association: []
+      },
+      {
+        id: 2,
+        name: "JavaScript Tutorial, Udemy",
+        association: []
+      },
+      {
+        id: 3,
+        name: "Mastering React, Udemy",
+        association: []
+      }
+      // },{
+      //   id: 4,
+      //   name: 'The Complete JQuery Course from Beginner To Advanced, Udemy',
+      //   association: []
+      // }
+    ],
+    posts: [
+      {
+        id: 1,
+        userId: 1,
+        body:
+          // tslint:disable-next-line:max-line-length
+          "salsabils's post",
+        likes: 50,
+        replies: 20,
+        imageUrls: [],
+        comments: [
+          {
+            userId: 3,
+            commentId: 1,
+            body: "comment",
+            likes: 5,
+            replies: 0,
+            liked: false
+          }
+        ],
+        onComment: false,
+        onHover: false,
+        onHoverReact: false,
+        liked: ""
+      }
+    ],
+    friendsId: [2, 3],
+    invitations: [],
+    invitationsSend: []
   };
-
-  // currentUser: User = {
-  //   id: 1,
-  //   userName: "bella",
-  //   email: "bella@gmail.com",
-  //   password: "bella123",
-  //   About: "joined ITI, looking for front end position ",
-  //   workExp: [
-  //     {
-  //       id: 1,
-  //       title: "frontend developer",
-  //       employmentType: { id: 1, name: "Full-time" },
-  //       companyName: "Information Technology Institute (ITI)",
-  //       location: "cairo",
-  //       isWorking: false,
-  //       startDate: "June",
-  //       endDate: "October",
-  //       description: "ITI is good",
-  //       Headline:
-  //         "Trainee Web & UI Development at Information Technology Institute(ITI)"
-  //     }
-  //   ],
-  //   userInfo: {
-  //     profilePhoto: "bella.jpg",
-  //     jobOpps: {
-  //       id: 1,
-  //       title: ["UI and Web development", "front end"],
-  //       jobLocation: ["maadi", "mokattam"],
-  //       jobTypes: [
-  //         { id: 2, name: "part-time" },
-  //         { id: 3, name: "temporary" }
-  //       ]
-  //     }
-  //   },
-  //   education: [
-  //     {
-  //       id: 1,
-  //       schoolName: "Cairo University",
-  //       degree: "Bachelors degree, Computer Science",
-  //       fieldOfStudy: "information technology",
-  //       startYear: 2015,
-  //       endYear: 2019,
-  //       grade: "good",
-  //       activity: "joined SCCI",
-  //       description: "computer science is good"
-  //     }
-  //   ],
-  //   skills: [
-  //     { id: 1, name: "problem solver" },
-  //     { id: 2, name: "communication" }
-  //   ],
-  //   courses: [
-  //     {
-  //       id: 1,
-  //       name: "Object-Oriented Programming in JavaScript, Udemy",
-  //       association: []
-  //     },
-  //     {
-  //       id: 2,
-  //       name: "JavaScript Tutorial, Udemy",
-  //       association: []
-  //     },
-  //     {
-  //       id: 3,
-  //       name: "Mastering React, Udemy",
-  //       association: []
-  //     }
-  //     // },{
-  //     //   id: 4,
-  //     //   name: 'The Complete JQuery Course from Beginner To Advanced, Udemy',
-  //     //   association: []
-  //     // }
-  //   ],
-  //   posts: [
-  //     {
-  //       id: 1,
-  //       userId: 1,
-  //       body:
-  //         // tslint:disable-next-line:max-line-length
-  //         "salsabils's post",
-  //       likes: 50,
-  //       replies: 20,
-  //       imageUrls: [],
-  //       comments: [
-  //         {
-  //           userId: 3,
-  //           commentId: 1,
-  //           body: "comment",
-  //           likes: 5,
-  //           replies: 0,
-  //           liked: false
-  //         }
-  //       ],
-  //       onComment: false,
-  //       onHover: false,
-  //       onHoverReact: false,
-  //       liked: ""
-  //     }
-  //   ],
-  //   friendsId: [2, 3],
-  //   invitations: [],
-  //   invitationsSend: []
-  // };
-
-  // currentUser: User = {
-  //   id: 4,
-  //   userName: 'mariam',
-  //   email: 'mariam@gmail.com',
-  //   password: 'mariam123',
-  //   About: 'joined ITI, looking for front end position ',
-  //   workExp: [{
-  //     id: 1,
-  //     title: 'frontend developer',
-  //     employmentType: { id: 1, name: 'Full-time' },
-  //     companyName: 'Information Technology Institute (ITI)',
-  //     location: 'cairo',
-  //     isWorking: false,
-  //     startDate: 'June',
-  //     endDate: 'October',
-  //     description: 'ITI is good' ,
-  //     Headline:'Trainee Web & UI Development at Information Technology Institute(ITI)'
-  //   }],
-  //   userInfo: {
-  //     profilePhoto: 'bella.jpg',
-  //     jobOpps:
-  //       {
-  //         id: 1,
-  //         title: ['UI and Web development','Full Stack'],
-  //         jobLocation: ['maadi', 'mokattam'],
-  //         jobTypes: [
-  //           { id: 2, name: 'part-time' },
-  //           { id: 3, name: 'temporary' }
-  //         ]
-  //       },
-
-  //   },
-  //   education: [{
-  //     id: 1,
-  //     schoolName: 'Cairo University',
-  //     degree: 'Bachelors degree, Computer Science',
-  //     fieldOfStudy: 'information technology',
-  //     startYear: 2015,
-  //     endYear: 2019,
-  //     grade: 'good',
-  //     activity: 'joined SCCI',
-  //     description: 'computer science is good'
-  //   }],
-  //   skills: [
-  //     { id: 1, name: 'problem solver' },
-  //     { id: 2, name: 'communication' }
-  //   ],
-  //   courses: [
-  //     {
-  //       id: 1,
-  //       name: 'Object-Oriented Programming in JavaScript, Udemy',
-  //       association: []
-  //     },{
-  //       id: 2,
-  //       name: 'JavaScript Tutorial, Udemy',
-  //       association: []
-  //     },{
-  //       id: 3,
-  //       name: 'Mastering React, Udemy',
-  //       association: []
-  //     }
-  //     // },{
-  //     //   id: 4,
-  //     //   name: 'The Complete JQuery Course from Beginner To Advanced, Udemy',
-  //     //   association: []
-  //     // }
-  //   ],
-  //   posts: [
-  //     {
-  //       id: 1,
-  //       userId: 1,
-  //       body:
-  //         // tslint:disable-next-line:max-line-length
-  //         'salsabil\'s post',
-  //       likes: 50,
-  //       replies: 20,
-  //       imageUrls: [],
-  //       comments: [
-  //         {
-  //           userId:3,
-  //           commentId: 1,
-  //           body: 'comment',
-  //           likes: 5,
-  //           replies: 0,
-  //           liked:false,
-
-  //         },
-  //       ],
-  //       onComment:false,
-  //       onHover:false,
-  //       onHoverReact:false,
-  //       liked:"",
-  //     },
-
-  //   ],
-  //   friendsId:[3],
-  //   invitations: [2],
-  //   invitationsSend: [5]
-  // };
 
   months = [
     "January",
@@ -804,79 +708,57 @@ export class UserService {
     },
   ];
 
-  getAll(): User[] {
-    return this.Users;
-  }
-
-  getById(id: number): User {
-    id = +id;
-
-    if (id >= 0) {
-      const user = this.Users.find(u => u.id === id);
-      return user;
-    }
-  }
-  getByName(name: string): User[] {
-    return this.Users.filter(user =>user.id !== this.currentUser.id&&
-      user.userName.toLowerCase().includes(name.toLowerCase())
-    );
-  }
-  getByJob(name: string): User[] {
-    let users = [];
-    for (const user of this.Users) {
-      const title = user.userInfo.jobOpps.title.filter(t =>
-        t.toLowerCase().includes(name.toLowerCase())
-      );
-      if (title.length != 0 && user.id !== this.currentUser.id) {
-        users.push(user);
-      }
-    }
-    return users;
-  }
-  getByLoc(name: string): User[] {
-    let users = [];
-    for (const user of this.Users) {
-      const title = user.userInfo.jobOpps.jobLocation.filter(t =>
-        t.toLowerCase().includes(name.toLowerCase())
-      );
-      if (title.length != 0 && user.id !== this.currentUser.id) {
-        users.push(user);
-      }
-    }
-    return users;
-  }
-  // addIdGeneric<T>(param:T , arr:[T])
-  // {
-
-  //     param[id]=arr.length+1;
-  //     arr.push(param);
-  //   }
-
-  add(user: User) {
-    user.id = this.Users.length + 1;
-    this.Users.push(user);
-    console.log(this.Users);
-  }
-  deleteById(id: number) {
-    id = +id;
-
-    const index = this.Users.findIndex(a => a.id === id);
-    this.Users.splice(index, 1);
-    console.log(this.Users);
-  }
   update(newUser: User) {
     const index = this.Users.findIndex(u => u.id === newUser.id);
     this.Users[index] = newUser;
     console.log(this.Users);
   }
+
+  getAll(): User[] {
+    return this.Users;
+  }
+
+  getByName(name: string): User[] {
+    return this.Users.filter(user =>user.id !== this.currentUser.id&&
+      user.userName.toLowerCase().includes(name.toLowerCase())
+    );
+  }
+
+  getByJob(name: string): User[] {
+    const users = [];
+    for (const user of this.Users) {
+      const title = user.userInfo.jobOpps.title.filter(t =>
+        t.toLowerCase().includes(name.toLowerCase())
+      );
+      if (title.length !== 0 && user.id !== this.currentUser.id) {
+        users.push(user);
+      }
+    }
+    return users;
+  }
+
+  getByLoc(name: string): User[] {
+    const users = [];
+    for (const user of this.Users) {
+      const title = user.userInfo.jobOpps.jobLocation.filter(t =>
+        t.toLowerCase().includes(name.toLowerCase())
+      );
+      if (title.length !== 0 && user.id !== this.currentUser.id) {
+        users.push(user);
+      }
+    }
+    return users;
+  }
+
   getFriends = () => {
-    let friends: User[] = [];
+    const friends: User[] = [];
     for (const userid of this.currentUser.friendsId) {
       const friendUser = this.getById(userid);
       friends.push(friendUser);
     }
     return friends;
-  };
+  }
+
   getAllExceptCurr = () => {
     const network = this.Users.filter(u => u.id !== this.currentUser.id);
     for (const userid of this.currentUser.friendsId) {
@@ -890,108 +772,69 @@ export class UserService {
       network.splice(index, 1);
     }
     return network;
-  };
+  }
 
-  addEducation = form => {
-    const selectUser = this.Users.filter(
-      user => user.id === this.currentUser.id
-    )[0];
-    form.id = selectUser.education.length + 1;
-    selectUser.education.push(form);
-    this.currentUser.education.push(form);
-  };
-
-  // getEducationById = id => {
-  //   const selectUser = this.Users.filter(user => user.id === this.currentUser.id)[0];
-  //   this.educationForm = selectUser.education[id - 1];
-  // }
-  // getExperienceById=id =>
-  // {
-
-  //   const user=this.Users.filter(user => user.id===this.currentUser.id)[0];
-  //   const experienceForm=user.workExp[id-1];
-  //   return experienceForm;
-
-  // }
-
-  getFormById<T>(id: number, obj: string) {
-    const user = this.Users.filter(user => user.id === this.currentUser.id)[0];
+  // getUserById, getEducationById, getExperienceById
+  getById<T>(id: number, obj: string = '') {
+    const selectUser = this.Users.filter( user => user.id === this.currentUser.id)[0];
     let form = {};
-    if (obj === "workExp") {
-      form = user.workExp.filter(exp => exp.id === id)[0];
-      this.workExpId = id;
-    }
-    console.log(form);
 
+    if (obj === '') {
+      return selectUser;
+    } else {
+      form = selectUser[obj].filter(ob => ob.id === id)[0];
+
+      if (obj === 'workExp') {
+        this.workExpId = id;
+      } else if (obj === 'education') {
+        form = selectUser[obj].filter(ob => ob.id === id)[0];
+        this.educationId = id;
+      }
+    }
     return form;
   }
 
-  getEducationById = id => {
-    const selectUser = this.Users.filter(
-      user => user.id === this.currentUser.id
-    )[0];
-    this.educationForm = selectUser.education[id - 1];
-    console.log(id);
-  };
+  // addUser, addEducationForm, addCourses, addSkills
+  addGeneric = (form, obj: string) => {
+    const selectUser = this.Users.filter( user => user.id === this.currentUser.id)[0];
 
-  editEducation = (form, id) => {
-    const selectUser = this.Users.filter(
-      user => user.id === this.currentUser.id
-    )[0];
-    selectUser.education[id - 1] = form;
-    selectUser.education[id - 1].id = id;
-    this.currentUser.education[id - 1] = form;
-    this.currentUser.education[id - 1].id = id;
-    console.log(this.Users);
-  };
+    if (obj === 'registration') {
+      form.id = this.Users.length + 1;
+      this.Users.push(form);
+    } else {
+      form.id = selectUser[obj].length + 1;
+      selectUser[obj].push(form);
+      this.currentUser[obj].push(form);
+    }
 
-  deleteEducation = id => {
-    const selectUser = this.Users.filter(
-      user => user.id === this.currentUser.id
-    )[0];
-    selectUser.education.splice(id - 1, 1);
-    this.currentUser.education.splice(id - 1, 1);
+    console.log(this.currentUser);
     console.log(this.Users);
-  };
-  //obj like workExp or education ..etc
-  editFormGeneric = (form, id, obj: string) => {
-    const selectUser = this.Users.filter(
-      user => user.id === this.currentUser.id
-    )[0];
+  }
+
+  // editEducation ..
+  editGeneric = (form, id, obj: string) => {
+    const selectUser = this.Users.filter( user => user.id === this.currentUser.id)[0];
     selectUser[obj][id - 1] = form;
-    return true;
-  };
+    selectUser[obj][id - 1].id = id;
+    this.currentUser[obj][id - 1] = form;
+    this.currentUser[obj][id - 1].id = id;
+  }
 
-  // privacy:string[]=[
-  //   "Anyone",
-  //   "Anyone + Twitter",
-  //   "Connections Only",
-  //   "Advanced Settings"
+  // deleteEducation ..
+  deleteGeneric = (id, obj: string) => {
+    const selectUser = this.Users.filter( user => user.id === this.currentUser.id)[0];
+    selectUser[obj].splice(id - 1, 1);
+    this.currentUser[obj].splice(id - 1, 1);
+  }
 
-  // ]
-  // editExpForm(myForm)
-  // {
 
-  //   myForm.patchValue({
 
-  //     title: this.experienceForm.title,
-  //   employmentType:this.experienceForm.employmentType.id,
-  //   companyName:this.experienceForm.companyName ,
-  //   location: this.experienceForm.location,
-  //   isWorking: this.experienceForm.isWorking,
-  //   startDate:this.experienceForm.startDate,
-  //   startYear:this.experienceForm.startYear,
-  //   endDate:this.experienceForm.endDate ,
-  //   endYear:this.experienceForm.endYear,
-  //   description:this.experienceForm.description ,
-  //   headline: this.experienceForm.Headline
-  //   });
+  
+  // deleteById(id: number) {
+  //   id = +id;
+
+  //   const index = this.Users.findIndex(a => a.id === id);
+  //   this.Users.splice(index, 1);
+  //   console.log(this.Users);
   // }
-
-  addcourses = courseForm => {
-    // tslint:disable-next-line: no-shadowed-variable
-    const User = this.Users.filter(user => user.id === this.currentUser.id)[0];
-    courseForm.id = User.courses.length + 1;
-    this.currentUser.courses.push(courseForm);
-  };
 }

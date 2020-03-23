@@ -30,7 +30,7 @@ export class CourseFormComponent implements OnInit {
     return this.courseForm.get('name');
   }
   onSubmit(){
-    this.userService.addcourses(this.courseForm.value);
+    this.userService.addGeneric(this.courseForm.value, 'courses');
     this.router.navigate(['/profile'])
   }
 }

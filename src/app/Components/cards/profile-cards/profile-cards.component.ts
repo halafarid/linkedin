@@ -17,7 +17,7 @@ export class ProfileCardsComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log(this.currentUser.courses[0].name);
+    // console.log(this.currentUser.courses[0].name);
   }
 
 }
