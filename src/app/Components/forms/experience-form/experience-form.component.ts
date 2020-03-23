@@ -44,7 +44,6 @@ export class ExperienceFormComponent implements OnInit {
   });
   
   constructor(public router: Router , public userService : UserService) {
-    debugger;
     // this.myForm.controls=this.userService.experienceForm;
   
   }
@@ -57,7 +56,6 @@ export class ExperienceFormComponent implements OnInit {
       this.formtitle = "Add experience";
       this.formBtn="Add";
     } else {
-    debugger;
       this.formtitle = "Edit experience";
       this.formBtn="Save";
       this.fillForm();
@@ -103,7 +101,6 @@ export class ExperienceFormComponent implements OnInit {
   }
   onCheckboxClicked($event: MouseEvent)
   {
-    debugger;
     this.isChecked = !this.isChecked;
     this.isChecked ? true : false;
     const checkbox = $event.target as HTMLInputElement;
@@ -121,7 +118,6 @@ export class ExperienceFormComponent implements OnInit {
     if(this.myForm.valid)
     
     {
-      debugger;
       if(btn==='Add')
       {
         this.addWorkExp();
@@ -162,7 +158,6 @@ export class ExperienceFormComponent implements OnInit {
   getFormData()
   {
     // this.userWorkExp.employmentType.name=this.employmentTypes[this.myForm.value.employmentType];
-    debugger;
     const userWorkExp :WorkExperience={};
     userWorkExp.title=this.myForm.value.title;
     userWorkExp.employmentType=this.myForm.value.employmentType;
@@ -211,7 +206,6 @@ export class ExperienceFormComponent implements OnInit {
   }
   editExpForm(id:number)
   {
-    debugger;
    const userWorkExp=this.getFormData();
    userWorkExp.id=id;
    let currentWorkExp= this.userService.Users[this.currentUser.id].workExp.filter(exp=>exp.id=== userWorkExp.id)[0];

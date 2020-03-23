@@ -33,6 +33,7 @@ export class MessageUserComponent implements OnInit {
 
   ngOnInit() {
 
+  
   }
  
   // sendMessage(text)
@@ -49,6 +50,7 @@ export class MessageUserComponent implements OnInit {
   sendMessageToUser(msg)
   {
  
+    
     this.Reciever.messages.push({senderId:this.senderId,senderName:this.sender.userName,message:msg});
     // console.log(this.userService.Users[this.recievierId].messages);
     this.router.navigate(['profile', this.recievierId]);

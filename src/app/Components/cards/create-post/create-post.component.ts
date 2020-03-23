@@ -12,7 +12,6 @@ export class CreatePostComponent implements OnInit {
   imgUrls:string[]=[]
 currPrivacy:string="Anyone";
   constructor(public us:UserService) { 
-   debugger;
   }
 
 
