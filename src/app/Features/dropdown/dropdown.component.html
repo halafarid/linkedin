@@ -1,7 +1,13 @@
 <div class=" dropdown--right">
     <div class="dropdown">
 
-        <button mat-raised-button (click)="isClicked()"  *ngIf="isSearchedFor" (click)="handleConnection()" class="btn btn--primary dropdown--btn dropdown--item">{{btnText}}</button>
+        
+        
+        <button mat-raised-button (click)="isClicked()"  *ngIf="isSearchedFor&&!isFriend&&!isAccepted" (click)="handleConnection()" class="btn btn--primary dropdown--btn dropdown--item">{{btnText}}</button>
+        <button mat-raised-button (click)="isClicked()"  *ngIf="isAccepted" class="btn btn--primary dropdown--btn dropdown--item">{{btnText}}</button>
+        
+        <button mat-stroked-button   *ngIf="isRequest&&!isAccepted"  (click)="cancelClicked()" >Ignore</button>
+        
         <button mat-stroked-button   *ngIf="isSearchedFor"  (click)="messageClicked()" >Message</button>
         <app-message-user class="dropdown--features"  *ngIf="messageOpended" ></app-message-user>
         <button mat-raised-button (click)="isClicked()" *ngIf="!isSearchedFor" class="btn btn--primary dropdown--btn dropdown--item">Add profile section</button>
