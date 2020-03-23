@@ -148,6 +148,7 @@ export class ExperienceFormComponent implements OnInit {
   }
   addWorkExp()
   {
+    debugger;
    
     const userData = this.userService.Users[+this.userId -1];
     const userWorkExp=this.getFormData();

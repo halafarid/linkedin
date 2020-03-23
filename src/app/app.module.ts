@@ -124,7 +124,7 @@ import { MessageUserComponent } from "./Features/message-user/message-user.compo
     SearchCardSmComponent,
     NavdropdownComponent,
     InvitationsCardComponent,
-    NotificationsComponent
+    NotificationsComponent,
     MessageUserComponent
   ],
 

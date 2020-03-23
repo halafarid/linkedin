@@ -29,7 +29,8 @@ export class ProfileComponent implements OnInit {
     if (this.router.url === "/profile") {
       this.isSerchedFor = false;
       this.currentUser = this.userService.currentUser;
-    } else {
+    } else if (this.router.url ==="/profile/:id")
+    {
       debugger;
       this.isSerchedFor = this.userService.isSearchedFor;
       this.SignedInId = this.currentUser.id;

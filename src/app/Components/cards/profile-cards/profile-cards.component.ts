@@ -10,11 +10,15 @@ export class ProfileCardsComponent implements OnInit {
 
   isSearchedFor : boolean=false;
   currentUser = this.userService.currentUser;
+  courses =[];
   constructor( public userService : UserService) {
+    debugger;
+    this.courses=this.userService.currentUser.courses;
     this.isSearchedFor=this.userService.isSearchedFor;
    }
 
   ngOnInit() {
+    console.log(this.currentUser.courses[0].name);
   }
 
 }
