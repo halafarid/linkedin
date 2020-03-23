@@ -69,7 +69,8 @@ export class RegestrationComponent implements OnInit {
         newUser.email = this.userData.value.email;
         newUser.password = this.userData.value.pass;
 
-        this.userService.add(newUser);
+        // this.userService.add(newUser);
+        this.userService.addGeneric(newUser, 'registration');
         this.userService.currentUser = newUser;
         setTimeout(() => {
           this.router.navigate(["/home"], { replaceUrl: true });
