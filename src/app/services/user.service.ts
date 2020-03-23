@@ -429,25 +429,24 @@ export class UserService {
       courses: [
         {
           id: 1,
-          name: "oop",
+          name: "Object-Oriented Programming in JavaScript, Udemy",
           association: []
         },
         {
           id: 2,
-          name: "Data Structures",
+          name: "JavaScript Tutorial, Udemy",
           association: []
         },
         {
           id: 3,
-          name: "Design Patterns",
-          association: []
-        },
-        ,
-        {
-          id: 4,
-          name: "Sass",
+          name: "Mastering React, Udemy",
           association: []
         }
+        // },{
+        //   id: 4,
+        //   name: 'The Complete JQuery Course from Beginner To Advanced, Udemy',
+        //   association: []
+        // }
       ],
       posts: [
         {
