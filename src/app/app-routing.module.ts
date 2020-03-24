@@ -36,6 +36,8 @@ const routes: Routes = [
   { path: 'skills/add', component: SkillsFormComponent },
   { path: 'post/add', component: CreatePostComponent },
   {path:'message',component:MessageUserComponent},
+  {path:'message/:item',component:MessageUserComponent},
+
   {path:'messages',component:NotificationsComponent},
   { path: 'notifications', component: NotificationsComponent},
   { path: 'home', component: HomeComponent },

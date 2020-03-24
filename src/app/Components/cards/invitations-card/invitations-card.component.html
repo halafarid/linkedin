@@ -1,4 +1,4 @@
-<mat-card class="card">
+<mat-card class="card" >
     <mat-card-title class="card__title--lg text--info">{{cardTitle}}</mat-card-title>
 
     <div *ngIf="items.length > 0">
@@ -27,8 +27,12 @@
                     <button mat-stroked-button class="btn btn-text--primary" (click)="onAccept(item)">Accept</button>
                 </div>
                 <div class="card--mrg-t" *ngIf="cardTitle==='Messages'">
-                    <button mat-button class="btn text--info card__btn" >Reply</button>
+                    <button mat-button class="btn text--info card__btn"  (click)="messageClicked(item , $event)"  >Reply</button>
+                    <app-message-user class="dropdown--features"  *ngIf="messageOpended" ></app-message-user>
+                    
+
                 </div>
+
     
                 <mat-card-subtitle class="card__subtitle text--sm"  *ngIf="cardTitle==='Invitations'"
                 >{{item.About}}</mat-card-subtitle

@@ -19,6 +19,7 @@ export class InvitationsCardComponent implements OnInit {
   senderIds :number[];
   items =[];
   cardTitle:string;
+  messageOpended:boolean=false;
   
 
   constructor(public userService: UserService , public router:Router) {
@@ -74,6 +75,19 @@ export class InvitationsCardComponent implements OnInit {
     this.onIgnore(user);
     selectUser.friendsId.push(user.id);
     user.friendsId.push(selectUser.id);
+  }
+
+  messageClicked(item,$event)
+  {
+    
+    debugger;
+    console.log(item.senderId);
+    this.userService.isReply=true;
+    this.userService.isPopUp=true;
+    this.userService.userToReply=item.senderId;
+    this.router.url==='/message';
+    this.messageOpended=!this.messageOpended;
+    
   }
 
 }

@@ -73,25 +73,31 @@ export class DropdownComponent implements OnInit {
   cancelClicked()
   {
     debugger;
-    console.log(this.userService.searchedForProfile.id);
-    this.userService.searchedForProfile.invitationsSend.splice(this.userService.currentUser.id);
-    const index=this.userService.currentUser.invitations.findIndex(user=>this.userService.searchedForProfile.id);
-    this.userService.currentUser.invitations.splice(index);
-    this.btnText='Connect'
-    this.isRequest=false;
+    if(this.btnText==='Connect')
+    {
+      this.handelConnectBtn();
+ 
+    }
+    else 
+    {
+      this.userService.searchedForProfile.invitationsSend.splice(this.userService.currentUser.id);
+      const index=this.userService.currentUser.invitations.findIndex(user=>this.userService.searchedForProfile.id);
+      this.userService.currentUser.invitations.splice(index);
+      this.btnText='Connect'
+      this.isRequest=false;
+    }
+    
 
 
 
 
 
   }
-  handleConnection()
+  handelConnectBtn()
   {
-  debugger
-    if(this.btnText==='Connect')
-    {
-  
-      this.btnText='Your Request Sent';
+    debugger;
+
+    this.btnText='Your Request Sent';
       this.SignedInId=this.userService.currentUser.id;
       this.invitorId=this.userService.searchedForProfile.id;
       this.userService.SignedInId=this.SignedInId;
@@ -101,6 +107,14 @@ export class DropdownComponent implements OnInit {
       this.pendingRequest.senderId=this.SignedInId;
       this.pendingRequest.receiverId=this.invitorId;
       this.userService.pendingRequests.push(this.pendingRequest);
+  }
+  handleConnection()
+  {
+  debugger
+    if(this.btnText==='Connect')
+    {
+     this.handelConnectBtn();
+      
     }
     else if(this.btnText==='Accept Request')
 
@@ -128,6 +142,7 @@ export class DropdownComponent implements OnInit {
   }
   messageClicked()
   {
+    debugger;
     this.router.url==='/message';
     this.messageOpended=!this.messageOpended;
     

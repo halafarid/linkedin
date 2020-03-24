@@ -17,16 +17,32 @@ export class MessageUserComponent implements OnInit {
   recievierId:number;
   sender:User={};
   Reciever:User={};
-  isOpened: false;
+  isOpened: boolean=false;
+  isPopUP: boolean=false;
+  
 
   // myForm = new FormGroup({
   //   message: new FormControl("", Validators.required)
   // });
   constructor(public router:Router, public userService:UserService) { 
-    this.senderId=this.userService.SignedInId;
-    this.recievierId=this.userService.invitorId;
+     debugger;
+    if(this.userService.isReply)
+    {
+      this.isPopUP=this.userService.isPopUp;
+      const item = this.userService.userToReply;
+      this.recievierId=item;
+      this.senderId=this.userService.currentUser.id;
+      
+    }
+    else 
+    {
+      this.isPopUP=true;
+      this.senderId=this.userService.SignedInId;
+      this.recievierId=this.userService.invitorId;
+
+    }
     this.sender=this.userService.getById(this.senderId);
-    this.Reciever=this.userService.getById(this.recievierId);
+    this.Reciever=this.userService.Users[this.recievierId-1];
     
 
   }
@@ -50,8 +66,9 @@ export class MessageUserComponent implements OnInit {
   sendMessageToUser(msg)
   {
  
-    
-    this.Reciever.messages.push({senderId:this.senderId,senderName:this.sender.userName,message:msg});
+    debugger;
+     
+    this.Reciever.messages.push({senderId:this.senderId,senderName:this.sender.userName,isPopUp:false,message:msg});
     // console.log(this.userService.Users[this.recievierId].messages);
     this.router.navigate(['profile', this.recievierId]);
     this.open=false;

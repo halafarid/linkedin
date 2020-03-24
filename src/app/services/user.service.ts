@@ -21,11 +21,13 @@ export class UserService {
 
   educationId = 0;
   educationForm: Education = {};
-
+  isReply:boolean=false;
+  userToReply : number;
   isSearchedFor: boolean = false;
   searchedForProfile: User = {};
   SignedInId: number;
   invitorId: number;
+  isPopUp:boolean = false;
   // currentUser: User = {};
   pendingRequests: PendingRequest[] = [];
 
@@ -278,7 +280,7 @@ export class UserService {
       friendsId: [2, 3],
       invitations: [],
       invitationsSend: [],
-      messages:[{senderId:2,senderName:'sara',message:"Hi Can We Connect ? "}]
+      messages:[{senderId:2,senderName:'sara',isPopUp:false,message:"Hi Can We Connect ? "}]
     },
     {
       id: 2,
@@ -373,8 +375,8 @@ export class UserService {
       invitations: [3],
       invitationsSend: [4],
       messages:[
-        {senderId:1,senderName:'bella',message:"Hi Can We Connect ? "},
-        {senderId:4,senderName:'mariam',message:"What About Your Company Job Offers ? "}]
+        {senderId:1,senderName:'bella',isPopUp:false,message:"Hi Can We Connect ? "},
+        {senderId:4,senderName:'mariam',isPopUp:false,message:"What About Your Company Job Offers ? "}]
 
     },
     {
@@ -494,7 +496,9 @@ export class UserService {
       ],
       friendsId: [1],
       invitations: [],
-      invitationsSend: []
+      invitationsSend: [],
+      messages:[{senderId:2,senderName:'sara',isPopUp:false,message:"Hi Can We Connect ? "}]
+
     },
     {
       id: 4,
@@ -598,8 +602,8 @@ export class UserService {
       invitations: [2],
       invitationsSend: [5],
       messages:[
-        {senderId:1,senderName:'bella',message:"Hi Can We Connect ? "},
-        {senderId:3,senderName:'mariam',message:"What About Your Company Job Offers ? "}]
+        {senderId:1,senderName:'bella',isPopUp:false,message:"Hi Can We Connect ? "},
+        {senderId:3,senderName:'mariam',isPopUp:false,message:"What About Your Company Job Offers ? "}]
     },
     {
       id: 5,
@@ -703,8 +707,8 @@ export class UserService {
       invitations: [4],
       invitationsSend: [],
       messages:[
-        {senderId:1,senderName:'bella',message:"Hi Can We Connect ? "},
-        {senderId:3,senderName:'hala',message:"What About Your Company Job Offers ? "}]
+        {senderId:1,senderName:'bella',isPopUp:false,message:"Hi Can We Connect ? "},
+        {senderId:3,senderName:'hala',isPopUp:false,message:"What About Your Company Job Offers ? "}]
     },
   ];
 
