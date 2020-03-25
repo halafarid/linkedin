@@ -44,7 +44,9 @@ export class DropdownComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.penddingRequestid !== -1)
+
+
+    if(this.penddingRequestid!== -1)
     {
       this.btnText = 'Your Request Sent';
     }
@@ -69,7 +71,7 @@ export class DropdownComponent implements OnInit {
   }
   cancelClicked()
   {
-    if (this.btnText === 'Connect')
+    if(this.btnText==='Connect')
     {
       this.handelConnectBtn();
  
@@ -123,9 +125,8 @@ export class DropdownComponent implements OnInit {
   }
   messageClicked()
   {
-    debugger;
-    this.router.url === '/message';
-    this.messageOpended = !this.messageOpended;
+    this.router.url==='/message';
+    this.messageOpended=!this.messageOpended;
     
   }
 }

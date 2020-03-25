@@ -807,7 +807,7 @@ export class UserService {
       this.Users.push(form);
     } else {
       form.id = selectUser[obj].length + 1;
-      selectUser[obj].push(form);
+      // selectUser[obj].push(form);
       this.currentUser[obj].push(form);
     }
 
