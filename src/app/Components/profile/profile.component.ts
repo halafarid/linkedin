@@ -68,10 +68,10 @@ export class ProfileComponent implements OnInit {
   }
 
   getEducation(id: number) {
-    this.userService.educationForm =  this.userService.getById(id, 'education');
+    this.userService.educationForm =  this.userService.getByIdGeneric(id, 'education');
   }
 
   getExperience(id: number) {
-    this.userService.experienceForm = this.userService.getById(id, 'workExp');
+    this.userService.experienceForm = this.userService.getByIdGeneric(id, 'workExp');
   }
 }

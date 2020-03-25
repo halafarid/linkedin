@@ -4,9 +4,9 @@
       <div mat-card-avatar class="example-header-image"></div>
       <div class="content">
         <mat-card-title>{{friend.userName}}</mat-card-title>
-        <mat-card-subtitle>{{friend.workExp.title}}</mat-card-subtitle>
+        <mat-card-subtitle>{{friend.workExp[0].title}}</mat-card-subtitle>
       </div> </mat-card-header
-    ><button class="btn btn--center btn-v">
+    ><button mat-stroked-button class="btn btn-text--primary btn--center btn-v">
       Message
     </button></mat-list-item
   >

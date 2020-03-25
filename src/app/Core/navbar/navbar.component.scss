@@ -55,6 +55,8 @@ mat-toolbar {
 }
 .logo {
   border-radius: 0;
+  outline: 0 !important;
+  cursor: pointer;
 }
 .search {
   // align-self: center;
@@ -65,10 +67,7 @@ mat-toolbar {
 input {
   background-color: #e1e9ee;
 }
-.active{
-  background-color: $light;
 
-}
 .mediv {
   border-radius: 50%;
   height: 30px;
@@ -145,4 +144,10 @@ span {
 .mat-badge-medium .mat-badge-content {
   height: 18px;
   line-height: 10px;
+}
+
+.active{
+  color: $light;
+  font-weight: bold;
+  border-bottom: 1px solid $light;
 }

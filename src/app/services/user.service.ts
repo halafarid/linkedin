@@ -722,6 +722,15 @@ export class UserService {
     return this.Users;
   }
 
+  getById(id: number): User {
+    id = +id;
+
+    if (id >= 0) {
+      const user = this.Users.find(u => u.id === id);
+      return user;
+    }
+  }
+
   getByName(name: string): User[] {
     return this.Users.filter(user =>user.id !== this.currentUser.id&&
       user.userName.toLowerCase().includes(name.toLowerCase())
@@ -758,8 +767,10 @@ export class UserService {
     const friends: User[] = [];
     for (const userid of this.currentUser.friendsId) {
       const friendUser = this.getById(userid);
+      console.log(friendUser);
       friends.push(friendUser);
     }
+    console.log(friends);
     return friends;
   }
 
@@ -779,7 +790,7 @@ export class UserService {
   }
 
   // getUserById, getEducationById, getExperienceById
-  getById<T>(id: number, obj: string = '') {
+  getByIdGeneric<T>(id: number, obj: string = '') {
     const selectUser = this.Users.filter( user => user.id === this.currentUser.id)[0];
     let form ;
 
