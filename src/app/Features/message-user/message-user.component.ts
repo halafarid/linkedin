@@ -25,7 +25,6 @@ export class MessageUserComponent implements OnInit {
   //   message: new FormControl("", Validators.required)
   // });
   constructor(public router:Router, public userService:UserService) { 
-     debugger;
     if(this.userService.isReply)
     {
       this.isPopUP=this.userService.isPopUp;
@@ -66,7 +65,6 @@ export class MessageUserComponent implements OnInit {
   sendMessageToUser(msg)
   {
  
-    debugger;
      
     this.Reciever.messages.push({senderId:this.senderId,senderName:this.sender.userName,isPopUp:false,message:msg});
     // console.log(this.userService.Users[this.recievierId].messages);
