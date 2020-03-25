@@ -12,7 +12,7 @@
         <app-message-user class="dropdown--features"  *ngIf="messageOpended" ></app-message-user>
         <button mat-raised-button (click)="isClicked()" *ngIf="!isSearchedFor" class="btn btn--primary dropdown--btn dropdown--item">Add profile section</button>
         <app-user-features class="dropdown--features" *ngIf="!isSearchedFor&&isOpened " ></app-user-features>
-        <button mat-stroked-button >More ... </button>
+        <button mat-stroked-button class="btn btn-text--info dropdown--btn dropdown--item" >More ... </button>
         <div class="card__icons-feat">
             <mat-icon class="dropdown--icon" *ngIf="!isSearchedFor">edit</mat-icon>
         </div>

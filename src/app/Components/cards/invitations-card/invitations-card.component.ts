@@ -80,7 +80,6 @@ export class InvitationsCardComponent implements OnInit {
   messageClicked(item,$event)
   {
     
-    debugger;
     console.log(item.senderId);
     this.userService.isReply=true;
     this.userService.isPopUp=true;

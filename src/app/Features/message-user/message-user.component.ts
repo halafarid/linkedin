@@ -25,9 +25,7 @@ export class MessageUserComponent implements OnInit {
   //   message: new FormControl("", Validators.required)
   // });
   constructor(public router:Router, public userService:UserService) { 
-     debugger;
-    if(this.userService.isReply)
-    {
+    if (this.userService.isReply) {
       this.isPopUP=this.userService.isPopUp;
       const item = this.userService.userToReply;
       this.recievierId=item;
@@ -63,11 +61,7 @@ export class MessageUserComponent implements OnInit {
     this.open=false;
     
   }
-  sendMessageToUser(msg)
-  {
- 
-    debugger;
-     
+  sendMessageToUser(msg) {
     this.Reciever.messages.push({senderId:this.senderId,senderName:this.sender.userName,isPopUp:false,message:msg});
     // console.log(this.userService.Users[this.recievierId].messages);
     this.router.navigate(['profile', this.recievierId]);

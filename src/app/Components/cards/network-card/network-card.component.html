@@ -7,11 +7,11 @@
     />
     <div class="card__img-parent">
       <div class="card_img card_img--radius">
-        <!-- <img
+        <img
           id="profile-img"
-          src="../../assets/logo.PNG"
+          src="../../../../assets/avatar4.png"
           class="card__img-profile"
-        /> -->
+        />
       </div>
     </div>
   </div>
@@ -19,7 +19,7 @@
     <div class="card-center">
       <h5 class="card-title">{{user.userName}}</h5>
       <p class="card-small-font--gray">
-        <!-- {{user.workExp.title}} -->
+        {{user.workExp[0].title}}
       </p>
       <p class="card-small-font--gray">
         <i class="fas fa-link"></i> {{user.friendsId.length}}conections

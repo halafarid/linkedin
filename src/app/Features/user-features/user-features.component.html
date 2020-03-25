@@ -40,6 +40,7 @@
       </ng-container>
     </app-feature-item>
   </mat-expansion-panel>
+
   <mat-expansion-panel
     (opened)="panelOpenState = true"
     (closed)="panelOpenState = false"
@@ -49,8 +50,6 @@
         About
       </mat-panel-title>
     </mat-expansion-panel-header>
-
-   
     
     <app-feature-item>
       <ng-container class="icon">
@@ -64,7 +63,7 @@
         </p>
       </ng-container>
       <ng-container id="addicon" class="addicon__styled">
-          <mat-icon >add_circle_outline</mat-icon>
+          <mat-icon routerLink="/about" >add_circle_outline</mat-icon>
       </ng-container>
     </app-feature-item>
   </mat-expansion-panel>
@@ -234,7 +233,7 @@
     </p>
   </ng-container>
   <ng-container id="addicon" class="addicon__styled">
-      <mat-icon  >add_circle_outline</mat-icon>
+      <mat-icon routerLink="/courses/add" >add_circle_outline</mat-icon>
   </ng-container>
 </app-feature-item>
 </mat-expansion-panel>
