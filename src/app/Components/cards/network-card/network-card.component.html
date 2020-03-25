@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" (click)="onChooseProfile(user)">
   <div class="card__cover">
     <img
       src="../../assets/profile/background.svg"
@@ -22,11 +22,11 @@
         {{user.workExp[0].title}}
       </p>
       <p class="card-small-font--gray">
-        <i class="fas fa-link"></i> {{user.friendsId.length}}conections
+        <i class="fas fa-link"></i> {{user.friendsId.length}} conections
       </p>
     </div>
   </div>
 
-  <button #pindingBtn mat-stroked-button class="btn btn--center btn-text--info btn-border--info" *ngIf="pinding.includes(user.id)" (click)="onClick(pindingBtn, user.id)">Pinding</button>
-  <button #connectionBtn mat-stroked-button class="btn btn--center btn-text--primary btn-border--primar" *ngIf="!pinding.includes(user.id)" (click)="onClick(connectionBtn, user.id)">Connect</button>
+  <button #pindingBtn mat-stroked-button class="btn btn--center btn-text--info btn-border--info" *ngIf="pinding.includes(user.id)" (click)="onClick(pindingBtn, user.id, $event)">Pinding</button>
+  <button #connectionBtn mat-stroked-button class="btn btn--center btn-text--primary btn-border--primar" *ngIf="!pinding.includes(user.id)" (click)="onClick(connectionBtn, user.id, $event)">Connect</button>
 </div>

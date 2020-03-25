@@ -1,9 +1,9 @@
-<div class="friend">
+<div class="friend" (click)="onChooseProfile(friend)">
   <mat-list-item class="list_item text--dark list_item--underline"
     ><mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
+      <div mat-card-avatar class="example-header-image username" (click)="onChooseProfile(friend)"></div>
       <div class="content">
-        <mat-card-title>{{friend.userName}}</mat-card-title>
+        <mat-card-title class="username">{{friend.userName}}</mat-card-title>
         <mat-card-subtitle>{{friend.workExp[0].title}}</mat-card-subtitle>
       </div> </mat-card-header
     ><button mat-stroked-button class="btn btn-text--primary btn--center btn-v">

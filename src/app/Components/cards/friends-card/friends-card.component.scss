@@ -114,3 +114,10 @@ i {
 .container {
   margin-top: 5rem;
 }
+
+.username {
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

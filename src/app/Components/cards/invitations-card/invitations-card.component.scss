@@ -1,2 +1,8 @@
 @import '../profile-cards/profile-cards.component.scss';
 @import '../../../../sass/buttons';
+
+.invitation {
+    &:hover {
+        cursor: pointer;
+    }
+}

@@ -6,9 +6,17 @@
   // margin-top:15px;
   width: 13rem;
   height: 17rem;
-  margin-right: 7px;
+  margin-right: 10px;
   margin-bottom: 20px;
   padding-bottom: 5px;
+
+  &:hover {
+    border: 1px solid $info;
+    box-shadow: 10px 10px 10px $light;
+    transition: 0.5s all ease-in-out;
+    cursor: pointer;
+  }
+
   &-small-font {
     display: flex;
     margin-top: 15px;

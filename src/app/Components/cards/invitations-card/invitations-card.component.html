@@ -8,9 +8,10 @@
             <img
                 mat-card-sm-image
                 src="../../assets/profile.png"
+                class="invitation"
             />
             <mat-card-title-group class="card__details" >
-                <mat-card-subtitle class="card__subtitle card--dark text--normal text--dark"  *ngIf="cardTitle==='Invitations'">
+                <mat-card-subtitle class="card__subtitle card--dark text--normal text--dark invitation"  *ngIf="cardTitle==='Invitations'" (click)="onChooseProfile(item)">
                     {{item.userName}}
                 </mat-card-subtitle>
 

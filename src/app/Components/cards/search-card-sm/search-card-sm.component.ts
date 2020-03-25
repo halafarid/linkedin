@@ -15,10 +15,6 @@ export class SearchCardSmComponent implements OnInit {
   ngOnInit() {}
   onChooseProfile()
   {
-    this.router.navigate(['/profile/'+this.user.id]);
-    this.userService.isSearchedFor=true;
-    this.userService.searchedForProfile=this.user;
-
-    
+    this.userService.getChooseProfile(this.user);
   }
 }

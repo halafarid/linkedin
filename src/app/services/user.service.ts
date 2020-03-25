@@ -8,12 +8,13 @@ import { User } from "src/app/Models/User";
 import { Courses } from "./../Models/Courses";
 import { BindingFlags } from "@angular/compiler/src/core";
 import { PendingRequest } from "./../Models/pendingReaquest";
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: "root"
 })
 export class UserService {
-  constructor() {}
+  constructor(private router: Router) {}
 
   // educationForm = {};
   workExpId = 0;
@@ -787,6 +788,12 @@ export class UserService {
       network.splice(index, 1);
     }
     return network;
+  }
+
+  getChooseProfile(user) {
+    this.router.navigate([`/profile/${user.id}`]);
+    this.isSearchedFor = true;
+    this.searchedForProfile = user;
   }
 
   // getUserById, getEducationById, getExperienceById
