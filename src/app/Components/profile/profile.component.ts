@@ -51,7 +51,7 @@ export class ProfileComponent implements OnInit {
     
     this.workExps =  this.userService.getById(this.currentUser.id).workExp;
   }
-
+  
   // tslint:disable-next-line: use-lifecycle-interface
   ngOnChanges() {
     console.log(this.currentUser.education);
